@@ -1,1 +1,2 @@
-si senor
+Sí, señor
+Keep yourself safe
