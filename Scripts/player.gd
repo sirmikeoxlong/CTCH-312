@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0
+var SPEED = 80.0
 const JUMP_VELOCITY = -400.0
 
 
@@ -31,3 +31,19 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, SPEED) 
 
 	move_and_slide()
+	
+func _input(event):
+# Handle running
+	if event.is_action_pressed("run"):
+		SPEED = 200
+	if event.is_action_released("run"):
+		SPEED = 80
+# Handle Crouching
+	if event.is_action_pressed("crouch"):
+		SPEED =  30
+	if event.is_action_released("crouch"):
+		SPEED = 80
+	if event.is_action_pressed("crouch"):
+		if event.is_action_pressed("run"):
+			SPEED = 60
+	
