@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c4b5asqafi1fr"]
+
+[ext_resource type="PackedScene" uid="uid://dj38ugwb5k1yf" path="res://Scenes/chapel.tscn" id="1_wemt7"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/player.tscn" id="2_exwrh"]
+[ext_resource type="Script" uid="uid://bcyjasak166ik" path="res://Scenes/chapel/portal_chapel.gd" id="3_yj02x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_exwrh"]
+radius = 13.0
+height = 80.0
+
+[node name="Chapel Scene" type="Node2D" unique_id=1835165868]
+
+[node name="Collisions" type="StaticBody2D" parent="." unique_id=618214365]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions" unique_id=1815973876]
+polygon = PackedVector2Array(-106, -56, 19, -56, 34, -55, 47, -55, 67, -55, 73, -54, 84, -53, 82, -69, 88, -54, 99, -53, 101, 155, -109, 154, -108, -68, -141, -88, -175, 41, -88, 203, 148, 181, 152, -4, 115, -135, -92, -104)
+
+[node name="EnvironmetalSorting" type="Node2D" parent="." unique_id=911521447]
+y_sort_enabled = true
+
+[node name="Chapel" parent="EnvironmetalSorting" unique_id=119320096 instance=ExtResource("1_wemt7")]
+position = Vector2(0, -32)
+
+[node name="Lauren" parent="EnvironmetalSorting" unique_id=1222447786 instance=ExtResource("2_exwrh")]
+position = Vector2(56, -26)
+
+[node name="Camera2D" type="Camera2D" parent="EnvironmetalSorting/Lauren" unique_id=379928047]
+position = Vector2(-1, -9)
+zoom = Vector2(6, 6)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1252158361]
+script = ExtResource("3_yj02x")
+
+[node name="Library Door" type="CollisionShape2D" parent="Area2D" unique_id=643268772]
+position = Vector2(52, -71)
+shape = SubResource("CapsuleShape2D_exwrh")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
