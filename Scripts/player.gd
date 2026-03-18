@@ -4,6 +4,7 @@ extends CharacterBody2D
 var SPEED = 80.0
 const JUMP_VELOCITY = -400.0
 const SUM = 50;
+var closet_entered = false
 
 
 func _physics_process(delta: float) -> void:
@@ -33,13 +34,13 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-func _input(event):
+func _input(event) -> void:
 # Handle running
 	if event.is_action_pressed("run"):
 		SPEED = 200
 	if event.is_action_released("run"):
 		SPEED = 80
-# Handle Crouching
+# Handle Crouching/ running crouch stuff
 	if event.is_action_pressed("crouch"):
 		SPEED = 30
 	if event.is_action_released("crouch"):
@@ -48,5 +49,31 @@ func _input(event):
 		SPEED = 60
 	if event.is_action_released("running_crouch"):
 		SPEED = 80
-	
-	
+
+# Handle closet hiding
+	if closet_entered == true:
+		# Shrink her collision detection
+		# Make it so that the player cannot move (player velocity = 0?)
+		# Make her sprite dissapear
+		if event.is_action_pressed("hide"):
+			$CollisionShape2D.shape.set_radius(0.0)
+			SPEED = 0.0
+			$AnimatedSprite2D.set_scale(Vector2(0.0, 0.0))
+		if event.is_action_released("hide"):
+			$CollisionShape2D.shape.set_radius(5.0)
+			SPEED = 80.0
+			$AnimatedSprite2D.set_scale(Vector2(1.0, 1.0))
+
+
+# Handle hiding
+	# if hide key is pressed, Lauren's Sprite dissapears and
+	# her collission either shrinks or dissapears enough that
+	# none of the NPCs can detect her
+	# I think this is probably gonna be a signal from the character to 
+	# another node?
+
+func _on_closet_1_body_entered(body: CharacterBody2D) -> void:
+	closet_entered = true
+
+func _on_closet_1_body_exited(body: Node2D) -> void:
+	closet_entered = false

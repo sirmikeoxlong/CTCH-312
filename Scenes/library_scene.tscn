@@ -4,10 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/player.tscn" id="2_hkdju"]
 [ext_resource type="Script" uid="uid://c1rs0uj6kkvku" path="res://Scenes/library/portals_library.gd" id="3_hkdju"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_061c0"]
-radius = 12.0
-height = 46.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_hkdju"]
 radius = 18.110771
 
@@ -23,6 +19,10 @@ radius = 14.035668
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ydier"]
 radius = 14.035668
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_061c0"]
+radius = 12.0
+height = 46.0
 
 [node name="library_scene" type="Node2D" unique_id=1027523911]
 
@@ -45,10 +45,6 @@ polygon = PackedVector2Array(-208, -33, -179, -33, -178, -68, -147, -69, -147, -
 [node name="Portals" type="Area2D" parent="." unique_id=1263894155]
 script = ExtResource("3_hkdju")
 
-[node name="Closet 1" type="CollisionShape2D" parent="Portals" unique_id=1163035068]
-position = Vector2(127, -43)
-shape = SubResource("CapsuleShape2D_061c0")
-
 [node name="Closet 2" type="CollisionShape2D" parent="Portals" unique_id=679500619]
 position = Vector2(-197, 95)
 shape = SubResource("CircleShape2D_hkdju")
@@ -69,5 +65,13 @@ shape = SubResource("CircleShape2D_aoy6y")
 position = Vector2(31, 115)
 shape = SubResource("CircleShape2D_ydier")
 
+[node name="Closet 1" type="Area2D" parent="." unique_id=83855810]
+
+[node name="Collision" type="CollisionShape2D" parent="Closet 1" unique_id=1163035068]
+position = Vector2(127, -43)
+shape = SubResource("CapsuleShape2D_061c0")
+
 [connection signal="body_entered" from="Portals" to="Portals" method="_on_body_entered"]
 [connection signal="body_exited" from="Portals" to="Portals" method="_on_body_exited"]
+[connection signal="body_entered" from="Closet 1" to="Environmental Sorting/Lauren" method="_on_closet_1_body_entered"]
+[connection signal="body_exited" from="Closet 1" to="Environmental Sorting/Lauren" method="_on_closet_1_body_exited"]
