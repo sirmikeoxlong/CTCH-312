@@ -77,3 +77,10 @@ func _on_closet_1_body_entered(body: CharacterBody2D) -> void:
 
 func _on_closet_1_body_exited(body: Node2D) -> void:
 	closet_entered = false
+	
+# Handle flashbang
+	# if flashbang button pressed
+	# Lauren should enter her flashlight animation (for that direction)
+	# The screen should immediately flash white
+	# Carmilla should enter her stunned state (8 seconds)
+	

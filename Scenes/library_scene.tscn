@@ -28,6 +28,9 @@ height = 46.0
 
 [node name="Environmental Sorting" type="Node2D" parent="." unique_id=479910548]
 
+[node name="CanvasModulate" type="CanvasModulate" parent="Environmental Sorting" unique_id=899621310]
+color = Color(0.12912142, 0.19021827, 0.40617716, 1)
+
 [node name="envLibrary" parent="Environmental Sorting" unique_id=1834645444 instance=ExtResource("1_061c0")]
 position = Vector2(-1, 1)
 
