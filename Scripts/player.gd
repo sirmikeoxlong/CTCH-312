@@ -18,8 +18,10 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var x_direction := Input.get_axis("ui_left", "ui_right")
+	# bruh why is it in RADIANSSSS AGHHHHHHHH 
+	var x_direction := Input.get_axis("left", "right")
 	if x_direction:
+		# goin lefting, lefterooooooo
 		velocity.x = x_direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -35,6 +37,19 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func _input(event) -> void:
+# Handle flashlight direction
+	if event.is_action_pressed("left"):
+		$Flashlight.set_rotation_degrees(90.6)
+		$Flashlight.set_position(Vector2(-25.0, 6.0))
+	if event.is_action_pressed("right"):
+		$Flashlight.set_rotation_degrees(270.6)
+		$Flashlight.set_position(Vector2(25.0, 6.0))
+	if event.is_action_pressed("up"):
+		$Flashlight.set_rotation_degrees(180.6)
+		$Flashlight.set_position(Vector2(0.0, -26.0))
+	if event.is_action_pressed("down"):
+		$Flashlight.set_rotation_degrees(0.6)
+		$Flashlight.set_position(Vector2(0.0, 26.0))
 # Handle running
 	if event.is_action_pressed("run"):
 		SPEED = 200
@@ -64,6 +79,13 @@ func _input(event) -> void:
 			SPEED = 80.0
 			$AnimatedSprite2D.set_scale(Vector2(1.0, 1.0))
 
+# Handle flashbang
+	if event.is_action_pressed("flashbang"):
+		$Flashlight.set_scale(Vector2(1.0, 1.0));
+	if event.is_action_released("flashbang"):
+		$Flashlight.set_scale(Vector2(0.0, 0.0));
+
+
 
 # Handle hiding
 	# if hide key is pressed, Lauren's Sprite dissapears and
@@ -83,4 +105,4 @@ func _on_closet_1_body_exited(body: Node2D) -> void:
 	# Lauren should enter her flashlight animation (for that direction)
 	# The screen should immediately flash white
 	# Carmilla should enter her stunned state (8 seconds)
-	
+		

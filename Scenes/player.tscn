@@ -42,6 +42,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
 radius = 5.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
+height = 52.0
+
 [node name="Lauren" type="CharacterBody2D" unique_id=1222447786]
 script = ExtResource("1_cvnsp")
 
@@ -56,4 +59,8 @@ frame_progress = 0.26812196
 position = Vector2(-1, 8)
 shape = SubResource("CircleShape2D_cvnsp")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=807483316]
+[node name="Flashlight" type="CollisionShape2D" parent="." unique_id=734635674]
+position = Vector2(-2, 25.999998)
+rotation = -3.1149716
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("CapsuleShape2D_cvnsp")
