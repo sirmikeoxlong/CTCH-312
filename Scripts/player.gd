@@ -60,6 +60,7 @@ func _input(event) -> void:
 		SPEED = 200
 	if event.is_action_released("run"):
 		SPEED = 80
+# Added a test comment
 		
 # Handle Crouching/ running crouch stuff
 	if event.is_action_pressed("crouch"):
