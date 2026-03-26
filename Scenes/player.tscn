@@ -42,8 +42,27 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
 radius = 5.0
 
+[sub_resource type="Gradient" id="Gradient_cvnsp"]
+offsets = PackedFloat32Array(0.082987554, 0.64315355, 0.7842324, 0.813278)
+colors = PackedColorArray(1, 1, 1, 1, 0.25858343, 0.25858343, 0.25858343, 1, 0.07185626, 0.07185626, 0.07185626, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6t5aa"]
+gradient = SubResource("Gradient_cvnsp")
+width = 40
+height = 39
+fill = 1
+fill_from = Vector2(0.485, 0.455)
+fill_to = Vector2(0.96, 0.125)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
-height = 52.0
+height = 64.13
+
+[sub_resource type="Gradient" id="Gradient_6t5aa"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vgqql"]
+gradient = SubResource("Gradient_6t5aa")
+fill_from = Vector2(0.4866469, 0.8991098)
+fill_to = Vector2(0.5074184, 0)
 
 [node name="Lauren" type="CharacterBody2D" unique_id=1222447786]
 script = ExtResource("1_cvnsp")
@@ -59,8 +78,28 @@ frame_progress = 0.26812196
 position = Vector2(-1, 8)
 shape = SubResource("CircleShape2D_cvnsp")
 
-[node name="Flashlight" type="CollisionShape2D" parent="." unique_id=734635674]
-position = Vector2(-2, 25.999998)
-rotation = -3.1149716
-scale = Vector2(1e-05, 1e-05)
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2095674953]
+color = Color(0.68390006, 0.760807, 0.9558019, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_6t5aa")
+texture_scale = 2.0
+
+[node name="LightPivot" type="Node2D" parent="." unique_id=245274219]
+
+[node name="Area2D" type="Area2D" parent="LightPivot" unique_id=1232556947]
+position = Vector2(0, 14.025)
+
+[node name="Flashlight" type="CollisionShape2D" parent="LightPivot/Area2D" unique_id=734635674]
+position = Vector2(0, 33.105)
+rotation = 3.1415927
 shape = SubResource("CapsuleShape2D_cvnsp")
+
+[node name="FlashbangPath" type="PointLight2D" parent="LightPivot/Area2D/Flashlight" unique_id=393874507]
+visible = false
+position = Vector2(-367375.47, -2174116.5)
+rotation = 3.1415927
+scale = Vector2(78125, 93749.99)
+energy = 2.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_vgqql")
+offset = Vector2(-0.12, 0.18)

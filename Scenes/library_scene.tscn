@@ -25,6 +25,7 @@ radius = 12.0
 height = 46.0
 
 [node name="library_scene" type="Node2D" unique_id=1027523911]
+position = Vector2(0, -1)
 
 [node name="Environmental Sorting" type="Node2D" parent="." unique_id=479910548]
 
