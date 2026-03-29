@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://sp4lobttuofx"]
+
+[ext_resource type="PackedScene" uid="uid://3w440ilb4h41" path="res://Scenes/environments/env_2_bedroom.tscn" id="1_xokou"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_qqts0"]
+
+[node name="2_bedroom_scene" type="Node2D" unique_id=162409078]
+
+[node name="Environmental Sorting" type="Node2D" parent="." unique_id=542797928]
+
+[node name="env_2_bedroom" parent="Environmental Sorting" unique_id=1943075142 instance=ExtResource("1_xokou")]
+position = Vector2(1, 2)
+scale = Vector2(0.7112066, 0.74963623)
+
+[node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("2_qqts0")]
+position = Vector2(-122, 41)
+
+[node name="bg_collision" type="StaticBody2D" parent="." unique_id=1734763748]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=533925950]
+polygon = PackedVector2Array(-126, -1, 45, 1, 46, 74, -148, 73, -148, 38, -125, 38, -123, 2, -205, 22, -210, 61, -143, 150, -37, 164, 69, 139, 96, 103, 102, 7, 102, -92, -10, -121, -136, -123, -184, -89, -196, -35, -180, -13)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1609483743]
+position = Vector2(-1, -1)
+scale = Vector2(0.7112066, 0.74963623)
+color = Color(0.44119266, 0.5500828, 0.8660146, 1)

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cewacawysgp5s"]
+
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="1_6rxsy"]
+[ext_resource type="PackedScene" uid="uid://u6ddgl6bf6sa" path="res://Scenes/environments/env_1_bedroom.tscn" id="2_qm5uv"]
+
+[node name="1_bedroom_scene" type="Node2D" unique_id=1592105858]
+
+[node name="bg_collision" type="StaticBody2D" parent="." unique_id=2127790378]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=1782881862]
+polygon = PackedVector2Array(-126, -2, 43, -1, 43, 34, 66, 35, 67, 71, -126, 72, -126, 1, -173, 37, -177, 104, -88, 161, 7, 139, 57, 125, 90, 52, 91, -34, -18, -123, -29, -125, -98, -126, -150, -106, -190, -69, -192, -20, -171, -8)
+
+[node name="Environmental Sorting" type="Node2D" parent="." unique_id=25157390]
+
+[node name="env_1_bedroom" parent="Environmental Sorting" unique_id=296830572 instance=ExtResource("2_qm5uv")]
+position = Vector2(-1, -1)
+scale = Vector2(0.7112066, 0.74963623)
+
+[node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("1_6rxsy")]
+position = Vector2(35, 36)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1123957822]
+position = Vector2(-1, -1)
+scale = Vector2(0.7112066, 0.74963623)
+color = Color(0.44119266, 0.5500828, 0.8660146, 1)
