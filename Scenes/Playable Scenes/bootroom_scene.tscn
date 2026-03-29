@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://licp8vg8j1c2"]
+
+[ext_resource type="PackedScene" uid="uid://vg2xkhobfw7h" path="res://Scenes/environments/env_bootroom.tscn" id="1_2teyn"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_gc13i"]
+
+[node name="bootroom_scene" type="Node2D" unique_id=892454826]
+
+[node name="env_bootroom" parent="." unique_id=1255504119 instance=ExtResource("1_2teyn")]
+position = Vector2(-30, 16)
+scale = Vector2(0.68000066, 0.63999724)
+
+[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_gc13i")]
+position = Vector2(23, -25)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1594320021]
+color = Color(0.1168422, 0.33254594, 0.43403766, 1)
