@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bh7ea6mot1w34"]
 
-[ext_resource type="PackedScene" uid="uid://tqxn6clkhth7" path="res://Scenes/env_library.tscn" id="1_061c0"]
-[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/player.tscn" id="2_hkdju"]
-[ext_resource type="Script" uid="uid://c1rs0uj6kkvku" path="res://Scenes/library/portals_library.gd" id="3_hkdju"]
+[ext_resource type="PackedScene" uid="uid://tqxn6clkhth7" path="res://Scenes/environments/env_library.tscn" id="1_uykyt"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_5x4c1"]
+[ext_resource type="Script" uid="uid://c1rs0uj6kkvku" path="res://Scenes/library/portals_library.gd" id="3_bujhp"]
+[ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="4_cs4en"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hkdju"]
 radius = 18.110771
@@ -30,16 +31,13 @@ position = Vector2(0, -1)
 [node name="Environmental Sorting" type="Node2D" parent="." unique_id=479910548]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Environmental Sorting" unique_id=899621310]
-color = Color(0.12912142, 0.19021827, 0.40617716, 1)
+color = Color(0.44119266, 0.5500828, 0.8660146, 1)
 
-[node name="envLibrary" parent="Environmental Sorting" unique_id=1834645444 instance=ExtResource("1_061c0")]
+[node name="envLibrary" parent="Environmental Sorting" unique_id=1834645444 instance=ExtResource("1_uykyt")]
 position = Vector2(-1, 1)
 
-[node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("2_hkdju")]
+[node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("2_5x4c1")]
 position = Vector2(-82, 87)
-
-[node name="Camera2D" type="Camera2D" parent="Environmental Sorting/Lauren" unique_id=1655519818]
-zoom = Vector2(6, 6)
 
 [node name="bg_collisions" type="StaticBody2D" parent="." unique_id=1366988549]
 
@@ -47,7 +45,7 @@ zoom = Vector2(6, 6)
 polygon = PackedVector2Array(-208, -33, -179, -33, -178, -68, -147, -69, -147, -33, -138, -33, -137, -18, -67, -17, -63, -15, -53, -16, -28, -20, -7, -21, 5, -18, 90, -19, 92, -30, 146, -30, 147, -17, 191, -18, 192, 34, 192, 111, -212, 114, -193, 109, -193, -29, -244, -18, -245, 154, -155, 213, 193, 202, 290, 60, 279, -129, 115, -179, -192, -168, -257, -56)
 
 [node name="Portals" type="Area2D" parent="." unique_id=1263894155]
-script = ExtResource("3_hkdju")
+script = ExtResource("3_bujhp")
 
 [node name="Closet 2" type="CollisionShape2D" parent="Portals" unique_id=679500619]
 position = Vector2(-197, 95)
@@ -74,6 +72,9 @@ shape = SubResource("CircleShape2D_ydier")
 [node name="Collision" type="CollisionShape2D" parent="Closet 1" unique_id=1163035068]
 position = Vector2(127, -43)
 shape = SubResource("CapsuleShape2D_061c0")
+
+[node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("4_cs4en")]
+position = Vector2(-162, -44)
 
 [connection signal="body_entered" from="Portals" to="Portals" method="_on_body_entered"]
 [connection signal="body_exited" from="Portals" to="Portals" method="_on_body_exited"]

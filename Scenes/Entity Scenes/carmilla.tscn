@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://ddaurrrwvdn47"]
+
+[ext_resource type="Script" uid="uid://24cqoufxc3m6" path="res://Scripts/carmilla.gd" id="1_fskwt"]
+[ext_resource type="Texture2D" uid="uid://bwmdj4ylfgvg8" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Entities/Npc's/Knight/Idle/Idle-Sheet.png" id="2_hvpdg"]
+[ext_resource type="Texture2D" uid="uid://640s5e1bj1qx" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Entities/Npc's/Knight/Run/Run-Sheet.png" id="3_antq7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxogf"]
+atlas = ExtResource("2_hvpdg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onu03"]
+atlas = ExtResource("2_hvpdg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4i38c"]
+atlas = ExtResource("2_hvpdg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj8wf"]
+atlas = ExtResource("2_hvpdg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a07ja"]
+atlas = ExtResource("3_antq7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok707"]
+atlas = ExtResource("3_antq7")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajupx"]
+atlas = ExtResource("3_antq7")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk1xi"]
+atlas = ExtResource("3_antq7")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsx7x"]
+atlas = ExtResource("3_antq7")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l077"]
+atlas = ExtResource("3_antq7")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0i32i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxogf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onu03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4i38c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj8wf")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Idle Left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Idle Right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Idle Up",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Stunned",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a07ja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ok707")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajupx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kk1xi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsx7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l077")
+}],
+"loop": true,
+"name": &"Walking Down",
+"speed": 7.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Walking Left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Walking Right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Walking Up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dj2b6"]
+radius = 7.071068
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5us03"]
+radius = 63.1981
+
+[node name="Carmilla" type="CharacterBody2D" unique_id=140519432]
+script = ExtResource("1_fskwt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=483615586]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_0i32i")
+animation = &"Idle"
+frame_progress = 0.4243664
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1577866949]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_dj2b6")
+
+[node name="Detection" type="Area2D" parent="." unique_id=2098650545]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=1364026821]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_5us03")
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]

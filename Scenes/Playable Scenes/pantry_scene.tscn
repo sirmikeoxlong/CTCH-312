@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://0lgw8tlov8tx"]
+
+[ext_resource type="PackedScene" uid="uid://bkajr5uxgr5mg" path="res://Scenes/environments/env_pantry.tscn" id="1_5rn18"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_5351w"]
+
+[node name="pantry_scene" type="Node2D" unique_id=233444306]
+metadata/_edit_vertical_guides_ = [-181.0]
+
+[node name="env_pantry" parent="." unique_id=1610001924 instance=ExtResource("1_5rn18")]
+position = Vector2(11, 6)
+scale = Vector2(0.56394696, 0.5999994)
+
+[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_5351w")]
+position = Vector2(-87, 15)
+
+[node name="bg_collision" type="StaticBody2D" parent="." unique_id=1494295255]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=1333694512]
+polygon = PackedVector2Array(-107, 16, -44, 17, -43, 6, -35, 7, -33, 14, 46, 15, 47, 6, 64, 6, 65, 64, 56, 64, 56, 82, 29, 82, 29, 63, -44, 61, -43, 44, -106, 43, -106, 20, -171, 76, -100, 135, 108, 138, 181, 27, 167, -137, 3, -186, -50, -211, -140, -144, -167, -1, -124, 11)

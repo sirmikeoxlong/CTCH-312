@@ -1,0 +1,285 @@
+[gd_scene format=3 uid="uid://be8qbmt0fe144"]
+
+[ext_resource type="Script" uid="uid://c3ubxpp10k6x6" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://iil2sl0amjny" path="res://Sprites/Juanna's Sprites/Untitled134_Restored_20260328022117.png" id="2_tenkg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r75iy"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(856, 0, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uho5"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(0, 312, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yunt8"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(0, 624, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihngi"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(0, 936, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgk7d"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(0, 0, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6inr"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(214, 0, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3174"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(428, 0, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnj1b"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(642, 0, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w72bm"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(856, 0, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s20c"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(0, 312, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e115"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(214, 312, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctaf6"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(428, 312, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1h8r"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(642, 312, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilbab"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(856, 312, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phyf0"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(0, 624, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfcru"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(214, 624, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3s33"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(428, 624, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejjhy"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(642, 624, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a0cm"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(856, 624, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v0ig"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(0, 936, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntxcv"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(214, 936, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnqdg"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(428, 936, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_118co"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(642, 936, 214, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kny0j"]
+atlas = ExtResource("2_tenkg")
+region = Rect2(856, 936, 214, 312)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qqcod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r75iy")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uho5")
+}],
+"loop": true,
+"name": &"Idle Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yunt8")
+}],
+"loop": true,
+"name": &"Idle Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihngi")
+}],
+"loop": true,
+"name": &"Idle Up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgk7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6inr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3174")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnj1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w72bm")
+}],
+"loop": true,
+"name": &"Walking Down",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s20c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e115")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctaf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1h8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilbab")
+}],
+"loop": true,
+"name": &"Walking Left",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phyf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfcru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3s33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejjhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a0cm")
+}],
+"loop": true,
+"name": &"Walking Right",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v0ig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntxcv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnqdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_118co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kny0j")
+}],
+"loop": true,
+"name": &"Walking Up",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
+radius = 6.0827627
+
+[sub_resource type="Gradient" id="Gradient_cvnsp"]
+offsets = PackedFloat32Array(0.082987554, 0.64315355, 0.7842324, 0.813278)
+colors = PackedColorArray(1, 1, 1, 1, 0.25858343, 0.25858343, 0.25858343, 1, 0.07185626, 0.07185626, 0.07185626, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6t5aa"]
+gradient = SubResource("Gradient_cvnsp")
+width = 40
+height = 39
+fill = 1
+fill_from = Vector2(0.485, 0.455)
+fill_to = Vector2(0.96, 0.125)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
+height = 64.13
+
+[sub_resource type="Gradient" id="Gradient_6t5aa"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vgqql"]
+gradient = SubResource("Gradient_6t5aa")
+fill_from = Vector2(0.4866469, 0.8991098)
+fill_to = Vector2(0.5074184, 0)
+
+[node name="Lauren" type="CharacterBody2D" unique_id=1222447786]
+script = ExtResource("1_cvnsp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1590759023]
+y_sort_enabled = true
+texture_filter = 1
+scale = Vector2(0.15284361, 0.13907285)
+sprite_frames = SubResource("SpriteFrames_qqcod")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.84652627
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=102025890]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_cvnsp")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2095674953]
+color = Color(0.68390006, 0.760807, 0.9558019, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_6t5aa")
+texture_scale = 2.0
+
+[node name="LightPivot" type="Node2D" parent="." unique_id=245274219]
+
+[node name="Area2D" type="Area2D" parent="LightPivot" unique_id=1232556947]
+position = Vector2(0, 14.025)
+
+[node name="Flashlight" type="CollisionShape2D" parent="LightPivot/Area2D" unique_id=734635674]
+position = Vector2(0, 33.105)
+rotation = 3.1415927
+shape = SubResource("CapsuleShape2D_cvnsp")
+
+[node name="FlashbangPath" type="PointLight2D" parent="LightPivot/Area2D/Flashlight" unique_id=393874507]
+visible = false
+position = Vector2(-367375.47, -2174116.5)
+rotation = 3.1415927
+scale = Vector2(78125, 93749.99)
+energy = 2.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_vgqql")
+offset = Vector2(-0.12, 0.18)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=173087138]
+zoom = Vector2(5, 5)
