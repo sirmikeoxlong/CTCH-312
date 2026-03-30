@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="CarmillasManorGameEdit"
-run/main_scene="uid://c4b5asqafi1fr"
+run/main_scene="uid://c4e58f6ugy1cw"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 DialogueManager="*uid://c3rodes2l3gxb"
+Global="*uid://88scnhacweae"
 
 [display]
 
