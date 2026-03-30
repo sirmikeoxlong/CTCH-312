@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://s8e82g7l36ba"
+path="res://.godot/imported/L n C Footsteps 02.ogg-ccae380c5f5902ae68e8ffd36a8e54e1.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/L n C Footsteps 02.ogg"
+dest_files=["res://.godot/imported/L n C Footsteps 02.ogg-ccae380c5f5902ae68e8ffd36a8e54e1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

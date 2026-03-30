@@ -1,0 +1,63 @@
+~ scene1forest1
+Lauren: I hope I’m going the right way. I didn’t exactly get the best directions.
+=> END
+
+~ scene1forest2
+Lauren: Looks like this it is.
+=> END
+
+~ scene2frontdoor1
+Lauren: Darn. Locked. Maybe there’s a key around here somewhere?
+=> END
+
+~ scene3gazebo1
+Lauren: Ouch. Stupid rock.
+=> END
+
+~ scene3gazebo2
+Lauren: Nice hiding place.
+=> END
+
+~ doorlock
+Lauren: Looks like I can't open this part yet.
+=> END 
+
+~ scene5enter1
+Lauren: Man, this place looks huge. Not many lights around for this big of a place..
+=> END
+
+~ scene6hall1
+Lauren: I should probably take a look down here first. I don't want to get too ahead of myself..
+=> END 
+
+~ scene6hall2
+Lauren: This looks like it needs some sort of puzzle piece to get in. I’ll look around for some.
+=> END 
+
+~ billards/parlorconnect
+Lauren: Door that connects the two gendered hangouts. Good idea.
+=> END 
+
+~ kitchendoor
+Lauren: This must be the kitchen. Looks like I need to find a way in there.
+=> END
+
+~ scene10gallery1
+Lauren: Hm. I wonder who these two are. 
+=> END 
+
+~ scene12bath1
+Lauren: This looks like it could fit into a door somewhere. Maybe I should check around the entrance area..
+=> END 
+
+~ scene12bath2
+Lauren: This piece looks like it could fit in that door from before!
+=> END
+
+~ scene13librarydoor1
+Lauren: Why is the door making that [shake]noise[/shake]?!
+=> END 
+
+~ scene13librarydoor2
+Lauren: Is someone here? I need to hide!
+=> END

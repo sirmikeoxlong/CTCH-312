@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bhygmdflffsma"
+path="res://.godot/imported/Thrall Footsteps 04.ogg-fb2507de824aefc00d062cc431dc2ea8.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Thrall Footsteps 04.ogg"
+dest_files=["res://.godot/imported/Thrall Footsteps 04.ogg-fb2507de824aefc00d062cc431dc2ea8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

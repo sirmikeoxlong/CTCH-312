@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://qyi5gkmabw6l"
+path="res://.godot/imported/Thrall Groan 02.ogg-ac708bd937d848f1d890c0dd44fb187d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Thrall Groan 02.ogg"
+dest_files=["res://.godot/imported/Thrall Groan 02.ogg-ac708bd937d848f1d890c0dd44fb187d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

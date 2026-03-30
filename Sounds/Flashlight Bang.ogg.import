@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b6vbjhqltlo36"
+path="res://.godot/imported/Flashlight Bang.ogg-52949d2ac640c296ee873f522b8b399f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Flashlight Bang.ogg"
+dest_files=["res://.godot/imported/Flashlight Bang.ogg-52949d2ac640c296ee873f522b8b399f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dhgr803yhujv"
+path="res://.godot/imported/Carmilla's Manor.dialogue-f3b6d4955e1f598124064feb10e802ac.tres"
+
+[deps]
+
+source_file="res://Dialogue/Carmilla's Manor.dialogue"
+dest_files=["res://.godot/imported/Carmilla's Manor.dialogue-f3b6d4955e1f598124064feb10e802ac.tres"]
+
+[params]
+
+defaults=true

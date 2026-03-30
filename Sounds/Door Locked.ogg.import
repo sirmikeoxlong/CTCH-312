@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://kbc4vqeyqbwc"
+path="res://.godot/imported/Door Locked.ogg-8cddbedd30b49afbb317ac09d3c5ef6e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Door Locked.ogg"
+dest_files=["res://.godot/imported/Door Locked.ogg-8cddbedd30b49afbb317ac09d3c5ef6e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
