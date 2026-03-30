@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bvtqb0awxdfuc"
+path="res://.godot/imported/UI Toy Piano.ogg-c49bd412fb83e21d9df45a149d0324ff.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/UI Toy Piano.ogg"
+dest_files=["res://.godot/imported/UI Toy Piano.ogg-c49bd412fb83e21d9df45a149d0324ff.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

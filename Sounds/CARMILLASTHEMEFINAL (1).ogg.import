@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bcob24m4558to"
+path="res://.godot/imported/CARMILLASTHEMEFINAL (1).ogg-4c20a33b7b1dfc96006e68cc33ee8989.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/CARMILLASTHEMEFINAL (1).ogg"
+dest_files=["res://.godot/imported/CARMILLASTHEMEFINAL (1).ogg-4c20a33b7b1dfc96006e68cc33ee8989.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
