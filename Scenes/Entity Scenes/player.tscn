@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://be8qbmt0fe144"]
 
 [ext_resource type="Script" uid="uid://c3ubxpp10k6x6" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://iil2sl0amjny" path="res://Sprites/Juanna's Sprites/Untitled134_Restored_20260328022117.png" id="2_tenkg"]
+[ext_resource type="Texture2D" uid="uid://d10h171ru05gu" path="res://Sprites/Juanna's Sprites/Lauren_walkingsprite_sheet_final.png" id="2_tenkg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r75iy"]
 atlas = ExtResource("2_tenkg")
-region = Rect2(856, 0, 214, 312)
+region = Rect2(428, 0, 214, 312)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2uho5"]
 atlas = ExtResource("2_tenkg")
@@ -247,9 +247,8 @@ y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.15284361, 0.13907285)
 sprite_frames = SubResource("SpriteFrames_qqcod")
-animation = &"Idle"
+animation = &"Walking Up"
 autoplay = "Idle"
-frame_progress = 0.84652627
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=102025890]
 position = Vector2(0, 7)

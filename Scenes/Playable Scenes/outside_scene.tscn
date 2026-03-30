@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://el140ya21vl2" path="res://Scripts/Scene Scripts/outside_scene.gd" id="1_2jf0q"]
 [ext_resource type="PackedScene" uid="uid://demqdejgfcxvn" path="res://Scenes/environments/env_outside.tscn" id="1_f5yt4"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_2jf0q"]
+[ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="4_nkkqu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nkkqu"]
 radius = 64.02203
@@ -27,4 +28,8 @@ rotation = 1.5650148
 shape = SubResource("CapsuleShape2D_nkkqu")
 
 [node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_2jf0q")]
-position = Vector2(-57, 539)
+position = Vector2(-53, 532)
+
+[node name="ClassRoomTeleport" parent="." unique_id=727452976 instance=ExtResource("4_nkkqu")]
+position = Vector2(-113, -19)
+teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
