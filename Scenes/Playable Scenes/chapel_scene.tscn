@@ -25,15 +25,16 @@ position = Vector2(0, -32)
 [node name="Lauren" parent="EnvironmetalSorting" unique_id=1222447786 instance=ExtResource("2_5gyh3")]
 position = Vector2(56, -26)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1252158361]
+[node name="Room Teleporting2" type="Area2D" parent="." unique_id=1018466263]
 script = ExtResource("3_r5y37")
+teleport = "res://Scenes/Playable Scenes/study_scene.tscn"
 
-[node name="Library Door" type="CollisionShape2D" parent="Area2D" unique_id=643268772]
+[node name="Door" type="CollisionShape2D" parent="Room Teleporting2" unique_id=673886561]
 position = Vector2(52, -71)
 shape = SubResource("CapsuleShape2D_exwrh")
 
 [node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("4_1ci17")]
 position = Vector2(-41, 99)
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Room Teleporting2" to="Room Teleporting2" method="_on_body_entered"]
+[connection signal="body_exited" from="Room Teleporting2" to="Room Teleporting2" method="_on_body_exited"]

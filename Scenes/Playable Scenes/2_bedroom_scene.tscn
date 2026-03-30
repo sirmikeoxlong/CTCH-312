@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://3w440ilb4h41" path="res://Scenes/environments/env_2_bedroom.tscn" id="1_xokou"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_qqts0"]
+[ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="3_qqts0"]
 
 [node name="2_bedroom_scene" type="Node2D" unique_id=162409078]
 
@@ -23,3 +24,7 @@ polygon = PackedVector2Array(-126, -1, 45, 1, 46, 74, -148, 73, -148, 38, -125, 
 position = Vector2(-1, -1)
 scale = Vector2(0.7112066, 0.74963623)
 color = Color(0.44119266, 0.5500828, 0.8660146, 1)
+
+[node name="ClassRoomTeleport" parent="." unique_id=727452976 instance=ExtResource("3_qqts0")]
+position = Vector2(-203, 116)
+teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"

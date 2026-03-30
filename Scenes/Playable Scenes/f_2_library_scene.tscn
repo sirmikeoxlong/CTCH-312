@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bsl480m5sh3sj" path="res://Scenes/environments/env_f_2_library.tscn" id="1_uxnrv"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_77tw0"]
+[ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="3_77tw0"]
 
 [node name="F2_library_scene" type="Node2D" unique_id=962146672]
 
@@ -20,3 +21,27 @@ color = Color(0.44119266, 0.5500828, 0.8660146, 1)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=744487845]
 scale = Vector2(0.99294823, 1)
 polygon = PackedVector2Array(-183.29254, -258, -28.198853, -258, -26.184649, -255, 9.063917, -255, 11.078121, -256, 166.17181, -257, 167.17891, -90, 15.106528, -90, 15.106528, 1, 65.461624, 2, 65.461624, 27, 16.11363, 27, 17.120731, 144, 263.8607, 144, 263.8607, 202, 248.75417, 202, 248.75417, 218, 208.4701, 219, 207.463, 205, 114.809616, 205, 114.809616, 219, 72.51134, 220, 73.51844, 204, -182.28545, 205, -183.29254, 219, -223.57661, 220, -224.58372, 205, -284.00275, 205, -284.00275, 144, -33.234364, 143, -33.234364, 27, -83.589455, 28, -81.57526, 2, -34.241463, 1, -32.22726, -90, -182.28545, -91, -182.28545, -256, -476.3592, -120, -517.6504, 122, -314.2158, 307, -16.11363, 360, 292.05954, 306, 348.45724, 115, 390.75552, 1, 311.1945, -171, 233.64764, -425, -22.156242, -507, -228.61214, -401, -241.70445, -298, -228.61214, -264)
+
+[node name="ClassRoomTeleport" parent="." unique_id=727452976 instance=ExtResource("3_77tw0")]
+position = Vector2(-209, -208)
+teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
+
+[node name="ClassRoomTeleport2" parent="." unique_id=2086894804 instance=ExtResource("3_77tw0")]
+position = Vector2(-137, 78)
+teleport = "res://Scenes/Playable Scenes/1_bedroom_scene.tscn"
+
+[node name="ClassRoomTeleport3" parent="." unique_id=310440998 instance=ExtResource("3_77tw0")]
+position = Vector2(16, 77)
+teleport = "res://Scenes/Playable Scenes/2_bedroom_scene.tscn"
+
+[node name="ClassRoomTeleport4" parent="." unique_id=1680612408 instance=ExtResource("3_77tw0")]
+position = Vector2(-212, 184)
+teleport = "res://Scenes/Playable Scenes/1_bedroom_scene.tscn"
+
+[node name="ClassRoomTeleport5" parent="." unique_id=1789752390 instance=ExtResource("3_77tw0")]
+position = Vector2(-254, 286)
+teleport = "res://Scenes/Playable Scenes/study_scene.tscn"
+
+[node name="ClassRoomTeleport6" parent="." unique_id=1691242732 instance=ExtResource("3_77tw0")]
+position = Vector2(41, 285)
+teleport = "res://Scenes/Playable Scenes/carmillasroom_scene.tscn"

@@ -1,3 +1,30 @@
 [gd_scene format=3 uid="uid://gaprye6uxwys"]
 
+[ext_resource type="Script" uid="uid://el140ya21vl2" path="res://Scripts/Scene Scripts/outside_scene.gd" id="1_2jf0q"]
+[ext_resource type="PackedScene" uid="uid://demqdejgfcxvn" path="res://Scenes/environments/env_outside.tscn" id="1_f5yt4"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_2jf0q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nkkqu"]
+radius = 64.02203
+height = 522.0
+
 [node name="outside_scene" type="Node2D" unique_id=373647599]
+script = ExtResource("1_2jf0q")
+
+[node name="envOutside" parent="." unique_id=1871588153 instance=ExtResource("1_f5yt4")]
+position = Vector2(-1, 1)
+
+[node name="bg_collision" type="StaticBody2D" parent="." unique_id=1178411334]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=908254339]
+polygon = PackedVector2Array(-273, 595, -268, 222, -231, 219, -201, 232, -194, 249, -141, 251, -184, 240, -190, 185, -209, 185, -287, 184, -286, -79, -198, -78, -193, -66, -144, -65, -142, -77, 27, -83, 33, -64, 77, -65, 81, -78, 202, -78, 226, 592, -258, 590, -138, 725, 500, 744, 632, 225, 389, -353, -270, -351, -535, -147, -497, 256, -390, 629, -265, 728)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1576738622]
+
+[node name="trigger_scene1forest1" type="CollisionShape2D" parent="Area2D" unique_id=1075042417]
+position = Vector2(-34, 167.00002)
+rotation = 1.5650148
+shape = SubResource("CapsuleShape2D_nkkqu")
+
+[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_2jf0q")]
+position = Vector2(-57, 539)
