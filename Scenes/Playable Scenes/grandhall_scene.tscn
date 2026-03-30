@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dxhcwcxiqfkyo"]
+
+[ext_resource type="PackedScene" uid="uid://ccmxpq6w5id6e" path="res://Scenes/environments/env_grandhall.tscn" id="1_nw6sa"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_o8okl"]
+
+[sub_resource type="Gradient" id="Gradient_nw6sa"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o8okl"]
+gradient = SubResource("Gradient_nw6sa")
+fill_from = Vector2(0.5099715, 0.7891738)
+fill_to = Vector2(0.51282054, 0)
+
+[node name="grandhall_scene" type="Node2D" unique_id=776564788]
+
+[node name="Environmental Sorting" type="Node2D" parent="." unique_id=1609331704]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Environmental Sorting" unique_id=926223720]
+color = Color(0.18170744, 0.44557506, 0.78279066, 1)
+
+[node name="Grand Hall" parent="Environmental Sorting" unique_id=950251797 instance=ExtResource("1_nw6sa")]
+position = Vector2(-58, -462)
+
+[node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("2_o8okl")]
+position = Vector2(-178, -419)
+
+[node name="bg_collisions" type="StaticBody2D" parent="." unique_id=912784998]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collisions" unique_id=1350586620]
+polygon = PackedVector2Array(-206, -419, -166, -420, -166, -415, -161, -411, -147, -411, -141, -416, -141, -420, -41, -420, -41, -415, -37, -412, -22, -412, -17, -414, -17, -420, 17, -420, 17, -320, 11, -320, 11, -296, 15, -296, 17, -237, 41, -237, 41, -212, 41, -160, -41, -161, -41, -138, 291, -136, 292, -71, 92, -72, 92, -95, -47, -96, -48, -55, 66, -53, 66, 104, -67, 106, -67, 154, -67, 154, -116, 154, -116, 106, -249, 108, -248, -56, -143, -55, -142, -96, -275, -94, -275, -74, -465, -71, -464, -138, -149, -138, -149, -163, -222, -162, -223, -230, -201, -230, -198, -295, -192, -296, -193, -320, -198, -321, -198, -400, -199, -418, -379, -350, -547, -196, -527, 104, -352, 198, 160, 204, 380, -42, 360, -170, 286, -259, 169, -420, 79, -538, -305, -528, -307, -436)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=452849513]
+position = Vector2(-95, -442.00003)
+scale = Vector2(0.1999988, 1.8)
+color = Color(0.90092367, 0.4718743, 0.42457274, 1)
+texture = SubResource("GradientTexture2D_o8okl")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=236502513]
+position = Vector2(-129, -433)
+scale = Vector2(0.1999988, 1.8)
+color = Color(0.4132972, 0.5412858, 0.9723869, 1)
+texture = SubResource("GradientTexture2D_o8okl")
+
+[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=895078424]
+position = Vector2(-62, -432.00003)
+scale = Vector2(0.1999988, 1.8)
+color = Color(0.48974895, 0.6093262, 0.98005384, 1)
+texture = SubResource("GradientTexture2D_o8okl")

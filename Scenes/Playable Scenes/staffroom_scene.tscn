@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ckxxk4p41qrss"]
+
+[ext_resource type="PackedScene" uid="uid://corj52leowie4" path="res://Scenes/environments/env_staffroom.tscn" id="1_n22a2"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_4c012"]
+
+[node name="staffroom_scene" type="Node2D" unique_id=2145826926]
+
+[node name="env_staffroom" parent="." unique_id=2052287017 instance=ExtResource("1_n22a2")]
+position = Vector2(-3, -34)
+scale = Vector2(0.7112066, 0.74963623)
+
+[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_4c012")]
+position = Vector2(96, -40)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1993776158]
+color = Color(0.44119266, 0.5500828, 0.8660146, 1)
+
+[node name="bg_collision" type="StaticBody2D" parent="." unique_id=77613953]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=125790837]
+polygon = PackedVector2Array(-104, -36, 97, -35, 97, 85, -106, 85, -106, -31, -192, 67, -212, 135, -212, 135, -140, 188, -139, 188, 6, 233, 179, 161, 197, -15, 171, -173, -20, -196, -140, -200, -198, -117, -194, -46, -164, -18)

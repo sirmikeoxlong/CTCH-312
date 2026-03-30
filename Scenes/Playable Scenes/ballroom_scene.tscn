@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dbucvaumjfgws"]
+
+[ext_resource type="PackedScene" uid="uid://2aboexdl5eie" path="res://Scenes/environments/env_ballroom.tscn" id="1_2xjvu"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_idnv1"]
+
+[sub_resource type="Gradient" id="Gradient_vppsg"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3ivsh"]
+gradient = SubResource("Gradient_vppsg")
+fill_from = Vector2(0.52991456, 0.7407407)
+fill_to = Vector2(0.54415953, 0.0056980057)
+
+[node name="ballroom_scene" type="Node2D" unique_id=368079613]
+
+[node name="env_ballroom" parent="." unique_id=1479919169 instance=ExtResource("1_2xjvu")]
+position = Vector2(12, -242)
+scale = Vector2(0.47819802, 0.48639843)
+
+[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_idnv1")]
+position = Vector2(89, -242)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=15137641]
+color = Color(0.28564373, 0.5053388, 0.7083086, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1112724748]
+position = Vector2(1, -178)
+scale = Vector2(3.8399994, 4.679999)
+color = Color(0.39683002, 0.5371094, 0.7295532, 1)
+texture = SubResource("GradientTexture2D_3ivsh")
+
+[node name="bg_collision" type="StaticBody2D" parent="." unique_id=839098216]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=1427761933]
+polygon = PackedVector2Array(-202, -243, 164, -242, 166, -126, 144, -126, 143, -101, 166, -102, 165, 7, 195, 6, 195, 39, 166, 39, -155, 37, -157, -103, -134, -104, -134, -9, -113, -8, -111, -32, -127, -43, -133, -125, -157, -125, -155, -218, -201, -218, -202, -238, -296, -152, -354, -47, -424, 131, -243, 208, 156, 218, 314, 89, 373, -212, 293, -356, 25, -453, -201, -450, -366, -370, -318, -258, -272, -217)

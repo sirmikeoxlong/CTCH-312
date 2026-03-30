@@ -1,43 +1,69 @@
 extends CharacterBody2D
 
-
-var SPEED = 80.0
 const JUMP_VELOCITY = -400.0
 const SUM = 50;
+
+var speed = 80.0
 var closet_entered = false
+var input_dir = Vector2.ZERO
+var movement_dir = ""
+var movement_enabled = true
+
 @onready var lightPivot = $LightPivot
 @onready var flashlight = $LightPivot/Area2D/Flashlight
 @onready var light = $LightPivot/Area2D/Flashlight/FlashbangPath
+@onready var animated_sprite = $AnimatedSprite2D
 
+
+func player():
+	pass
+
+func _ready() -> void:
+	$AnimatedSprite2D.play("Idle")
 
 func _physics_process(delta: float) -> void:
-	## Add the gravity.
-	#if not is_on_floor():
-		#velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	# bruh why is it in RADIANSSSS AGHHHHHHHH 
-	var x_direction := Input.get_axis("left", "right")
-	if x_direction:
-		# goin lefting, lefterooooooo
-		velocity.x = x_direction * SPEED
+		move_and_slide()
+		player_movement()
+		movement_direction()
+		player_animation()
+		
+func player_movement():
+	if movement_enabled == true:
+		input_dir = Input.get_vector("left", "right", "up", "down")
+		velocity = input_dir * speed 
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		speed = 0.0
 	
-	# Handling Up and Down keys
-	var y_direction := Input.get_axis("ui_down", "ui_up")
-	if y_direction:
-		velocity.y = y_direction * -SPEED
-	else:
-		# if I removwe this, bro turns into a ping pong ball :3
-		velocity.y = move_toward(velocity.y, 0, SPEED) 
+func movement_direction():
+	if Input.is_action_just_pressed("left"):
+		movement_dir = "left"
+	if Input.is_action_just_pressed("right"):
+		movement_dir = "right"
+	if Input.is_action_just_pressed("up"):
+		movement_dir = "up"
+	if Input.is_action_just_pressed("down"):
+		movement_dir = "down"
 
-	move_and_slide()
+func player_animation():
+	if velocity:
+		if movement_dir == "left":
+			$AnimatedSprite2D.play("Walking Left")
+		elif movement_dir == "right":
+			$AnimatedSprite2D.play("Walking Right")
+		elif movement_dir == "up":
+			$AnimatedSprite2D.play("Walking Up")
+		elif movement_dir == "down":
+			$AnimatedSprite2D.play("Walking Down")
+	else:
+		if movement_dir == "left":
+			$AnimatedSprite2D.play("Idle Left")
+		elif movement_dir == "right":
+			$AnimatedSprite2D.play("Idle Right")
+		elif movement_dir == "up":
+			$AnimatedSprite2D.play("Idle Up")
+		elif movement_dir == "down":
+			$AnimatedSprite2D.play("Idle")
+		
 	
 func _input(event) -> void:
 	
@@ -57,33 +83,32 @@ func _input(event) -> void:
 		
 # Handle running
 	if event.is_action_pressed("run"):
-		SPEED = 200
+		speed = 200
 	if event.is_action_released("run"):
-		SPEED = 80
+		speed = 80
+# Added a test comment
 		
 # Handle Crouching/ running crouch stuff
 	if event.is_action_pressed("crouch"):
-		SPEED = 30
+		speed = 30
 	if event.is_action_released("crouch"):
-		SPEED = 80
+		speed = 80
 	if event.is_action_pressed("running_crouch"):
-		SPEED = 60
+		speed = 60
 	if event.is_action_released("running_crouch"):
-		SPEED = 80
+		speed = 80
 
 # Handle closet hiding
 	if closet_entered == true:
-		# Shrink her collision detection
-		# Make it so that the player cannot move (player velocity = 0?)
 		# Make her sprite dissapear + Point light diminish or dissapear
 		if event.is_action_pressed("hide"):
-			$CollisionShape2D.shape.set_radius(0.0)
-			SPEED = 0.0
-			$AnimatedSprite2D.set_scale(Vector2(0.0, 0.0))
+			#$CollisionShape2D.disabled = true
+			movement_enabled = false
+			$AnimatedSprite2D.visible = false
 		if event.is_action_released("hide"):
-			$CollisionShape2D.shape.set_radius(5.0)
-			SPEED = 80.0
-			$AnimatedSprite2D.set_scale(Vector2(1.0, 1.0))
+			#$CollisionShape2D.disabled = false
+			movement_enabled = true
+			$AnimatedSprite2D.visible = true
 
 # Handle flashbang
 # Add an enable/disabler thing rather than scaling
@@ -101,6 +126,8 @@ func _input(event) -> void:
 	# none of the NPCs can detect her
 	# I think this is probably gonna be a signal from the character to 
 	# another node?
+	
+
 
 func _on_closet_1_body_entered(body: CharacterBody2D) -> void:
 	closet_entered = true

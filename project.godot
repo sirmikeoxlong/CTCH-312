@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 DialogueManager="*uid://c3rodes2l3gxb"
 
+[display]
+
+window/size/mode=2
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [dotnet]
 
 project/assembly_name="New Game Project"
@@ -78,6 +84,7 @@ flashbang={
 [internationalization]
 
 locale/translations_pot_files=PackedStringArray("res://Dialogue/Carmilla\'s Manor.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogue_lol nothing/untitled.dialogue", "res://Dialogue_lol nothing/test2.dialogue")
 
 [physics]
 
@@ -86,4 +93,5 @@ common/physics_interpolation=true
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
