@@ -4,6 +4,7 @@ extends Area2D
 
 signal has_yapped_about_it
 
+@export var id : String
 @export var RoomMessage : String
 
 func _ready() -> void:
@@ -24,7 +25,8 @@ func say_room_dialogue():
 	# Function where Lauren yaps
 	# After done, set the signal to true (emit)
 	print("say_room_dialogue function working")
-	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), RoomMessage)
+	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
+	RoomMessage)
 	
 
 func _on_body_entered(body: CharacterBody2D) -> void:

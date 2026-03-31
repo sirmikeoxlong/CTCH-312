@@ -2,8 +2,12 @@ class_name cutscene_interactables
 
 extends Node2D
 
-signal pocketed
+@export var id : String
+@export var pickup_message : String
+
 @onready var entered
+
+signal pocketed
 
 func _ready() -> void:
 	if Global.collectedItems.has(global_position):
@@ -34,7 +38,7 @@ func mark_as_touched():
 func add_to_inventory():
 	# add an item of this class to global inventory
 	SingPlayer.inventory.push_front(self)
-	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), "scene1forest2")
+	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), pickup_message)
 	self.hide()
 	pocketed.emit()
 
@@ -43,7 +47,7 @@ func remove_from_scene():
 	Storystate.picked_first_gate_key = true
 	Global.collectedItems.append(global_position)
 	Global.items.erase(global_position)
-	queue_free()
+	#queue_free()
 	# remove from the scene
 	
 	

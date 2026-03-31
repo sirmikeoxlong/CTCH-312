@@ -5,6 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_o8okl"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="3_o8okl"]
 [ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="5_x36kx"]
+[ext_resource type="PackedScene" uid="uid://bjd76wvhpf2t8" path="res://Scripts/Classes/class_puzzle.tscn" id="6_x36kx"]
+[ext_resource type="PackedScene" uid="uid://dhyg2sy24swn7" path="res://Scripts/Keys/library_door_key_1.tscn" id="7_eo0va"]
+[ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="8_oyaqd"]
+[ext_resource type="Texture2D" uid="uid://b0xf8ms2lue40" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Tools.png" id="9_ww25j"]
 
 [sub_resource type="Gradient" id="Gradient_nw6sa"]
 
@@ -16,6 +20,12 @@ fill_to = Vector2(0.51282054, 0)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lgo1s"]
 radius = 15.0
 height = 86.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo0va"]
+size = Vector2(39, 24.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o8ve4"]
+radius = 18.0
 
 [node name="grandhall_scene" type="Node2D" unique_id=776564788]
 script = ExtResource("1_lgo1s")
@@ -59,7 +69,6 @@ texture = SubResource("GradientTexture2D_o8okl")
 [node name="ClassRoomTeleport" parent="Doors" unique_id=727452976 instance=ExtResource("3_o8okl")]
 position = Vector2(-231, -373)
 teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
-unlocked = true
 
 [node name="ClassRoomTeleport2" parent="Doors" unique_id=594815162 instance=ExtResource("3_o8okl")]
 position = Vector2(-470, -96)
@@ -127,4 +136,54 @@ position = Vector2(2, -8)
 rotation = 1.5778282
 shape = SubResource("CapsuleShape2D_lgo1s")
 
+[node name="Library Door Puzzle" parent="." unique_id=1487168353 node_paths=PackedStringArray("item_puzzle_pieces") instance=ExtResource("6_x36kx")]
+position = Vector2(-152, -402)
+item_puzzle_pieces = [NodePath("../Key 1")]
+event = "scene13librarydoor1"
+unsolved_message = "scene6hall2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Library Door Puzzle" unique_id=1190051502]
+position = Vector2(-25, -19)
+shape = SubResource("RectangleShape2D_eo0va")
+
+[node name="Collectable Items (offscreen)" type="Node2D" parent="." unique_id=874164551]
+
+[node name="Library Door Key 2" parent="Collectable Items (offscreen)" unique_id=266493154 instance=ExtResource("7_eo0va")]
+position = Vector2(-155, 7)
+
+[node name="Library Door Key 3" parent="Collectable Items (offscreen)" unique_id=1336902944 instance=ExtResource("7_eo0va")]
+position = Vector2(-153, 27)
+
+[node name="Key 1" parent="." unique_id=1015122729 instance=ExtResource("8_oyaqd")]
+position = Vector2(-154, -22)
+id = "key1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key 1" unique_id=104178822]
+shape = SubResource("CircleShape2D_o8ve4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Key 1" unique_id=30966898]
+scale = Vector2(1.2857143, 1.2857143)
+texture = ExtResource("9_ww25j")
+region_enabled = true
+region_rect = Rect2(113, 17, 14, 14)
+
+[node name="Key 2" parent="." unique_id=1510061342 instance=ExtResource("8_oyaqd")]
+position = Vector2(-154, -22)
+id = "key1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key 2" unique_id=1645059917]
+shape = SubResource("CircleShape2D_o8ve4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Key 2" unique_id=715123414]
+position = Vector2(194, 97)
+scale = Vector2(1.2857143, 1.2857143)
+texture = ExtResource("9_ww25j")
+region_enabled = true
+region_rect = Rect2(113, 17, 14, 14)
+
 [connection signal="has_yapped_about_it" from="Dialogue/d_scene5enter1" to="." method="_on_class_room_trigger_has_yapped_about_it"]
+[connection signal="body_entered" from="Library Door Puzzle" to="." method="_on_class_puzzle_body_entered"]
+[connection signal="body_entered" from="Key 1" to="." method="_on_pickup_body_entered"]
+[connection signal="pocketed" from="Key 1" to="." method="_on_pickup_pocketed"]
+[connection signal="body_entered" from="Key 2" to="." method="_on_pickup_body_entered"]
+[connection signal="pocketed" from="Key 2" to="." method="_on_pickup_pocketed"]

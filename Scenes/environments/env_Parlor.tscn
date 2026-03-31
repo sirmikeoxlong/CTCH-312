@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://c3apro8y55bh" path="res://Sprites/sprites/TopDownHouse_FurnitureState2.png" id="6_vtbft"]
 [ext_resource type="Texture2D" uid="uid://cpsasollqaoor" path="res://Sprites/sprites/TopDownHouse_FurnitureState1.png" id="7_bqjq4"]
 [ext_resource type="Texture2D" uid="uid://bs4wo1wwlthf7" path="res://Sprites/sprites/Props_Decor.png" id="8_w3myw"]
-[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="9_65vf4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w1a3e"]
 texture = ExtResource("1_rxas4")
@@ -5411,6 +5410,3 @@ shape = SubResource("RectangleShape2D_fb0ee")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=984248828]
 position = Vector2(-152.5, 70)
 shape = SubResource("RectangleShape2D_hk3tc")
-
-[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("9_65vf4")]
-position = Vector2(-114, -224)
