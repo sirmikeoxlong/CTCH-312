@@ -213,3 +213,145 @@ Lauren: What does she want from me? There's no way she thinks I'm my grandmother
 => END
 
 ~ scene28librarydoor1
+Carmilla: Oh poppet!~ Come out to play~ I want to keep you here forever!!
+=> END
+
+~ scene28librarydoor2
+Lauren: I bet I missed a key somewhere in the manor. Maybe I should go double check some of the rooms. 
+=> END
+
+~ scene31kitchen1
+Lauren: This must be the exit the journal was talking about! I can finally get out of here soon. The entrance to it must be upstairs.
+=> END
+
+~ doorlocked
+*Door locks*
+=> END
+
+~ scene34mainbed1
+Lauren: I hope that keeps her occupied..
+=> END
+
+~ scene34mainbed2
+Carmilla: Lauren!! Come forth and join me! Do not aggravate me!!
+=> END
+
+~ flashbackyear
+1871. Carmilla is 6 years old.
+=> END
+
+~ scene36flashback1
+Margaret: Good day. My name is Margaret. How goes it?
+Carmilla: Hello. I am Carmilla. Crave to see something fun?
+Margaret: Yes please!
+Carmilla opens her mouth to reveal her vampire fangs.
+Carmilla: Look! My teeth are pointy! Ain't that neat?
+Margaret is taken aback, but stares in awe.
+Margaret: Neat indeed! Why might they be like that?
+=> END
+
+~ scene36flashback2
+Carmilla's Mother: Carmilla! What is thy purpose?!
+Carmilla: Mother! Father! I made a friend!
+Carmilla's Father: Why must you show your teeth!?
+Carmilla: She is nice to me!
+Carmilla's Mother: ...
+Carmilla's Father: ...Join us, young girl.
+Margaret: Alright!
+=> END
+
+~ flashbackyear2
+1881. Carmilla is 16 years old.
+=> END
+
+~ scene37flashback1
+Carmilla: Daisy! Join to me! Let us play outside.
+Margaret: Why must you call me Daisy? Why not Peggy like our parents do?
+Carmilla: You know why! Marguerite is French for daisy, and Marguerite sounds similar to Margaret. Thou does not approve of it?
+Margaret: Tis fine. I must say, it doth sound like thou are head over heels for me.
+Carmilla: I am! Thou does not crave to be my beau?
+=> END
+
+~ scene37flashback2
+Carmilla's Mother: Peggy, Carmilla. Thou must geet ready for schooling.
+Carmilla's Mother: Alright!
+=> END
+
+~ scene37flashback3
+Margaret in her head: *Carmilla wants me to be her... beau?*
+=> END
+
+~ scene38flashback1
+Carmilla waits at the school entrance for Margaret to walk home together, but she does not show up after 2 hours.
+Carmilla's Mother: Carmilla! Where have thou been?
+Carmilla's Father: Where is dear Peggy?
+Carmilla: I hast no idea.. She did not show up after schooling!
+Carmilla's Mother: Oh dear.. We must report it to the police!
+Carmilla's Father: My dear, we must not. I am afraid it is out of our hands.
+Carmilla: But Father! It is Margaret! We must not leave her behind!
+Carmilla's Father: I am sorry, young Carmilla. Come. We must go back home.
+=> END
+
+~ scene38flashback2
+???: Excuse me, miss?
+Carmilla: Yes? Doth need help?
+???: My husband and I wanted to bid thou some questions.
+Carmilla: If you must.
+???: We are asking around about our daughter. She has been gone for 10 years now. We pray this is the school she went to. 
+Carmilla: What is her name?
+???: Margaret. Margaret Dubois.
+Carmilla is extremely shocked to hear Margaret's name. 
+Carmilla: She hath been living with us. For the past 10 years...
+Margarets's Mother: Preposterous! Thou took our only daughter?! Police! Police! This woman hath stolen our daughter!
+Carmilla: No.. you do not understand! I love her!
+The police arrive.
+Carmilla: I am sorry! Please do not have thy taken away!
+Magaret's Father: Arrest this young lady! She hath robbed us from our daughter!!
+=> END
+
+~ scene39carmillaroom1
+Carmilla breaks down the door.
+Carmilla: You have made a grave mistake Lauren!
+Lauren: Wait! I know who the woman in the painting is.
+Carmilla: .....Whom?
+Lauren: Margaret. My 3rd great grandmother. Her last name was Dubois. And you loved her..
+Carmilla: ..How doth you know?
+Lauren: I saw her memories. Just like you did when you bit me, correct?
+Carmilla: What a smart one you are.
+Lauren: My grandmother, Margaret- she knew about you being a vampire didn't she. Why didn't she run away earlier?
+Carmilla: Daisy was in love with [shake]me![/shake] She ran away from [shake]mine love![/shake] To another country!! Why doth she do this to me?!
+Lauren: Carmilla, I am sorry for what happened in the past. I am not Margaret, even though you may think I am. 
+Carmilla: Thou shall never be my Margaret!
+Lauren: Then what do you want from me?
+Carmilla: For thou to stay here with mine for eternity. The way it should have been with Daisy and I. Our love can flourish and match what Daisy and I had, rekindling our love from the past!
+Lauren: You can't keep me here forever! Even though you resent my grandmother for leaving, that doesn't mean you have to take it out on me!
+Carmilla: ...I will give thine one more chance to please me. It would be in thy best interest to stay.
+- Leave Carmilla
+	Lauren: You can never force me to stay here, you pale faced hag!
+	Flash your light at Carmilla, before she reaches you.
+	- Escape => scene40parenthouse1
+	=>< scene40parenthouse1
+	Lauren: Yah
+	=> END
+- Stay with Carmilla
+	Lauren put the necklace on and walks towards Carmilla.
+	Lauren: You were right. I should have never tried to leave. And I won't try to leave ever again.
+	Carmilla: Good girl. Come here my love.
+	Carmilla: Allow me to see those memories once again.
+	Lauren blushes and leans away from Carmilla, showing her neck.
+	Carmilla sinks her teeth into Lauren's neck.
+	Lauren: Augh!
+	Carmilla continues to suck the blood from Lauren, draining her life force until her body goes limp.
+	Carmilla: Good job my dear. You may rest now.
+	=> END 
+
+~ scene40parenthouse1
+1 week later...
+Lauren arrives at her parents house, and begins to describe her adventure at the manor, minus the vampire stuff.
+Lauren's Grandma: Oh Lauren sweetheart, I am proud of you for discovering what I thought we had lost about our family's history.
+Lauren: R-really? You're proud..?
+Lauren's Mom: I know we haven't been fair to you in the past, with your schooling and such.
+Lauren's Dad: I am proud of you honey. You brought our family back together.
+Lauren smiles with tears in her eyes.
+THE END
+=> END!
