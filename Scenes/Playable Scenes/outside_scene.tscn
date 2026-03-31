@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://el140ya21vl2" path="res://Scripts/Scene Scripts/outside_scene.gd" id="1_2jf0q"]
 [ext_resource type="PackedScene" uid="uid://demqdejgfcxvn" path="res://Scenes/environments/env_outside.tscn" id="1_f5yt4"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_2jf0q"]
+[ext_resource type="Script" uid="uid://qb5b7c1gato3" path="res://Scripts/Outside/area_2d.gd" id="3_0yj4u"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="4_nkkqu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nkkqu"]
@@ -21,9 +22,10 @@ position = Vector2(-1, 1)
 polygon = PackedVector2Array(-273, 595, -268, 222, -231, 219, -201, 232, -194, 249, -141, 251, -184, 240, -190, 185, -209, 185, -287, 184, -286, -79, -198, -78, -193, -66, -144, -65, -142, -77, 27, -83, 33, -64, 77, -65, 81, -78, 202, -78, 226, 592, -258, 590, -138, 725, 500, 744, 632, 225, 389, -353, -270, -351, -535, -147, -497, 256, -390, 629, -265, 728)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1576738622]
+script = ExtResource("3_0yj4u")
 
 [node name="trigger_scene1forest1" type="CollisionShape2D" parent="Area2D" unique_id=1075042417]
-position = Vector2(-34, 167.00002)
+position = Vector2(-61, 429.00003)
 rotation = 1.5650148
 shape = SubResource("CapsuleShape2D_nkkqu")
 
@@ -33,3 +35,6 @@ position = Vector2(-53, 532)
 [node name="ClassRoomTeleport" parent="." unique_id=727452976 instance=ExtResource("4_nkkqu")]
 position = Vector2(-113, -19)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
+key = "String1"
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

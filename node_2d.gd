@@ -3,8 +3,16 @@ class_name RoomTeleport
 extends Area2D
 
 @export var teleport : String
+@export var key : String #change this to type key or interactable later
 
 var entered
+var unlocked = false
+
+# Check if player has the key to unlock this door in inventory
+func unlock():
+	if key in SingPlayer.inventory:
+		print("door unlocked")
+		unlocked = true
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	entered = true
@@ -15,4 +23,9 @@ func _on_body_exited(body: CharacterBody2D) -> void:
 func _process(delta: float) -> void:
 	if entered == true:
 		if Input.is_action_just_pressed("ui_accept"):
-			Global.goto_scene(teleport)
+			unlock()
+			if unlocked == true:
+					Global.goto_scene(teleport)
+			else:
+				DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
+				"scene2frontdoor1")

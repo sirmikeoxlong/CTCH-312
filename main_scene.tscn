@@ -8,19 +8,24 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_0f027")
 
-[node name="Menu" type="Control" parent="." unique_id=1572352376]
+[node name="Main Menu" type="Control" parent="." unique_id=1572352376]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Start Game" type="Button" parent="Menu" unique_id=1386517725]
+[node name="Start Game" type="Button" parent="Main Menu" unique_id=1386517725]
 layout_mode = 0
-offset_left = 512.0
-offset_top = 293.0
-offset_right = 636.0
-offset_bottom = 327.0
+offset_left = 515.0
+offset_top = 304.0
+offset_right = 639.0
+offset_bottom = 338.0
 text = "Start"
 script = ExtResource("2_2c62f")
 
-[connection signal="pressed" from="Menu/Start Game" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Menu/Start Game" to="Menu/Start Game" method="_on_pressed"]
+[node name="Inventory" type="Control" parent="." unique_id=357764338]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Main Menu/Start Game" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Main Menu/Start Game" to="Main Menu/Start Game" method="_on_pressed"]

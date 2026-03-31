@@ -14,7 +14,6 @@ var movement_enabled = true
 @onready var light = $LightPivot/Area2D/Flashlight/FlashbangPath
 @onready var animated_sprite = $AnimatedSprite2D
 
-
 func player():
 	pass
 

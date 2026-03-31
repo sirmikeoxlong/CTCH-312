@@ -239,7 +239,7 @@ gradient = SubResource("Gradient_6t5aa")
 fill_from = Vector2(0.4866469, 0.8991098)
 fill_to = Vector2(0.5074184, 0)
 
-[node name="Lauren" type="CharacterBody2D" unique_id=1222447786]
+[node name="Lauren" type="CharacterBody2D" unique_id=1222447786 groups=["player"]]
 script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1590759023]
