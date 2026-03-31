@@ -26,4 +26,4 @@ func _on_main_door_key_body_exited(body: Node2D) -> void:
 
 func _on_main_door_key_pocketed() -> void:
 	key1.remove_from_scene()
-	key1.queue_free()
+	#key1.queue_free()
