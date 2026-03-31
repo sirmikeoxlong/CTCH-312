@@ -3,6 +3,8 @@ extends Node
 var current_scene = null
 var items = []
 var collectedItems = []
+var dialogue = []
+var completed_room_dialogue = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

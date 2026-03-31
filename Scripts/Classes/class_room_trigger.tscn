@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d0trqxdl8e8mm"]
+
+[ext_resource type="Script" uid="uid://c0h2gaswq240n" path="res://Scripts/Classes/class_room_trigger.gd" id="1_logdy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yejjw"]
+radius = 120.0
+height = 520.0
+
+[node name="class RoomTrigger" type="Area2D" unique_id=359445996]
+script = ExtResource("1_logdy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1569485718]
+position = Vector2(542, 247)
+rotation = 1.5670694
+shape = SubResource("CapsuleShape2D_yejjw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
