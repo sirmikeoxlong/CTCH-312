@@ -1,7 +1,8 @@
 extends Node
 
 var current_scene = null
-
+var items = []
+var collectedItems = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

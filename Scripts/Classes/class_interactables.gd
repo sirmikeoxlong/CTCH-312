@@ -5,6 +5,12 @@ extends Node2D
 signal pocketed
 @onready var entered
 
+func _ready() -> void:
+	if Global.collectedItems.has(global_position):
+		queue_free() #free the item becouse already has been collected
+	else:
+		Global.items.append(global_position)
+
 func _process(delta: float) -> void:
 	mark_as_touched()
 
@@ -35,6 +41,9 @@ func add_to_inventory():
 func remove_from_scene():
 	# signal to story state that this item has been picked up
 	Storystate.picked_first_gate_key = true
+	Global.collectedItems.append(global_position)
+	Global.items.erase(global_position)
+	queue_free()
 	# remove from the scene
 	
 	
