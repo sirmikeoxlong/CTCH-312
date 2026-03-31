@@ -2,10 +2,12 @@ class_name cutscene_interactables
 
 extends Node2D
 
-@export var sprite : String
-@export var collidable : Shape2D
-@export var cutscene : Animation
 @export var touched : bool = false
+
+@onready var entered
+
+func _process(delta: float) -> void:
+	mark_as_touched()
 
 func trigger():
 	# if player collided with this object, trigger the scene
@@ -18,7 +20,19 @@ func perform():
 	pass
 
 func mark_as_touched():
-	# signal that this specific interactable has been touched already
-	# originally set as untouched
-	pass
+	if entered == true:
+		if Input.is_action_just_pressed("ui_accept"):
+			touched = true
+			print ("touched")
+			add_to_inventory()
+	else:
+		pass
+
+func add_to_inventory():
+	# add an item of this class to global inventory
+	SingPlayer.inventory.push_front(self)
+	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), "scene1forest2")
+	self.hide()
+	
+
 	

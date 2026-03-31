@@ -10,3 +10,14 @@ func _process(delta: float) -> void:
 	
 # if player passes through the collision, trigger the dialogue
 # also make the camera zoom out to look at the mansion in full?
+
+
+func _on_main_door_key_body_entered(body: CharacterBody2D) -> void:
+	print("entered")
+	$"Main Door Key".entered = true
+	print(SingPlayer.inventory)
+
+
+func _on_main_door_key_body_exited(body: Node2D) -> void:
+	print("exited")
+	$"Main Door Key".entered = false

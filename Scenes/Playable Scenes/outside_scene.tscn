@@ -5,10 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_2jf0q"]
 [ext_resource type="Script" uid="uid://qb5b7c1gato3" path="res://Scripts/Outside/area_2d.gd" id="3_0yj4u"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="4_nkkqu"]
+[ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="6_kv6y2"]
+[ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="7_jl6lp"]
+[ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="8_jl6lp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nkkqu"]
 radius = 64.02203
 height = 522.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_021d3"]
+radius = 25.019993
 
 [node name="outside_scene" type="Node2D" unique_id=373647599]
 script = ExtResource("1_2jf0q")
@@ -32,9 +38,23 @@ shape = SubResource("CapsuleShape2D_nkkqu")
 [node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_2jf0q")]
 position = Vector2(-53, 532)
 
-[node name="ClassRoomTeleport" parent="." unique_id=727452976 instance=ExtResource("4_nkkqu")]
+[node name="ClassRoomTeleport" parent="." unique_id=727452976 node_paths=PackedStringArray("key") instance=ExtResource("4_nkkqu")]
 position = Vector2(-113, -19)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
-key = "String1"
+key = NodePath("../Main Door Key")
+
+[node name="Main Door Key" parent="." unique_id=1086952445 instance=ExtResource("6_kv6y2")]
+position = Vector2(-9, -4)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Main Door Key" unique_id=1693780998]
+texture = ExtResource("7_jl6lp")
+region_enabled = true
+region_rect = Rect2(98, 52, 12, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main Door Key" unique_id=1248744531]
+shape = SubResource("CircleShape2D_021d3")
+script = ExtResource("8_jl6lp")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Main Door Key" to="." method="_on_main_door_key_body_entered"]
+[connection signal="body_exited" from="Main Door Key" to="." method="_on_main_door_key_body_exited"]

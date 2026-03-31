@@ -3,7 +3,7 @@ class_name RoomTeleport
 extends Area2D
 
 @export var teleport : String
-@export var key : String #change this to type key or interactable later
+@export var key : cutscene_interactables #change this to type key or interactable later
 
 var entered
 var unlocked = false
