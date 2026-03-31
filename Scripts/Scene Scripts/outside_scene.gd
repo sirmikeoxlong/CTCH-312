@@ -21,3 +21,9 @@ func _on_main_door_key_body_entered(body: CharacterBody2D) -> void:
 func _on_main_door_key_body_exited(body: Node2D) -> void:
 	print("exited")
 	$"Main Door Key".entered = false
+
+
+func _on_main_door_key_pocketed() -> void:
+	$"Main Door Key".remove_from_scene()
+	$"Main Door Key".queue_free()
+	print("touched")

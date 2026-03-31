@@ -3,8 +3,9 @@ extends Node
 # Scene 1
 var has_started_scene1 = false
 var entrance_unlocked = false
+var picked_first_gate_key = false
 
-# Called when the node enters the scene tree for the first time.
+# remove all nodes that are necessary upon scene load
 func _ready() -> void:
 	pass # Replace with function body.
 

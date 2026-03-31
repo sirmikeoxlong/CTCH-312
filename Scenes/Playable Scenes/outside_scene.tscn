@@ -58,3 +58,4 @@ script = ExtResource("8_jl6lp")
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Main Door Key" to="." method="_on_main_door_key_body_entered"]
 [connection signal="body_exited" from="Main Door Key" to="." method="_on_main_door_key_body_exited"]
+[connection signal="pocketed" from="Main Door Key" to="." method="_on_main_door_key_pocketed"]
