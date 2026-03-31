@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var trigger_scene_1_forest_1: CollisionShape2D = $Area2D/trigger_scene1forest1
+@onready var key1 = $"Main Door Key"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -14,16 +15,15 @@ func _process(delta: float) -> void:
 
 func _on_main_door_key_body_entered(body: CharacterBody2D) -> void:
 	print("entered")
-	$"Main Door Key".entered = true
+	key1.entered = true
 	print(SingPlayer.inventory)
 
 
 func _on_main_door_key_body_exited(body: Node2D) -> void:
 	print("exited")
-	$"Main Door Key".entered = false
+	key1.entered = false
 
 
 func _on_main_door_key_pocketed() -> void:
-	$"Main Door Key".remove_from_scene()
-	$"Main Door Key".queue_free()
-	print("touched")
+	key1.remove_from_scene()
+	key1.queue_free()

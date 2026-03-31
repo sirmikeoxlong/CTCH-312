@@ -4,9 +4,10 @@ extends Area2D
 
 @export var teleport : String
 @export var key : cutscene_interactables #change this to type key or interactable later
+@export var unlocked = false
 
 var entered
-var unlocked = false
+
 
 # Check if player has the key to unlock this door in inventory
 func unlock():
