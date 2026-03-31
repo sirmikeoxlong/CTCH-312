@@ -61,3 +61,46 @@ Lauren: Why is the door making that [shake]noise[/shake]?!
 ~ scene13librarydoor2
 Lauren: Is someone here? I need to hide!
 => END
+
+~ scene13librarycloset1
+Lauren: OOF! Not a very sturdy closet huh.
+=> END 
+
+~ scene14kitchen1
+Lauren: Ah. Found a way into the kitchen. 
+=> END
+
+~ scene15pantry1
+Lauren: Pretty sure this key leads to that room near the entrance.
+=> END
+
+~ scene16kitchen1
+Lauren: Nice. This is unlocked now. 
+=> END 
+
+~ scene18entrance1
+Lauren: I should open the room near the entrance first.
+=> END
+
+~ scene20entrance1
+Lauren: W-who are you?
+Carmilla: I do contest, shouldn’t I be the one asking you perhaps? What is someone like you doing in my manor?
+Lauren: I’m sorry ma’am, I didn’t know anyone would be living here. I was sent by my family to find something that once belonged to my great grandmother. I believe this was her house in the 1800s. I uh.. found the key outside. I can leave if you want-
+Carmilla: What is thy name?
+Lauren: Lauren. Lauren Woods.
+Carmilla: Mmm. Interesting.
+Lauren: I’m sorry ma’am, I didn’t know anyone would be living here. I was sent by my family to find something that once belonged to my great grandmother. I believe this was her house in the 1800s. I uh.. found the key outside. I can leave if you want-
+Carmilla: I’m sorry ma’am, I didn’t know anyone would be living here. I was sent by my family to find something that once belonged to my great grandmother. I believe this was her house in the 1800s. I uh.. found the key outside. I can leave if you want-
+=> END
+
+~ scene20entrance2
+The door is locked.
+=> END
+
+~ scene20entrance3
+Carmilla: Thou just got here sweetheart. Stay a while.
+Lauren: What do you want with me...?
+Carmilla: Come. Walk with me.
+Lauren: Okay....
+Lauren in her head: *Is this a good idea?* 
+=> END 
