@@ -1,3 +1,80 @@
 [gd_scene format=3 uid="uid://gaprye6uxwys"]
 
+[ext_resource type="Script" uid="uid://el140ya21vl2" path="res://Scripts/Scene Scripts/outside_scene.gd" id="1_2jf0q"]
+[ext_resource type="PackedScene" uid="uid://demqdejgfcxvn" path="res://Scenes/environments/env_outside.tscn" id="1_f5yt4"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_2jf0q"]
+[ext_resource type="Script" uid="uid://qb5b7c1gato3" path="res://Scripts/Outside/area_2d.gd" id="3_0yj4u"]
+[ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="4_nkkqu"]
+[ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="6_kv6y2"]
+[ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="7_jl6lp"]
+[ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="8_jl6lp"]
+[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="9_021d3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nkkqu"]
+radius = 64.02203
+height = 522.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_021d3"]
+radius = 25.019993
+
 [node name="outside_scene" type="Node2D" unique_id=373647599]
+script = ExtResource("1_2jf0q")
+
+[node name="envOutside" parent="." unique_id=1871588153 instance=ExtResource("1_f5yt4")]
+position = Vector2(-1, 1)
+
+[node name="bg_collision" type="StaticBody2D" parent="." unique_id=1178411334]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=908254339]
+polygon = PackedVector2Array(-273, 595, -268, 222, -231, 219, -201, 232, -194, 249, -141, 251, -184, 240, -190, 185, -209, 185, -287, 184, -286, -79, -198, -78, -193, -66, -144, -65, -142, -77, 27, -83, 33, -64, 77, -65, 81, -78, 202, -78, 226, 592, -258, 590, -138, 725, 500, 744, 632, 225, 389, -353, -270, -351, -535, -147, -497, 256, -390, 629, -265, 728)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1576738622]
+script = ExtResource("3_0yj4u")
+
+[node name="trigger_scene1forest1" type="CollisionShape2D" parent="Area2D" unique_id=1075042417]
+position = Vector2(-61, 429.00003)
+rotation = 1.5650148
+shape = SubResource("CapsuleShape2D_nkkqu")
+
+[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_2jf0q")]
+position = Vector2(-53, 532)
+
+[node name="ClassRoomTeleport" parent="." unique_id=727452976 node_paths=PackedStringArray("key") instance=ExtResource("4_nkkqu")]
+position = Vector2(-113, -19)
+teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
+key = NodePath("../Main Door Key")
+
+[node name="Main Door Key" parent="." unique_id=1086952445 instance=ExtResource("6_kv6y2")]
+position = Vector2(-9, -4)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Main Door Key" unique_id=1693780998]
+texture = ExtResource("7_jl6lp")
+region_enabled = true
+region_rect = Rect2(98, 52, 12, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main Door Key" unique_id=1248744531]
+shape = SubResource("CircleShape2D_021d3")
+script = ExtResource("8_jl6lp")
+
+[node name="Label" type="Label" parent="Main Door Key" unique_id=1980359079]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_021d3")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Main Door Key" to="." method="_on_main_door_key_body_entered"]
+[connection signal="body_exited" from="Main Door Key" to="." method="_on_main_door_key_body_exited"]
+[connection signal="pocketed" from="Main Door Key" to="." method="_on_main_door_key_pocketed"]

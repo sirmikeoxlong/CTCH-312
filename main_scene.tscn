@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c4e58f6ugy1cw"]
+
+[ext_resource type="Script" uid="uid://budm5ecrg44g3" path="res://Scripts/main_scene.gd" id="1_0f027"]
+[ext_resource type="Script" uid="uid://c2r15hqgvbn8c" path="res://Scripts/start_game.gd" id="2_2c62f"]
+
+[node name="MainScene" type="Control" unique_id=1957953634]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0f027")
+
+[node name="Main Menu" type="Control" parent="." unique_id=1572352376]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start Game" type="Button" parent="Main Menu" unique_id=1386517725]
+layout_mode = 0
+offset_left = 515.0
+offset_top = 304.0
+offset_right = 639.0
+offset_bottom = 338.0
+text = "Start"
+script = ExtResource("2_2c62f")
+
+[node name="Inventory" type="Control" parent="." unique_id=357764338]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Main Menu/Start Game" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Main Menu/Start Game" to="Main Menu/Start Game" method="_on_pressed"]

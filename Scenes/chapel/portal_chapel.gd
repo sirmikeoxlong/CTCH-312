@@ -1,6 +1,7 @@
 extends Area2D
 
 var entered
+@export var teleport : String
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	entered = true
@@ -11,4 +12,4 @@ func _on_body_exited(body: Node2D) -> void:
 func _process(delta: float) -> void:
 	if entered == true:
 		if Input.is_action_just_pressed("ui_accept"):
-			get_tree().change_scene_to_file("res://Scenes/library_scene.tscn")
+			Global.goto_scene(teleport)

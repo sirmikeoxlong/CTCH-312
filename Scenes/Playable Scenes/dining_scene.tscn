@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c0vljv5x8tda3" path="res://Scenes/environments/env_dining.tscn" id="1_cty6c"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_10372"]
+[ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="3_6q8cs"]
 
 [node name="dining_scene" type="Node2D" unique_id=809300282]
 
@@ -16,3 +17,7 @@ position = Vector2(-189, 142)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collisions" unique_id=1753854485]
 polygon = PackedVector2Array(-212, 48, -185, 49, -185, 54, -180, 56, -164, 57, -159, 52, -158, 48, -54, 48, -53, 50, -13, 50, -11, 48, 75, 48, 76, 53, 80, 54, 95, 55, 101, 51, 101, 48, 136, 48, 137, 147, -174, 148, -175, 172, -213, 172, -212, 49, -308, 112, -283, 239, -91, 254, 74, 229, 147, 267, 282, 140, 249, -13, 259, -124, -61, -260, -325, -159, -358, 19)
+
+[node name="ClassRoomTeleport" parent="." unique_id=727452976 instance=ExtResource("3_6q8cs")]
+position = Vector2(-243, 253)
+teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
