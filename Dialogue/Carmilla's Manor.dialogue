@@ -104,3 +104,112 @@ Carmilla: Come. Walk with me.
 Lauren: Okay....
 Lauren in her head: *Is this a good idea?* 
 => END 
+
+~ followcarmilla
+Lauren: We should see what the lady wants first. Don’t want her getting upset.
+=> END
+
+~ scene20entrance4
+Carmilla: I don't have all day deary.
+=> END
+
+~ scene21gallery1
+Carmilla: Are you familiar with the lady in the ivory half dress?
+Lauren: The what dress?
+Carmilla: The lady towards the left side of the protrait.
+Lauren: Oh. No, I do not recognize her.
+Carmilla: How intriguing.
+=> END
+
+~ scene21gallery2
+Lauren: Um... Can I ask what your name is?
+Carmilla: ... Carmilla.
+Lauren in her head: *That name seems familiar..*
+Lauren: ...
+Carmilla: ...
+Lauren: I think I should be going now, it'll be getting dark outside soon-
+Carmilla: ...
+Carmilla: Perhaps youare familiar with my dear Margaret?
+Lauren: I don't think so? And I really should be going-
+Carmilla: I want you to grant me something first my dear.
+Lauren: What's that..?
+=> END
+
+~ scene21gallery3
+Carmilla: [shake]Thy blood!![/shake]
+Lauren: What?!
+=> END
+
+~ scene21gallery4
+Lauren: [shake]Ahhh![/shake] What are you doing?!
+=> END
+
+~ scene21gallery5
+Lauren: Are you crazy?! What was that for?!
+=> END
+
+~ scene21gallery6
+Carmilla: Lauren deary, do not run from me now!~
+=> END
+
+~ mechanics1
+Hit 'Q' to use your flashlight to stun Carmilla
+=> END
+
+~ scene23bedroom1
+Lauren: Who is that crazy lady?! And why on earth did she bite me?! Is she really a vampire? God, I need to find a way out of here.
+=> END
+
+~ studylock
+Lauren: Maybe I should try this on the Study.
+=> END
+
+~ studyjournal
+Lauren: I should look for some information about this place. Maybe the study has something.
+=> END
+
+~ studyjournalafterward
+Lauren: If this book is correct, there should be a secret escape in the main bedroom, which can only be accessed through finding a key in the library. Those puzzle pieces must be for the library door! It says one will be in the staff room, and one is in Carmilla’s room. Okay Lauren, you can do this!
+=> END
+
+~ bathroomkey1
+Lauren: Looks like I can use this on the bathroom on the other side of this floor.
+=> END
+
+~ bathroomhole
+Lauren: I should take a closer look around the bathroom.
+=> END
+
+~ scene27carmillaroom1
+Lauren: This looks like it could be Carmilla's old room. There’s so much dust in here though. Makes sense since vampires don’t sleep.
+=> END
+
+~ carmillajournal
+Lauren: I bet I can find out more about Carmilla if I look around some more.
+=> END
+
+~ scene27carmillaroom2
+Lauren: My great grandmother used to live here with Carmilla? Her name is Margaret, that’s what the M stood for in her journal at home. But why would she live here? That part still doesn’t make sense.. Guess I have to dig a bit deeper.
+=> END
+
+~ puzzlepiece1
+Lauren: Nice, I got the second puzzle piece for that door.
+=> END
+
+~ scene27carmillaroom3
+Carmilla: Oh Lauren darling, I know you’re around here somewhere!~
+=> END
+
+~ scene27carmillaroom4
+Lauren: I need to hide!
+=> END
+
+~ scene27carmillaroom5
+Carmilla: Lauren~ I know you're here. Join me so we may talk.
+=> END
+
+~ scene27carmillaroom6
+Lauren: What does she want from me? There's no way she thinks I'm my grandmother... right?
+=> END
+
+~ scene28librarydoor1
