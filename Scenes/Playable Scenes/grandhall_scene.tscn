@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxhcwcxiqfkyo"]
 
-[ext_resource type="Script" path="res://Scripts/Scene Scripts/grandhall_scene.gd" id="1_lgo1s"]
+[ext_resource type="Script" uid="uid://3hxikejx5jx" path="res://Scripts/Scene Scripts/grandhall_scene.gd" id="1_lgo1s"]
 [ext_resource type="PackedScene" uid="uid://ccmxpq6w5id6e" path="res://Scenes/environments/env_grandhall.tscn" id="1_nw6sa"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_o8okl"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="3_o8okl"]
@@ -12,6 +12,15 @@
 [ext_resource type="Texture2D" uid="uid://b0xf8ms2lue40" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Tools.png" id="9_ww25j"]
 [ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="10_5xqpn"]
 [ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="11_tkr8p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lx5np"]
+size = Vector2(39, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xqpn"]
+size = Vector2(35.5, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkr8p"]
+size = Vector2(80, 77)
 
 [sub_resource type="Gradient" id="Gradient_lx5np"]
 
@@ -48,10 +57,25 @@ position = Vector2(-54, -461.99997)
 position = Vector2(-178, -419)
 
 [node name="bg_collisions" type="StaticBody2D" parent="." unique_id=912784998]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collisions" unique_id=1350586620]
 polygon = PackedVector2Array(-206, -419, -166, -420, -166, -415, -161, -411, -147, -411, -141, -416, -141, -420, -41, -420, -41, -415, -37, -412, -22, -412, -17, -414, -17, -420, 17, -420, 17, -320, 11, -320, 11, -296, 15, -296, 17, -237, 41, -237, 41, -212, 41, -160, -41, -161, -41, -138, 291, -136, 292, -71, 92, -72, 92, -95, -47, -96, -48, -55, 66, -53, 66, 104, -67, 106, -67, 154, -67, 154, -116, 154, -116, 106, -301, 104, -300, 70, -250, 70, -248, -56, -236, -55, -143, -55, -142, -96, -275, -94, -275, -74, -465, -71, -464, -138, -149, -138, -149, -163, -222, -162, -223, -230, -201, -230, -198, -295, -192, -296, -193, -320, -198, -321, -198, -400, -199, -418, -379, -350, -547, -196, -527, 104, -352, 198, 160, 204, 380, -42, 360, -170, 286, -259, 169, -420, 79, -538, -305, -528, -307, -436)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="bg_collisions" unique_id=231124187]
+position = Vector2(-276.5, -75)
+shape = SubResource("RectangleShape2D_lx5np")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="bg_collisions" unique_id=1352091612]
+position = Vector2(280.25, -105)
+shape = SubResource("RectangleShape2D_5xqpn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bg_collisions" unique_id=878110279]
+position = Vector2(1, -175)
+shape = SubResource("RectangleShape2D_tkr8p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bg_collisions" unique_id=978694989]
+position = Vector2(-184, -175.5)
+shape = SubResource("RectangleShape2D_tkr8p")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=452849513]
 position = Vector2(-92, -438.00003)
