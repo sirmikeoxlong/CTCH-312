@@ -8,9 +8,12 @@ extends Node2D
 @onready var bootroom: RoomTeleport = $Doors/Bootroom
 @onready var to_library: RoomTeleport = $"Doors/To Library"
 
+# Entity Instances
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	 # Replace with function body.
+	Global.lauren_movement_allowed = true
 	to_library.set_process(false)
 	MusicManager.play_music(load("res://Sounds/AMBIENCE.ogg"))
 	
@@ -26,6 +29,8 @@ func screen_shake_animation():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# hide Carmilla until Storage Room key has been found
+	# Once found, this instance of Carmilla can be unhidden and loaded up
 	pass
 
 func _on_class_room_trigger_has_yapped_about_it() -> void:
@@ -49,7 +54,6 @@ func _on_pickup_body_entered(body: Node2D) -> void:
 
 func _on_pickup_pocketed() -> void:
 	key_1.remove_from_scene()
-
 
 func _on_to_library_body_entered(body: CharacterBody2D) -> void:
 	pass

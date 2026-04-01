@@ -8,6 +8,14 @@ var completed_room_dialogue = []
 var puzzles = []
 var completed_puzzles = []
 
+# ___________________STATE CHANGES_______________________
+
+var carmilla_movement_allowed = true
+var lauren_movement_allowed = true
+
+
+var cutscene_1_completed = false
+
 # ___________________GRAND HALL KEYS_______________________
 
 # library

@@ -90,14 +90,11 @@ Carmilla: What is thy name?
 Lauren: Lauren. Lauren Woods.
 Carmilla: Mmm. Interesting.
 Lauren: I’m sorry ma’am, I didn’t know anyone would be living here. I was sent by my family to find something that once belonged to my great grandmother. I believe this was her house in the 1800s. I uh.. found the key outside. I can leave if you want-
-Carmilla: I’m sorry ma’am, I didn’t know anyone would be living here. I was sent by my family to find something that once belonged to my great grandmother. I believe this was her house in the 1800s. I uh.. found the key outside. I can leave if you want-
+Try the front door...
 => END
 
 ~ scene20entrance2
 The door is locked.
-=> END
-
-~ scene20entrance3
 Carmilla: Thou just got here sweetheart. Stay a while.
 Lauren: What do you want with me...?
 Carmilla: Come. Walk with me.

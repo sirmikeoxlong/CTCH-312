@@ -7,8 +7,8 @@ var speed = 80.0
 var closet_entered = false
 var input_dir = Vector2.ZERO
 var movement_dir = ""
-var movement_enabled = true
 
+@onready var movement_enabled = Global.lauren_movement_allowed
 @onready var lightPivot = $LightPivot
 @onready var flashlight = $LightPivot/Area2D/Flashlight
 @onready var light = $LightPivot/Area2D/Flashlight/FlashbangPath
@@ -16,6 +16,7 @@ var movement_enabled = true
 @onready var player_sfx: AudioStreamPlayer2D = %player_sfx
 @onready var footstep_timer: Timer = $player_sfx/footstep_timer
 @export var step_delay: float = 0.
+@onready var camera_2d: Camera2D = $Camera2D
 
 
 
@@ -26,6 +27,8 @@ func _ready() -> void:
 	$AnimatedSprite2D.play("Idle")
 
 func _physics_process(delta: float) -> void:
+	movement_enabled = Global.lauren_movement_allowed
+	if movement_enabled == true:
 		move_and_slide()
 		player_movement()
 		movement_direction()
@@ -37,6 +40,8 @@ func _physics_process(delta: float) -> void:
 				$player_sfx/footstep_timer.start()
 		else:
 			$player_sfx/footstep_timer.stop()
+	else:
+		pass
 
 func _on_footstep_timer_timeout():
 	# Play the sound when the timer times out
@@ -50,6 +55,9 @@ func player_movement():
 		velocity = input_dir * speed 
 	else:
 		speed = 0.0
+
+func disable_camera():
+	camera_2d.queue_free()
 		
 	
 func movement_direction():
@@ -122,11 +130,11 @@ func _input(event) -> void:
 		# Make her sprite dissapear + Point light diminish or dissapear
 		if event.is_action_pressed("hide"):
 			#$CollisionShape2D.disabled = true
-			movement_enabled = false
+			disable_movement()
 			$AnimatedSprite2D.visible = false
 		if event.is_action_released("hide"):
 			#$CollisionShape2D.disabled = false
-			movement_enabled = true
+			enable_movement()
 			$AnimatedSprite2D.visible = true
 
 # Handle flashbang
@@ -137,6 +145,15 @@ func _input(event) -> void:
 	if event.is_action_released("flashbang"):
 		flashlight.disabled = true
 		light.visible = false
+		
+
+func disable_movement():
+	movement_enabled = false
+	#Global.lauren_movement_allowed = false
+
+func enable_movement():
+	movement_enabled = true
+	#Global.lauren_movement_allowed = true
 
 
 # Handle hiding

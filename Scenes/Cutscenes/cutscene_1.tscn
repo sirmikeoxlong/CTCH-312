@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://dtd6nwxpq5vgd"]
+
+[ext_resource type="Script" uid="uid://cynkasjf2gbjh" path="res://Scripts/cutscene_scripts/cutscene_1.gd" id="1_uxk81"]
+[ext_resource type="PackedScene" uid="uid://ccmxpq6w5id6e" path="res://Scenes/environments/env_grandhall.tscn" id="2_r0uby"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="3_kulqj"]
+[ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="4_bl2sy"]
+[ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="5_fydfr"]
+
+[sub_resource type="Gradient" id="Gradient_au0op"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e5ivg"]
+gradient = SubResource("Gradient_au0op")
+fill_from = Vector2(0.61538464, 0.7948718)
+fill_to = Vector2(0.6011396, 0.16524217)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qujks"]
+radius = 15.0
+height = 86.0
+
+[sub_resource type="Animation" id="Animation_ax81e"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Carmilla:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-111, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carmilla:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-122, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_8xjj7"]
+resource_name = "carmilla_move"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Carmilla:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(1, 1),
+"points": PackedFloat32Array(-112.99999, -0.25, 0, 0.25, 0, -322.99997, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carmilla:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(1, 1),
+"points": PackedFloat32Array(-123, -0.25, 0, 0.25, 0, -164, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qujks"]
+_data = {
+&"RESET": SubResource("Animation_ax81e"),
+&"carmilla_move": SubResource("Animation_8xjj7")
+}
+
+[node name="Cutscene 1" type="Node2D" unique_id=1686572223]
+script = ExtResource("1_uxk81")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1568221019]
+position = Vector2(-109, -36)
+zoom = Vector2(3, 3)
+
+[node name="Grand Hall" parent="." unique_id=950251797 instance=ExtResource("2_r0uby")]
+position = Vector2(-72, -484)
+
+[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("3_kulqj")]
+position = Vector2(-271, 50)
+
+[node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("4_bl2sy")]
+position = Vector2(-111, -122)
+scale = Vector2(0.16182943, 0.17172727)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1675137377]
+position = Vector2(-20, -25)
+color = Color(0.73762393, 0.34754023, 0.6222237, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1905979694]
+visible = false
+position = Vector2(-88.99999, -102)
+rotation = -0.00047039986
+scale = Vector2(2.3258908, 2.398146)
+texture = SubResource("GradientTexture2D_e5ivg")
+
+[node name="Meet Carmilla" parent="." unique_id=359445996 instance=ExtResource("5_fydfr")]
+position = Vector2(-165, -43)
+scale = Vector2(4.8410025, 1.2089908)
+id = "first_cutscene"
+RoomMessage = "scene20entrance1"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Meet Carmilla" unique_id=1067789864]
+position = Vector2(10.999999, 6.999999)
+rotation = 0.012639626
+scale = Vector2(1.0040979, 1.0000159)
+shape = SubResource("CapsuleShape2D_qujks")
+
+[node name="Front Door" parent="." unique_id=67263175 instance=ExtResource("5_fydfr")]
+position = Vector2(-163, -80)
+scale = Vector2(4.8410025, 1.2089908)
+id = "Front Door Locked"
+RoomMessage = "scene20entrance2"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Front Door" unique_id=1866364541]
+position = Vector2(11.98099, 167.90863)
+rotation = 0.012639626
+scale = Vector2(1.0040979, 1.0000159)
+shape = SubResource("CapsuleShape2D_qujks")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=335776729]
+position = Vector2(-20, -25)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=680308434]
+polygon = PackedVector2Array(-293, 103, -292, 73, -246, 73, -244, 10, -182, 11, -171, -51, -144, -51, -143, -93, -34, -93, -33, -54, -1, -54, -3, -15, 13, 15, 28, 8, 69, 8, 72, 106, -61, 108, -61, 153, -108, 152, -110, 107, -287, 107, -169, 221, 85, 163, 106, 10, 52, -126, -69, -143, -236, -131, -326, 22, -342, 114)
+
+[node name="Carmilla Walks to Chapel" type="AnimationPlayer" parent="." unique_id=1550446560]
+libraries/ = SubResource("AnimationLibrary_qujks")
+
+[connection signal="body_entered" from="Meet Carmilla" to="." method="_on_snarky_comment_body_entered"]
+[connection signal="body_entered" from="Front Door" to="." method="_on_snarky_comment_body_entered"]
+[connection signal="has_yapped_about_it" from="Front Door" to="." method="_on_front_door_has_yapped_about_it"]

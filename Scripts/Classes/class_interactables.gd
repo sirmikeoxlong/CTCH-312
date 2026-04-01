@@ -5,11 +5,13 @@ extends Node2D
 @export var id : String
 @export var pickup_message : String
 @onready var key_main: AudioStreamPlayer2D = $key_main
+@onready var lauren: CharacterBody2D = $"../Lauren"
 
 
 @onready var entered
 
 signal pocketed
+signal saying_finished
 
 func _ready() -> void:
 	if Global.collectedItems.has(id):
@@ -39,14 +41,18 @@ func mark_as_touched():
 
 func add_to_inventory():
 	# add an item of this class to global inventory
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("Talk"):
 		key_main.stop()
 		key_main.play()
 		SingPlayer.inventory.push_front(self)
+		Global.lauren_movement_allowed = false
 		DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
 		pickup_message)
 		self.hide()
+		await get_tree().create_timer(2.5).timeout
+		Global.lauren_movement_allowed = true
 		pocketed.emit()
+		saying_finished.emit()
 
 func remove_from_scene():
 	# signal to story state that this item has been picked up

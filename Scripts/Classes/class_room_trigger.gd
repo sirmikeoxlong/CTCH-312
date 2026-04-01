@@ -3,6 +3,8 @@ class_name RoomTrigger
 extends Area2D
 
 signal has_yapped_about_it
+signal saying_started
+signal saying_finished
 
 @export var id : String
 @export var RoomMessage : String
@@ -27,14 +29,19 @@ func say_room_dialogue():
 	print("say_room_dialogue function working")
 	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
 	RoomMessage)
-	
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	if Global.dialogue.has(global_position):
 		# if character enters here for the first time, trigger the necessary scene
 		# once done, this dialogue has to be deqeued from the scene
 		print("_on_body_entered function working")
+		Global.lauren_movement_allowed = false
 		say_room_dialogue()
-		has_yapped_about_it.emit()
+		await get_tree().create_timer(2.5).timeout
+		Global.lauren_movement_allowed = true
+		emit_yap()
 		remove_from_scene()
+
+func emit_yap():
+	has_yapped_about_it.emit()
 		

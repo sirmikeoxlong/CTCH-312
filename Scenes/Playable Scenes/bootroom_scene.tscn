@@ -66,7 +66,13 @@ forbidden_message = "doorlock"
 
 [node name="To Ballroom" parent="." unique_id=521600244 instance=ExtResource("8_chcfv")]
 position = Vector2(-21, -8)
-teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
+teleport = "res://Scenes/Playable Scenes/ballroom_scene.tscn"
+unlocked = true
+forbidden_message = "doorlock"
+
+[node name="To cutscene 1" parent="." unique_id=824014948 instance=ExtResource("8_chcfv")]
+position = Vector2(41, 117)
+teleport = "res://Scenes/Playable Scenes/ballroom_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
 

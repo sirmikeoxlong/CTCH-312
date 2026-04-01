@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxhcwcxiqfkyo"]
 
-[ext_resource type="Script" path="res://Scripts/Scene Scripts/grandhall_scene.gd" id="1_lgo1s"]
+[ext_resource type="Script" uid="uid://3hxikejx5jx" path="res://Scripts/Scene Scripts/grandhall_scene.gd" id="1_lgo1s"]
 [ext_resource type="PackedScene" uid="uid://ccmxpq6w5id6e" path="res://Scenes/environments/env_grandhall.tscn" id="1_nw6sa"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_o8okl"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="3_o8okl"]
@@ -175,7 +175,7 @@ position = Vector2(-25, -19)
 shape = SubResource("RectangleShape2D_eo0va")
 
 [node name="Collectable Items (offscreen)" type="Node2D" parent="." unique_id=874164551]
-position = Vector2(-406, 96)
+position = Vector2(-606, 205)
 
 [node name="Library Door Key 2" parent="Collectable Items (offscreen)" unique_id=266493154 instance=ExtResource("7_eo0va")]
 position = Vector2(-155, 7)
@@ -217,7 +217,7 @@ region_enabled = true
 region_rect = Rect2(98, 52, 12, 7)
 
 [node name="Key 1" parent="." unique_id=472880370 instance=ExtResource("8_oyaqd")]
-position = Vector2(-375, 50)
+position = Vector2(-606, 204)
 id = "key1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Key 1" unique_id=104178822]
@@ -230,14 +230,14 @@ region_enabled = true
 region_rect = Rect2(113, 17, 14, 14)
 
 [node name="Key 2" parent="." unique_id=1510061342 instance=ExtResource("8_oyaqd")]
-position = Vector2(-380, 59)
+position = Vector2(-585, 246)
 id = "key1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Key 2" unique_id=1645059917]
 shape = SubResource("CircleShape2D_o8ve4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Key 2" unique_id=715123414]
-position = Vector2(194, 97)
+position = Vector2(-185, 275)
 scale = Vector2(1.2857143, 1.2857143)
 texture = ExtResource("9_ww25j")
 region_enabled = true
