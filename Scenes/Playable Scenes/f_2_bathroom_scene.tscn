@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://r6pseto4rekk"]
 
 [ext_resource type="PackedScene" uid="uid://dhq83tbhml3xa" path="res://Scenes/environments/env_bath_f_2.tscn" id="1_8h8cu"]
+[ext_resource type="Script" uid="uid://c1xrksklmi5tw" path="res://Scripts/Scene Scripts/f_2_bathroom_scene.gd" id="1_f6p4l"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="2_yvb7v"]
 [ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="3_sp427"]
 
@@ -9,6 +10,7 @@ radius = 15.0
 height = 86.0
 
 [node name="F2_bathroom_scene" type="Node2D" unique_id=838831071]
+script = ExtResource("1_f6p4l")
 
 [node name="Node2D" parent="." unique_id=533592669 instance=ExtResource("1_8h8cu")]
 position = Vector2(588, 406)

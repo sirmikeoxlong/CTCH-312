@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://f7fpfc0m2oa5"]
 
 [ext_resource type="PackedScene" uid="uid://ptl8vy0m8int" path="res://Scenes/environments/env_kitchen.tscn" id="1_55l32"]
+[ext_resource type="Script" uid="uid://bqf51thvou7ow" path="res://Scripts/Scene Scripts/kitchen_scene.gd" id="1_j6ss8"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_exuah"]
 [ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="3_tog74"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="4_e50ly"]
@@ -10,6 +11,7 @@ radius = 15.0
 height = 86.0
 
 [node name="kitchen_scene" type="Node2D" unique_id=1798775096]
+script = ExtResource("1_j6ss8")
 
 [node name="env_kitchen" parent="." unique_id=1237898850 instance=ExtResource("1_55l32")]
 position = Vector2(-30, -1)

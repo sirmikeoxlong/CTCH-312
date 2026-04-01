@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dbucvaumjfgws"]
 
 [ext_resource type="PackedScene" uid="uid://2aboexdl5eie" path="res://Scenes/environments/env_ballroom.tscn" id="1_2xjvu"]
+[ext_resource type="Script" uid="uid://bx6ekppb3q837" path="res://Scripts/Scene Scripts/ballroom_scene.gd" id="1_fdcss"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_idnv1"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="3_idnv1"]
 [ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="4_tod71"]
@@ -19,6 +20,7 @@ fill_to = Vector2(0.54415953, 0.0056980057)
 radius = 25.019993
 
 [node name="ballroom_scene" type="Node2D" unique_id=368079613]
+script = ExtResource("1_fdcss")
 
 [node name="env_ballroom" parent="." unique_id=1479919169 instance=ExtResource("1_2xjvu")]
 position = Vector2(12, -242)
