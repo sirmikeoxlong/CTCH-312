@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="6_gtbdw"]
 [ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="7_d1lcf"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="8_ow1mq"]
+[ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="9_xo5wk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0hgf8"]
 radius = 25.019993
@@ -21,11 +22,13 @@ script = ExtResource("1_ego5m")
 
 [node name="Node2D" parent="." unique_id=680823826 instance=ExtResource("2_ikq5d")]
 position = Vector2(-13, 34)
+scale = Vector2(0.47819802, 0.48639843)
 
 [node name="Ballroom Paper" parent="." unique_id=1015122729 instance=ExtResource("3_j7gci")]
-position = Vector2(-14, -70)
-scale = Vector2(2, 2.0400019)
+position = Vector2(6, -20)
+scale = Vector2(1.3599999, 1.360001)
 id = "parlor_paper"
+pickup_message = "scene1forest2"
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ballroom Paper" unique_id=612045584]
 texture = ExtResource("4_qicmb")
@@ -58,7 +61,7 @@ vertical_alignment = 1
 position = Vector2(-7, 35)
 
 [node name="snarky comment" parent="Dialogue" unique_id=359445996 instance=ExtResource("7_d1lcf")]
-position = Vector2(221, -123)
+position = Vector2(94, -60)
 id = "gener_comment"
 RoomMessage = "billards/parlorconnect"
 
@@ -69,7 +72,18 @@ scale = Vector2(1.0040979, 1.0000159)
 shape = SubResource("CapsuleShape2D_yykth")
 
 [node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("8_ow1mq")]
-position = Vector2(-132, -188)
+position = Vector2(-71, -77)
+
+[node name="To Billiards" parent="." unique_id=727452976 instance=ExtResource("9_xo5wk")]
+position = Vector2(87, 55)
+teleport = "res://Scenes/Playable Scenes/billiards_scene.tscn"
+unlocked = true
+
+[node name="To Grand Hall" parent="." unique_id=343064353 instance=ExtResource("9_xo5wk")]
+position = Vector2(-123, -44)
+teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
+unlocked = true
 
 [connection signal="body_entered" from="Ballroom Paper" to="." method="_on_ballroom_paper_body_entered"]
 [connection signal="pocketed" from="Ballroom Paper" to="." method="_on_ballroom_paper_pocketed"]
+[connection signal="has_yapped_about_it" from="Dialogue/snarky comment" to="." method="_on_snarky_comment_has_yapped_about_it"]

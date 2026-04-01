@@ -1,6 +1,19 @@
 [gd_scene format=3 uid="uid://dvddkt0rl26qe"]
 
+[ext_resource type="Texture2D" uid="uid://uusmu7bbwy1v" path="res://Sprites/Juanna's Sprites/Untitled140_20260331173827.png" id="1_fk2eq"]
 [ext_resource type="Texture2D" uid="uid://dxb4vhdkqv5uy" path="res://Sprites/Juanna's Sprites/Untitled136_20260330224420.png" id="1_xo35h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1dh6"]
+atlas = ExtResource("1_fk2eq")
+region = Rect2(0, 350, 250, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g02sp"]
+atlas = ExtResource("1_fk2eq")
+region = Rect2(250, 350, 250, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5gc5"]
+atlas = ExtResource("1_fk2eq")
+region = Rect2(500, 350, 250, 350)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fk2eq"]
 atlas = ExtResource("1_xo35h")
@@ -76,6 +89,25 @@ region = Rect2(250, 1050, 250, 350)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o155q"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"chase_attack(front)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1dh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g02sp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5gc5")
+}],
+"loop": true,
+"name": &"chase_attack(side)",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fk2eq")
@@ -175,5 +207,6 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=254229016]
 sprite_frames = SubResource("SpriteFrames_o155q")
-animation = &"left"
-frame_progress = 0.8361517
+animation = &"down"
+frame = 2
+frame_progress = 0.19581361

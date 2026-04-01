@@ -8,7 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bjd76wvhpf2t8" path="res://Scripts/Classes/class_puzzle.tscn" id="6_x36kx"]
 [ext_resource type="PackedScene" uid="uid://dhyg2sy24swn7" path="res://Scripts/Keys/library_door_key_1.tscn" id="7_eo0va"]
 [ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="8_oyaqd"]
+[ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="9_lx5np"]
 [ext_resource type="Texture2D" uid="uid://b0xf8ms2lue40" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Tools.png" id="9_ww25j"]
+[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="10_5xqpn"]
+[ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="11_tkr8p"]
 
 [sub_resource type="Gradient" id="Gradient_nw6sa"]
 
@@ -23,6 +26,9 @@ height = 86.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo0va"]
 size = Vector2(39, 24.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uju4l"]
+radius = 18.382355
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o8ve4"]
 radius = 18.0
@@ -80,24 +86,31 @@ position = Vector2(-329, -91)
 teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
 unlocked = true
 
-[node name="ClassRoomTeleport4" parent="Doors" unique_id=1348103655 instance=ExtResource("3_o8okl")]
+[node name="ClassRoomTeleport14" parent="Doors" unique_id=1074362768 instance=ExtResource("3_o8okl")]
+position = Vector2(-281, -161)
+teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
+unlocked = true
+
+[node name="ClassRoomTeleport4" parent="Doors" unique_id=1348103655 node_paths=PackedStringArray("key") instance=ExtResource("3_o8okl")]
 position = Vector2(-388, 1)
-teleport = "res://Scenes/Playable Scenes/ballroom_scene.tscn"
+teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
+key = NodePath("../../Collectable Items (offscreen)/Boot Room Key")
 forbidden_message = "doorlock"
 
 [node name="ClassRoomTeleport5" parent="Doors" unique_id=2077266263 instance=ExtResource("3_o8okl")]
 position = Vector2(111, -97)
 teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
-unlocked = true
+forbidden_message = "kitchendoor"
 
 [node name="ClassRoomTeleport6" parent="Doors" unique_id=447909036 instance=ExtResource("3_o8okl")]
 position = Vector2(-143, 221)
 teleport = "res://Scenes/Playable Scenes/outside_scene.tscn"
 forbidden_message = "doorlock"
 
-[node name="ClassRoomTeleport7" parent="Doors" unique_id=100980308 instance=ExtResource("3_o8okl")]
+[node name="Bootroom" parent="Doors" unique_id=100980308 node_paths=PackedStringArray("key") instance=ExtResource("3_o8okl")]
 position = Vector2(-353, 158)
-teleport = "res://Scenes/Playable Scenes/outside_scene.tscn"
+teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
+key = NodePath("../../Collectable Items (offscreen)/Boot Room Key")
 forbidden_message = "doorlock"
 
 [node name="ClassRoomTeleport8" parent="Doors" unique_id=2129919375 instance=ExtResource("3_o8okl")]
@@ -125,6 +138,11 @@ position = Vector2(-10, 26)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 forbidden_message = "scene6hall1"
 
+[node name="ClassRoomTeleport13" parent="Doors" unique_id=802532146 instance=ExtResource("3_o8okl")]
+position = Vector2(-7, -155)
+teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
+forbidden_message = "kitchendoor"
+
 [node name="Dialogue" type="Node2D" parent="." unique_id=1555633052]
 
 [node name="d_scene5enter1" parent="Dialogue" unique_id=359445996 instance=ExtResource("5_x36kx")]
@@ -137,7 +155,7 @@ rotation = 1.5778282
 shape = SubResource("CapsuleShape2D_lgo1s")
 
 [node name="Library Door Puzzle" parent="." unique_id=1487168353 node_paths=PackedStringArray("item_puzzle_pieces") instance=ExtResource("6_x36kx")]
-position = Vector2(-152, -402)
+position = Vector2(-152, -397)
 item_puzzle_pieces = [NodePath("../Key 1")]
 event = "scene13librarydoor1"
 unsolved_message = "scene6hall2"
@@ -154,7 +172,40 @@ position = Vector2(-155, 7)
 [node name="Library Door Key 3" parent="Collectable Items (offscreen)" unique_id=1336902944 instance=ExtResource("7_eo0va")]
 position = Vector2(-153, 27)
 
-[node name="Key 1" parent="." unique_id=1015122729 instance=ExtResource("8_oyaqd")]
+[node name="Boot Room Key" parent="Collectable Items (offscreen)" unique_id=1015122729 instance=ExtResource("8_oyaqd")]
+position = Vector2(6, -2)
+scale = Vector2(1.3599999, 1.360001)
+id = "bootroom_key"
+pickup_message = "scene15pantry1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable Items (offscreen)/Boot Room Key" unique_id=1142166542]
+shape = SubResource("CircleShape2D_uju4l")
+script = ExtResource("9_lx5np")
+
+[node name="Label" type="Label" parent="Collectable Items (offscreen)/Boot Room Key" unique_id=768170619]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("10_5xqpn")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="Collectable Items (offscreen)/Boot Room Key" unique_id=1701621728]
+texture = ExtResource("11_tkr8p")
+region_enabled = true
+region_rect = Rect2(98, 52, 12, 7)
+
+[node name="Key 1" parent="." unique_id=472880370 instance=ExtResource("8_oyaqd")]
 position = Vector2(-154, -22)
 id = "key1"
 

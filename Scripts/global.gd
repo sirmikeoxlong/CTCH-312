@@ -8,6 +8,22 @@ var completed_room_dialogue = []
 var puzzles = []
 var completed_puzzles = []
 
+# ___________________GRAND HALL KEYS_______________________
+
+# library
+var lib_key1_collect = false
+var lib_key2_colelct = false
+var lib_key3_colelct = false
+
+# misc
+
+var boot_key_collect = false
+
+# ___________________SMALL ROOM KEYS_______________________
+
+var spare_bed_key = false
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var root = get_tree().root

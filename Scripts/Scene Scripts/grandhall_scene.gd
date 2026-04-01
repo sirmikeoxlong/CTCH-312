@@ -5,12 +5,17 @@ extends Node2D
 @onready var class_room_teleport: RoomTeleport = $Doors/ClassRoomTeleport
 @onready var key_1: cutscene_interactables = $"Key 1"
 
-
+# Door Paths
+@onready var bootroom: RoomTeleport = $Doors/Bootroom
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 	class_room_teleport.set_process(false)
+	
+func unloack_all_doors():
+	if Global.boot_key_collect == true:
+		bootroom.unlocked = true
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,15 +27,16 @@ func _on_class_room_trigger_has_yapped_about_it() -> void:
 	print("_on_class_room_trigger_has_yapped_about_it function working")
 
 func _on_class_puzzle_body_entered(body: CharacterBody2D) -> void:
+	print("_on_class_puzzle_body_entered function entered")
 	#if character has entered here and they have met the criteria, 
 	# the event will trigger
-	print("_on_class_puzzle_body_entered function entered")
-	if library_door_puzzle.solve_puzzle() == false:
-		library_door_puzzle.perform_event()
-		library_door_puzzle.remove_from_scene()
-		class_room_teleport.set_process(true)
+	if library_door_puzzle.missing_piece() == true:
+		print("detected a missing piece. Look around some more.")
 	else:
-		pass
+		if Input.is_action_just_pressed("ui_accept"):
+			library_door_puzzle.perform_event()
+			class_room_teleport.set_process(true)
+			print("Puzzle solved successfully")
 
 func _on_pickup_body_entered(body: Node2D) -> void:
 	key_1.entered = true

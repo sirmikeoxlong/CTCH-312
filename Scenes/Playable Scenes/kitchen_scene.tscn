@@ -2,6 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://ptl8vy0m8int" path="res://Scenes/environments/env_kitchen.tscn" id="1_55l32"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_exuah"]
+[ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="3_tog74"]
+[ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="4_e50ly"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e50ly"]
+radius = 15.0
+height = 86.0
 
 [node name="kitchen_scene" type="Node2D" unique_id=1798775096]
 
@@ -16,3 +22,41 @@ position = Vector2(-114, -13)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collisions" unique_id=1252470989]
 polygon = PackedVector2Array(-158, -1, -78, -1, -78, 7, -52, 7, -52, -1, -42, -1, -41, 1, -2, 1, -2, -3, 5, -1, 5, 9, 84, 9, 85, 27, 107, 27, 107, 34, 149, 34, 150, 60, 106, 60, 107, 104, 74, 104, 74, 120, 48, 120, 47, 103, -159, 104, -159, 50, -210, 50, -236, 51, -236, 24, -159, 25, -158, 0, -270, -31, -319, 48, -234, 158, -86, 172, 116, 174, 170, 109, 214, -70, 39, -164, -203, -181, -356, -147, -366, -44, -248, -64)
+
+[node name="Dialogue" type="Node2D" parent="." unique_id=1649744313]
+position = Vector2(-7, 35)
+
+[node name="Kitchen Unlocked" parent="Dialogue" unique_id=359445996 instance=ExtResource("3_tog74")]
+position = Vector2(94, -60)
+id = "kitchen_unlocked"
+RoomMessage = "scene16kitchen1"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Dialogue/Kitchen Unlocked" unique_id=1452908360]
+position = Vector2(5.9999995, 57.999996)
+rotation = 0.012639626
+scale = Vector2(1.0040979, 1.0000159)
+shape = SubResource("CapsuleShape2D_e50ly")
+
+[node name="To Pantry" parent="." unique_id=727452976 instance=ExtResource("4_e50ly")]
+position = Vector2(94, 112)
+teleport = "res://Scenes/Playable Scenes/pantry_scene.tscn"
+unlocked = true
+forbidden_message = "doorlock"
+
+[node name="To Dining" parent="." unique_id=1476474386 instance=ExtResource("4_e50ly")]
+position = Vector2(-171, 47)
+teleport = "res://Scenes/Playable Scenes/dining_scene.tscn"
+unlocked = true
+forbidden_message = "doorlock"
+
+[node name="To Great Hall" parent="." unique_id=1152223735 instance=ExtResource("4_e50ly")]
+position = Vector2(9, 189)
+teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
+unlocked = true
+forbidden_message = "doorlock"
+
+[node name="To Great Hall2" parent="." unique_id=1362045417 instance=ExtResource("4_e50ly")]
+position = Vector2(-281, 113)
+teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
+unlocked = true
+forbidden_message = "doorlock"

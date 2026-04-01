@@ -1,9 +1,19 @@
 [gd_scene format=3 uid="uid://0lgw8tlov8tx"]
 
 [ext_resource type="PackedScene" uid="uid://bkajr5uxgr5mg" path="res://Scenes/environments/env_pantry.tscn" id="1_5rn18"]
+[ext_resource type="Script" uid="uid://dwpfymwxte64p" path="res://Scripts/Scene Scripts/pantry_scene.gd" id="1_fyiem"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_5351w"]
+[ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="4_vpwu3"]
+[ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="6_hjcw1"]
+[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="7_a7ttm"]
+[ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="7_vpwu3"]
+[ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="8_mjwrk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u7sk3"]
+radius = 18.382355
 
 [node name="pantry_scene" type="Node2D" unique_id=233444306]
+script = ExtResource("1_fyiem")
 metadata/_edit_vertical_guides_ = [-181.0]
 
 [node name="env_pantry" parent="." unique_id=1610001924 instance=ExtResource("1_5rn18")]
@@ -17,3 +27,49 @@ position = Vector2(-87, 15)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=1333694512]
 polygon = PackedVector2Array(-107, 16, -44, 17, -43, 6, -35, 7, -33, 14, 46, 15, 47, 6, 64, 6, 65, 64, 56, 64, 56, 82, 29, 82, 29, 63, -44, 61, -43, 44, -106, 43, -106, 20, -171, 76, -100, 135, 108, 138, 181, 27, 167, -137, 3, -186, -50, -211, -140, -144, -167, -1, -124, 11)
+
+[node name="Boot Room Key" parent="." unique_id=1015122729 instance=ExtResource("4_vpwu3")]
+position = Vector2(6, -2)
+scale = Vector2(1.3599999, 1.360001)
+id = "bootroom_key"
+pickup_message = "scene15pantry1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boot Room Key" unique_id=1933248149]
+shape = SubResource("CircleShape2D_u7sk3")
+script = ExtResource("6_hjcw1")
+
+[node name="Label" type="Label" parent="Boot Room Key" unique_id=1712015986]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_a7ttm")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="Boot Room Key" unique_id=729729449]
+texture = ExtResource("7_vpwu3")
+region_enabled = true
+region_rect = Rect2(98, 52, 12, 7)
+
+[node name="To Staff Room" parent="." unique_id=727452976 instance=ExtResource("8_mjwrk")]
+position = Vector2(-10, 165)
+teleport = "res://Scenes/Playable Scenes/staffroom_scene.tscn"
+unlocked = true
+
+[node name="To Kitchen" parent="." unique_id=1187717758 instance=ExtResource("8_mjwrk")]
+position = Vector2(-157, 100)
+teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
+unlocked = true
+
+[connection signal="body_entered" from="Boot Room Key" to="." method="_on_boot_room_key_body_entered"]
+[connection signal="pocketed" from="Boot Room Key" to="." method="_on_boot_room_key_pocketed"]
