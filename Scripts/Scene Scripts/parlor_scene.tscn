@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://hue66445np52"]
+
+[ext_resource type="Script" uid="uid://dlmfo3vnhsmgy" path="res://Scripts/Scene Scripts/parlor_scene.gd" id="1_ego5m"]
+[ext_resource type="PackedScene" uid="uid://c4nf2hgc5ndn0" path="res://Scenes/environments/env_Parlor.tscn" id="2_ikq5d"]
+[ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="3_j7gci"]
+[ext_resource type="Texture2D" uid="uid://c2f73jo000gfb" path="res://Sprites/sprites/TopDownHouse_SmallItems.png" id="4_qicmb"]
+[ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="5_bds3v"]
+[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="6_gtbdw"]
+[ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="7_d1lcf"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="8_ow1mq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hgf8"]
+radius = 25.019993
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yykth"]
+radius = 15.0
+height = 86.0
+
+[node name="Parlor_scene" type="Node2D" unique_id=1854053113]
+script = ExtResource("1_ego5m")
+
+[node name="Node2D" parent="." unique_id=680823826 instance=ExtResource("2_ikq5d")]
+position = Vector2(-13, 34)
+
+[node name="Ballroom Paper" parent="." unique_id=1015122729 instance=ExtResource("3_j7gci")]
+position = Vector2(-14, -70)
+scale = Vector2(2, 2.0400019)
+id = "parlor_paper"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ballroom Paper" unique_id=612045584]
+texture = ExtResource("4_qicmb")
+region_enabled = true
+region_rect = Rect2(36, 22, 9, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ballroom Paper" unique_id=1427630719]
+shape = SubResource("CircleShape2D_0hgf8")
+script = ExtResource("5_bds3v")
+
+[node name="Label" type="Label" parent="Ballroom Paper" unique_id=334409004]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_gtbdw")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dialogue" type="Node2D" parent="." unique_id=1028391491]
+position = Vector2(-7, 35)
+
+[node name="snarky comment" parent="Dialogue" unique_id=359445996 instance=ExtResource("7_d1lcf")]
+position = Vector2(221, -123)
+id = "gener_comment"
+RoomMessage = "billards/parlorconnect"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Dialogue/snarky comment" unique_id=276586270]
+position = Vector2(10.999999, 6.999999)
+rotation = 0.012639626
+scale = Vector2(1.0040979, 1.0000159)
+shape = SubResource("CapsuleShape2D_yykth")
+
+[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("8_ow1mq")]
+position = Vector2(-132, -188)
+
+[connection signal="body_entered" from="Ballroom Paper" to="." method="_on_ballroom_paper_body_entered"]
+[connection signal="pocketed" from="Ballroom Paper" to="." method="_on_ballroom_paper_pocketed"]

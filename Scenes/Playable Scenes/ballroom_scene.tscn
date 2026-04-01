@@ -3,6 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://2aboexdl5eie" path="res://Scenes/environments/env_ballroom.tscn" id="1_2xjvu"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_idnv1"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="3_idnv1"]
+[ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="4_tod71"]
+[ext_resource type="Texture2D" uid="uid://c2f73jo000gfb" path="res://Sprites/sprites/TopDownHouse_SmallItems.png" id="5_fdcss"]
+[ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="6_wim1q"]
+[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="7_t1yt5"]
 
 [sub_resource type="Gradient" id="Gradient_vppsg"]
 
@@ -10,6 +14,9 @@
 gradient = SubResource("Gradient_vppsg")
 fill_from = Vector2(0.52991456, 0.7407407)
 fill_to = Vector2(0.54415953, 0.0056980057)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2yy10"]
+radius = 25.019993
 
 [node name="ballroom_scene" type="Node2D" unique_id=368079613]
 
@@ -44,3 +51,34 @@ position = Vector2(-251, -162)
 [node name="ClassRoomTeleport3" parent="bg_collision" unique_id=1431071824 instance=ExtResource("3_idnv1")]
 position = Vector2(139, 92)
 teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
+
+[node name="Ballroom Paper" parent="." unique_id=1015122729 instance=ExtResource("4_tod71")]
+position = Vector2(-47, -134)
+id = "ballroom_paper"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ballroom Paper" unique_id=1899531499]
+texture = ExtResource("5_fdcss")
+region_enabled = true
+region_rect = Rect2(36, 22, 9, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ballroom Paper" unique_id=1792909560]
+shape = SubResource("CircleShape2D_2yy10")
+script = ExtResource("6_wim1q")
+
+[node name="Label" type="Label" parent="Ballroom Paper" unique_id=895743623]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_t1yt5")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1

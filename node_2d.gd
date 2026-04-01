@@ -5,6 +5,7 @@ extends Area2D
 @export var teleport : String
 @export var key : cutscene_interactables #change this to type key or interactable later
 @export var unlocked = false
+@export var forbidden_message : String
 
 var entered
 
@@ -29,4 +30,4 @@ func _process(delta: float) -> void:
 					Global.goto_scene(teleport)
 			else:
 				DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
-				"scene2frontdoor1")
+				forbidden_message)

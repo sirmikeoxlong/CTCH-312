@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dhyg2sy24swn7"]
+
+[ext_resource type="Script" uid="uid://dg54u6djv21f5" path="res://Scripts/Classes/class_interactables.gd" id="1_0keq4"]
+[ext_resource type="Texture2D" uid="uid://b0xf8ms2lue40" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Tools.png" id="2_fmm2c"]
+
+[node name="Library Door Key 1" type="Node2D" unique_id=1126116951]
+script = ExtResource("1_0keq4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=101370308]
+scale = Vector2(1.2857143, 1.2857143)
+texture = ExtResource("2_fmm2c")
+region_enabled = true
+region_rect = Rect2(113, 17, 14, 14)

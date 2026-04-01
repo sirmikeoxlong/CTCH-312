@@ -61,3 +61,297 @@ Lauren: Why is the door making that [shake]noise[/shake]?!
 ~ scene13librarydoor2
 Lauren: Is someone here? I need to hide!
 => END
+
+~ scene13librarycloset1
+Lauren: OOF! Not a very sturdy closet huh.
+=> END 
+
+~ scene14kitchen1
+Lauren: Ah. Found a way into the kitchen. 
+=> END
+
+~ scene15pantry1
+Lauren: Pretty sure this key leads to that room near the entrance.
+=> END
+
+~ scene16kitchen1
+Lauren: Nice. This is unlocked now. 
+=> END 
+
+~ scene18entrance1
+Lauren: I should open the room near the entrance first.
+=> END
+
+~ scene20entrance1
+Lauren: W-who are you?
+Carmilla: I do contest, shouldn’t I be the one asking you perhaps? What is someone like you doing in my manor?
+Lauren: I’m sorry ma’am, I didn’t know anyone would be living here. I was sent by my family to find something that once belonged to my great grandmother. I believe this was her house in the 1800s. I uh.. found the key outside. I can leave if you want-
+Carmilla: What is thy name?
+Lauren: Lauren. Lauren Woods.
+Carmilla: Mmm. Interesting.
+Lauren: I’m sorry ma’am, I didn’t know anyone would be living here. I was sent by my family to find something that once belonged to my great grandmother. I believe this was her house in the 1800s. I uh.. found the key outside. I can leave if you want-
+Carmilla: I’m sorry ma’am, I didn’t know anyone would be living here. I was sent by my family to find something that once belonged to my great grandmother. I believe this was her house in the 1800s. I uh.. found the key outside. I can leave if you want-
+=> END
+
+~ scene20entrance2
+The door is locked.
+=> END
+
+~ scene20entrance3
+Carmilla: Thou just got here sweetheart. Stay a while.
+Lauren: What do you want with me...?
+Carmilla: Come. Walk with me.
+Lauren: Okay....
+Lauren in her head: *Is this a good idea?* 
+=> END 
+
+~ followcarmilla
+Lauren: We should see what the lady wants first. Don’t want her getting upset.
+=> END
+
+~ scene20entrance4
+Carmilla: I don't have all day deary.
+=> END
+
+~ scene21gallery1
+Carmilla: Are you familiar with the lady in the ivory half dress?
+Lauren: The what dress?
+Carmilla: The lady towards the left side of the protrait.
+Lauren: Oh. No, I do not recognize her.
+Carmilla: How intriguing.
+=> END
+
+~ scene21gallery2
+Lauren: Um... Can I ask what your name is?
+Carmilla: ... Carmilla.
+Lauren in her head: *That name seems familiar..*
+Lauren: ...
+Carmilla: ...
+Lauren: I think I should be going now, it'll be getting dark outside soon-
+Carmilla: ...
+Carmilla: Perhaps youare familiar with my dear Margaret?
+Lauren: I don't think so? And I really should be going-
+Carmilla: I want you to grant me something first my dear.
+Lauren: What's that..?
+=> END
+
+~ scene21gallery3
+Carmilla: [shake]Thy blood!![/shake]
+Lauren: What?!
+=> END
+
+~ scene21gallery4
+Lauren: [shake]Ahhh![/shake] What are you doing?!
+=> END
+
+~ scene21gallery5
+Lauren: Are you crazy?! What was that for?!
+=> END
+
+~ scene21gallery6
+Carmilla: Lauren deary, do not run from me now!~
+=> END
+
+~ mechanics1
+Hit 'Q' to use your flashlight to stun Carmilla
+=> END
+
+~ scene23bedroom1
+Lauren: Who is that crazy lady?! And why on earth did she bite me?! Is she really a vampire? God, I need to find a way out of here.
+=> END
+
+~ studylock
+Lauren: Maybe I should try this on the Study.
+=> END
+
+~ studyjournal
+Lauren: I should look for some information about this place. Maybe the study has something.
+=> END
+
+~ studyjournalafterward
+Lauren: If this book is correct, there should be a secret escape in the main bedroom, which can only be accessed through finding a key in the library. Those puzzle pieces must be for the library door! It says one will be in the staff room, and one is in Carmilla’s room. Okay Lauren, you can do this!
+=> END
+
+~ bathroomkey1
+Lauren: Looks like I can use this on the bathroom on the other side of this floor.
+=> END
+
+~ bathroomhole
+Lauren: I should take a closer look around the bathroom.
+=> END
+
+~ scene27carmillaroom1
+Lauren: This looks like it could be Carmilla's old room. There’s so much dust in here though. Makes sense since vampires don’t sleep.
+=> END
+
+~ carmillajournal
+Lauren: I bet I can find out more about Carmilla if I look around some more.
+=> END
+
+~ scene27carmillaroom2
+Lauren: My great grandmother used to live here with Carmilla? Her name is Margaret, that’s what the M stood for in her journal at home. But why would she live here? That part still doesn’t make sense.. Guess I have to dig a bit deeper.
+=> END
+
+~ puzzlepiece1
+Lauren: Nice, I got the second puzzle piece for that door.
+=> END
+
+~ scene27carmillaroom3
+Carmilla: Oh Lauren darling, I know you’re around here somewhere!~
+=> END
+
+~ scene27carmillaroom4
+Lauren: I need to hide!
+=> END
+
+~ scene27carmillaroom5
+Carmilla: Lauren~ I know you're here. Join me so we may talk.
+=> END
+
+~ scene27carmillaroom6
+Lauren: What does she want from me? There's no way she thinks I'm my grandmother... right?
+=> END
+
+~ scene28librarydoor1
+Carmilla: Oh poppet!~ Come out to play~ I want to keep you here forever!!
+=> END
+
+~ scene28librarydoor2
+Lauren: I bet I missed a key somewhere in the manor. Maybe I should go double check some of the rooms. 
+=> END
+
+~ scene31kitchen1
+Lauren: This must be the exit the journal was talking about! I can finally get out of here soon. The entrance to it must be upstairs.
+=> END
+
+~ doorlocked
+*Door locks*
+=> END
+
+~ scene34mainbed1
+Lauren: I hope that keeps her occupied..
+=> END
+
+~ scene34mainbed2
+Carmilla: Lauren!! Come forth and join me! Do not aggravate me!!
+=> END
+
+~ flashbackyear
+1871. Carmilla is 6 years old.
+=> END
+
+~ scene36flashback1
+Margaret: Good day. My name is Margaret. How goes it?
+Carmilla: Hello. I am Carmilla. Crave to see something fun?
+Margaret: Yes please!
+Carmilla opens her mouth to reveal her vampire fangs.
+Carmilla: Look! My teeth are pointy! Ain't that neat?
+Margaret is taken aback, but stares in awe.
+Margaret: Neat indeed! Why might they be like that?
+=> END
+
+~ scene36flashback2
+Carmilla's Mother: Carmilla! What is thy purpose?!
+Carmilla: Mother! Father! I made a friend!
+Carmilla's Father: Why must you show your teeth!?
+Carmilla: She is nice to me!
+Carmilla's Mother: ...
+Carmilla's Father: ...Join us, young girl.
+Margaret: Alright!
+=> END
+
+~ flashbackyear2
+1881. Carmilla is 16 years old.
+=> END
+
+~ scene37flashback1
+Carmilla: Daisy! Join to me! Let us play outside.
+Margaret: Why must you call me Daisy? Why not Peggy like our parents do?
+Carmilla: You know why! Marguerite is French for daisy, and Marguerite sounds similar to Margaret. Thou does not approve of it?
+Margaret: Tis fine. I must say, it doth sound like thou are head over heels for me.
+Carmilla: I am! Thou does not crave to be my beau?
+=> END
+
+~ scene37flashback2
+Carmilla's Mother: Peggy, Carmilla. Thou must geet ready for schooling.
+Carmilla's Mother: Alright!
+=> END
+
+~ scene37flashback3
+Margaret in her head: *Carmilla wants me to be her... beau?*
+=> END
+
+~ scene38flashback1
+Carmilla waits at the school entrance for Margaret to walk home together, but she does not show up after 2 hours.
+Carmilla's Mother: Carmilla! Where have thou been?
+Carmilla's Father: Where is dear Peggy?
+Carmilla: I hast no idea.. She did not show up after schooling!
+Carmilla's Mother: Oh dear.. We must report it to the police!
+Carmilla's Father: My dear, we must not. I am afraid it is out of our hands.
+Carmilla: But Father! It is Margaret! We must not leave her behind!
+Carmilla's Father: I am sorry, young Carmilla. Come. We must go back home.
+=> END
+
+~ scene38flashback2
+???: Excuse me, miss?
+Carmilla: Yes? Doth need help?
+???: My husband and I wanted to bid thou some questions.
+Carmilla: If you must.
+???: We are asking around about our daughter. She has been gone for 10 years now. We pray this is the school she went to. 
+Carmilla: What is her name?
+???: Margaret. Margaret Dubois.
+Carmilla is extremely shocked to hear Margaret's name. 
+Carmilla: She hath been living with us. For the past 10 years...
+Margarets's Mother: Preposterous! Thou took our only daughter?! Police! Police! This woman hath stolen our daughter!
+Carmilla: No.. you do not understand! I love her!
+The police arrive.
+Carmilla: I am sorry! Please do not have thy taken away!
+Magaret's Father: Arrest this young lady! She hath robbed us from our daughter!!
+=> END
+
+~ scene39carmillaroom1
+Carmilla breaks down the door.
+Carmilla: You have made a grave mistake Lauren!
+Lauren: Wait! I know who the woman in the painting is.
+Carmilla: .....Whom?
+Lauren: Margaret. My 3rd great grandmother. Her last name was Dubois. And you loved her..
+Carmilla: ..How doth you know?
+Lauren: I saw her memories. Just like you did when you bit me, correct?
+Carmilla: What a smart one you are.
+Lauren: My grandmother, Margaret- she knew about you being a vampire didn't she. Why didn't she run away earlier?
+Carmilla: Daisy was in love with [shake]me![/shake] She ran away from [shake]mine love![/shake] To another country!! Why doth she do this to me?!
+Lauren: Carmilla, I am sorry for what happened in the past. I am not Margaret, even though you may think I am. 
+Carmilla: Thou shall never be my Margaret!
+Lauren: Then what do you want from me?
+Carmilla: For thou to stay here with mine for eternity. The way it should have been with Daisy and I. Our love can flourish and match what Daisy and I had, rekindling our love from the past!
+Lauren: You can't keep me here forever! Even though you resent my grandmother for leaving, that doesn't mean you have to take it out on me!
+Carmilla: ...I will give thine one more chance to please me. It would be in thy best interest to stay.
+- Leave Carmilla
+	Lauren: You can never force me to stay here, you pale faced hag!
+	Flash your light at Carmilla, before she reaches you.
+	- Escape => scene40parenthouse1
+	=>< scene40parenthouse1
+	Lauren: Yah
+	=> END
+- Stay with Carmilla
+	Lauren put the necklace on and walks towards Carmilla.
+	Lauren: You were right. I should have never tried to leave. And I won't try to leave ever again.
+	Carmilla: Good girl. Come here my love.
+	Carmilla: Allow me to see those memories once again.
+	Lauren blushes and leans away from Carmilla, showing her neck.
+	Carmilla sinks her teeth into Lauren's neck.
+	Lauren: Augh!
+	Carmilla continues to suck the blood from Lauren, draining her life force until her body goes limp.
+	Carmilla: Good job my dear. You may rest now.
+	=> END 
+
+~ scene40parenthouse1
+1 week later...
+Lauren arrives at her parents house, and begins to describe her adventure at the manor, minus the vampire stuff.
+Lauren's Grandma: Oh Lauren sweetheart, I am proud of you for discovering what I thought we had lost about our family's history.
+Lauren: R-really? You're proud..?
+Lauren's Mom: I know we haven't been fair to you in the past, with your schooling and such.
+Lauren's Dad: I am proud of you honey. You brought our family back together.
+Lauren smiles with tears in her eyes.
+THE END
+=> END!

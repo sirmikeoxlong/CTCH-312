@@ -14,16 +14,12 @@ func _process(delta: float) -> void:
 
 
 func _on_main_door_key_body_entered(body: CharacterBody2D) -> void:
-	print("entered")
 	key1.entered = true
-	print(SingPlayer.inventory)
 
 
 func _on_main_door_key_body_exited(body: Node2D) -> void:
 	print("exited")
-	key1.entered = false
-
 
 func _on_main_door_key_pocketed() -> void:
 	key1.remove_from_scene()
-	key1.queue_free()
+	#key1.queue_free()

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bjd76wvhpf2t8"]
+
+[ext_resource type="Script" uid="uid://dyvwf3r4mb888" path="res://Scripts/Classes/class_puzzle.gd" id="1_uqr54"]
+
+[node name="Class Puzzle" type="Area2D" unique_id=1487168353]
+script = ExtResource("1_uqr54")
