@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dureghr3sqo2e"
+path="res://.godot/imported/Lore.dialogue-6244d1cfc95142708c1090f015d69c6b.tres"
+
+[deps]
+
+source_file="res://Dialogue/Lore.dialogue"
+dest_files=["res://.godot/imported/Lore.dialogue-6244d1cfc95142708c1090f015d69c6b.tres"]
+
+[params]
+
+defaults=true
