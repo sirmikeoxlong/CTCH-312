@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hue66445np52"]
 
-[ext_resource type="Script" uid="uid://dlmfo3vnhsmgy" path="res://Scripts/Scene Scripts/parlor_scene.gd" id="1_ego5m"]
+[ext_resource type="Script" path="res://Scripts/Scene Scripts/parlor_scene.gd" id="1_ego5m"]
 [ext_resource type="PackedScene" uid="uid://c4nf2hgc5ndn0" path="res://Scenes/environments/env_Parlor.tscn" id="2_ikq5d"]
 [ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="3_j7gci"]
 [ext_resource type="Texture2D" uid="uid://c2f73jo000gfb" path="res://Sprites/sprites/TopDownHouse_SmallItems.png" id="4_qicmb"]

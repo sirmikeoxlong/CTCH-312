@@ -13,6 +13,11 @@ var movement_enabled = true
 @onready var flashlight = $LightPivot/Area2D/Flashlight
 @onready var light = $LightPivot/Area2D/Flashlight/FlashbangPath
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var player_sfx: AudioStreamPlayer2D = %player_sfx
+@onready var footstep_timer: Timer = $player_sfx/footstep_timer
+@export var step_delay: float = 0.
+
+
 
 func player():
 	pass
@@ -26,12 +31,26 @@ func _physics_process(delta: float) -> void:
 		movement_direction()
 		player_animation()
 		
+		  # Check if the player is moving and on the floor
+		if velocity.length() > 0 :
+			if $player_sfx/footstep_timer.is_stopped():
+				$player_sfx/footstep_timer.start()
+		else:
+			$player_sfx/footstep_timer.stop()
+
+func _on_footstep_timer_timeout():
+	# Play the sound when the timer times out
+	if velocity.length() > 0 :
+			player_sfx.play()
+		
+		
 func player_movement():
 	if movement_enabled == true:
 		input_dir = Input.get_vector("left", "right", "up", "down")
 		velocity = input_dir * speed 
 	else:
 		speed = 0.0
+		
 	
 func movement_direction():
 	if Input.is_action_just_pressed("left"):
@@ -79,6 +98,7 @@ func _input(event) -> void:
 	if event.is_action_pressed("down"):
 		lightPivot.set_rotation_degrees(0)
 		lightPivot.set_position(Vector2(0.0, 26.0))
+		
 		
 # Handle running
 	if event.is_action_pressed("run"):
@@ -139,4 +159,5 @@ func _on_closet_1_body_exited(body: Node2D) -> void:
 	# Lauren should enter her flashlight animation (for that direction)
 	# The screen should immediately flash white
 	# Carmilla should enter her stunned state (8 seconds)
+		
 		

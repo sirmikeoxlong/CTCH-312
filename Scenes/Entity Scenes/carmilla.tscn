@@ -1,8 +1,27 @@
 [gd_scene format=3 uid="uid://ddaurrrwvdn47"]
 
 [ext_resource type="Script" uid="uid://24cqoufxc3m6" path="res://Scripts/carmilla.gd" id="1_fskwt"]
+[ext_resource type="AudioStream" uid="uid://s8e82g7l36ba" path="res://Sounds/L n C Footsteps 02.ogg" id="2_eqxqm"]
 [ext_resource type="Texture2D" uid="uid://uusmu7bbwy1v" path="res://Sprites/Juanna's Sprites/Untitled140_20260331173827.png" id="2_f0r47"]
 [ext_resource type="Texture2D" uid="uid://dxb4vhdkqv5uy" path="res://Sprites/Juanna's Sprites/Untitled136_20260330224420.png" id="3_lfmej"]
+[ext_resource type="AudioStream" uid="uid://chqt6lmjneees" path="res://Sounds/L n C Footsteps 01.ogg" id="3_ywx2v"]
+[ext_resource type="AudioStream" uid="uid://caasqsm7h26tl" path="res://Sounds/L n C Footsteps 03.ogg" id="4_u02ix"]
+[ext_resource type="AudioStream" uid="uid://olikc5fra0gq" path="res://Sounds/L n C Footsteps 04.ogg" id="5_ggb2o"]
+[ext_resource type="AudioStream" uid="uid://cggk0u8f3dmyy" path="res://Sounds/L n C Footsteps 05.ogg" id="6_7pl62"]
+[ext_resource type="AudioStream" uid="uid://d060nwlkbb6tw" path="res://Sounds/L n C Footsteps 06.ogg" id="7_4io6j"]
+[ext_resource type="AudioStream" uid="uid://d1ljaoxxhtokl" path="res://Sounds/L n C Footsteps 07.ogg" id="8_bjahg"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_noky8"]
+random_pitch = 1.123435
+random_volume_offset_db = 2.9
+streams_count = 7
+stream_0/stream = ExtResource("2_eqxqm")
+stream_1/stream = ExtResource("3_ywx2v")
+stream_2/stream = ExtResource("4_u02ix")
+stream_3/stream = ExtResource("5_ggb2o")
+stream_4/stream = ExtResource("6_7pl62")
+stream_5/stream = ExtResource("7_4io6j")
+stream_6/stream = ExtResource("8_bjahg")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n1dh6"]
 atlas = ExtResource("2_f0r47")
@@ -225,6 +244,17 @@ fill_to = Vector2(0.96, 0.125)
 [node name="Carmilla" type="CharacterBody2D" unique_id=140519432]
 script = ExtResource("1_fskwt")
 
+[node name="player_sfx" type="AudioStreamPlayer2D" parent="." unique_id=1247149017]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_noky8")
+volume_db = 10.324
+attenuation = 1.9318731
+bus = &"sfx"
+playback_type = 1
+
+[node name="footstep_timer" type="Timer" parent="player_sfx" unique_id=228417152]
+wait_time = 0.15
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1412246481]
 sprite_frames = SubResource("SpriteFrames_y4qxr")
 animation = &"down"
@@ -246,5 +276,6 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_f0r47")
 texture_scale = 2.0
 
+[connection signal="timeout" from="player_sfx/footstep_timer" to="." method="_on_footstep_timer_timeout"]
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]

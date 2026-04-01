@@ -2,6 +2,25 @@
 
 [ext_resource type="Script" uid="uid://c3ubxpp10k6x6" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://d10h171ru05gu" path="res://Sprites/Juanna's Sprites/Lauren_walkingsprite_sheet_final.png" id="2_tenkg"]
+[ext_resource type="AudioStream" uid="uid://chqt6lmjneees" path="res://Sounds/L n C Footsteps 01.ogg" id="3_lgk7d"]
+[ext_resource type="AudioStream" uid="uid://s8e82g7l36ba" path="res://Sounds/L n C Footsteps 02.ogg" id="4_k6inr"]
+[ext_resource type="AudioStream" uid="uid://caasqsm7h26tl" path="res://Sounds/L n C Footsteps 03.ogg" id="5_y3174"]
+[ext_resource type="AudioStream" uid="uid://olikc5fra0gq" path="res://Sounds/L n C Footsteps 04.ogg" id="6_jnj1b"]
+[ext_resource type="AudioStream" uid="uid://cggk0u8f3dmyy" path="res://Sounds/L n C Footsteps 05.ogg" id="7_w72bm"]
+[ext_resource type="AudioStream" uid="uid://d060nwlkbb6tw" path="res://Sounds/L n C Footsteps 06.ogg" id="7_y3174"]
+[ext_resource type="AudioStream" uid="uid://d1ljaoxxhtokl" path="res://Sounds/L n C Footsteps 07.ogg" id="8_jnj1b"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2uho5"]
+random_pitch = 1.123435
+random_volume_offset_db = 2.9
+streams_count = 7
+stream_0/stream = ExtResource("4_k6inr")
+stream_1/stream = ExtResource("3_lgk7d")
+stream_2/stream = ExtResource("5_y3174")
+stream_3/stream = ExtResource("6_jnj1b")
+stream_4/stream = ExtResource("7_w72bm")
+stream_5/stream = ExtResource("7_y3174")
+stream_6/stream = ExtResource("8_jnj1b")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r75iy"]
 atlas = ExtResource("2_tenkg")
@@ -35,10 +54,6 @@ region = Rect2(428, 0, 214, 312)
 atlas = ExtResource("2_tenkg")
 region = Rect2(642, 0, 214, 312)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w72bm"]
-atlas = ExtResource("2_tenkg")
-region = Rect2(856, 0, 214, 312)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s20c"]
 atlas = ExtResource("2_tenkg")
 region = Rect2(0, 312, 214, 312)
@@ -54,10 +69,6 @@ region = Rect2(428, 312, 214, 312)
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1h8r"]
 atlas = ExtResource("2_tenkg")
 region = Rect2(642, 312, 214, 312)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ilbab"]
-atlas = ExtResource("2_tenkg")
-region = Rect2(856, 312, 214, 312)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_phyf0"]
 atlas = ExtResource("2_tenkg")
@@ -75,10 +86,6 @@ region = Rect2(428, 624, 214, 312)
 atlas = ExtResource("2_tenkg")
 region = Rect2(642, 624, 214, 312)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0a0cm"]
-atlas = ExtResource("2_tenkg")
-region = Rect2(856, 624, 214, 312)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5v0ig"]
 atlas = ExtResource("2_tenkg")
 region = Rect2(0, 936, 214, 312)
@@ -94,10 +101,6 @@ region = Rect2(428, 936, 214, 312)
 [sub_resource type="AtlasTexture" id="AtlasTexture_118co"]
 atlas = ExtResource("2_tenkg")
 region = Rect2(642, 936, 214, 312)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kny0j"]
-atlas = ExtResource("2_tenkg")
-region = Rect2(856, 936, 214, 312)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qqcod"]
 animations = [{
@@ -145,9 +148,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jnj1b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w72bm")
 }],
 "loop": true,
 "name": &"Walking Down",
@@ -165,9 +165,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s1h8r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ilbab")
 }],
 "loop": true,
 "name": &"Walking Left",
@@ -185,9 +182,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ejjhy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0a0cm")
 }],
 "loop": true,
 "name": &"Walking Right",
@@ -205,9 +199,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_118co")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kny0j")
 }],
 "loop": true,
 "name": &"Walking Up",
@@ -239,15 +230,58 @@ gradient = SubResource("Gradient_6t5aa")
 fill_from = Vector2(0.4866469, 0.8991098)
 fill_to = Vector2(0.5074184, 0)
 
+[sub_resource type="Animation" id="Animation_lgk7d"]
+resource_name = "Walking"
+length = 10.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_sfx")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k6inr"]
+_data = {
+&"Walking": SubResource("Animation_lgk7d")
+}
+
 [node name="Lauren" type="CharacterBody2D" unique_id=1222447786 groups=["player"]]
 script = ExtResource("1_cvnsp")
+
+[node name="player_sfx" type="AudioStreamPlayer2D" parent="." unique_id=80923421]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_2uho5")
+volume_db = 10.324
+attenuation = 1.9318731
+bus = &"sfx"
+playback_type = 1
+
+[node name="footstep_timer" type="Timer" parent="player_sfx" unique_id=289095111]
+wait_time = 0.35
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1590759023]
 y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.15284361, 0.13907285)
 sprite_frames = SubResource("SpriteFrames_qqcod")
-animation = &"Walking Up"
+animation = &"Walking Down"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=102025890]
@@ -282,3 +316,8 @@ offset = Vector2(-0.12, 0.18)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=173087138]
 zoom = Vector2(5, 5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=874741190]
+libraries/ = SubResource("AnimationLibrary_k6inr")
+
+[connection signal="timeout" from="player_sfx/footstep_timer" to="." method="_on_footstep_timer_timeout"]
