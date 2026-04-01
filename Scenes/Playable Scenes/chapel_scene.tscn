@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c4b5asqafi1fr"]
 
 [ext_resource type="PackedScene" uid="uid://dj38ugwb5k1yf" path="res://Scenes/environments/env_chapel.tscn" id="1_bsle1"]
-[ext_resource type="Script" uid="uid://ysdyd6pahx61" path="res://Scripts/Scene Scripts/chapel_scene.gd" id="1_f5eag"]
+[ext_resource type="Script" path="res://Scripts/Scene Scripts/chapel_scene.gd" id="1_f5eag"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_5gyh3"]
 [ext_resource type="Script" uid="uid://bcyjasak166ik" path="res://Scenes/chapel/portal_chapel.gd" id="3_r5y37"]
 [ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="4_1ci17"]
