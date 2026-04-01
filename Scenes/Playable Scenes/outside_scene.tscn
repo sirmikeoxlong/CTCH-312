@@ -46,6 +46,8 @@ key = NodePath("../Main Door Key")
 
 [node name="Main Door Key" parent="." unique_id=1086952445 instance=ExtResource("6_kv6y2")]
 position = Vector2(-9, -4)
+id = "main_door_key"
+pickup_message = "scene3gazebo2"
 
 [node name="Sprite2D2" type="Sprite2D" parent="Main Door Key" unique_id=1693780998]
 texture = ExtResource("7_jl6lp")

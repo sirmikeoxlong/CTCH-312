@@ -1,10 +1,37 @@
 [gd_scene format=3 uid="uid://33eumvq2ohvu"]
 
+[ext_resource type="Script" uid="uid://hkxnow41g5wl" path="res://Scripts/Scene Scripts/f_2_library_scene.gd" id="1_186q5"]
 [ext_resource type="PackedScene" uid="uid://bsl480m5sh3sj" path="res://Scenes/environments/env_f_2_library.tscn" id="1_uxnrv"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_77tw0"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="3_77tw0"]
+[ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="5_5a3ix"]
+[ext_resource type="Texture2D" uid="uid://b0xf8ms2lue40" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Tools.png" id="6_c2gcy"]
+[ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="7_s130n"]
+[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="8_mloce"]
+[ext_resource type="Texture2D" uid="uid://e4kha20n1f77" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Esoteric.png" id="9_5a3ix"]
+
+[sub_resource type="Gradient" id="Gradient_nw6sa"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_77tw0"]
+gradient = SubResource("Gradient_nw6sa")
+fill_from = Vector2(0.5099715, 0.7891738)
+fill_to = Vector2(0.51282054, 0)
+
+[sub_resource type="Gradient" id="Gradient_5hgog"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0fwj2"]
+gradient = SubResource("Gradient_5hgog")
+fill_from = Vector2(0.5099715, 0.7891738)
+fill_to = Vector2(0.51282054, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_flwdo"]
+radius = 25.019993
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c2gcy"]
+radius = 25.019993
 
 [node name="F2_library_scene" type="Node2D" unique_id=962146672]
+script = ExtResource("1_186q5")
 
 [node name="env_F2_library" parent="." unique_id=319555236 instance=ExtResource("1_uxnrv")]
 position = Vector2(-25, -257)
@@ -22,26 +49,132 @@ color = Color(0.44119266, 0.5500828, 0.8660146, 1)
 scale = Vector2(0.99294823, 1)
 polygon = PackedVector2Array(-183.29254, -258, -28.198853, -258, -26.184649, -255, 9.063917, -255, 11.078121, -256, 166.17181, -257, 167.17891, -90, 15.106528, -90, 15.106528, 1, 65.461624, 2, 65.461624, 27, 16.11363, 27, 17.120731, 144, 263.8607, 144, 263.8607, 202, 248.75417, 202, 248.75417, 218, 208.4701, 219, 207.463, 205, 114.809616, 205, 114.809616, 219, 72.51134, 220, 73.51844, 204, -182.28545, 205, -183.29254, 219, -223.57661, 220, -224.58372, 205, -284.00275, 205, -284.00275, 144, -33.234364, 143, -33.234364, 27, -83.589455, 28, -81.57526, 2, -34.241463, 1, -32.22726, -90, -182.28545, -91, -182.28545, -256, -476.3592, -120, -517.6504, 122, -314.2158, 307, -16.11363, 360, 292.05954, 306, 348.45724, 115, 390.75552, 1, 311.1945, -171, 233.64764, -425, -22.156242, -507, -228.61214, -401, -241.70445, -298, -228.61214, -264)
 
-[node name="ClassRoomTeleport" parent="." unique_id=727452976 instance=ExtResource("3_77tw0")]
+[node name="Lighting" type="Node2D" parent="." unique_id=896085662]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting" unique_id=383461200]
+position = Vector2(-95, -265.00003)
+scale = Vector2(0.1999988, 1.8)
+color = Color(0.90092367, 0.4718743, 0.42457274, 1)
+texture = SubResource("GradientTexture2D_77tw0")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lighting" unique_id=1914562010]
+position = Vector2(103, -264)
+scale = Vector2(0.1999988, 1.8)
+color = Color(0.90092367, 0.4718743, 0.42457274, 1)
+texture = SubResource("GradientTexture2D_77tw0")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lighting" unique_id=1398821495]
+position = Vector2(-3.9999998, -265)
+scale = Vector2(0.1999988, 1.8)
+color = Color(0.4132972, 0.5412858, 0.9723869, 1)
+texture = SubResource("GradientTexture2D_0fwj2")
+
+[node name="Doors" type="Node2D" parent="." unique_id=392325371]
+
+[node name="To Library F1" parent="Doors" unique_id=727452976 instance=ExtResource("3_77tw0")]
 position = Vector2(-209, -208)
 teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
+forbidden_message = "doorlock"
 
-[node name="ClassRoomTeleport2" parent="." unique_id=2086894804 instance=ExtResource("3_77tw0")]
+[node name="Bedroom 1 entrance 2" parent="Doors" unique_id=2086894804 instance=ExtResource("3_77tw0")]
 position = Vector2(-137, 78)
 teleport = "res://Scenes/Playable Scenes/1_bedroom_scene.tscn"
+unlocked = true
+forbidden_message = "doorlock"
 
-[node name="ClassRoomTeleport3" parent="." unique_id=310440998 instance=ExtResource("3_77tw0")]
+[node name="Bedroom 2 entrance 2" parent="Doors" unique_id=310440998 instance=ExtResource("3_77tw0")]
 position = Vector2(16, 77)
 teleport = "res://Scenes/Playable Scenes/2_bedroom_scene.tscn"
+unlocked = true
+forbidden_message = "doorlock"
 
-[node name="ClassRoomTeleport4" parent="." unique_id=1680612408 instance=ExtResource("3_77tw0")]
+[node name="To Bedroom 1" parent="Doors" unique_id=1680612408 instance=ExtResource("3_77tw0")]
 position = Vector2(-212, 184)
 teleport = "res://Scenes/Playable Scenes/1_bedroom_scene.tscn"
+unlocked = true
+forbidden_message = "doorlock"
 
-[node name="ClassRoomTeleport5" parent="." unique_id=1789752390 instance=ExtResource("3_77tw0")]
+[node name="To Study" parent="Doors" unique_id=1789752390 node_paths=PackedStringArray("key") instance=ExtResource("3_77tw0")]
 position = Vector2(-254, 286)
 teleport = "res://Scenes/Playable Scenes/study_scene.tscn"
+key = NodePath("../../Lockpick")
+forbidden_message = "doorlock"
 
-[node name="ClassRoomTeleport6" parent="." unique_id=1691242732 instance=ExtResource("3_77tw0")]
+[node name="To Carmilla\'s Room" parent="Doors" unique_id=1691242732 instance=ExtResource("3_77tw0")]
 position = Vector2(41, 285)
 teleport = "res://Scenes/Playable Scenes/carmillasroom_scene.tscn"
+forbidden_message = "doorlock"
+
+[node name="To Bedroom 2 entrance 1" parent="Doors" unique_id=1656883946 instance=ExtResource("3_77tw0")]
+position = Vector2(93, 195)
+teleport = "res://Scenes/Playable Scenes/2_bedroom_scene.tscn"
+unlocked = true
+forbidden_message = "doorlock"
+
+[node name="To F2 Bathroom" parent="Doors" unique_id=1468689881 instance=ExtResource("3_77tw0")]
+position = Vector2(174, 274)
+teleport = "res://Scenes/Playable Scenes/f_2_bathroom_scene.tscn"
+forbidden_message = "doorlock"
+
+[node name="Lockpick" parent="." unique_id=1015122729 instance=ExtResource("5_5a3ix")]
+position = Vector2(-465, 281)
+id = "lockpick"
+pickup_message = "scene1forest2"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Lockpick" unique_id=1558479779]
+texture = ExtResource("6_c2gcy")
+region_enabled = true
+region_rect = Rect2(68, 178, 7, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lockpick" unique_id=775533348]
+shape = SubResource("CircleShape2D_flwdo")
+script = ExtResource("7_s130n")
+
+[node name="Label" type="Label" parent="Lockpick" unique_id=1003883883]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_mloce")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Library Book 3" parent="." unique_id=658571419 instance=ExtResource("5_5a3ix")]
+position = Vector2(-17, -200)
+id = "lib_book_3"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Library Book 3" unique_id=97553616]
+texture = ExtResource("9_5a3ix")
+region_enabled = true
+region_rect = Rect2(0, 162, 15, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Library Book 3" unique_id=1623736416]
+shape = SubResource("CircleShape2D_c2gcy")
+script = ExtResource("7_s130n")
+
+[node name="Label" type="Label" parent="Library Book 3" unique_id=706839187]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_mloce")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1

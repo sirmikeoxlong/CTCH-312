@@ -51,7 +51,3 @@ func remove_from_scene():
 	Global.items.erase(id)
 	queue_free()
 	# remove from the scene
-	
-	
-
-	

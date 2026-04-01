@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="3_j7gci"]
 [ext_resource type="Texture2D" uid="uid://c2f73jo000gfb" path="res://Sprites/sprites/TopDownHouse_SmallItems.png" id="4_qicmb"]
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="5_bds3v"]
-[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="6_gtbdw"]
 [ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="7_d1lcf"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="8_ow1mq"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="9_xo5wk"]
@@ -39,24 +38,6 @@ region_rect = Rect2(36, 22, 9, 9)
 shape = SubResource("CircleShape2D_0hgf8")
 script = ExtResource("5_bds3v")
 
-[node name="Label" type="Label" parent="Ballroom Paper" unique_id=334409004]
-modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
-z_index = 20
-texture_filter = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -62.0
-offset_top = 11.0
-offset_right = 59.0
-offset_bottom = 50.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("6_gtbdw")
-theme_override_font_sizes/font_size = 10
-text = "[Enter] To Interact"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Dialogue" type="Node2D" parent="." unique_id=1028391491]
 position = Vector2(-7, 35)
 
@@ -83,6 +64,9 @@ unlocked = true
 position = Vector2(-123, -44)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=173428673]
+color = Color(0.44119266, 0.5500828, 0.8660146, 1)
 
 [connection signal="body_entered" from="Ballroom Paper" to="." method="_on_ballroom_paper_body_entered"]
 [connection signal="pocketed" from="Ballroom Paper" to="." method="_on_ballroom_paper_pocketed"]

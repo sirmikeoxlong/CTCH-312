@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://oksiqc3bhq2w"]
 
 [ext_resource type="PackedScene" uid="uid://bpw5iowtgtr5f" path="res://Scenes/environments/env_carmillasroom.tscn" id="1_s51ua"]
+[ext_resource type="Script" uid="uid://5wlmk82ca6ip" path="res://Scripts/Scene Scripts/carmillasroom_scene.gd" id="1_vjl3u"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_5rvrc"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="3_5rvrc"]
+[ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="4_bpqc3"]
+[ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="6_8df38"]
+[ext_resource type="Texture2D" uid="uid://e4kha20n1f77" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Esoteric.png" id="7_0ki4e"]
+[ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="8_5xige"]
+[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="9_il6a2"]
 
 [sub_resource type="Gradient" id="Gradient_bpqc3"]
 
@@ -10,7 +16,15 @@
 gradient = SubResource("Gradient_bpqc3")
 fill_from = Vector2(0.27920228, 0.7293447)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vjl3u"]
+radius = 15.0
+height = 86.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tn5m8"]
+radius = 42.0119
+
 [node name="carmillasroom_scene" type="Node2D" unique_id=261969615]
+script = ExtResource("1_vjl3u")
 
 [node name="env_carmillasroom" parent="." unique_id=62720326 instance=ExtResource("1_s51ua")]
 position = Vector2(-111, 28)
@@ -20,27 +34,48 @@ scale = Vector2(0.68000066, 0.63999724)
 position = Vector2(-167, -86)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1136904234]
-color = Color(0.1168422, 0.33254594, 0.43403766, 1)
+color = Color(0.2705868, 0.5876851, 0.81755114, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="CanvasModulate" unique_id=1709428593]
 position = Vector2(-142, 187.00002)
 rotation = 3.1390944
 scale = Vector2(1.0318675, 0.81323725)
-color = Color(0.1986548, 0.53293043, 0.7988846, 1)
+color = Color(0.8521892, 0.5946987, 0.62683237, 1)
 texture = SubResource("GradientTexture2D_vjl3u")
 
 [node name="PointLight2D2" type="PointLight2D" parent="CanvasModulate" unique_id=978756846]
 position = Vector2(7.9999847, 186)
 rotation = 3.1390944
 scale = Vector2(1.0318675, 0.81323725)
-color = Color(0.1986548, 0.53293043, 0.7988846, 1)
+color = Color(0.8521892, 0.5946987, 0.62683237, 1)
 texture = SubResource("GradientTexture2D_vjl3u")
 
 [node name="PointLight2D3" type="PointLight2D" parent="CanvasModulate" unique_id=2073123214]
 position = Vector2(157, 186.99998)
 rotation = 3.1390944
 scale = Vector2(1.0318675, 0.81323725)
-color = Color(0.1986548, 0.53293043, 0.7988846, 1)
+color = Color(0.8521892, 0.5946987, 0.62683237, 1)
+texture = SubResource("GradientTexture2D_vjl3u")
+
+[node name="PointLight2D4" type="PointLight2D" parent="CanvasModulate" unique_id=1121550686]
+position = Vector2(-149.00002, 261)
+rotation = 3.1390944
+scale = Vector2(-0.30008554, 0.59984934)
+color = Color(0.8521892, 0.5946987, 0.62683237, 1)
+texture = SubResource("GradientTexture2D_vjl3u")
+
+[node name="PointLight2D5" type="PointLight2D" parent="CanvasModulate" unique_id=505896541]
+position = Vector2(12.999985, 260)
+rotation = 3.1390944
+scale = Vector2(-0.30008554, 0.59984934)
+color = Color(0.8521892, 0.5946987, 0.62683237, 1)
+texture = SubResource("GradientTexture2D_vjl3u")
+
+[node name="PointLight2D6" type="PointLight2D" parent="CanvasModulate" unique_id=1569205930]
+position = Vector2(162.99998, 260)
+rotation = 3.1390944
+scale = Vector2(-0.30008554, 0.59984934)
+color = Color(0.8521892, 0.5946987, 0.62683237, 1)
 texture = SubResource("GradientTexture2D_vjl3u")
 
 [node name="bg_collision" type="StaticBody2D" parent="." unique_id=1265171759]
@@ -48,10 +83,60 @@ texture = SubResource("GradientTexture2D_vjl3u")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=22691681]
 polygon = PackedVector2Array(-220, -59, -220, -75, -77, -74, -74, -71, -21, -71, -19, -76, -10, -76, -6, -72, 43, -72, 45, -77, 56, -77, 58, -71, 111, -71, 114, -74, 248, -75, 249, -42, 249, -13, 228, -13, 226, -43, 140, -43, 140, 58, 202, 57, 207, 259, -219, 260, -220, -58, -440, 48, -478, 226, -311, 419, 142, 394, 158, 550, 585, 113, 473, -218, -329, -307, -358, -197, -357, -152, -289, -97)
 
-[node name="ClassRoomTeleport" parent="." unique_id=727452976 instance=ExtResource("3_5rvrc")]
+[node name="To F2 Library Hall" parent="." unique_id=727452976 instance=ExtResource("3_5rvrc")]
 position = Vector2(-224, -23)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
+forbidden_message = "carmillajournal"
 
 [node name="ClassRoomTeleport2" parent="." unique_id=303715587 instance=ExtResource("3_5rvrc")]
 position = Vector2(196, 18)
 teleport = "res://Scenes/Playable Scenes/pantry_scene.tscn"
+
+[node name="Dialogue" type="Node2D" parent="." unique_id=1209335487]
+position = Vector2(-424, -430)
+
+[node name="Enter Carmilla\'s Room" parent="Dialogue" unique_id=359445996 instance=ExtResource("4_bpqc3")]
+position = Vector2(571, 321)
+id = "enter_carmilla_room_firsttime"
+RoomMessage = "scene27carmillaroom1"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Dialogue/Enter Carmilla\'s Room" unique_id=936253602]
+position = Vector2(5.9999995, 57.999996)
+rotation = 0.012639626
+scale = Vector2(1.0040979, 1.0000159)
+shape = SubResource("CapsuleShape2D_vjl3u")
+
+[node name="Carmilla\'s Diary" parent="." unique_id=1015122729 instance=ExtResource("6_8df38")]
+position = Vector2(25, 41)
+id = "carmillas_diary"
+pickup_message = "scene27carmillaroom2"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Carmilla\'s Diary" unique_id=1931558096]
+texture = ExtResource("7_0ki4e")
+region_enabled = true
+region_rect = Rect2(0, 162, 15, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Carmilla\'s Diary" unique_id=1303236534]
+shape = SubResource("CircleShape2D_tn5m8")
+script = ExtResource("8_5xige")
+
+[node name="Label" type="Label" parent="Carmilla\'s Diary" unique_id=1940409080]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_il6a2")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Carmilla\'s Diary" to="." method="_on_carmillas_diary_body_entered"]
+[connection signal="pocketed" from="Carmilla\'s Diary" to="." method="_on_carmillas_diary_pocketed"]

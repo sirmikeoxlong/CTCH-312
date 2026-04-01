@@ -1,10 +1,19 @@
 [gd_scene format=3 uid="uid://sp4lobttuofx"]
 
+[ext_resource type="Script" uid="uid://bo60acan8o3nx" path="res://Scripts/Scene Scripts/2_bedroom_scene.gd" id="1_7a1rt"]
 [ext_resource type="PackedScene" uid="uid://3w440ilb4h41" path="res://Scenes/environments/env_2_bedroom.tscn" id="1_xokou"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_qqts0"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="3_qqts0"]
+[ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="5_sqg00"]
+[ext_resource type="Texture2D" uid="uid://b0xf8ms2lue40" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Tools.png" id="6_b816f"]
+[ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="7_42875"]
+[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="8_grb6j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ns3tc"]
+radius = 25.019993
 
 [node name="2_bedroom_scene" type="Node2D" unique_id=162409078]
+script = ExtResource("1_7a1rt")
 
 [node name="Environmental Sorting" type="Node2D" parent="." unique_id=542797928]
 
@@ -25,6 +34,42 @@ position = Vector2(-1, -1)
 scale = Vector2(0.7112066, 0.74963623)
 color = Color(0.44119266, 0.5500828, 0.8660146, 1)
 
-[node name="ClassRoomTeleport" parent="." unique_id=727452976 instance=ExtResource("3_qqts0")]
+[node name="To Library F2" parent="." unique_id=727452976 instance=ExtResource("3_qqts0")]
 position = Vector2(-203, 116)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
+unlocked = true
+
+[node name="Lockpick" parent="." unique_id=1015122729 instance=ExtResource("5_sqg00")]
+position = Vector2(18, 24)
+id = "lockpick"
+pickup_message = "scene1forest2"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Lockpick" unique_id=1630497088]
+texture = ExtResource("6_b816f")
+region_enabled = true
+region_rect = Rect2(68, 178, 7, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lockpick" unique_id=883192111]
+shape = SubResource("CircleShape2D_ns3tc")
+script = ExtResource("7_42875")
+
+[node name="Label" type="Label" parent="Lockpick" unique_id=837281394]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_grb6j")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Lockpick" to="." method="_on_lockpick_body_entered"]
+[connection signal="pocketed" from="Lockpick" to="." method="_on_lockpick_pocketed"]

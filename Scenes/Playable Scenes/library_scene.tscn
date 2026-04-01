@@ -3,7 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://tqxn6clkhth7" path="res://Scenes/environments/env_library.tscn" id="1_uykyt"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_5x4c1"]
 [ext_resource type="Script" uid="uid://c1rs0uj6kkvku" path="res://Scenes/library/portals_library.gd" id="3_bujhp"]
-[ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="4_cs4en"]
+[ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="4_cs4en"]
+[ext_resource type="Texture2D" uid="uid://e4kha20n1f77" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Esoteric.png" id="5_kbvjs"]
+[ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="6_g0o87"]
+[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="7_al5vg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hkdju"]
 radius = 18.110771
@@ -24,6 +27,9 @@ radius = 14.035668
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_061c0"]
 radius = 12.0
 height = 46.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tktcv"]
+radius = 25.019993
 
 [node name="library_scene" type="Node2D" unique_id=1027523911]
 position = Vector2(0, -1)
@@ -73,8 +79,67 @@ shape = SubResource("CircleShape2D_ydier")
 position = Vector2(127, -43)
 shape = SubResource("CapsuleShape2D_061c0")
 
-[node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("4_cs4en")]
-position = Vector2(-162, -44)
+[node name="Library Book 1" parent="." unique_id=1015122729 instance=ExtResource("4_cs4en")]
+position = Vector2(156, 66)
+id = "lib_book_1"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Library Book 1" unique_id=1880658040]
+texture = ExtResource("5_kbvjs")
+region_enabled = true
+region_rect = Rect2(0, 162, 15, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Library Book 1" unique_id=836189184]
+shape = SubResource("CircleShape2D_tktcv")
+script = ExtResource("6_g0o87")
+
+[node name="Label" type="Label" parent="Library Book 1" unique_id=892110090]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_al5vg")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Library Book 2" parent="." unique_id=2028402636 instance=ExtResource("4_cs4en")]
+position = Vector2(-90, -9)
+id = "lib_book_2"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Library Book 2" unique_id=1818118937]
+texture = ExtResource("5_kbvjs")
+region_enabled = true
+region_rect = Rect2(0, 162, 15, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Library Book 2" unique_id=616718169]
+shape = SubResource("CircleShape2D_tktcv")
+script = ExtResource("6_g0o87")
+
+[node name="Label" type="Label" parent="Library Book 2" unique_id=1916724241]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_al5vg")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="Portals" to="Portals" method="_on_body_entered"]
 [connection signal="body_exited" from="Portals" to="Portals" method="_on_body_exited"]

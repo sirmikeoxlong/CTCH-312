@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var boot_room_key: cutscene_interactables = $"Boot Room Key"
+@onready var to_kitchen: RoomTeleport = $"To Kitchen"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +12,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func unloack_all_doors():
+	if Global.staff_room_key_collect == true:
+		to_kitchen.unlocked = true
 
 func _on_boot_room_key_body_entered(body: CharacterBody2D) -> void:
 	boot_room_key.entered = true

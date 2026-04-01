@@ -7,6 +7,7 @@ extends Node2D
 
 # Door Paths
 @onready var bootroom: RoomTeleport = $Doors/Bootroom
+@onready var to_library: RoomTeleport = $"Doors/To Library"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,6 +17,11 @@ func _ready() -> void:
 func unloack_all_doors():
 	if Global.boot_key_collect == true:
 		bootroom.unlocked = true
+	if Global.lib_key1_collect == true & Global.lib_key2_collect == true & Global.lib_key3_collect == true:
+		to_library.unlocked == true
+
+func screen_shake_animation():
+	pass
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,3 +49,7 @@ func _on_pickup_body_entered(body: Node2D) -> void:
 
 func _on_pickup_pocketed() -> void:
 	key_1.remove_from_scene()
+
+
+func _on_to_library_body_entered(body: CharacterBody2D) -> void:
+	pass

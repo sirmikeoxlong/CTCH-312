@@ -13,10 +13,10 @@
 [ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="10_5xqpn"]
 [ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="11_tkr8p"]
 
-[sub_resource type="Gradient" id="Gradient_nw6sa"]
+[sub_resource type="Gradient" id="Gradient_lx5np"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_o8okl"]
-gradient = SubResource("Gradient_nw6sa")
+gradient = SubResource("Gradient_lx5np")
 fill_from = Vector2(0.5099715, 0.7891738)
 fill_to = Vector2(0.51282054, 0)
 
@@ -42,7 +42,7 @@ script = ExtResource("1_lgo1s")
 color = Color(0.44393474, 0.6622654, 0.9536515, 1)
 
 [node name="Grand Hall" parent="Environmental Sorting" unique_id=950251797 instance=ExtResource("1_nw6sa")]
-position = Vector2(-58, -462)
+position = Vector2(-54, -461.99997)
 
 [node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("2_o8okl")]
 position = Vector2(-178, -419)
@@ -54,27 +54,27 @@ visible = false
 polygon = PackedVector2Array(-206, -419, -166, -420, -166, -415, -161, -411, -147, -411, -141, -416, -141, -420, -41, -420, -41, -415, -37, -412, -22, -412, -17, -414, -17, -420, 17, -420, 17, -320, 11, -320, 11, -296, 15, -296, 17, -237, 41, -237, 41, -212, 41, -160, -41, -161, -41, -138, 291, -136, 292, -71, 92, -72, 92, -95, -47, -96, -48, -55, 66, -53, 66, 104, -67, 106, -67, 154, -67, 154, -116, 154, -116, 106, -301, 104, -300, 70, -250, 70, -248, -56, -236, -55, -143, -55, -142, -96, -275, -94, -275, -74, -465, -71, -464, -138, -149, -138, -149, -163, -222, -162, -223, -230, -201, -230, -198, -295, -192, -296, -193, -320, -198, -321, -198, -400, -199, -418, -379, -350, -547, -196, -527, 104, -352, 198, 160, 204, 380, -42, 360, -170, 286, -259, 169, -420, 79, -538, -305, -528, -307, -436)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=452849513]
-position = Vector2(-95, -442.00003)
+position = Vector2(-92, -438.00003)
 scale = Vector2(0.1999988, 1.8)
 color = Color(0.90092367, 0.4718743, 0.42457274, 1)
 texture = SubResource("GradientTexture2D_o8okl")
 
 [node name="PointLight2D2" type="PointLight2D" parent="." unique_id=236502513]
-position = Vector2(-129, -433)
+position = Vector2(-125, -426.00003)
 scale = Vector2(0.1999988, 1.8)
 color = Color(0.4132972, 0.5412858, 0.9723869, 1)
 texture = SubResource("GradientTexture2D_o8okl")
 
 [node name="PointLight2D3" type="PointLight2D" parent="." unique_id=895078424]
-position = Vector2(-62, -432.00003)
+position = Vector2(-57, -425)
 scale = Vector2(0.1999988, 1.8)
 color = Color(0.48974895, 0.6093262, 0.98005384, 1)
 texture = SubResource("GradientTexture2D_o8okl")
 
 [node name="Doors" type="Node2D" parent="." unique_id=668105722]
 
-[node name="ClassRoomTeleport" parent="Doors" unique_id=727452976 instance=ExtResource("3_o8okl")]
-position = Vector2(-231, -373)
+[node name="To Library" parent="Doors" unique_id=727452976 instance=ExtResource("3_o8okl")]
+position = Vector2(-227, -372)
 teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
 
 [node name="ClassRoomTeleport2" parent="Doors" unique_id=594815162 instance=ExtResource("3_o8okl")]
@@ -114,28 +114,36 @@ teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
 key = NodePath("../../Collectable Items (offscreen)/Boot Room Key")
 forbidden_message = "doorlock"
 
-[node name="ClassRoomTeleport8" parent="Doors" unique_id=2129919375 instance=ExtResource("3_o8okl")]
+[node name="To Storage Room" parent="Doors" unique_id=2129919375 instance=ExtResource("3_o8okl")]
 position = Vector2(-488, -5)
-teleport = "res://Scenes/Playable Scenes/outside_scene.tscn"
+teleport = "res://Scenes/Playable Scenes/storage_room_scene.tscn"
 unlocked = true
 
-[node name="ClassRoomTeleport9" parent="Doors" unique_id=1477209996 instance=ExtResource("3_o8okl")]
+[node name="To Parlor" parent="Doors" unique_id=1477209996 instance=ExtResource("3_o8okl")]
 position = Vector2(68, -2)
-teleport = "res://Scenes/Playable Scenes/outside_scene.tscn"
+teleport = "res://Scenes/Playable Scenes/parlor_scene.tscn"
+unlocked = true
 forbidden_message = "doorlock"
 
 [node name="ClassRoomTeleport10" parent="Doors" unique_id=811835521 instance=ExtResource("3_o8okl")]
 position = Vector2(145, -1)
-teleport = "res://Scenes/Playable Scenes/outside_scene.tscn"
+teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
+unlocked = true
+
+[node name="Bathroom" parent="Doors" unique_id=1908018243 instance=ExtResource("3_o8okl")]
+position = Vector2(195, -3)
+teleport = "res://Scenes/Playable Scenes/f_1_bathroom_scene.tscn"
 unlocked = true
 
 [node name="ClassRoomTeleport11" parent="Doors" unique_id=1488737441 instance=ExtResource("3_o8okl")]
-position = Vector2(-279, 24)
+position = Vector2(-315, -52)
+scale = Vector2(1.8077381, 0.27740824)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 forbidden_message = "scene6hall1"
 
 [node name="ClassRoomTeleport12" parent="Doors" unique_id=401403867 instance=ExtResource("3_o8okl")]
-position = Vector2(-10, 26)
+position = Vector2(-71, -48)
+scale = Vector2(2.2399988, 0.40000063)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 forbidden_message = "scene6hall1"
 
@@ -151,11 +159,12 @@ position = Vector2(-91, 96)
 RoomMessage = "scene5enter1"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Dialogue/d_scene5enter1" unique_id=641975107]
-position = Vector2(2, -8)
+position = Vector2(4, -10)
 rotation = 1.5778282
 shape = SubResource("CapsuleShape2D_lgo1s")
 
 [node name="Library Door Puzzle" parent="." unique_id=1487168353 node_paths=PackedStringArray("item_puzzle_pieces") instance=ExtResource("6_x36kx")]
+visible = false
 position = Vector2(-152, -397)
 item_puzzle_pieces = [NodePath("../Key 1")]
 event = "scene13librarydoor1"
@@ -166,6 +175,7 @@ position = Vector2(-25, -19)
 shape = SubResource("RectangleShape2D_eo0va")
 
 [node name="Collectable Items (offscreen)" type="Node2D" parent="." unique_id=874164551]
+position = Vector2(-406, 96)
 
 [node name="Library Door Key 2" parent="Collectable Items (offscreen)" unique_id=266493154 instance=ExtResource("7_eo0va")]
 position = Vector2(-155, 7)
@@ -207,7 +217,7 @@ region_enabled = true
 region_rect = Rect2(98, 52, 12, 7)
 
 [node name="Key 1" parent="." unique_id=472880370 instance=ExtResource("8_oyaqd")]
-position = Vector2(-154, -22)
+position = Vector2(-375, 50)
 id = "key1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Key 1" unique_id=104178822]
@@ -220,7 +230,7 @@ region_enabled = true
 region_rect = Rect2(113, 17, 14, 14)
 
 [node name="Key 2" parent="." unique_id=1510061342 instance=ExtResource("8_oyaqd")]
-position = Vector2(-154, -22)
+position = Vector2(-380, 59)
 id = "key1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Key 2" unique_id=1645059917]
@@ -233,6 +243,7 @@ texture = ExtResource("9_ww25j")
 region_enabled = true
 region_rect = Rect2(113, 17, 14, 14)
 
+[connection signal="body_entered" from="Doors/To Library" to="." method="_on_to_library_body_entered"]
 [connection signal="has_yapped_about_it" from="Dialogue/d_scene5enter1" to="." method="_on_class_room_trigger_has_yapped_about_it"]
 [connection signal="body_entered" from="Library Door Puzzle" to="." method="_on_class_puzzle_body_entered"]
 [connection signal="body_entered" from="Key 1" to="." method="_on_pickup_body_entered"]

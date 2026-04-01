@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bi2kbtqcyxo3e"]
+
+[ext_resource type="PackedScene" uid="uid://co5a663ngqjk4" path="res://Scenes/environments/env_storage.tscn" id="1_0r605"]
+[ext_resource type="Script" uid="uid://c7ausyctwbvbl" path="res://Scripts/Scene Scripts/storage_room_scene.gd" id="1_1wm1b"]
+[ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="2_1wm1b"]
+[ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="3_h7cjq"]
+[ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="5_go4le"]
+[ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="6_h7cjq"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="7_yuxg7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_702hq"]
+radius = 18.382355
+
+[node name="storage_room_scene" type="Node2D" unique_id=45757476]
+script = ExtResource("1_1wm1b")
+
+[node name="Node2D" parent="." unique_id=1404880243 instance=ExtResource("1_0r605")]
+position = Vector2(496, 322)
+scale = Vector2(0.7112066, 0.74963623)
+
+[node name="Staffroom Key" parent="." unique_id=1015122729 instance=ExtResource("2_1wm1b")]
+position = Vector2(491.99997, 438.00003)
+scale = Vector2(1.3599999, 1.360001)
+id = "staffroom_key"
+pickup_message = "scene1forest2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Staffroom Key" unique_id=98081654]
+shape = SubResource("CircleShape2D_702hq")
+script = ExtResource("3_h7cjq")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Staffroom Key" unique_id=1579463202]
+texture = ExtResource("5_go4le")
+region_enabled = true
+region_rect = Rect2(98, 52, 12, 7)
+
+[node name="To Great Hall" parent="." unique_id=727452976 instance=ExtResource("6_h7cjq")]
+position = Vector2(472, 267)
+teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
+unlocked = true
+forbidden_message = "scene2frontdoor1"
+
+[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("7_yuxg7")]
+position = Vector2(533, 220)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1821230511]
+color = Color(0.44119266, 0.5500828, 0.8660146, 1)
+
+[connection signal="body_entered" from="Staffroom Key" to="." method="_on_staffroom_key_body_entered"]
+[connection signal="pocketed" from="Staffroom Key" to="." method="_on_staffroom_key_pocketed"]

@@ -1,10 +1,24 @@
 [gd_scene format=3 uid="uid://cewacawysgp5s"]
 
+[ext_resource type="Script" uid="uid://fj542gbt4yjl" path="res://Scripts/Scene Scripts/1_bedroom_scene.gd" id="1_0e4ed"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="1_6rxsy"]
 [ext_resource type="PackedScene" uid="uid://u6ddgl6bf6sa" path="res://Scenes/environments/env_1_bedroom.tscn" id="2_qm5uv"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="3_qm5uv"]
+[ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="5_rc84x"]
+[ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="6_oajk3"]
+[ext_resource type="Texture2D" uid="uid://c2f73jo000gfb" path="res://Sprites/sprites/TopDownHouse_SmallItems.png" id="7_21ink"]
+[ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="8_38q4e"]
+[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="9_eq51f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6sk4h"]
+radius = 15.0
+height = 86.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sdmo7"]
+radius = 25.019993
 
 [node name="1_bedroom_scene" type="Node2D" unique_id=1592105858]
+script = ExtResource("1_0e4ed")
 
 [node name="bg_collision" type="StaticBody2D" parent="." unique_id=2127790378]
 
@@ -28,3 +42,53 @@ color = Color(0.44119266, 0.5500828, 0.8660146, 1)
 [node name="ClassRoomTeleport" parent="." unique_id=727452976 instance=ExtResource("3_qm5uv")]
 position = Vector2(16, 112)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
+unlocked = true
+
+[node name="Dialogue" type="Node2D" parent="." unique_id=1498691533]
+position = Vector2(-38, 30)
+
+[node name="After First Bite" parent="Dialogue" unique_id=359445996 instance=ExtResource("5_rc84x")]
+position = Vector2(34, -53)
+id = "first_bite"
+RoomMessage = "scene23bedroom1"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Dialogue/After First Bite" unique_id=1544666407]
+position = Vector2(5.9999995, 57.999996)
+rotation = 0.012639626
+scale = Vector2(1.0040979, 1.0000159)
+shape = SubResource("CapsuleShape2D_6sk4h")
+
+[node name="Bedroom 1 Paper" parent="." unique_id=1015122729 instance=ExtResource("6_oajk3")]
+position = Vector2(-77, 32)
+id = "bedroom1_paper"
+pickup_message = "scene1forest2"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Bedroom 1 Paper" unique_id=976216302]
+texture = ExtResource("7_21ink")
+region_enabled = true
+region_rect = Rect2(36, 22, 9, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bedroom 1 Paper" unique_id=686880861]
+shape = SubResource("CircleShape2D_sdmo7")
+script = ExtResource("8_38q4e")
+
+[node name="Label" type="Label" parent="Bedroom 1 Paper" unique_id=1589530672]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_eq51f")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Bedroom 1 Paper" to="." method="_on_bedroom_1_paper_body_entered"]
+[connection signal="pocketed" from="Bedroom 1 Paper" to="." method="_on_bedroom_1_paper_pocketed"]

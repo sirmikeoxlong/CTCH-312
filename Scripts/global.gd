@@ -12,17 +12,29 @@ var completed_puzzles = []
 
 # library
 var lib_key1_collect = false
-var lib_key2_colelct = false
-var lib_key3_colelct = false
+var lib_key2_collect = false
+var lib_key3_collect = false
 
-# misc
+#____________________F1 COLLECTABLE ITEMS_____________________
 
 var boot_key_collect = false
+var staff_room_key_collect = false
 
 # ___________________SMALL ROOM KEYS_______________________
 
 var spare_bed_key = false
 
+#____________________F2 COLLECTABLE ITEMS_____________________
+
+var bedroom1_key_pocketed = false
+var lockpick_pocketed = false
+var fathers_journal_pocketed = false
+var f2_bathroom_key_pocketed = false
+var carmilla_diary_pocketed = false
+
+#____________________STORY SPAWNERS_____________________
+
+var storage_room_key_allowed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
