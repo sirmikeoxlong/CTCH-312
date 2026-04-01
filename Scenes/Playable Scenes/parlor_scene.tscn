@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hue66445np52"]
 
-[ext_resource type="Script" path="res://Scripts/Scene Scripts/parlor_scene.gd" id="1_ego5m"]
+[ext_resource type="Script" uid="uid://dlmfo3vnhsmgy" path="res://Scripts/Scene Scripts/parlor_scene.gd" id="1_ego5m"]
 [ext_resource type="PackedScene" uid="uid://c4nf2hgc5ndn0" path="res://Scenes/environments/env_Parlor.tscn" id="2_ikq5d"]
 [ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="3_j7gci"]
 [ext_resource type="Texture2D" uid="uid://c2f73jo000gfb" path="res://Sprites/sprites/TopDownHouse_SmallItems.png" id="4_qicmb"]
@@ -55,13 +55,13 @@ shape = SubResource("CapsuleShape2D_yykth")
 [node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("8_ow1mq")]
 position = Vector2(-71, -77)
 
-[node name="To Billiards" parent="." unique_id=727452976 instance=ExtResource("9_xo5wk")]
-position = Vector2(87, 55)
+[node name="Billiards" parent="." unique_id=727452976 instance=ExtResource("9_xo5wk")]
+position = Vector2(142, -18)
 teleport = "res://Scenes/Playable Scenes/billiards_scene.tscn"
 unlocked = true
 
-[node name="To Grand Hall" parent="." unique_id=343064353 instance=ExtResource("9_xo5wk")]
-position = Vector2(-123, -44)
+[node name="Parlour" parent="." unique_id=343064353 instance=ExtResource("9_xo5wk")]
+position = Vector2(-71, -105)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
 

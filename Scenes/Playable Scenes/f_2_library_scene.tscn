@@ -76,43 +76,41 @@ position = Vector2(-209, -208)
 teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
 forbidden_message = "doorlock"
 
-[node name="Bedroom 1 entrance 2" parent="Doors" unique_id=2086894804 instance=ExtResource("3_77tw0")]
-position = Vector2(-137, 78)
+[node name="BR1" parent="Doors" unique_id=2086894804 instance=ExtResource("3_77tw0")]
+position = Vector2(-89, 23)
 teleport = "res://Scenes/Playable Scenes/1_bedroom_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
 
-[node name="Bedroom 2 entrance 2" parent="Doors" unique_id=310440998 instance=ExtResource("3_77tw0")]
-position = Vector2(16, 77)
+[node name="BR2" parent="Doors" unique_id=310440998 instance=ExtResource("3_77tw0")]
+position = Vector2(70, 15)
 teleport = "res://Scenes/Playable Scenes/2_bedroom_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
 
 [node name="To Bedroom 1" parent="Doors" unique_id=1680612408 instance=ExtResource("3_77tw0")]
-position = Vector2(-212, 184)
+position = Vector2(-160, 121)
 teleport = "res://Scenes/Playable Scenes/1_bedroom_scene.tscn"
-unlocked = true
 forbidden_message = "doorlock"
 
-[node name="To Study" parent="Doors" unique_id=1789752390 node_paths=PackedStringArray("key") instance=ExtResource("3_77tw0")]
-position = Vector2(-254, 286)
+[node name="Study" parent="Doors" unique_id=1789752390 node_paths=PackedStringArray("key") instance=ExtResource("3_77tw0")]
+position = Vector2(-200, 210)
 teleport = "res://Scenes/Playable Scenes/study_scene.tscn"
 key = NodePath("../../Lockpick")
 forbidden_message = "doorlock"
 
-[node name="To Carmilla\'s Room" parent="Doors" unique_id=1691242732 instance=ExtResource("3_77tw0")]
-position = Vector2(41, 285)
+[node name="Carmilla\'s Room" parent="Doors" unique_id=1691242732 instance=ExtResource("3_77tw0")]
+position = Vector2(95, 210)
 teleport = "res://Scenes/Playable Scenes/carmillasroom_scene.tscn"
 forbidden_message = "doorlock"
 
 [node name="To Bedroom 2 entrance 1" parent="Doors" unique_id=1656883946 instance=ExtResource("3_77tw0")]
-position = Vector2(93, 195)
+position = Vector2(145, 121)
 teleport = "res://Scenes/Playable Scenes/2_bedroom_scene.tscn"
-unlocked = true
 forbidden_message = "doorlock"
 
-[node name="To F2 Bathroom" parent="Doors" unique_id=1468689881 instance=ExtResource("3_77tw0")]
-position = Vector2(174, 274)
+[node name="F2 Bathroom" parent="Doors" unique_id=1468689881 instance=ExtResource("3_77tw0")]
+position = Vector2(227, 211)
 teleport = "res://Scenes/Playable Scenes/f_2_bathroom_scene.tscn"
 forbidden_message = "doorlock"
 

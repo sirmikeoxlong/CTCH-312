@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bh7ea6mot1w34"]
 
+[ext_resource type="Script" uid="uid://butahsqtaqt88" path="res://Scripts/Scene Scripts/library_scene.gd" id="1_kbvjs"]
 [ext_resource type="PackedScene" uid="uid://tqxn6clkhth7" path="res://Scenes/environments/env_library.tscn" id="1_uykyt"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_5x4c1"]
 [ext_resource type="Script" uid="uid://c1rs0uj6kkvku" path="res://Scenes/library/portals_library.gd" id="3_bujhp"]
@@ -33,6 +34,7 @@ radius = 25.019993
 
 [node name="library_scene" type="Node2D" unique_id=1027523911]
 position = Vector2(0, -1)
+script = ExtResource("1_kbvjs")
 
 [node name="Environmental Sorting" type="Node2D" parent="." unique_id=479910548]
 

@@ -13,6 +13,7 @@ var completed_puzzles = []
 var carmilla_movement_allowed = true
 var lauren_movement_allowed = true
 
+var last_door_accessed : String = ""
 
 var cutscene_1_completed = false
 

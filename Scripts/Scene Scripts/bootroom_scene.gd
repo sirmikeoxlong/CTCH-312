@@ -5,10 +5,13 @@ extends Node2D
 @onready var normal_door_path : String = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 @onready var to_great_hall: RoomTeleport = $"To Great Hall"
 @onready var to_cutscene_1: RoomTeleport = $"To cutscene 1"
+@onready var lauren: CharacterBody2D = $Lauren
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	MusicManager.play_music(load("res://Sounds/AMBIENCE.ogg"))
+	Global.lauren_movement_allowed = true
+	lauren.global_position = get_node(Global.last_door_accessed).position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -34,7 +34,7 @@ position = Vector2(-1, -1)
 scale = Vector2(0.7112066, 0.74963623)
 color = Color(0.44119266, 0.5500828, 0.8660146, 1)
 
-[node name="To Library F2" parent="." unique_id=727452976 instance=ExtResource("3_qqts0")]
+[node name="BR2" parent="." unique_id=727452976 instance=ExtResource("3_qqts0")]
 position = Vector2(-203, 116)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 unlocked = true

@@ -74,81 +74,82 @@ texture = SubResource("GradientTexture2D_o8okl")
 [node name="Doors" type="Node2D" parent="." unique_id=668105722]
 
 [node name="To Library" parent="Doors" unique_id=727452976 instance=ExtResource("3_o8okl")]
-position = Vector2(-227, -372)
+position = Vector2(-175, -436)
 teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
+forbidden_message = "scene6hall2"
 
-[node name="ClassRoomTeleport2" parent="Doors" unique_id=594815162 instance=ExtResource("3_o8okl")]
-position = Vector2(-470, -96)
+[node name="ChapelDoor3" parent="Doors" unique_id=594815162 instance=ExtResource("3_o8okl")]
+position = Vector2(-418, -161)
+teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
+
+[node name="ChapelDoor2" parent="Doors" unique_id=865009521 instance=ExtResource("3_o8okl")]
+position = Vector2(-274, -156)
+teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
+
+[node name="ChapelDoor1" parent="Doors" unique_id=1074362768 instance=ExtResource("3_o8okl")]
+position = Vector2(-226, -227)
 teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
 unlocked = true
 
-[node name="ClassRoomTeleport3" parent="Doors" unique_id=865009521 instance=ExtResource("3_o8okl")]
-position = Vector2(-329, -91)
-teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
-unlocked = true
-
-[node name="ClassRoomTeleport14" parent="Doors" unique_id=1074362768 instance=ExtResource("3_o8okl")]
-position = Vector2(-281, -161)
-teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
-unlocked = true
-
-[node name="ClassRoomTeleport4" parent="Doors" unique_id=1348103655 node_paths=PackedStringArray("key") instance=ExtResource("3_o8okl")]
-position = Vector2(-388, 1)
+[node name="Ballroom" parent="Doors" unique_id=1348103655 node_paths=PackedStringArray("key") instance=ExtResource("3_o8okl")]
+position = Vector2(-334, -76)
 teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
 key = NodePath("../../Collectable Items (offscreen)/Boot Room Key")
 forbidden_message = "doorlock"
 
-[node name="ClassRoomTeleport5" parent="Doors" unique_id=2077266263 instance=ExtResource("3_o8okl")]
-position = Vector2(111, -97)
+[node name="Kitchen1" parent="Doors" unique_id=2077266263 instance=ExtResource("3_o8okl")]
+position = Vector2(166, -153)
 teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
 forbidden_message = "kitchendoor"
 
-[node name="ClassRoomTeleport6" parent="Doors" unique_id=447909036 instance=ExtResource("3_o8okl")]
-position = Vector2(-143, 221)
+[node name="Entrance" parent="Doors" unique_id=447909036 instance=ExtResource("3_o8okl")]
+position = Vector2(-87.86, 130)
 teleport = "res://Scenes/Playable Scenes/outside_scene.tscn"
+unlocked = true
 forbidden_message = "doorlock"
+door_id = "f1_outdoor"
 
 [node name="Bootroom" parent="Doors" unique_id=100980308 node_paths=PackedStringArray("key") instance=ExtResource("3_o8okl")]
-position = Vector2(-353, 158)
+position = Vector2(-299, 88)
 teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
 key = NodePath("../../Collectable Items (offscreen)/Boot Room Key")
 forbidden_message = "doorlock"
 
-[node name="To Storage Room" parent="Doors" unique_id=2129919375 instance=ExtResource("3_o8okl")]
-position = Vector2(-488, -5)
+[node name="Storage Room" parent="Doors" unique_id=2129919375 instance=ExtResource("3_o8okl")]
+position = Vector2(-432, -80)
 teleport = "res://Scenes/Playable Scenes/storage_room_scene.tscn"
 unlocked = true
 
-[node name="To Parlor" parent="Doors" unique_id=1477209996 instance=ExtResource("3_o8okl")]
-position = Vector2(68, -2)
+[node name="Parlour" parent="Doors" unique_id=1477209996 instance=ExtResource("3_o8okl")]
+position = Vector2(126, -76)
 teleport = "res://Scenes/Playable Scenes/parlor_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
 
-[node name="ClassRoomTeleport10" parent="Doors" unique_id=811835521 instance=ExtResource("3_o8okl")]
-position = Vector2(145, -1)
-teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
+[node name="Billiards" parent="Doors" unique_id=811835521 instance=ExtResource("3_o8okl")]
+position = Vector2(201, -76)
+teleport = "res://Scenes/Playable Scenes/billiards_scene.tscn"
 unlocked = true
 
 [node name="Bathroom" parent="Doors" unique_id=1908018243 instance=ExtResource("3_o8okl")]
-position = Vector2(195, -3)
+position = Vector2(250, -81)
 teleport = "res://Scenes/Playable Scenes/f_1_bathroom_scene.tscn"
 unlocked = true
 
-[node name="ClassRoomTeleport11" parent="Doors" unique_id=1488737441 instance=ExtResource("3_o8okl")]
-position = Vector2(-315, -52)
-scale = Vector2(1.8077381, 0.27740824)
+[node name="Upstairs1" parent="Doors" unique_id=1488737441 instance=ExtResource("3_o8okl")]
+position = Vector2(-223, -62)
+scale = Vector2(1.8077381, 0.5174084)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 forbidden_message = "scene6hall1"
 
-[node name="ClassRoomTeleport12" parent="Doors" unique_id=401403867 instance=ExtResource("3_o8okl")]
-position = Vector2(-71, -48)
-scale = Vector2(2.2399988, 0.40000063)
+[node name="Upstairs2" parent="Doors" unique_id=401403867 instance=ExtResource("3_o8okl")]
+position = Vector2(50, -57)
+scale = Vector2(2.2399988, 0.5974243)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 forbidden_message = "scene6hall1"
 
-[node name="ClassRoomTeleport13" parent="Doors" unique_id=802532146 instance=ExtResource("3_o8okl")]
-position = Vector2(-7, -155)
+[node name="Kitchen" parent="Doors" unique_id=802532146 instance=ExtResource("3_o8okl")]
+position = Vector2(48, -233)
 teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
 forbidden_message = "kitchendoor"
 
@@ -163,10 +164,9 @@ position = Vector2(4, -10)
 rotation = 1.5778282
 shape = SubResource("CapsuleShape2D_lgo1s")
 
-[node name="Library Door Puzzle" parent="." unique_id=1487168353 node_paths=PackedStringArray("item_puzzle_pieces") instance=ExtResource("6_x36kx")]
+[node name="Library Door Puzzle" parent="." unique_id=1487168353 instance=ExtResource("6_x36kx")]
 visible = false
 position = Vector2(-152, -397)
-item_puzzle_pieces = [NodePath("../Key 1")]
 event = "scene13librarydoor1"
 unsolved_message = "scene6hall2"
 

@@ -12,7 +12,7 @@ height = 80.0
 script = ExtResource("1_eb011")
 
 [node name="Door" type="CollisionShape2D" parent="." unique_id=1553931810]
-position = Vector2(52, -71)
+position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_exwx1")
 
 [node name="door_locked" type="AudioStreamPlayer2D" parent="." unique_id=1059968816]

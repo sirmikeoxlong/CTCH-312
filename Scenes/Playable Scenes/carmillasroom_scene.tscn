@@ -83,13 +83,13 @@ texture = SubResource("GradientTexture2D_vjl3u")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=22691681]
 polygon = PackedVector2Array(-220, -59, -220, -75, -77, -74, -74, -71, -21, -71, -19, -76, -10, -76, -6, -72, 43, -72, 45, -77, 56, -77, 58, -71, 111, -71, 114, -74, 248, -75, 249, -42, 249, -13, 228, -13, 226, -43, 140, -43, 140, 58, 202, 57, 207, 259, -219, 260, -220, -58, -440, 48, -478, 226, -311, 419, 142, 394, 158, 550, 585, 113, 473, -218, -329, -307, -358, -197, -357, -152, -289, -97)
 
-[node name="To F2 Library Hall" parent="." unique_id=727452976 instance=ExtResource("3_5rvrc")]
-position = Vector2(-224, -23)
+[node name="Carmilla\'s Room" parent="." unique_id=727452976 instance=ExtResource("3_5rvrc")]
+position = Vector2(-174, -91)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 forbidden_message = "carmillajournal"
 
-[node name="To Bathroom" parent="." unique_id=303715587 instance=ExtResource("3_5rvrc")]
-position = Vector2(196, 18)
+[node name="Bathroom" parent="." unique_id=303715587 instance=ExtResource("3_5rvrc")]
+position = Vector2(249, -53)
 teleport = "res://Scenes/Playable Scenes/f_2_bathroom_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"

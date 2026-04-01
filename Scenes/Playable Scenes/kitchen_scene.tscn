@@ -39,26 +39,26 @@ rotation = 0.012639626
 scale = Vector2(1.0040979, 1.0000159)
 shape = SubResource("CapsuleShape2D_e50ly")
 
-[node name="To Pantry" parent="." unique_id=727452976 instance=ExtResource("4_e50ly")]
-position = Vector2(94, 112)
+[node name="Pantry" parent="." unique_id=727452976 instance=ExtResource("4_e50ly")]
+position = Vector2(146, 43)
 teleport = "res://Scenes/Playable Scenes/pantry_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
 
-[node name="To Dining" parent="." unique_id=1476474386 instance=ExtResource("4_e50ly")]
-position = Vector2(-171, 47)
+[node name="Dining" parent="." unique_id=1476474386 instance=ExtResource("4_e50ly")]
+position = Vector2(-117, -15)
 teleport = "res://Scenes/Playable Scenes/dining_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
 
-[node name="To Great Hall" parent="." unique_id=1152223735 instance=ExtResource("4_e50ly")]
-position = Vector2(9, 189)
+[node name="Kitchen1" parent="." unique_id=1152223735 instance=ExtResource("4_e50ly")]
+position = Vector2(59, 118)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
 
-[node name="To Great Hall2" parent="." unique_id=1362045417 instance=ExtResource("4_e50ly")]
-position = Vector2(-281, 113)
+[node name="Kitchen" parent="." unique_id=1362045417 instance=ExtResource("4_e50ly")]
+position = Vector2(-233, 44)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"

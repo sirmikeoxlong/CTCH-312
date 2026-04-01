@@ -81,13 +81,13 @@ rotation = 0.012639626
 scale = Vector2(1.0040979, 1.0000159)
 shape = SubResource("CapsuleShape2D_tjc02")
 
-[node name="To Parlour" parent="." unique_id=727452976 instance=ExtResource("10_sb6fc")]
-position = Vector2(398, 336)
+[node name="Parlour" parent="." unique_id=727452976 instance=ExtResource("10_sb6fc")]
+position = Vector2(452, 272)
 teleport = "res://Scenes/Playable Scenes/parlor_scene.tscn"
 unlocked = true
 
-[node name="To Grand Hall" parent="." unique_id=265100955 instance=ExtResource("10_sb6fc")]
-position = Vector2(620, 204)
+[node name="Billiards" parent="." unique_id=265100955 instance=ExtResource("10_sb6fc")]
+position = Vector2(674, 142)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
 
