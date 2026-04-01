@@ -88,9 +88,11 @@ position = Vector2(-224, -23)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 forbidden_message = "carmillajournal"
 
-[node name="ClassRoomTeleport2" parent="." unique_id=303715587 instance=ExtResource("3_5rvrc")]
+[node name="To Bathroom" parent="." unique_id=303715587 instance=ExtResource("3_5rvrc")]
 position = Vector2(196, 18)
-teleport = "res://Scenes/Playable Scenes/pantry_scene.tscn"
+teleport = "res://Scenes/Playable Scenes/f_2_bathroom_scene.tscn"
+unlocked = true
+forbidden_message = "doorlock"
 
 [node name="Dialogue" type="Node2D" parent="." unique_id=1209335487]
 position = Vector2(-424, -430)
