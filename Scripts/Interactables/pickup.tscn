@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://we1jdhe0xtlx"]
 
 [ext_resource type="Script" uid="uid://dg54u6djv21f5" path="res://Scripts/Classes/class_interactables.gd" id="1_qyevg"]
+[ext_resource type="AudioStream" uid="uid://df7r64tbvkg7k" path="res://Sounds/UI Toy Dream.ogg" id="2_g8lmu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g8lmu"]
 radius = 9.0
 
 [node name="pickup" type="Area2D" unique_id=1015122729]
 script = ExtResource("1_qyevg")
+
+[node name="key_main" type="AudioStreamPlayer2D" parent="." unique_id=1246752038]
+stream = ExtResource("2_g8lmu")
+volume_db = 3.467
+bus = &"UI"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=791869576]
 

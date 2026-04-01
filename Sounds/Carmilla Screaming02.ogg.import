@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Carmilla Screaming02.ogg-a532777a1386acd916a1
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.112
+bpm=100.0
 beat_count=0
 bar_beats=4

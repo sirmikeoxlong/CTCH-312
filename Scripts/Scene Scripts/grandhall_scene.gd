@@ -13,6 +13,7 @@ extends Node2D
 func _ready() -> void:
 	pass # Replace with function body.
 	class_room_teleport.set_process(false)
+	MusicManager.play_music(load("res://Sounds/AMBIENCE.ogg"))
 	
 func unloack_all_doors():
 	if Global.boot_key_collect == true:
