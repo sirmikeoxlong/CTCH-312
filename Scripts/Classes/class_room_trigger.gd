@@ -36,4 +36,5 @@ func _on_body_entered(body: CharacterBody2D) -> void:
 		print("_on_body_entered function working")
 		say_room_dialogue()
 		has_yapped_about_it.emit()
+		remove_from_scene()
 		

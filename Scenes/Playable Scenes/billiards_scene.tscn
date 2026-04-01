@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://mhn6k80aynjl"]
+
+[ext_resource type="PackedScene" uid="uid://cupn0flms6a15" path="res://Scenes/environments/env_billiards.tscn" id="1_m1juu"]
+[ext_resource type="Script" uid="uid://hp64l1cindap" path="res://Scripts/Scene Scripts/billiards_scene.gd" id="1_tjc02"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_8grv3"]
+[ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="3_tjc02"]
+[ext_resource type="Texture2D" uid="uid://c2f73jo000gfb" path="res://Sprites/sprites/TopDownHouse_SmallItems.png" id="4_sb6fc"]
+[ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="5_8lp4k"]
+[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="6_nbqb4"]
+[ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="7_vvobh"]
+[ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="8_8grv3"]
+[ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="10_sb6fc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aal0d"]
+radius = 25.019993
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjc02"]
+radius = 15.0
+height = 86.0
+
+[node name="billiards_scene" type="Node2D" unique_id=166059031]
+script = ExtResource("1_tjc02")
+
+[node name="billiards env" parent="." unique_id=1399201207 instance=ExtResource("1_m1juu")]
+position = Vector2(608, 214.99998)
+scale = Vector2(0.47819802, 0.48639843)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=656779597]
+color = Color(0.28564373, 0.5053388, 0.7083086, 1)
+
+[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_8grv3")]
+position = Vector2(479, 263)
+
+[node name="Billiards Paper" parent="." unique_id=1015122729 instance=ExtResource("3_tjc02")]
+position = Vector2(533, 171)
+id = "billiards_paper"
+pickup_message = "scene1forest2"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Billiards Paper" unique_id=379194637]
+texture = ExtResource("4_sb6fc")
+region_enabled = true
+region_rect = Rect2(36, 22, 9, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Billiards Paper" unique_id=1587237253]
+shape = SubResource("CircleShape2D_aal0d")
+script = ExtResource("5_8lp4k")
+
+[node name="Label" type="Label" parent="Billiards Paper" unique_id=339825961]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_nbqb4")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("7_vvobh")]
+position = Vector2(618, 174)
+scale = Vector2(0.16, 0.16)
+
+[node name="Dialogue" type="Node2D" parent="." unique_id=546926051]
+position = Vector2(-7, 35)
+
+[node name="snarky comment" parent="Dialogue" unique_id=359445996 instance=ExtResource("8_8grv3")]
+position = Vector2(511, 221)
+id = "gener_comment"
+RoomMessage = "billards/parlorconnect"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Dialogue/snarky comment" unique_id=186073904]
+position = Vector2(10.999999, 6.999999)
+rotation = 0.012639626
+scale = Vector2(1.0040979, 1.0000159)
+shape = SubResource("CapsuleShape2D_tjc02")
+
+[node name="To Parlour" parent="." unique_id=727452976 instance=ExtResource("10_sb6fc")]
+position = Vector2(398, 336)
+teleport = "res://Scenes/Playable Scenes/parlor_scene.tscn"
+unlocked = true
+
+[node name="To Grand Hall" parent="." unique_id=265100955 instance=ExtResource("10_sb6fc")]
+position = Vector2(620, 204)
+teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
+unlocked = true
+
+[connection signal="body_entered" from="Billiards Paper" to="." method="_on_billiards_paper_body_entered"]
+[connection signal="pocketed" from="Billiards Paper" to="." method="_on_billiards_paper_pocketed"]

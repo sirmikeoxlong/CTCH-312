@@ -1,15 +1,24 @@
 [gd_scene format=3 uid="uid://c4b5asqafi1fr"]
 
 [ext_resource type="PackedScene" uid="uid://dj38ugwb5k1yf" path="res://Scenes/environments/env_chapel.tscn" id="1_bsle1"]
+[ext_resource type="Script" uid="uid://ysdyd6pahx61" path="res://Scripts/Scene Scripts/chapel_scene.gd" id="1_f5eag"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_5gyh3"]
 [ext_resource type="Script" uid="uid://bcyjasak166ik" path="res://Scenes/chapel/portal_chapel.gd" id="3_r5y37"]
 [ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="4_1ci17"]
+[ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="5_e2yx4"]
+[ext_resource type="Texture2D" uid="uid://c2f73jo000gfb" path="res://Sprites/sprites/TopDownHouse_SmallItems.png" id="6_f5eag"]
+[ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="7_yjeg6"]
+[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="8_g347d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_exwrh"]
 radius = 13.0
 height = 80.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tb6un"]
+radius = 25.019993
+
 [node name="Chapel Scene" type="Node2D" unique_id=1835165868]
+script = ExtResource("1_f5eag")
 
 [node name="Collisions" type="StaticBody2D" parent="." unique_id=618214365]
 
@@ -36,5 +45,73 @@ shape = SubResource("CapsuleShape2D_exwrh")
 [node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("4_1ci17")]
 position = Vector2(-41, 99)
 
+[node name="Chapel Paper" parent="." unique_id=1015122729 instance=ExtResource("5_e2yx4")]
+position = Vector2(-21, -9)
+id = "chapel_paper"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Chapel Paper" unique_id=952643096]
+texture = ExtResource("6_f5eag")
+region_enabled = true
+region_rect = Rect2(36, 22, 9, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chapel Paper" unique_id=1735473413]
+shape = SubResource("CircleShape2D_tb6un")
+script = ExtResource("7_yjeg6")
+
+[node name="Label" type="Label" parent="Chapel Paper" unique_id=529339075]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_g347d")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="painting" parent="." unique_id=1120716706 instance=ExtResource("5_e2yx4")]
+position = Vector2(-41, -69)
+id = "painting"
+pickup_message = "scene10gallery1"
+
+[node name="Sprite2D2" type="Sprite2D" parent="painting" unique_id=225006605]
+visible = false
+texture = ExtResource("6_f5eag")
+region_enabled = true
+region_rect = Rect2(36, 22, 9, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="painting" unique_id=980870858]
+shape = SubResource("CircleShape2D_tb6un")
+script = ExtResource("7_yjeg6")
+
+[node name="Label" type="Label" parent="painting" unique_id=613308167]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_g347d")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="Room Teleporting2" to="Room Teleporting2" method="_on_body_entered"]
 [connection signal="body_exited" from="Room Teleporting2" to="Room Teleporting2" method="_on_body_exited"]
+[connection signal="body_entered" from="Chapel Paper" to="." method="_on_chapel_paper_body_entered"]
+[connection signal="pocketed" from="Chapel Paper" to="." method="_on_chapel_paper_pocketed"]
+[connection signal="body_entered" from="painting" to="." method="_on_painting_body_entered"]
+[connection signal="pocketed" from="painting" to="." method="_on_painting_pocketed"]

@@ -20,32 +20,41 @@ func _ready() -> void:
 	else:
 		Global.puzzles.append(global_position)
 		
-func solve_puzzle() -> bool:
+func missing_piece() -> bool:
 	
 	# COMPLETED PUZZLE CHECK
+	#if !puzzle_puzzle_piece.is_empty():
+		#for i in range(puzzle_puzzle_piece.size()):
+			#if !Global.completed_puzzles.has(puzzle_puzzle_piece[i].id):
+				#detected_missing_piece = true
+			#else:
+				#detected_missing_piece = false
 	if !puzzle_puzzle_piece.is_empty():
 		for i in range(puzzle_puzzle_piece.size()):
-			if !Global.completed_puzzles.has(puzzle_puzzle_piece[i].id):
+			if Global.lib_key1_collect == true:
 				detected_missing_piece = true
 			else:
 				detected_missing_piece = false
+		
 				
 	# INVENTORY CHECK
 	if !item_puzzle_pieces.is_empty():
 		for i in range (item_puzzle_pieces.size()):
-			if !Global.collectedItems.has(item_puzzle_pieces[i].id):
-				#mark that something hasn't been collected
-				detected_missing_piece = true
-			else:
-				detected_missing_piece = false
+			pass
+			#if !Global.collectedItems.has(item_puzzle_pieces[i].id):
+				##mark that something hasn't been collected
+				#detected_missing_piece = true
+			#else:
+				#detected_missing_piece = false
 			
 	# COMPLETED ROOM STORY CHECK
 	if !story_puzzle_piece.is_empty():
 		for i in range(story_puzzle_piece.size()):
-			if !Global.completed_room_dialogue.has(story_puzzle_piece[i].id):
-				detected_missing_piece = true
-			else:
-				detected_missing_piece = true
+			pass
+			#if !Global.completed_room_dialogue.has(story_puzzle_piece[i].id):
+				#detected_missing_piece = true
+			#else:
+				#detected_missing_piece = true
 
 	
 	print("Detected a Missing Puzzle Piece: ",detected_missing_piece)
@@ -54,19 +63,19 @@ func solve_puzzle() -> bool:
 	
 func perform_event():
 	# After done, set the signal to true (emit)
-	if Input.is_action_just_pressed("ui_accept"):
 		if !detected_missing_piece:
 			print("perform_event function working")
 			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
 			event)
+			remove_from_scene()
 		else:
 			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
 			unsolved_message)
 	
 func remove_from_scene():
 	# signal to story state that this puzzle has been solved
-	Global.completed_puzzles.append(global_position)
-	Global.puzzles.erase(global_position)
+	Global.completed_puzzles.append(id)
+	Global.puzzles.erase(id)
 	print("remove_from_scene function working")
 	queue_free()
 	

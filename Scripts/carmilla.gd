@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 	$Detection/CollisionShape2D.disabled = false
 	if player_in_area:
 		position += (player.position - position) / speed
-		$AnimatedSprite2D.play("move")
+		$AnimatedSprite2D.play("left")
 	else:
 		$AnimatedSprite2D.play("idle")
 

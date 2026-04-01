@@ -10,10 +10,10 @@ extends Node2D
 signal pocketed
 
 func _ready() -> void:
-	if Global.collectedItems.has(global_position):
+	if Global.collectedItems.has(id):
 		queue_free() #free the item becouse already has been collected
 	else:
-		Global.items.append(global_position)
+		Global.items.append(id)
 
 func _process(delta: float) -> void:
 	mark_as_touched()
@@ -30,24 +30,26 @@ func perform():
 
 func mark_as_touched():
 	if entered == true:
-		if Input.is_action_just_pressed("ui_accept"):
-			add_to_inventory()
+		add_to_inventory()
 	else:
 		pass
 
 func add_to_inventory():
 	# add an item of this class to global inventory
-	SingPlayer.inventory.push_front(self)
-	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), pickup_message)
-	self.hide()
-	pocketed.emit()
+	if Input.is_action_just_pressed("ui_accept"):
+		SingPlayer.inventory.push_front(self)
+		DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
+		pickup_message)
+		
+		self.hide()
+		pocketed.emit()
 
 func remove_from_scene():
 	# signal to story state that this item has been picked up
 	Storystate.picked_first_gate_key = true
-	Global.collectedItems.append(global_position)
-	Global.items.erase(global_position)
-	#queue_free()
+	Global.collectedItems.append(id)
+	Global.items.erase(id)
+	queue_free()
 	# remove from the scene
 	
 	

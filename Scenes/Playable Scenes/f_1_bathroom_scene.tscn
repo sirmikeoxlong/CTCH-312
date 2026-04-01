@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bn15cuoxl7uvi"]
+
+[ext_resource type="PackedScene" uid="uid://b2ytknrau6lyj" path="res://Scenes/environments/env_bathfirstfloor.tscn" id="1_hemdk"]
+[ext_resource type="Script" uid="uid://nvx6u8jo1dlj" path="res://Scripts/Scene Scripts/f_1_bathroom_scene.gd" id="1_wwngx"]
+[ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="2_wwngx"]
+[ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="3_1bnw5"]
+[ext_resource type="Texture2D" uid="uid://b0xf8ms2lue40" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Tools.png" id="4_qikmf"]
+[ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="5_tmnbr"]
+[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="6_6o85f"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="7_si3nc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kl7wy"]
+radius = 25.019993
+
+[node name="F1_bathroom_scene" type="Node2D" unique_id=298687056]
+script = ExtResource("1_wwngx")
+
+[node name="Node2D" parent="." unique_id=928787448 instance=ExtResource("1_hemdk")]
+position = Vector2(332.00003, 298)
+scale = Vector2(0.8400012, 0.88)
+
+[node name="To Grand Hall" parent="." unique_id=727452976 instance=ExtResource("2_wwngx")]
+position = Vector2(268, 195)
+teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
+unlocked = true
+
+[node name="Library Piece 1" parent="." unique_id=1015122729 instance=ExtResource("3_1bnw5")]
+position = Vector2(248, 266)
+scale = Vector2(1.3599999, 1.360001)
+id = "lib_key_1"
+pickup_message = "scene12bath1"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Library Piece 1" unique_id=1055162779]
+scale = Vector2(1.2857143, 1.2857144)
+texture = ExtResource("4_qikmf")
+region_enabled = true
+region_rect = Rect2(113, 17, 14, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Library Piece 1" unique_id=1144786543]
+shape = SubResource("CircleShape2D_kl7wy")
+script = ExtResource("5_tmnbr")
+
+[node name="Label" type="Label" parent="Library Piece 1" unique_id=134393187]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_6o85f")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("7_si3nc")]
+position = Vector2(308, 188)
+
+[connection signal="body_entered" from="Library Piece 1" to="." method="_on_library_piece_1_body_entered"]
+[connection signal="pocketed" from="Library Piece 1" to="." method="_on_library_piece_1_pocketed"]
