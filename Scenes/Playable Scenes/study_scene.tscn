@@ -66,8 +66,8 @@ text = "[Enter] To Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="To Library F2" parent="." unique_id=727452976 node_paths=PackedStringArray("key") instance=ExtResource("8_ts3k0")]
-position = Vector2(138, 27)
+[node name="Study" parent="." unique_id=727452976 node_paths=PackedStringArray("key") instance=ExtResource("8_ts3k0")]
+position = Vector2(191, -40)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 key = NodePath("../Father\'s Journal")
 forbidden_message = "studyjournal"

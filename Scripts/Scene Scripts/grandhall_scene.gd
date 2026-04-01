@@ -3,18 +3,21 @@ extends Node2D
 @onready var d_scene_5_enter_1: RoomTrigger = $Dialogue/d_scene5enter1
 @onready var library_door_puzzle: Puzzle = $"Library Door Puzzle"
 @onready var key_1: cutscene_interactables = $"Key 1"
+@onready var lauren: CharacterBody2D = $"Environmental Sorting/Lauren"
 
 # Door Paths
 @onready var bootroom: RoomTeleport = $Doors/Bootroom
 @onready var to_library: RoomTeleport = $"Doors/To Library"
 
-# Entity Instances
+@onready var doors: Node2D = $Doors
 
+var last_door = Global.last_door_accessed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.lauren_movement_allowed = true
 	to_library.set_process(false)
+	lauren.global_position = doors.get_node(last_door).position
 	MusicManager.play_music(load("res://Sounds/AMBIENCE.ogg"))
 	
 func unloack_all_doors():

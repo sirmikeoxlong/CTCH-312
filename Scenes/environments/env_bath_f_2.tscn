@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://bgdyw1a8xv4bb" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Tilesets/Wall_Variations.png" id="7_nlop3"]
 [ext_resource type="Texture2D" uid="uid://bs4wo1wwlthf7" path="res://Sprites/sprites/Props_Decor.png" id="8_h4use"]
 [ext_resource type="Texture2D" uid="uid://b622b3bb2t7ae" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Rocks.png" id="10_et234"]
-[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="10_mf1cb"]
 [ext_resource type="Texture2D" uid="uid://nrisjcfannpe" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Shadows.png" id="11_k12hc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_simyt"]
@@ -5014,6 +5013,3 @@ tile_set = SubResource("TileSet_tpadu")
 [node name="decor2" type="TileMapLayer" parent="." unique_id=1885101459]
 tile_map_data = PackedByteArray("AADu/wkAAwAGAAEAAADv/wkAAwAGAAEAAADw/wYAAwAGAAEAAADw/wcAAwAGAAEAAADw/wgAAwAGAAEAAADw/wkAAwAGAAEAAADx/wYAAwAGAAEAAADx/wcAAwAGAAEAAADx/wgAAwAGAAEAAADx/wkAAwAGAAEAAADy/wYAAwAGAAEAAADy/wcAAwAGAAEAAADy/wgAAwAGAAEAAADy/wkAAwAGAAEAAADz/wYAAwAGAAEAAADz/wcAAwAGAAEAAADz/wgAAwAGAAEAAADz/wkAAwAGAAEAAADu/wcAAwAGAAEAAADu/wgAAwAGAAEAAADv/wcAAwAGAAEAAADv/wgAAwAGAAEAAADu/wYAAwAGAAEAAADv/wYAAwAGAAEAAAD2//b/BgAKAAEAABD2//f/BgAKAAIAABD2//j/BgAKAAMAABD2//n/CgAPAAAAAAD3//b/BgAJAA8AAAD3//f/BgAJAAIAABD3//j/BgAJAAMAABD3//n/BgAJAAQAABD4//f/BgAIAAIAABD4//j/BgAIAAMAABD4//n/BgAIAAQAABD5//f/BgAHAAIAABD5//j/BgAHAAMAABD5//n/BgAHAAQAABD6//f/BgAGAAIAABD6//j/BgAGAAMAABD6//n/BgAGAAQAABD8//b/BgABAAEAAAD8//f/BgABAAIAAAD8//j/BgABAAMAAAD8//n/BgABAAQAAAD9//b/BgACAAEAAAD9//f/BgACAAIAAAD9//j/BgACAAMAAAD9//n/BgACAAQAAAD5//T/BgALAA0AAAD5//X/BgALAA4AAAD5//b/BgALAA8AAAD3//T/BgAJAA0AAAD3//X/BgAJAA4AAAD4//T/BgAKAA0AAAD4//X/BgAKAA4AAAD4//b/BgAKAA8AAAD///b/BgAGAAkAAAD///f/BgAGAAoAAAD///j/BgAGAAsAAAD///n/BgAGAAwAAAAAAPb/BgAHAAkAAAAAAPf/BgAHAAoAAAAAAPj/BgAHAAsAAAAAAPn/BgAHAAwAAAABAPb/BgAIAAkAAAABAPf/BgAIAAoAAAABAPj/BgAIAAsAAAABAPn/BgAIAAwAAADs//7/AwAGAAEAAADs////AwAGAAEAAADs/wAAAwAGAAEAAADt//7/AwAGAAEAAADt////AwAGAAEAAADt/wAAAwAGAAEAAADu//7/AwAGAAEAAADu////AwAGAAEAAADu/wAAAwAGAAEAAADv//7/BQAAAAAAAADv////BQAAAAEAAADv/wAABQAAAAIAAADw//7/BQABAAAAAADw////BQABAAEAAADw/wAABQABAAIAAADx//7/BQACAAAAAADx////BQACAAEAAADx/wAABQACAAIAAADy//7/BQADAAAAAADy////BQADAAEAAADy/wAABQADAAIAAADz//7/BQAEAAAAAADz////BQAEAAEAAADz/wAABQAEAAIAAAAHAPz/CgAPAAAAAAAHAP3/CgAPAAEAAAAHAP7/CgAPAAIAAAAHAP//CgAPAAMAAAAHAAAACgAPAAQAAAAHAPf/CgAPAAAAAAAHAPj/CgAPAAEAAAAHAPn/CgAPAAIAAAAHAPr/CgAPAAMAAAAHAPv/CgAPAAQAAAD2//r/CgAPAAEAAAD2//v/CgAPAAIAAAD2//z/CgAPAAMAAAD2//3/CgAPAAQAAAD0//7/BQAFAAAAAAD0////BQAFAAEAAAD0/wAABQAFAAIAAAD1//7/BQAGAAAAAAD1////BQAGAAEAAAD1/wAABQAGAAIAAAA=")
 tile_set = SubResource("TileSet_tpadu")
-
-[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("10_mf1cb")]
-position = Vector2(-17, -113)

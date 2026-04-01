@@ -19,8 +19,8 @@ script = ExtResource("1_wwngx")
 position = Vector2(332.00003, 298)
 scale = Vector2(0.8400012, 0.88)
 
-[node name="To Grand Hall" parent="." unique_id=727452976 instance=ExtResource("2_wwngx")]
-position = Vector2(268, 195)
+[node name="Bathroom" parent="." unique_id=727452976 instance=ExtResource("2_wwngx")]
+position = Vector2(321, 127)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
 

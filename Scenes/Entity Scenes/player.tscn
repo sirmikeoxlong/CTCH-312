@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://cggk0u8f3dmyy" path="res://Sounds/L n C Footsteps 05.ogg" id="7_w72bm"]
 [ext_resource type="AudioStream" uid="uid://d060nwlkbb6tw" path="res://Sounds/L n C Footsteps 06.ogg" id="7_y3174"]
 [ext_resource type="AudioStream" uid="uid://d1ljaoxxhtokl" path="res://Sounds/L n C Footsteps 07.ogg" id="8_jnj1b"]
+[ext_resource type="Texture2D" uid="uid://xr362eho5n7c" path="res://Sprites/Juanna's Sprites/LaurenCrouch.png" id="9_jnj1b"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2uho5"]
 random_pitch = 1.123435
@@ -21,6 +22,38 @@ stream_3/stream = ExtResource("6_jnj1b")
 stream_4/stream = ExtResource("7_w72bm")
 stream_5/stream = ExtResource("7_y3174")
 stream_6/stream = ExtResource("8_jnj1b")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w72bm"]
+atlas = ExtResource("9_jnj1b")
+region = Rect2(0, 828, 355, 414)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilbab"]
+atlas = ExtResource("9_jnj1b")
+region = Rect2(355, 828, 355, 414)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a0cm"]
+atlas = ExtResource("9_jnj1b")
+region = Rect2(0, 828, 355, 414)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kny0j"]
+atlas = ExtResource("9_jnj1b")
+region = Rect2(0, 414, 355, 414)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5njnm"]
+atlas = ExtResource("9_jnj1b")
+region = Rect2(355, 414, 355, 414)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xsc0"]
+atlas = ExtResource("9_jnj1b")
+region = Rect2(710, 414, 355, 414)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hb0pf"]
+atlas = ExtResource("9_jnj1b")
+region = Rect2(0, 0, 355, 414)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2ume"]
+atlas = ExtResource("9_jnj1b")
+region = Rect2(355, 0, 355, 414)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r75iy"]
 atlas = ExtResource("2_tenkg")
@@ -104,6 +137,60 @@ region = Rect2(642, 936, 214, 312)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qqcod"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w72bm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilbab")
+}],
+"loop": true,
+"name": &"Crouch down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a0cm")
+}],
+"loop": true,
+"name": &"Crouch down idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kny0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5njnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xsc0")
+}],
+"loop": true,
+"name": &"Crouch left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Crouch right idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hb0pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2ume")
+}],
+"loop": true,
+"name": &"Crouch up idle",
+"speed": 6.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Croush left idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r75iy")
@@ -203,6 +290,16 @@ animations = [{
 "loop": true,
 "name": &"Walking Up",
 "speed": 6.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"crouch right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"crouch up",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
@@ -289,7 +386,7 @@ y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.15284361, 0.13907285)
 sprite_frames = SubResource("SpriteFrames_qqcod")
-animation = &"Walking Down"
+animation = &"Crouch left"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=102025890]

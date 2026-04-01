@@ -39,10 +39,11 @@ shape = SubResource("CapsuleShape2D_nkkqu")
 [node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_2jf0q")]
 position = Vector2(-53, 532)
 
-[node name="ClassRoomTeleport" parent="." unique_id=727452976 node_paths=PackedStringArray("key") instance=ExtResource("4_nkkqu")]
-position = Vector2(-113, -19)
+[node name="Entrance" parent="." unique_id=727452976 node_paths=PackedStringArray("key") instance=ExtResource("4_nkkqu")]
+position = Vector2(-63, -91)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 key = NodePath("../Main Door Key")
+door_id = "main_entrance"
 
 [node name="Main Door Key" parent="." unique_id=1086952445 instance=ExtResource("6_kv6y2")]
 position = Vector2(-9, -4)

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c1xrksklmi5tw" path="res://Scripts/Scene Scripts/f_2_bathroom_scene.gd" id="1_f6p4l"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="2_yvb7v"]
 [ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="3_sp427"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="5_e4l5w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6p4l"]
 radius = 15.0
@@ -16,13 +17,13 @@ script = ExtResource("1_f6p4l")
 position = Vector2(588, 406)
 scale = Vector2(0.51459193, 0.5224101)
 
-[node name="To Carmilla\'s Room" parent="." unique_id=727452976 instance=ExtResource("2_yvb7v")]
-position = Vector2(443, 478)
+[node name="Bathroom" parent="." unique_id=727452976 instance=ExtResource("2_yvb7v")]
+position = Vector2(446, 407)
 teleport = "res://Scenes/Playable Scenes/carmillasroom_scene.tscn"
 unlocked = true
 
-[node name="To Library_ Hall F2" parent="." unique_id=260962038 instance=ExtResource("2_yvb7v")]
-position = Vector2(574, 388)
+[node name="F2 Bathroom" parent="." unique_id=260962038 instance=ExtResource("2_yvb7v")]
+position = Vector2(627, 325)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 unlocked = true
 
@@ -42,3 +43,6 @@ position = Vector2(5.9999995, 57.999996)
 rotation = 0.012639626
 scale = Vector2(1.0040979, 1.0000159)
 shape = SubResource("CapsuleShape2D_f6p4l")
+
+[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("5_e4l5w")]
+position = Vector2(574, 335)

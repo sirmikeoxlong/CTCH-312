@@ -33,8 +33,8 @@ texture = ExtResource("5_go4le")
 region_enabled = true
 region_rect = Rect2(98, 52, 12, 7)
 
-[node name="To Great Hall" parent="." unique_id=727452976 instance=ExtResource("6_h7cjq")]
-position = Vector2(472, 267)
+[node name="Storage Room" parent="." unique_id=727452976 instance=ExtResource("6_h7cjq")]
+position = Vector2(527, 207)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
 forbidden_message = "scene2frontdoor1"

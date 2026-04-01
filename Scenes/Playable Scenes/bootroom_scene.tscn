@@ -59,19 +59,19 @@ region_enabled = true
 region_rect = Rect2(98, 52, 12, 7)
 
 [node name="To Great Hall" parent="." unique_id=727452976 instance=ExtResource("8_chcfv")]
-position = Vector2(40, 116)
+position = Vector2(125, 42)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
 
-[node name="To Ballroom" parent="." unique_id=521600244 instance=ExtResource("8_chcfv")]
-position = Vector2(-21, -8)
+[node name="Bootroom" parent="." unique_id=521600244 instance=ExtResource("8_chcfv")]
+position = Vector2(30, -73)
 teleport = "res://Scenes/Playable Scenes/ballroom_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
 
 [node name="To cutscene 1" parent="." unique_id=824014948 instance=ExtResource("8_chcfv")]
-position = Vector2(41, 117)
+position = Vector2(93, 45)
 teleport = "res://Scenes/Playable Scenes/ballroom_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"

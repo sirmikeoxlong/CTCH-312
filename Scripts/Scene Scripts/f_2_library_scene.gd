@@ -2,11 +2,14 @@ extends Node2D
 
 @onready var to_study: RoomTeleport = $"Doors/To Study"
 @onready var to_f_2_bathroom: RoomTeleport = $"Doors/To F2 Bathroom"
+@onready var lauren: CharacterBody2D = $Lauren
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	unlock_all_doors()
 	MusicManager.play_music(load("res://Sounds/AMBIENCE.ogg"))
+	Global.lauren_movement_allowed = true
+	lauren.global_position = get_node(Global.last_door_accessed).position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
