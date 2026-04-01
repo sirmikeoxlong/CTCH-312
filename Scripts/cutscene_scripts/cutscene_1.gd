@@ -6,6 +6,7 @@ extends Node2D
 func _ready() -> void:
 	lauren.disable_camera()
 	Global.lauren_movement_allowed = true
+	lauren.global_position = get_node(Global.last_door_accessed).position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -26,4 +27,4 @@ func _on_front_door_has_yapped_about_it() -> void:
 	"followcarmilla")
 	await get_tree().create_timer(2.5).timeout
 	Global.cutscene_1_completed = true
-	Global.goto_scene("res://Scenes/Playable Scenes/bootroom_scene.tscn")
+	Global.goto_scene("res://Scenes/Playable Scenes/f_2_library_scene.tscn")

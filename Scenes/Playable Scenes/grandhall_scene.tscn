@@ -74,7 +74,12 @@ texture = SubResource("GradientTexture2D_o8okl")
 [node name="Doors" type="Node2D" parent="." unique_id=668105722]
 
 [node name="To Library" parent="Doors" unique_id=727452976 instance=ExtResource("3_o8okl")]
-position = Vector2(-175, -436)
+position = Vector2(-175, -423)
+teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
+forbidden_message = "scene6hall2"
+
+[node name="To Library2" parent="Doors" unique_id=406643199 instance=ExtResource("3_o8okl")]
+position = Vector2(-175, -423)
 teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
 forbidden_message = "scene6hall2"
 
@@ -113,6 +118,7 @@ door_id = "f1_outdoor"
 position = Vector2(-299, 88)
 teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
 key = NodePath("../../Collectable Items (offscreen)/Boot Room Key")
+unlocked = true
 forbidden_message = "doorlock"
 
 [node name="Storage Room" parent="Doors" unique_id=2129919375 instance=ExtResource("3_o8okl")]
@@ -123,7 +129,6 @@ unlocked = true
 [node name="Parlour" parent="Doors" unique_id=1477209996 instance=ExtResource("3_o8okl")]
 position = Vector2(126, -76)
 teleport = "res://Scenes/Playable Scenes/parlor_scene.tscn"
-unlocked = true
 forbidden_message = "doorlock"
 
 [node name="Billiards" parent="Doors" unique_id=811835521 instance=ExtResource("3_o8okl")]
@@ -151,6 +156,7 @@ forbidden_message = "scene6hall1"
 [node name="Kitchen" parent="Doors" unique_id=802532146 instance=ExtResource("3_o8okl")]
 position = Vector2(48, -233)
 teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
+unlocked = true
 forbidden_message = "kitchendoor"
 
 [node name="Dialogue" type="Node2D" parent="." unique_id=1555633052]
@@ -244,6 +250,7 @@ region_enabled = true
 region_rect = Rect2(113, 17, 14, 14)
 
 [connection signal="body_entered" from="Doors/To Library" to="." method="_on_to_library_body_entered"]
+[connection signal="body_entered" from="Doors/To Library2" to="." method="_on_to_library_body_entered"]
 [connection signal="has_yapped_about_it" from="Dialogue/d_scene5enter1" to="." method="_on_class_room_trigger_has_yapped_about_it"]
 [connection signal="body_entered" from="Library Door Puzzle" to="." method="_on_class_puzzle_body_entered"]
 [connection signal="body_entered" from="Key 1" to="." method="_on_pickup_body_entered"]

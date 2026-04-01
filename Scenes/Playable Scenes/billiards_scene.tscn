@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c2f73jo000gfb" path="res://Sprites/sprites/TopDownHouse_SmallItems.png" id="4_sb6fc"]
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="5_8lp4k"]
 [ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="6_nbqb4"]
-[ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="7_vvobh"]
 [ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="8_8grv3"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="10_sb6fc"]
 
@@ -63,10 +62,6 @@ text = "[Enter] To Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("7_vvobh")]
-position = Vector2(618, 174)
-scale = Vector2(0.16, 0.16)
-
 [node name="Dialogue" type="Node2D" parent="." unique_id=546926051]
 position = Vector2(-7, 35)
 
@@ -81,7 +76,7 @@ rotation = 0.012639626
 scale = Vector2(1.0040979, 1.0000159)
 shape = SubResource("CapsuleShape2D_tjc02")
 
-[node name="Parlour" parent="." unique_id=727452976 instance=ExtResource("10_sb6fc")]
+[node name="Gender" parent="." unique_id=727452976 instance=ExtResource("10_sb6fc")]
 position = Vector2(452, 272)
 teleport = "res://Scenes/Playable Scenes/parlor_scene.tscn"
 unlocked = true
