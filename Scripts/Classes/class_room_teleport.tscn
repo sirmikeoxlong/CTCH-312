@@ -22,7 +22,7 @@ bus = &"UI"
 
 [node name="door_use" type="AudioStreamPlayer2D" parent="." unique_id=1971184972]
 stream = ExtResource("3_l0tst")
-volume_db = 7.704
+volume_db = -2.774
 bus = &"UI"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
