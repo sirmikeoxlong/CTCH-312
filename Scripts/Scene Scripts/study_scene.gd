@@ -7,7 +7,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	to_library_f_2.unlocked = false
-
+	MusicManager.play_music(load("res://Sounds/AMBIENCE.ogg"))
 	
 func force_player_to_study():
 	if Global.fathers_journal_pocketed == true:

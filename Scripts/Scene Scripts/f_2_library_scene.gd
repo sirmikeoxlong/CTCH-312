@@ -6,6 +6,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	unlock_all_doors()
+	MusicManager.play_music(load("res://Sounds/AMBIENCE.ogg"))
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
