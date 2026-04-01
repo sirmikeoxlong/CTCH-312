@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="3_kulqj"]
 [ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="4_bl2sy"]
 [ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="5_fydfr"]
+[ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="6_r0uby"]
 
 [sub_resource type="Gradient" id="Gradient_au0op"]
 
@@ -133,6 +134,18 @@ polygon = PackedVector2Array(-293, 103, -292, 73, -246, 73, -244, 10, -182, 11, 
 
 [node name="Carmilla Walks to Chapel" type="AnimationPlayer" parent="." unique_id=1550446560]
 libraries/ = SubResource("AnimationLibrary_qujks")
+
+[node name="Cutscene1" parent="." unique_id=727452976 instance=ExtResource("6_r0uby")]
+position = Vector2(-313, 64)
+teleport = "res://Scenes/Playable Scenes/ballroom_scene.tscn"
+unlocked = true
+forbidden_message = "doorlock"
+
+[node name="Cutscene2" parent="." unique_id=1497041106 instance=ExtResource("6_r0uby")]
+position = Vector2(-11, 32)
+teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
+unlocked = true
+forbidden_message = "doorlock"
 
 [connection signal="body_entered" from="Meet Carmilla" to="." method="_on_snarky_comment_body_entered"]
 [connection signal="body_entered" from="Front Door" to="." method="_on_snarky_comment_body_entered"]

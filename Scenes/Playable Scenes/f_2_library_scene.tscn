@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="7_s130n"]
 [ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="8_mloce"]
 [ext_resource type="Texture2D" uid="uid://e4kha20n1f77" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Esoteric.png" id="9_5a3ix"]
+[ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="10_c2gcy"]
 
 [sub_resource type="Gradient" id="Gradient_nw6sa"]
 
@@ -71,8 +72,8 @@ texture = SubResource("GradientTexture2D_0fwj2")
 
 [node name="Doors" type="Node2D" parent="." unique_id=392325371]
 
-[node name="To Library F1" parent="Doors" unique_id=727452976 instance=ExtResource("3_77tw0")]
-position = Vector2(-209, -208)
+[node name="Cutscene2" parent="Doors" unique_id=727452976 instance=ExtResource("3_77tw0")]
+position = Vector2(-157, -275)
 teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
 forbidden_message = "doorlock"
 
@@ -112,6 +113,7 @@ forbidden_message = "doorlock"
 [node name="F2 Bathroom" parent="Doors" unique_id=1468689881 instance=ExtResource("3_77tw0")]
 position = Vector2(227, 211)
 teleport = "res://Scenes/Playable Scenes/f_2_bathroom_scene.tscn"
+unlocked = true
 forbidden_message = "doorlock"
 
 [node name="Lockpick" parent="." unique_id=1015122729 instance=ExtResource("5_5a3ix")]
@@ -159,20 +161,6 @@ region_rect = Rect2(0, 162, 15, 12)
 shape = SubResource("CircleShape2D_c2gcy")
 script = ExtResource("7_s130n")
 
-[node name="Label" type="Label" parent="Library Book 3" unique_id=706839187]
-modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
-z_index = 20
-texture_filter = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -62.0
-offset_top = 11.0
-offset_right = 59.0
-offset_bottom = 50.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("8_mloce")
-theme_override_font_sizes/font_size = 10
-text = "[Enter] To Interact"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("10_c2gcy")]
+position = Vector2(128, -179)
+scale = Vector2(0.16, 0.16)

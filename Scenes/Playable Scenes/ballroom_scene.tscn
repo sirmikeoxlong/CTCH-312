@@ -43,17 +43,6 @@ texture = SubResource("GradientTexture2D_3ivsh")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=1427761933]
 polygon = PackedVector2Array(-202, -243, 164, -242, 166, -126, 144, -126, 143, -101, 166, -102, 165, 7, 195, 6, 195, 39, 166, 39, -155, 37, -157, -103, -134, -104, -134, -9, -113, -8, -111, -32, -127, -43, -133, -125, -157, -125, -155, -218, -201, -218, -202, -238, -296, -152, -354, -47, -424, 131, -243, 208, 156, 218, 314, 89, 373, -212, 293, -356, 25, -453, -201, -450, -366, -370, -318, -258, -272, -217)
 
-[node name="Ballroom" parent="bg_collision" unique_id=727452976 instance=ExtResource("3_idnv1")]
-position = Vector2(69, -252)
-teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
-
-[node name="Storage" parent="bg_collision" unique_id=1627856602 instance=ExtResource("3_idnv1")]
-position = Vector2(-203, -218)
-
-[node name="Bootroom" parent="bg_collision" unique_id=1431071824 instance=ExtResource("3_idnv1")]
-position = Vector2(193, 23)
-teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
-
 [node name="Ballroom Paper" parent="." unique_id=1015122729 instance=ExtResource("4_tod71")]
 position = Vector2(-47, -134)
 id = "ballroom_paper"
@@ -84,3 +73,15 @@ theme_override_font_sizes/font_size = 10
 text = "[Enter] To Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Ballroom" parent="." unique_id=727452976 instance=ExtResource("3_idnv1")]
+position = Vector2(69, -252)
+teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
+unlocked = true
+
+[node name="Bootroom" parent="." unique_id=1431071824 instance=ExtResource("3_idnv1")]
+position = Vector2(193, 23)
+teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
+
+[node name="Storage" parent="." unique_id=1627856602 instance=ExtResource("3_idnv1")]
+position = Vector2(-203, -218)

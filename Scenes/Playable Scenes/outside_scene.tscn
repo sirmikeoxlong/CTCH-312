@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="6_kv6y2"]
 [ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="7_jl6lp"]
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="8_jl6lp"]
-[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="9_021d3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nkkqu"]
 radius = 64.02203
@@ -26,7 +25,7 @@ position = Vector2(-1, 1)
 [node name="bg_collision" type="StaticBody2D" parent="." unique_id=1178411334]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=908254339]
-polygon = PackedVector2Array(-273, 595, -268, 222, -231, 219, -201, 232, -194, 249, -141, 251, -184, 240, -190, 185, -209, 185, -287, 184, -286, -79, -198, -78, -193, -66, -144, -65, -142, -77, 27, -83, 33, -64, 77, -65, 81, -78, 202, -78, 226, 592, -258, 590, -138, 725, 500, 744, 632, 225, 389, -353, -270, -351, -535, -147, -497, 256, -390, 629, -265, 728)
+polygon = PackedVector2Array(-273, 595, -347, 377, -268, 222, -231, 219, -201, 232, -194, 249, -141, 251, -184, 240, -190, 185, -209, 185, -287, 184, -375, 5, -296, -157, -209, -160, -208, -81, -193, -66, -144, -65, -142, -77, 27, -83, 33, -64, 77, -65, 81, -78, 116, -163, 192, -159, 202, -78, 279, -28, 269, 380, 226, 592, -258, 590, -138, 725, 500, 744, 632, 225, 389, -353, -270, -351, -535, -147, -497, 256, -390, 629, -265, 728)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1576738622]
 script = ExtResource("3_0yj4u")
@@ -43,10 +42,11 @@ position = Vector2(-53, 532)
 position = Vector2(-63, -91)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 key = NodePath("../Main Door Key")
+forbidden_message = "doorlock"
 door_id = "main_entrance"
 
 [node name="Main Door Key" parent="." unique_id=1086952445 instance=ExtResource("6_kv6y2")]
-position = Vector2(-9, -4)
+position = Vector2(242, 13)
 id = "main_door_key"
 pickup_message = "scene3gazebo2"
 
@@ -58,24 +58,6 @@ region_rect = Rect2(98, 52, 12, 7)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Main Door Key" unique_id=1248744531]
 shape = SubResource("CircleShape2D_021d3")
 script = ExtResource("8_jl6lp")
-
-[node name="Label" type="Label" parent="Main Door Key" unique_id=1980359079]
-modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
-z_index = 20
-texture_filter = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -62.0
-offset_top = 11.0
-offset_right = 59.0
-offset_bottom = 50.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("9_021d3")
-theme_override_font_sizes/font_size = 10
-text = "[Enter] To Interact"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Main Door Key" to="." method="_on_main_door_key_body_entered"]
