@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dx1pcgoii0f41"]
 
 [ext_resource type="Script" uid="uid://dr271r0c4r02c" path="res://node_2d.gd" id="1_eb011"]
+[ext_resource type="AudioStream" uid="uid://kbc4vqeyqbwc" path="res://Sounds/Door Locked.ogg" id="2_7j2sk"]
+[ext_resource type="AudioStream" uid="uid://cf0eskfwphc5u" path="res://Sounds/Door.ogg" id="3_l0tst"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_exwx1"]
 radius = 13.0
@@ -12,6 +14,16 @@ script = ExtResource("1_eb011")
 [node name="Door" type="CollisionShape2D" parent="." unique_id=1553931810]
 position = Vector2(52, -71)
 shape = SubResource("CapsuleShape2D_exwx1")
+
+[node name="door_locked" type="AudioStreamPlayer2D" parent="." unique_id=1059968816]
+stream = ExtResource("2_7j2sk")
+volume_db = 3.082
+bus = &"UI"
+
+[node name="door_use" type="AudioStreamPlayer2D" parent="." unique_id=1971184972]
+stream = ExtResource("3_l0tst")
+volume_db = 7.704
+bus = &"UI"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

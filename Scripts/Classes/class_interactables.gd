@@ -4,6 +4,8 @@ extends Node2D
 
 @export var id : String
 @export var pickup_message : String
+@onready var key_main: AudioStreamPlayer2D = $key_main
+
 
 @onready var entered
 
@@ -23,6 +25,7 @@ func trigger():
 	# probably a separate mask layer to do this
 	pass
 	
+	
 func perform():
 	# if the above function returns true, perform the animation
 	# once done, send a signal to the story singleton that the obj has been touched
@@ -37,10 +40,11 @@ func mark_as_touched():
 func add_to_inventory():
 	# add an item of this class to global inventory
 	if Input.is_action_just_pressed("ui_accept"):
+		key_main.stop()
+		key_main.play()
 		SingPlayer.inventory.push_front(self)
 		DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
 		pickup_message)
-		
 		self.hide()
 		pocketed.emit()
 

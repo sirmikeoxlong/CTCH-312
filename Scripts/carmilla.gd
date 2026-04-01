@@ -7,7 +7,9 @@ var last_position: Vector2
 
 @onready var player_sfx: AudioStreamPlayer2D = %player_sfx
 @onready var footstep_timer: Timer = $player_sfx/footstep_timer
-@export var step_delay: float = 0.4
+@export var step_delay: float = 0.2
+@onready var scream: AudioStreamPlayer2D = $scream
+@onready var notice: AudioStreamPlayer2D = $notice
 
 
 func _ready() -> void:
@@ -23,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("idle")
 
  # Check if the player is moving and on the floor
-	var is_moving = position.distance_to(last_position) > 0.5
+	var is_moving = position.distance_to(last_position) > 0.2
 
 	if is_moving:
 		if footstep_timer.is_stopped():
@@ -42,7 +44,11 @@ func _on_detection_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = true
 		player = body
+		scream.play()
+		notice.play()
 
 func _on_detection_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = false
+		scream.stop()
+		notice.stop()

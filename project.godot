@@ -15,6 +15,10 @@ run/main_scene="uid://c4e58f6ugy1cw"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://c7o32jvfapbk0"
+
 [autoload]
 
 DialogueManager="*uid://c3rodes2l3gxb"
@@ -22,6 +26,7 @@ Global="*uid://88scnhacweae"
 Storystate="*uid://d0brtuuqupi01"
 SingPlayer="*uid://clqd1cw1d02vy"
 InteractionManager="*uid://co8x0n26retru"
+MusicManager="*uid://sanlbfns5jvi"
 
 [display]
 

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://budm5ecrg44g3" path="res://Scripts/main_scene.gd" id="1_0f027"]
 [ext_resource type="Script" uid="uid://c2r15hqgvbn8c" path="res://Scripts/start_game.gd" id="2_2c62f"]
+[ext_resource type="AudioStream" uid="uid://bvtqb0awxdfuc" path="res://Sounds/UI Toy Piano.ogg" id="3_gyfs4"]
+[ext_resource type="AudioStream" uid="uid://w687qn0kb5jj" path="res://Sounds/TheTitleThemCarmillaMAnor.ogg" id="4_d5x1h"]
 
 [node name="MainScene" type="Control" unique_id=1957953634]
 layout_mode = 3
@@ -22,10 +24,19 @@ offset_bottom = 338.0
 text = "Start"
 script = ExtResource("2_2c62f")
 
+[node name="UI" type="AudioStreamPlayer2D" parent="Main Menu" unique_id=1738646645]
+stream = ExtResource("3_gyfs4")
+volume_db = -3.467
+bus = &"UI"
+
 [node name="Inventory" type="Control" parent="." unique_id=357764338]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="MainMenuTheme" type="AudioStreamPlayer2D" parent="." unique_id=726964460]
+stream = ExtResource("4_d5x1h")
+volume_db = 2.311
 
 [connection signal="pressed" from="Main Menu/Start Game" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Main Menu/Start Game" to="Main Menu/Start Game" method="_on_pressed"]
