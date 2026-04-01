@@ -3,7 +3,7 @@ Lauren: I hope I’m going the right way. I didn’t exactly get the best direct
 => END
 
 ~ scene1forest2
-Lauren: Looks like this it is.
+Lauren: Looks like this is it.
 => END
 
 ~ scene2frontdoor1
@@ -331,7 +331,6 @@ Carmilla: ...I will give thine one more chance to please me. It would be in thy 
 	Flash your light at Carmilla, before she reaches you.
 	- Escape => scene40parenthouse1
 	=>< scene40parenthouse1
-	Lauren: Yah
 	=> END
 - Stay with Carmilla
 	Lauren put the necklace on and walks towards Carmilla.
