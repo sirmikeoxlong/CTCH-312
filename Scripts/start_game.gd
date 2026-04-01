@@ -7,7 +7,7 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	main_menu_theme.play()
+	pass
 
 func _on_pressed() -> void:
 	ui.play()
