@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxhcwcxiqfkyo"]
 
-[ext_resource type="Script" uid="uid://3hxikejx5jx" path="res://Scripts/Scene Scripts/grandhall_scene.gd" id="1_lgo1s"]
+[ext_resource type="Script" path="res://Scripts/Scene Scripts/grandhall_scene.gd" id="1_lgo1s"]
 [ext_resource type="PackedScene" uid="uid://ccmxpq6w5id6e" path="res://Scenes/environments/env_grandhall.tscn" id="1_nw6sa"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_o8okl"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="3_o8okl"]
