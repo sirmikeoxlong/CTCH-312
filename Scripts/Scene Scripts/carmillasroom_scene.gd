@@ -26,4 +26,6 @@ func _on_carmillas_diary_pocketed() -> void:
 	Global.carmilla_diary_pocketed = true
 	Global.lib_key2_collect = true
 	Global.storage_room_key_allowed = true
+
+func _on_carmillas_diary_saying_finished() -> void:
 	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), "puzzlepiece1")

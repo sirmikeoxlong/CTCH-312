@@ -140,5 +140,7 @@ text = "[Enter] To Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="saying_finished" from="Dialogue/Enter Carmilla\'s Room" to="." method="_on_enter_carmillas_room_saying_finished"]
+[connection signal="saying_started" from="Dialogue/Enter Carmilla\'s Room" to="." method="_on_enter_carmillas_room_saying_started"]
 [connection signal="body_entered" from="Carmilla\'s Diary" to="." method="_on_carmillas_diary_body_entered"]
 [connection signal="pocketed" from="Carmilla\'s Diary" to="." method="_on_carmillas_diary_pocketed"]
