@@ -77,7 +77,7 @@ scale = Vector2(1.0040979, 1.0000159)
 shape = SubResource("CapsuleShape2D_tjc02")
 
 [node name="Gender" parent="." unique_id=727452976 instance=ExtResource("10_sb6fc")]
-position = Vector2(452, 272)
+position = Vector2(467, 268)
 teleport = "res://Scenes/Playable Scenes/parlor_scene.tscn"
 unlocked = true
 

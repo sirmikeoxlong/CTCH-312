@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var to_f_2_library_hall: RoomTeleport = $"To F2 Library Hall"
+@onready var carmilla_s_room: RoomTeleport = $"Carmilla's Room"
 @onready var carmilla_s_diary: cutscene_interactables = $"Carmilla's Diary"
 @onready var lauren: CharacterBody2D = $Lauren
 
@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	
 func force_player_to_study():
 	if Global.carmilla_diary_pocketed == true:
-		to_f_2_library_hall.unlocked = true
+		carmilla_s_room.unlocked = true
 
 
 func _on_carmillas_diary_body_entered(body: CharacterBody2D) -> void:

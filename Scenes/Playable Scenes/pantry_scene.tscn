@@ -48,7 +48,7 @@ teleport = "res://Scenes/Playable Scenes/staffroom_scene.tscn"
 forbidden_message = "doorlock"
 
 [node name="Pantry" parent="." unique_id=1187717758 instance=ExtResource("8_mjwrk")]
-position = Vector2(-107, 31)
+position = Vector2(-96, 29)
 teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"

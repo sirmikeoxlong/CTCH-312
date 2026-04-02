@@ -142,7 +142,7 @@ unlocked = true
 forbidden_message = "doorlock"
 
 [node name="Cutscene2" parent="." unique_id=1497041106 instance=ExtResource("6_r0uby")]
-position = Vector2(-11, 32)
+position = Vector2(-279, 66)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
