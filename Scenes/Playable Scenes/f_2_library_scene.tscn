@@ -78,13 +78,13 @@ teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
 forbidden_message = "doorlock"
 
 [node name="BR1" parent="Doors" unique_id=2086894804 instance=ExtResource("3_77tw0")]
-position = Vector2(-89, 23)
+position = Vector2(-69, 16)
 teleport = "res://Scenes/Playable Scenes/1_bedroom_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
 
 [node name="BR2" parent="Doors" unique_id=310440998 instance=ExtResource("3_77tw0")]
-position = Vector2(70, 15)
+position = Vector2(52, 14)
 teleport = "res://Scenes/Playable Scenes/2_bedroom_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
@@ -98,6 +98,7 @@ forbidden_message = "doorlock"
 position = Vector2(-200, 210)
 teleport = "res://Scenes/Playable Scenes/study_scene.tscn"
 key = NodePath("../../Lockpick")
+unlocked = true
 forbidden_message = "doorlock"
 
 [node name="Carmilla\'s Room" parent="Doors" unique_id=1691242732 instance=ExtResource("3_77tw0")]
@@ -113,7 +114,6 @@ forbidden_message = "doorlock"
 [node name="F2 Bathroom" parent="Doors" unique_id=1468689881 instance=ExtResource("3_77tw0")]
 position = Vector2(227, 211)
 teleport = "res://Scenes/Playable Scenes/f_2_bathroom_scene.tscn"
-unlocked = true
 forbidden_message = "doorlock"
 
 [node name="Lockpick" parent="." unique_id=1015122729 instance=ExtResource("5_5a3ix")]

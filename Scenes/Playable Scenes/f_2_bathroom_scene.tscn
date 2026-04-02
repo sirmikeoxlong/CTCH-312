@@ -18,12 +18,12 @@ position = Vector2(588, 406)
 scale = Vector2(0.51459193, 0.5224101)
 
 [node name="Bathroom" parent="." unique_id=727452976 instance=ExtResource("2_yvb7v")]
-position = Vector2(446, 407)
+position = Vector2(520, 405)
 teleport = "res://Scenes/Playable Scenes/carmillasroom_scene.tscn"
 unlocked = true
 
 [node name="F2 Bathroom" parent="." unique_id=260962038 instance=ExtResource("2_yvb7v")]
-position = Vector2(627, 325)
+position = Vector2(629, 323)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 unlocked = true
 

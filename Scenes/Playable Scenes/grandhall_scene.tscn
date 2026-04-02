@@ -92,7 +92,7 @@ position = Vector2(-274, -156)
 teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
 
 [node name="ChapelDoor1" parent="Doors" unique_id=1074362768 instance=ExtResource("3_o8okl")]
-position = Vector2(-226, -227)
+position = Vector2(-211, -230)
 teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
 unlocked = true
 
@@ -115,7 +115,7 @@ forbidden_message = "doorlock"
 door_id = "f1_outdoor"
 
 [node name="Bootroom" parent="Doors" unique_id=100980308 node_paths=PackedStringArray("key") instance=ExtResource("3_o8okl")]
-position = Vector2(-299, 88)
+position = Vector2(-283, 85)
 teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
 key = NodePath("../../Collectable Items (offscreen)/Boot Room Key")
 unlocked = true
@@ -154,7 +154,7 @@ teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 forbidden_message = "scene6hall1"
 
 [node name="Kitchen" parent="Doors" unique_id=802532146 instance=ExtResource("3_o8okl")]
-position = Vector2(48, -233)
+position = Vector2(38, -233)
 teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
 unlocked = true
 forbidden_message = "kitchendoor"
