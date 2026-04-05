@@ -8,7 +8,6 @@ extends Node2D
 # Door Paths
 @onready var bootroom: RoomTeleport = $Doors/Bootroom
 @onready var to_library: RoomTeleport = $"Doors/To Library"
-
 @onready var doors: Node2D = $Doors
 
 var last_door = Global.last_door_accessed
@@ -17,7 +16,8 @@ var last_door = Global.last_door_accessed
 func _ready() -> void:
 	Global.lauren_movement_allowed = true
 	to_library.set_process(false)
-	lauren.global_position = doors.get_node(last_door).position
+	if !(last_door == ""):
+		lauren.global_position = doors.get_node(last_door).position
 	MusicManager.play_music(load("res://Sounds/AMBIENCE.ogg"))
 	
 func unloack_all_doors():
