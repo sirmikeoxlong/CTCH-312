@@ -6,12 +6,16 @@ extends Node2D
 @onready var f_2_bathroom_key: cutscene_interactables = $"F2 Bathroom Key"
 @onready var lauren: CharacterBody2D = $Lauren
 
+var last_door = Global.last_door_accessed
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	study.unlocked = false
 	MusicManager.play_music(load("res://Sounds/AMBIENCE.ogg"))
 	Global.lauren_movement_allowed = true
-	lauren.global_position = get_node(Global.last_door_accessed).position
+	
+	if !(last_door == ""):
+		lauren.global_position = get_node(Global.last_door_accessed).position
 	
 func force_player_to_study():
 	if Global.fathers_journal_pocketed == true:
