@@ -1,17 +1,21 @@
 extends Node2D
 
-@onready var lauren: CharacterBody2D = $Lauren
+@onready var lauren: CharacterBody2D = $"Environmental Sorting/Lauren"
 @onready var trigger_scene_1_forest_1: CollisionShape2D = $Area2D/trigger_scene1forest1
 @onready var key1 = $"Main Door Key"
 @onready var outdoor_amb: AudioStreamPlayer = $OutdoorAMB
 
 var last_door = Global.last_door_accessed
 
-# Called when the node enters the scene tree for the first time.
+# Called when the node enters the scenewD tree for the first time.
 func _ready() -> void:
 	outdoor_amb.play()
 	if !(last_door == ""):
 		lauren.global_position = get_node(last_door).position
+		print("exiting ready state change function")
+	else:
+		print("Skipped global position change at onready")
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

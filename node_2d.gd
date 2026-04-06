@@ -46,6 +46,7 @@ func _process(delta: float) -> void:
 					door_use.play()
 					Global.last_door_accessed = self.name
 					await get_tree().create_timer(0.4).timeout
+					print("Global.last_door_accessed has been updated")
 					Global.goto_scene(teleport)
 					pass
 			else:
