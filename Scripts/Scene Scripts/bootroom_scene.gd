@@ -9,7 +9,6 @@ extends Node2D
 
 var last_door = Global.last_door_accessed
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	MusicManager.play_music(load("res://Sounds/AMBIENCE.ogg"))

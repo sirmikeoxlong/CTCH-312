@@ -15,11 +15,15 @@ radius = 25.019993
 [node name="dining_scene" type="Node2D" unique_id=809300282]
 script = ExtResource("1_85gh8")
 
-[node name="env_dining" parent="." unique_id=2073618328 instance=ExtResource("1_cty6c")]
+[node name="Environmental Sorting" type="Node2D" parent="." unique_id=962404621]
+y_sort_enabled = true
+
+[node name="env_dining" parent="Environmental Sorting" unique_id=2073618328 instance=ExtResource("1_cty6c")]
 position = Vector2(-89, 107)
 scale = Vector2(0.5127585, 0.52853614)
 
-[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_10372")]
+[node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("2_10372")]
+y_sort_enabled = true
 position = Vector2(-189, 142)
 
 [node name="bg_collisions" type="StaticBody2D" parent="." unique_id=427350585]

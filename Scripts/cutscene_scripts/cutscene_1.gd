@@ -2,20 +2,27 @@ extends Node2D
 
 @onready var lauren: CharacterBody2D = $Lauren
 
-# Called when the node enters the scene tree for the first time.
+var last_door = Global.last_door_accessed
+
+# Called wh$Camera2Den the node enters the scene tree for the first time.
 func _ready() -> void:
-	lauren.disable_camera()
+	$Camera2D.set_process(false)
 	Global.lauren_movement_allowed = true
-	lauren.global_position = get_node(Global.last_door_accessed).position
+	Global.carmilla_movement_allowed = false
+	
+	if !(last_door == ""):
+		lauren.global_position = get_node(Global.last_door_accessed).position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 
-func _on_snarky_comment_body_entered(body: Node2D) -> void:
+func _on_snarky_comment_body_entered(body: CharacterBody2D) -> void:
+	lauren.disable_camera()
+	$Camera2D.set_process(true)
 	Global.lauren_movement_allowed = false
-	Global.carmilla_movement_allowed = false
+	#Global.carmilla_movement_allowed = false
 
 func _on_front_door_has_yapped_about_it() -> void:
 	# Carmilla should move away
