@@ -16,7 +16,7 @@ fill_to = Vector2(0.6011396, 0.16524217)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qujks"]
 radius = 15.0
-height = 86.0
+height = 41.456955
 
 [sub_resource type="Animation" id="Animation_ax81e"]
 length = 0.001
@@ -77,9 +77,9 @@ _data = {
 [node name="Cutscene 1" type="Node2D" unique_id=1686572223]
 script = ExtResource("1_uxk81")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1568221019]
-position = Vector2(-109, -36)
-zoom = Vector2(3, 3)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2090206386]
+position = Vector2(-109, -98)
+zoom = Vector2(5, 5)
 
 [node name="Grand Hall" parent="." unique_id=950251797 instance=ExtResource("2_r0uby")]
 position = Vector2(-72, -484)
@@ -109,9 +109,9 @@ id = "first_cutscene"
 RoomMessage = "scene20entrance1"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Meet Carmilla" unique_id=1067789864]
-position = Vector2(10.999999, 6.999999)
+position = Vector2(11.361285, -26.468355)
 rotation = 0.012639626
-scale = Vector2(1.0040979, 1.0000159)
+scale = Vector2(1.1241713, 0.39937955)
 shape = SubResource("CapsuleShape2D_qujks")
 
 [node name="Front Door" parent="." unique_id=67263175 instance=ExtResource("5_fydfr")]

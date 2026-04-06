@@ -19,8 +19,16 @@ radius = 25.019993
 [node name="outside_scene" type="Node2D" unique_id=373647599]
 script = ExtResource("1_2jf0q")
 
-[node name="envOutside" parent="." unique_id=1871588153 instance=ExtResource("1_f5yt4")]
+[node name="Environmental Sorting" type="Node2D" parent="." unique_id=826236310]
+y_sort_enabled = true
+
+[node name="envOutside" parent="Environmental Sorting" unique_id=1871588153 instance=ExtResource("1_f5yt4")]
+y_sort_enabled = true
 position = Vector2(-1, 1)
+
+[node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("2_2jf0q")]
+y_sort_enabled = true
+position = Vector2(-53, 532)
 
 [node name="bg_collision" type="StaticBody2D" parent="." unique_id=1178411334]
 
@@ -34,9 +42,6 @@ script = ExtResource("3_0yj4u")
 position = Vector2(-61, 429.00003)
 rotation = 1.5650148
 shape = SubResource("CapsuleShape2D_nkkqu")
-
-[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_2jf0q")]
-position = Vector2(-53, 532)
 
 [node name="Entrance" parent="." unique_id=727452976 node_paths=PackedStringArray("key") instance=ExtResource("4_nkkqu")]
 position = Vector2(-63, -91)

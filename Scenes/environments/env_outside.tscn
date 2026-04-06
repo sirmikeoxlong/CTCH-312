@@ -6366,8 +6366,8 @@ tile_set = SubResource("TileSet_ju6cp")
 light_mask = 2
 visibility_layer = 2
 texture_filter = 1
-position = Vector2(301, -603.99994)
-scale = Vector2(0.10676929, 0.10612211)
+position = Vector2(406, -573)
+scale = Vector2(0.19495293, 0.21001674)
 texture = ExtResource("2_7mkpd")
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=2124866057]
