@@ -2690,9 +2690,9 @@ offset_bottom = 40.0
 [node name="Start Game" type="Button" parent="Main Menu" unique_id=1386517725]
 layout_mode = 0
 offset_left = 458.0
-offset_top = 420.0
-offset_right = 582.0
-offset_bottom = 454.0
+offset_top = 426.99997
+offset_right = 589.99286
+offset_bottom = 463.96332
 scale = Vector2(1.984956, 2.164307)
 script = ExtResource("2_2c62f")
 
@@ -2712,7 +2712,7 @@ offset_bottom = 40.0
 
 [node name="MainMenuTheme" type="AudioStreamPlayer2D" parent="." unique_id=726964460]
 stream = ExtResource("4_d5x1h")
-volume_db = 2.311
+volume_db = 24.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1205487107]
 position = Vector2(587, 330)

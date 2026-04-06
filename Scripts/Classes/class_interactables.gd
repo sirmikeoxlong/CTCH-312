@@ -49,7 +49,7 @@ func add_to_inventory():
 		DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
 		pickup_message)
 		self.hide()
-		await get_tree().create_timer(2.5).timeout
+		await get_tree().create_timer(.8).timeout
 		Global.lauren_movement_allowed = true
 		pocketed.emit()
 		saying_finished.emit()

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://el140ya21vl2" path="res://Scripts/Scene Scripts/outside_scene.gd" id="1_2jf0q"]
 [ext_resource type="PackedScene" uid="uid://demqdejgfcxvn" path="res://Scenes/environments/env_outside.tscn" id="1_f5yt4"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_2jf0q"]
+[ext_resource type="AudioStream" uid="uid://cb6lde0iweaeo" path="res://Sounds/freesound_community-general-outside-ambience-72630.ogg" id="2_021d3"]
 [ext_resource type="Script" uid="uid://qb5b7c1gato3" path="res://Scripts/Outside/area_2d.gd" id="3_0yj4u"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="4_nkkqu"]
 [ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="6_kv6y2"]
@@ -18,6 +19,10 @@ radius = 25.019993
 
 [node name="outside_scene" type="Node2D" unique_id=373647599]
 script = ExtResource("1_2jf0q")
+
+[node name="OutdoorAMB" type="AudioStreamPlayer" parent="." unique_id=277018067]
+stream = ExtResource("2_021d3")
+volume_db = -14.026
 
 [node name="envOutside" parent="." unique_id=1871588153 instance=ExtResource("1_f5yt4")]
 position = Vector2(-1, 1)
