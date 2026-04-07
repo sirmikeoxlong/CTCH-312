@@ -9,6 +9,9 @@ var input_dir = Vector2.ZERO
 var movement_dir = ""
 var can_flashbang = true
 
+
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var flashlight_click: AudioStreamPlayer = $FlashlightClick
 @onready var movement_enabled = Global.lauren_movement_allowed
 @onready var lightPivot = $LightPivot
@@ -23,6 +26,10 @@ var can_flashbang = true
 @onready var flashlight_bang: AudioStreamPlayer = $LightPivot/Area2D/Flashlight/FlashbangPath/FlashlightBang
 @onready var flashlighton: Sprite2D = $Flashlighton
 @onready var flashlightoff: Sprite2D = $Flashlightoff
+@onready var heal_sfx: AudioStreamPlayer = $HEAL_SFX
+@onready var hpbar: CanvasLayer = $Hpbar
+@onready var hit_sfx: AudioStreamPlayer = $hit_sfx
+@onready var death_timer: Timer = $death_timer
 
 
 
@@ -31,6 +38,7 @@ func player():
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("Idle")
+	animation_player.stop()
 
 func _physics_process(delta: float) -> void:
 	movement_enabled = Global.lauren_movement_allowed
@@ -197,3 +205,24 @@ func _on_flash_timer_timeout() -> void:
 	can_flashbang = true
 	flashlighton.show()
 	flashlight_click.play()
+
+#healsssss - pick up function that will be used as a signal for the bandages
+func heal_pickup():
+	print("healed!") # debug
+	$Hpbar.heal()
+	heal_sfx.play()
+	
+#get smacked
+func hit():
+	print("get Smacked") #debug
+	$Hpbar.hit()
+	hit_sfx.play()
+
+func die():
+	print("You Dead")
+	movement_enabled = false
+	animation_player.play("death")
+	death_timer.start()
+
+func _on_death_timer_timeout() -> void:
+	get_tree().reload_current_scene()
