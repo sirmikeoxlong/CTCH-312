@@ -1,0 +1,128 @@
+[gd_resource type="PackedScene" format=3 uid="uid://c7qotmjvokqh4"]
+
+[ext_resource type="AudioStream" uid="uid://b6vbjhqltlo36" path="res://Sounds/Flashlight Bang.ogg" id="1_7wxms"]
+[ext_resource type="Texture2D" uid="uid://b3ds00ygu1fsc" path="res://Sprites/sprites/UIEFFECTS/cardboard-texture.jpg" id="2_hrmgr"]
+
+[sub_resource type="Animation" id="Animation_uvml0"]
+resource_name = "FLASH"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.7784455, 0.7784455, 0.7784455, 0.7921569), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CardboardTexture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CardboardTexture:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.43333334),
+"transitions": PackedFloat32Array(1, 1.1095692, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.91764706, 1, 1, 0.5137255), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FlashlightBang:stream")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_7wxms")]
+}
+
+[sub_resource type="Animation" id="Animation_qb1me"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CardboardTexture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_hrmgr")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CardboardTexture:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FlashlightBang:stream")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_7wxms")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cub8h"]
+_data = {
+&"FLASH": SubResource("Animation_uvml0"),
+&"RESET": SubResource("Animation_qb1me")
+}
+
+[resource]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Node2D", "AnimationPlayer", "libraries/", "autoplay", "CanvasLayer", "ColorRect", "offset_left", "offset_top", "offset_right", "offset_bottom", "CardboardTexture", "modulate", "position", "texture", "Sprite2D", "FlashlightBang", "stream", "bus", "AudioStreamPlayer"),
+"node_count": 6,
+"node_ids": PackedInt32Array(651150477, 284463162, 715392215, 500135540, 1134253396, 1425235346),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 0, 0, -1, 0, 0, 0, 0, 1, 1, -1, 2, 2, 0, 3, 1, 0, 0, 0, 4, 4, -1, 0, 0, 2, 0, 5, 5, -1, 4, 6, 2, 7, 3, 8, 4, 9, 5, 0, 0, 0, 14, 10, -1, 3, 11, 6, 12, 7, 13, 8, 0, 0, 0, 18, 15, -1, 2, 16, 9, 17, 10, 0),
+"variants": [SubResource("AnimationLibrary_cub8h"), &"FLASH", -30.0, -21.0, 1217.0, 667.0, Color(1, 1, 1, 0), Vector2(607, 348), ExtResource("2_hrmgr"), ExtResource("1_7wxms"), &"sfx"],
+"version": 3
+}

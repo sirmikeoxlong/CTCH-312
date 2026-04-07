@@ -10,6 +10,12 @@
 [ext_resource type="AudioStream" uid="uid://d060nwlkbb6tw" path="res://Sounds/L n C Footsteps 06.ogg" id="7_y3174"]
 [ext_resource type="AudioStream" uid="uid://d1ljaoxxhtokl" path="res://Sounds/L n C Footsteps 07.ogg" id="8_jnj1b"]
 [ext_resource type="Texture2D" uid="uid://xr362eho5n7c" path="res://Sprites/Juanna's Sprites/LaurenCrouch.png" id="9_jnj1b"]
+[ext_resource type="AudioStream" uid="uid://b6vbjhqltlo36" path="res://Sounds/Flashlight Bang.ogg" id="11_w72bm"]
+[ext_resource type="Texture2D" uid="uid://qndiiwukmhim" path="res://Sprites/sprites/UIEFFECTS/flashlighton.png" id="12_1s20c"]
+[ext_resource type="Texture2D" uid="uid://t32xtrahhuak" path="res://Sprites/sprites/UIEFFECTS/flashlightoff.png" id="12_6e115"]
+[ext_resource type="AudioStream" uid="uid://cvr7o0dm61ddf" path="res://Sounds/flashlight_click.ogg" id="14_ctaf6"]
+[ext_resource type="Texture2D" uid="uid://dmrjfajqoeu07" path="res://Sprites/sprites/UIEFFECTS/HITHEART.png" id="15_ilbab"]
+[ext_resource type="Texture2D" uid="uid://bgi4lxph27myf" path="res://Sprites/sprites/UIEFFECTS/HEART.png" id="16_phyf0"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2uho5"]
 random_pitch = 1.123435
@@ -368,6 +374,8 @@ _data = {
 }
 
 [node name="Lauren" type="CharacterBody2D" unique_id=1222447786 groups=["player"]]
+collision_layer = 9
+collision_mask = 9
 script = ExtResource("1_cvnsp")
 
 [node name="player_sfx" type="AudioStreamPlayer2D" parent="." unique_id=80923421]
@@ -406,18 +414,27 @@ position = Vector2(0, 14.025)
 
 [node name="Flashlight" type="CollisionShape2D" parent="LightPivot/Area2D" unique_id=734635674]
 position = Vector2(0, 33.105)
-rotation = 3.1415927
+rotation = -3.1415925
 shape = SubResource("CapsuleShape2D_cvnsp")
 
 [node name="FlashbangPath" type="PointLight2D" parent="LightPivot/Area2D/Flashlight" unique_id=393874507]
-visible = false
-position = Vector2(-367375.47, -2174116.5)
-rotation = 3.1415927
+position = Vector2(-366464.22, -2174066.8)
+rotation = -3.1415925
 scale = Vector2(78125, 93749.99)
+color = Color(0.17785347, 0.17785347, 0.17785338, 1)
 energy = 2.5
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_vgqql")
 offset = Vector2(-0.12, 0.18)
+
+[node name="flash_timer" type="Timer" parent="LightPivot/Area2D/Flashlight/FlashbangPath" unique_id=1850800034]
+wait_time = 6.0
+one_shot = true
+
+[node name="FlashlightBang" type="AudioStreamPlayer" parent="LightPivot/Area2D/Flashlight/FlashbangPath" unique_id=781934410]
+stream = ExtResource("11_w72bm")
+volume_db = 6.225
+bus = &"sfx"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=173087138]
 zoom = Vector2(5, 5)
@@ -429,4 +446,79 @@ libraries/ = SubResource("AnimationLibrary_k6inr")
 root_node = NodePath("../player_sfx")
 libraries/ = SubResource("AnimationLibrary_jnj1b")
 
+[node name="Flashlightoff" type="Sprite2D" parent="." unique_id=1069926047]
+position = Vector2(104.40931, -51.147682)
+scale = Vector2(0.027996432, 0.029473186)
+texture = ExtResource("12_6e115")
+
+[node name="Flashlighton" type="Sprite2D" parent="." unique_id=1731440604]
+z_index = 5
+position = Vector2(104.39587, -51.09186)
+scale = Vector2(0.028112978, 0.029307459)
+texture = ExtResource("12_1s20c")
+
+[node name="PointLight2D" type="PointLight2D" parent="Flashlighton" unique_id=876881479]
+position = Vector2(7.2073307, -286.8941)
+scale = Vector2(11.028283, 9.186424)
+color = Color(0.68390006, 0.760807, 0.9558019, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_6t5aa")
+texture_scale = 2.0
+
+[node name="FlashlightClick" type="AudioStreamPlayer" parent="." unique_id=291450074]
+stream = ExtResource("14_ctaf6")
+
+[node name="HITHEARTS" type="HBoxContainer" parent="." unique_id=1868446684]
+layout_direction = 2
+offset_left = -93.0
+offset_top = -55.0
+offset_right = -93.0
+offset_bottom = -55.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Hitheart1" type="Sprite2D" parent="HITHEARTS" unique_id=638575910]
+position = Vector2(-12, 1)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("15_ilbab")
+
+[node name="Hitheart2" type="Sprite2D" parent="HITHEARTS" unique_id=1569044704]
+position = Vector2(0, 1)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("15_ilbab")
+
+[node name="Hitheart3" type="Sprite2D" parent="HITHEARTS" unique_id=1063606162]
+position = Vector2(12, 1)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("15_ilbab")
+
+[node name="HEARTS" type="HBoxContainer" parent="." unique_id=878174408]
+layout_direction = 2
+offset_left = -113.0
+offset_top = -63.0
+offset_right = -73.0
+offset_bottom = -47.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Heart1" type="Sprite2D" parent="HEARTS" unique_id=42528934]
+position = Vector2(8, 9)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("16_phyf0")
+
+[node name="Heart2" type="Sprite2D" parent="HEARTS" unique_id=461105788]
+position = Vector2(20, 9)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("16_phyf0")
+
+[node name="Heart3" type="Sprite2D" parent="HEARTS" unique_id=479225431]
+position = Vector2(32, 9)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("16_phyf0")
+
 [connection signal="timeout" from="player_sfx/footstep_timer" to="." method="_on_footstep_timer_timeout"]
+[connection signal="timeout" from="LightPivot/Area2D/Flashlight/FlashbangPath/flash_timer" to="." method="_on_flash_timer_timeout"]
+[connection signal="hidden" from="Flashlightoff" to="." method="_on_flashlightoff_hidden"]
+[connection signal="hidden" from="Flashlighton" to="." method="_on_flashlighton_hidden"]

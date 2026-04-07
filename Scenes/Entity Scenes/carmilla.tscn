@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cggk0u8f3dmyy" path="res://Sounds/L n C Footsteps 05.ogg" id="6_7pl62"]
 [ext_resource type="AudioStream" uid="uid://d060nwlkbb6tw" path="res://Sounds/L n C Footsteps 06.ogg" id="7_4io6j"]
 [ext_resource type="AudioStream" uid="uid://d1ljaoxxhtokl" path="res://Sounds/L n C Footsteps 07.ogg" id="8_bjahg"]
+[ext_resource type="PackedScene" uid="uid://cq5pp0rj4x3ut" path="res://Scenes/killzone.tscn" id="13_ggb2o"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_noky8"]
 random_pitch = 1.123435
@@ -243,6 +244,10 @@ fill = 1
 fill_from = Vector2(0.485, 0.455)
 fill_to = Vector2(0.96, 0.125)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ggb2o"]
+radius = 69.0
+height = 212.0
+
 [node name="Carmilla" type="CharacterBody2D" unique_id=140519432]
 script = ExtResource("1_fskwt")
 
@@ -293,6 +298,14 @@ color = Color(0.68390006, 0.760807, 0.9558019, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_f0r47")
 texture_scale = 2.0
+
+[node name="Killzone" parent="." unique_id=849670136 instance=ExtResource("13_ggb2o")]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=154715467]
+position = Vector2(-1, 70)
+shape = SubResource("CapsuleShape2D_ggb2o")
 
 [connection signal="timeout" from="player_sfx/footstep_timer" to="." method="_on_footstep_timer_timeout"]
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]

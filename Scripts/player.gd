@@ -7,7 +7,9 @@ var speed = 80.0
 var closet_entered = false
 var input_dir = Vector2.ZERO
 var movement_dir = ""
+var can_flashbang = true
 
+@onready var flashlight_click: AudioStreamPlayer = $FlashlightClick
 @onready var movement_enabled = Global.lauren_movement_allowed
 @onready var lightPivot = $LightPivot
 @onready var flashlight = $LightPivot/Area2D/Flashlight
@@ -17,6 +19,10 @@ var movement_dir = ""
 @onready var footstep_timer: Timer = $player_sfx/footstep_timer
 @export var step_delay: float = 0.
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var flash_timer: Timer = $LightPivot/Area2D/Flashlight/FlashbangPath/flash_timer
+@onready var flashlight_bang: AudioStreamPlayer = $LightPivot/Area2D/Flashlight/FlashbangPath/FlashlightBang
+@onready var flashlighton: Sprite2D = $Flashlighton
+@onready var flashlightoff: Sprite2D = $Flashlightoff
 
 
 
@@ -139,13 +145,22 @@ func _input(event) -> void:
 
 # Handle flashbang
 # Add an enable/disabler thing rather than scaling
-	if event.is_action_pressed("flashbang"):
+#can_flashbang is the variable to connect the timeout function
+		
+	if event.is_action_pressed("flashbang") and can_flashbang:
+		can_flashbang = false
 		flashlight.disabled = false
 		light.visible = true
+		flashlight_bang.play()
+		flash_timer.start()
+		flashlightoff.hide()
+		flashlighton.show()
 	if event.is_action_released("flashbang"):
 		flashlight.disabled = true
 		light.visible = false
-		
+		flashlighton.hide()
+		flashlightoff.show()
+
 
 func disable_movement():
 	movement_enabled = false
@@ -176,5 +191,9 @@ func _on_closet_1_body_exited(body: Node2D) -> void:
 	# Lauren should enter her flashlight animation (for that direction)
 	# The screen should immediately flash white
 	# Carmilla should enter her stunned state (8 seconds)
-		
-		
+	
+#connect timer timeout to flash
+func _on_flash_timer_timeout() -> void:
+	can_flashbang = true
+	flashlighton.show()
+	flashlight_click.play()
