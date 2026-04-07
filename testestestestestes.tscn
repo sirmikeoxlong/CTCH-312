@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://chrlufaa1fg1e"]
+
+[ext_resource type="PackedScene" uid="uid://cupn0flms6a15" path="res://Scenes/environments/env_billiards.tscn" id="1_ulelt"]
+[ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="2_aihol"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="3_tf7kh"]
+[ext_resource type="PackedScene" uid="uid://cr07ih8i3dfyv" path="res://Scenes/interactables/heal.tscn" id="4_nx66r"]
+
+[node name="Node2D" type="Node2D" unique_id=800785171]
+
+[node name="Node2D" parent="." unique_id=1399201207 instance=ExtResource("1_ulelt")]
+position = Vector2(591, 351)
+
+[node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("2_aihol")]
+position = Vector2(708, 253)
+
+[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("3_tf7kh")]
+position = Vector2(477, 276)
+
+[node name="Area2D" parent="." unique_id=138601532 instance=ExtResource("4_nx66r")]
+position = Vector2(466, 470)
+
+[node name="Area2D2" parent="." unique_id=1255815334 instance=ExtResource("4_nx66r")]
+position = Vector2(707, 543)

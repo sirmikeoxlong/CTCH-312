@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cr07ih8i3dfyv"]
+
+[ext_resource type="Texture2D" uid="uid://f1uxugf3kqks" path="res://Sprites/sprites/UIEFFECTS/BANDAGE.png" id="1_agdki"]
+[ext_resource type="Script" uid="uid://g3ivi2srf4vk" path="res://Scenes/interactables/heal_pickup.gd" id="1_j43i8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j43i8"]
+radius = 23.0
+
+[node name="Area2D" type="Area2D" unique_id=138601532]
+position = Vector2(10, 11)
+collision_layer = 9
+collision_mask = 9
+script = ExtResource("1_j43i8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1262331330]
+position = Vector2(-9, -10)
+scale = Vector2(0.061666664, 0.061666664)
+texture = ExtResource("1_agdki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1881727245]
+position = Vector2(-10, -9)
+shape = SubResource("CircleShape2D_j43i8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

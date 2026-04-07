@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cbobwhfisyjwc"]
+
+[ext_resource type="Texture2D" uid="uid://bgi4lxph27myf" path="res://Sprites/sprites/UIEFFECTS/HEART.png" id="1_qyoav"]
+
+[node name="heart" type="TextureRect" unique_id=1322513731]
+texture = ExtResource("1_qyoav")
+expand_mode = 2
