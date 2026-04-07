@@ -244,6 +244,7 @@ fill_from = Vector2(0.485, 0.455)
 fill_to = Vector2(0.96, 0.125)
 
 [node name="Carmilla" type="CharacterBody2D" unique_id=140519432]
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_fskwt")
 
 [node name="notice" type="AudioStreamPlayer2D" parent="." unique_id=1882281371]
