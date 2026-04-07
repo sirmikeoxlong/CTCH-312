@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://vsgv846qvios"]
+
+[ext_resource type="PackedScene" uid="uid://cupn0flms6a15" path="res://Scenes/environments/env_billiards.tscn" id="1_ypupe"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_qgdn4"]
+[ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="3_67ua7"]
+
+[node name="Node2D" type="Node2D" unique_id=1286361880]
+
+[node name="Node2D" parent="." unique_id=1399201207 instance=ExtResource("1_ypupe")]
+
+[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_qgdn4")]
+position = Vector2(-135, -97)
+
+[node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("3_67ua7")]
+position = Vector2(72, -82)
+scale = Vector2(0.2, 0.2)
