@@ -108,8 +108,9 @@ teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
 forbidden_message = "kitchendoor"
 
 [node name="Entrance" parent="Doors" unique_id=447909036 instance=ExtResource("3_o8okl")]
-position = Vector2(-87.00001, 139.00002)
+position = Vector2(-91, 141.99998)
 rotation = 1.5840678
+scale = Vector2(0.56056887, 0.55844724)
 teleport = "res://Scenes/Playable Scenes/outside_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
@@ -168,7 +169,7 @@ position = Vector2(-91, 96)
 RoomMessage = "scene5enter1"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Dialogue/d_scene5enter1" unique_id=641975107]
-position = Vector2(4, -10)
+position = Vector2(4, -17)
 rotation = 1.5778282
 shape = SubResource("CapsuleShape2D_lgo1s")
 

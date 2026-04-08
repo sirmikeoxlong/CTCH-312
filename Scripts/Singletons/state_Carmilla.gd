@@ -3,6 +3,8 @@ extends Node
 var scene
 var curr_carmilla_instance
 
+var rng = RandomNumberGenerator.new()
+
 # A state for when Carmilla is Normal/roaming
 var carmilla_curr_roaming : bool
 
@@ -35,6 +37,10 @@ func _process(delta: float) -> void:
 			print(curr_carmilla_instance)
 			carmilla_en_scene = true
 		else:
+			#if she doesn't already exist, calculate a random value to
+			# ddetermine if she should be spawned
+			if should_random_spawn_calc():
+				pass #call the spawner
 			print("Carmilla does not currently exist in this scene")
 			carmilla_en_scene = false
 	
@@ -108,4 +114,12 @@ func spawn_carmilla():
 	
 func defer_carmilla_spawner_disable():
 	call_for_spawn = false
+	
+	
+# ________________________________________________________________TODO !!!
+# check if the random value equals 1 or 2. If it is, then return true
+func should_random_spawn_calc() -> bool:
+	var my_random_number = rng.randi_range(1, 5)
+	print(my_random_number)
+	return true
 	
