@@ -40,6 +40,7 @@ func player():
 func _ready() -> void:
 	$AnimatedSprite2D.play("Idle")
 	animation_player.stop()
+	light.visible = false
 
 func _physics_process(delta: float) -> void:
 	movement_enabled = Global.lauren_movement_allowed
