@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cggk0u8f3dmyy" path="res://Sounds/L n C Footsteps 05.ogg" id="6_7pl62"]
 [ext_resource type="AudioStream" uid="uid://d060nwlkbb6tw" path="res://Sounds/L n C Footsteps 06.ogg" id="7_4io6j"]
 [ext_resource type="AudioStream" uid="uid://d1ljaoxxhtokl" path="res://Sounds/L n C Footsteps 07.ogg" id="8_bjahg"]
-[ext_resource type="PackedScene" uid="uid://cq5pp0rj4x3ut" path="res://Scenes/killzone.tscn" id="13_ggb2o"]
+[ext_resource type="PackedScene" path="res://Scenes/killzone.tscn" id="13_ggb2o"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_noky8"]
 random_pitch = 1.123435
@@ -227,7 +227,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dj2b6"]
-radius = 7.071068
+radius = 165.9789
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5us03"]
 radius = 407.17688

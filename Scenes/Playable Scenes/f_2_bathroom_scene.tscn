@@ -23,7 +23,7 @@ teleport = "res://Scenes/Playable Scenes/carmillasroom_scene.tscn"
 unlocked = true
 
 [node name="F2 Bathroom" parent="." unique_id=260962038 instance=ExtResource("2_yvb7v")]
-position = Vector2(629, 323)
+position = Vector2(627, 347)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 unlocked = true
 

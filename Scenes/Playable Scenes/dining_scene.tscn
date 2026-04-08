@@ -32,7 +32,7 @@ position = Vector2(-189, 142)
 polygon = PackedVector2Array(-212, 48, -185, 49, -185, 54, -180, 56, -164, 57, -159, 52, -158, 48, -54, 48, -53, 50, -13, 50, -11, 48, 75, 48, 76, 53, 80, 54, 95, 55, 101, 51, 101, 48, 136, 48, 137, 147, -174, 148, -175, 172, -213, 172, -212, 49, -308, 112, -283, 239, -91, 254, 74, 229, 147, 267, 282, 140, 249, -13, 259, -124, -61, -260, -325, -159, -358, 19)
 
 [node name="Dining" parent="." unique_id=727452976 instance=ExtResource("3_6q8cs")]
-position = Vector2(-198, 170)
+position = Vector2(-196, 148)
 teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
 forbidden_message = "kitchendoor"
 
@@ -69,7 +69,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Staff Room" parent="." unique_id=1205495377 instance=ExtResource("3_6q8cs")]
-position = Vector2(94, 169)
+position = Vector2(96, 150)
 teleport = "res://Scenes/Playable Scenes/staffroom_scene.tscn"
 unlocked = true
 

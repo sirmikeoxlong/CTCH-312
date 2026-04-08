@@ -34,6 +34,7 @@ func _on_fathers_journal_body_entered(body: CharacterBody2D) -> void:
 func _on_fathers_journal_pocketed() -> void:
 	father_s_journal.remove_from_scene()
 	Global.fathers_journal_pocketed = true
+	StateCarmilla.call_for_spawn = true
 	
 
 func _on_f_2_bathroom_key_body_entered(body: CharacterBody2D) -> void:

@@ -45,10 +45,9 @@ color = Color(0.44393474, 0.6622654, 0.9536515, 1)
 position = Vector2(-54, -461.99997)
 
 [node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("2_o8okl")]
-position = Vector2(-178, -419)
+position = Vector2(-163, -417)
 
 [node name="bg_collisions" type="StaticBody2D" parent="." unique_id=912784998]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collisions" unique_id=1350586620]
 polygon = PackedVector2Array(-206, -419, -166, -420, -166, -415, -161, -411, -147, -411, -141, -416, -141, -420, -41, -420, -41, -415, -37, -412, -22, -412, -17, -414, -17, -420, 17, -420, 17, -320, 11, -320, 11, -296, 15, -296, 17, -237, 41, -237, 41, -212, 41, -160, -41, -161, -41, -138, 291, -136, 292, -71, 92, -72, 92, -95, -47, -96, -48, -55, 66, -53, 66, 104, -67, 106, -67, 154, -67, 154, -116, 154, -116, 106, -301, 104, -300, 70, -250, 70, -248, -56, -236, -55, -143, -55, -142, -96, -275, -94, -275, -74, -465, -71, -464, -138, -149, -138, -149, -163, -222, -162, -223, -230, -201, -230, -198, -295, -192, -296, -193, -320, -198, -321, -198, -400, -199, -418, -379, -350, -547, -196, -527, 104, -352, 198, 160, 204, 380, -42, 360, -170, 286, -259, 169, -420, 79, -538, -305, -528, -307, -436)
@@ -79,36 +78,37 @@ teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
 forbidden_message = "scene6hall2"
 
 [node name="To Library2" parent="Doors" unique_id=406643199 instance=ExtResource("3_o8okl")]
-position = Vector2(-175, -423)
+position = Vector2(-173, -411)
 teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
 forbidden_message = "scene6hall2"
 
 [node name="ChapelDoor3" parent="Doors" unique_id=594815162 instance=ExtResource("3_o8okl")]
-position = Vector2(-418, -161)
+position = Vector2(-416, -125)
 teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
 
 [node name="ChapelDoor2" parent="Doors" unique_id=865009521 instance=ExtResource("3_o8okl")]
-position = Vector2(-274, -156)
+position = Vector2(-274, -127)
 teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
 
 [node name="ChapelDoor1" parent="Doors" unique_id=1074362768 instance=ExtResource("3_o8okl")]
-position = Vector2(-211, -230)
+position = Vector2(-207, -220)
 teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
 unlocked = true
 
 [node name="Ballroom" parent="Doors" unique_id=1348103655 node_paths=PackedStringArray("key") instance=ExtResource("3_o8okl")]
-position = Vector2(-334, -76)
+position = Vector2(-333, -93)
 teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
 key = NodePath("../../Collectable Items (offscreen)/Boot Room Key")
 forbidden_message = "doorlock"
 
 [node name="Kitchen1" parent="Doors" unique_id=2077266263 instance=ExtResource("3_o8okl")]
-position = Vector2(166, -153)
+position = Vector2(168, -129)
+scale = Vector2(1.0264968, 0.27100122)
 teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
 forbidden_message = "kitchendoor"
 
 [node name="Entrance" parent="Doors" unique_id=447909036 instance=ExtResource("3_o8okl")]
-position = Vector2(-88, 149)
+position = Vector2(-87.00001, 139.00002)
 rotation = 1.5840678
 teleport = "res://Scenes/Playable Scenes/outside_scene.tscn"
 unlocked = true
@@ -123,39 +123,40 @@ unlocked = true
 forbidden_message = "doorlock"
 
 [node name="Storage Room" parent="Doors" unique_id=2129919375 instance=ExtResource("3_o8okl")]
-position = Vector2(-432, -80)
+position = Vector2(-431, -96)
 teleport = "res://Scenes/Playable Scenes/storage_room_scene.tscn"
 unlocked = true
 
 [node name="Parlour" parent="Doors" unique_id=1477209996 instance=ExtResource("3_o8okl")]
-position = Vector2(126, -76)
+position = Vector2(126.00001, -83)
+scale = Vector2(1.0716633, 0.19019532)
 teleport = "res://Scenes/Playable Scenes/parlor_scene.tscn"
 forbidden_message = "doorlock"
 
 [node name="Billiards" parent="Doors" unique_id=811835521 instance=ExtResource("3_o8okl")]
-position = Vector2(201, -76)
+position = Vector2(199, -99)
 teleport = "res://Scenes/Playable Scenes/billiards_scene.tscn"
 unlocked = true
 
 [node name="Bathroom" parent="Doors" unique_id=1908018243 instance=ExtResource("3_o8okl")]
-position = Vector2(250, -81)
+position = Vector2(250, -103)
 teleport = "res://Scenes/Playable Scenes/f_1_bathroom_scene.tscn"
 unlocked = true
 
 [node name="Upstairs1" parent="Doors" unique_id=1488737441 instance=ExtResource("3_o8okl")]
-position = Vector2(-223, -62)
+position = Vector2(-222.99998, -46.000004)
 scale = Vector2(1.8077381, 0.5174084)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 forbidden_message = "scene6hall1"
 
 [node name="Upstairs2" parent="Doors" unique_id=401403867 instance=ExtResource("3_o8okl")]
-position = Vector2(50, -57)
+position = Vector2(46, -43)
 scale = Vector2(2.2399988, 0.5974243)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 forbidden_message = "scene6hall1"
 
 [node name="Kitchen" parent="Doors" unique_id=802532146 instance=ExtResource("3_o8okl")]
-position = Vector2(38, -233)
+position = Vector2(32, -220)
 teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
 unlocked = true
 forbidden_message = "kitchendoor"

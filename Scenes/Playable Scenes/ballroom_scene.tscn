@@ -75,13 +75,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Ballroom" parent="." unique_id=727452976 instance=ExtResource("3_idnv1")]
-position = Vector2(69, -252)
+position = Vector2(71, -230)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
 
 [node name="Bootroom" parent="." unique_id=1431071824 instance=ExtResource("3_idnv1")]
-position = Vector2(193, 23)
+position = Vector2(181, 22)
 teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
 
 [node name="Storage" parent="." unique_id=1627856602 instance=ExtResource("3_idnv1")]
-position = Vector2(-203, -218)
+position = Vector2(-188, -231)

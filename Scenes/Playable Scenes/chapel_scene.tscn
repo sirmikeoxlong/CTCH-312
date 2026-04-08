@@ -37,7 +37,7 @@ script = ExtResource("3_r5y37")
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 
 [node name="Door" type="CollisionShape2D" parent="ChapelDoor1" unique_id=673886561]
-position = Vector2(52, -71)
+position = Vector2(51, -46)
 shape = SubResource("CapsuleShape2D_exwrh")
 
 [node name="Chapel Paper" parent="." unique_id=1015122729 instance=ExtResource("5_e2yx4")]

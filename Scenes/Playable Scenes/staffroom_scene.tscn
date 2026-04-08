@@ -64,7 +64,7 @@ scale = Vector2(1.0040979, 1.0000159)
 shape = SubResource("CapsuleShape2D_ccn60")
 
 [node name="Staffroom" parent="." unique_id=727452976 instance=ExtResource("8_ccn60")]
-position = Vector2(76, -55)
+position = Vector2(71, -27)
 teleport = "res://Scenes/Playable Scenes/pantry_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
