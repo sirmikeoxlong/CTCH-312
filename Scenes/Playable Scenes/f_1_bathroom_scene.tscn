@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="3_1bnw5"]
 [ext_resource type="Texture2D" uid="uid://b0xf8ms2lue40" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Tools.png" id="4_qikmf"]
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="5_tmnbr"]
-[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="6_6o85f"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="7_si3nc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kl7wy"]
@@ -25,7 +24,7 @@ teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
 
 [node name="Library Piece 1" parent="." unique_id=1015122729 instance=ExtResource("3_1bnw5")]
-position = Vector2(248, 266)
+position = Vector2(227, 255)
 scale = Vector2(1.3599999, 1.360001)
 id = "lib_key_1"
 pickup_message = "scene12bath1"
@@ -47,13 +46,12 @@ texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -62.0
-offset_top = 11.0
-offset_right = 59.0
-offset_bottom = 50.0
+offset_left = -60.294125
+offset_top = -3.6764653
+offset_right = 60.705875
+offset_bottom = 35.323536
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("6_6o85f")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 8
 text = "[Enter] To Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
