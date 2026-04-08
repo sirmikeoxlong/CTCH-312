@@ -29,6 +29,8 @@ func _physics_process(delta: float) -> void:
 	#navigation_agent_2d.velocity = new_velocity
 	#update_target_position(lauren.global_transform.origin)
 	
+	
+	
 	$Detection/CollisionShape2D.disabled = false
 	if player_in_area:
 		if Global.carmilla_movement_allowed:

@@ -311,8 +311,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ilbab"]
-radius = 7.0
-height = 40.0
+radius = 5.0
+height = 10.0
 
 [sub_resource type="Gradient" id="Gradient_cvnsp"]
 offsets = PackedFloat32Array(0.082987554, 0.64315355, 0.7842324, 0.813278)
@@ -455,10 +455,15 @@ texture_scale = 2.0
 
 [node name="Area2D" type="Area2D" parent="LightPivot" unique_id=1232556947]
 position = Vector2(0, 14.025)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Flashlight" type="CollisionShape2D" parent="LightPivot/Area2D" unique_id=734635674]
+light_mask = 3
+visibility_layer = 3
 position = Vector2(0, 33.105)
 rotation = -3.1415925
+scale = Vector2(3.3200011, 1)
 shape = SubResource("CapsuleShape2D_cvnsp")
 
 [node name="FlashbangPath" type="PointLight2D" parent="LightPivot/Area2D/Flashlight" unique_id=393874507]

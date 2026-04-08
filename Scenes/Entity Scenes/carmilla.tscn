@@ -227,7 +227,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dj2b6"]
-radius = 165.9789
+radius = 65.49045
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5us03"]
 radius = 1228.7557
@@ -250,6 +250,8 @@ height = 212.0
 
 [node name="Carmilla" type="CharacterBody2D" unique_id=140519432]
 scale = Vector2(0.2, 0.2)
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_fskwt")
 
 [node name="notice" type="AudioStreamPlayer2D" parent="." unique_id=1882281371]
@@ -313,4 +315,5 @@ shape = SubResource("CapsuleShape2D_ggb2o")
 [connection signal="timeout" from="player_sfx/footstep_timer" to="." method="_on_footstep_timer_timeout"]
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="body_exited" from="Killzone" to="Killzone" method="_on_body_exited"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

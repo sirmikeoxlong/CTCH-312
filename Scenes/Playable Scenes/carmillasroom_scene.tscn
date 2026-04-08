@@ -10,10 +10,10 @@
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="8_5xige"]
 [ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="9_il6a2"]
 
-[sub_resource type="Gradient" id="Gradient_bpqc3"]
+[sub_resource type="Gradient" id="Gradient_8df38"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vjl3u"]
-gradient = SubResource("Gradient_bpqc3")
+gradient = SubResource("Gradient_8df38")
 fill_from = Vector2(0.27920228, 0.7293447)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vjl3u"]
@@ -144,3 +144,4 @@ vertical_alignment = 1
 [connection signal="saying_started" from="Dialogue/Enter Carmilla\'s Room" to="." method="_on_enter_carmillas_room_saying_started"]
 [connection signal="body_entered" from="Carmilla\'s Diary" to="." method="_on_carmillas_diary_body_entered"]
 [connection signal="pocketed" from="Carmilla\'s Diary" to="." method="_on_carmillas_diary_pocketed"]
+[connection signal="saying_finished" from="Carmilla\'s Diary" to="." method="_on_carmillas_diary_saying_finished"]

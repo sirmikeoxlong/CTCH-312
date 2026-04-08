@@ -6,7 +6,6 @@ var last_door = Global.last_door_accessed
 
 # Called wh$Camera2Den the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Camera2D.set_process(false)
 	Global.lauren_movement_allowed = true
 	Global.carmilla_movement_allowed = false
 	
@@ -19,8 +18,6 @@ func _process(delta: float) -> void:
 
 
 func _on_snarky_comment_body_entered(body: CharacterBody2D) -> void:
-	lauren.disable_camera()
-	$Camera2D.set_process(true)
 	Global.lauren_movement_allowed = false
 	#Global.carmilla_movement_allowed = false
 
@@ -28,7 +25,7 @@ func _on_front_door_has_yapped_about_it() -> void:
 	# Carmilla should move away
 	# wait a bit
 	# Once Lauren goes through the hall, transport he to the next cutscene
-	$"Carmilla Walks to Chapel".play("carmilla_move")
+	$AnimationPlayer.play("new_animation")
 	await get_tree().create_timer(2.5).timeout
 	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
 	"followcarmilla")
