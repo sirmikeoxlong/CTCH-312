@@ -230,7 +230,7 @@ animations = [{
 radius = 165.9789
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5us03"]
-radius = 407.17688
+radius = 1228.7557
 
 [sub_resource type="Gradient" id="Gradient_cvnsp"]
 offsets = PackedFloat32Array(0.082987554, 0.64315355, 0.7842324, 0.813278)
@@ -308,6 +308,9 @@ collision_mask = 8
 position = Vector2(-1, 70)
 shape = SubResource("CapsuleShape2D_ggb2o")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1518181889]
+
 [connection signal="timeout" from="player_sfx/footstep_timer" to="." method="_on_footstep_timer_timeout"]
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
