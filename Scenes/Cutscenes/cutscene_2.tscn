@@ -1,0 +1,377 @@
+[gd_scene format=3 uid="uid://sf8y72mufevv"]
+
+[ext_resource type="PackedScene" uid="uid://dj38ugwb5k1yf" path="res://Scenes/environments/env_chapel.tscn" id="1_32eod"]
+[ext_resource type="Script" uid="uid://uh60lfgcqi41" path="res://Scripts/cutscene_scripts/cutscene_2.gd" id="1_duoo3"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_06wed"]
+[ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="3_duoo3"]
+[ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="4_06wed"]
+[ext_resource type="Script" uid="uid://bcyjasak166ik" path="res://Scenes/chapel/portal_chapel.gd" id="6_gpbou"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_duoo3"]
+radius = 4.507997
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_duoo3"]
+radius = 3.7305427
+height = 159.24252
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gpbou"]
+radius = 5.3376846
+height = 16.140604
+
+[sub_resource type="Gradient" id="Gradient_cvnsp"]
+offsets = PackedFloat32Array(0.082987554, 0.64315355, 0.7842324, 0.813278)
+colors = PackedColorArray(1, 1, 1, 1, 0.25858343, 0.25858343, 0.25858343, 1, 0.07185626, 0.07185626, 0.07185626, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gpbou"]
+gradient = SubResource("Gradient_cvnsp")
+width = 40
+height = 39
+fill = 1
+fill_from = Vector2(0.485, 0.455)
+fill_to = Vector2(0.96, 0.125)
+
+[sub_resource type="Animation" id="Animation_duoo3"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Carmilla:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-72, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carmilla:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-56, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Carmilla:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.25, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Carmilla:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.264, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EnvironmetalSorting/Lauren:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.945, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("EnvironmetalSorting/Lauren:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.945, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("EnvironmetalSorting/Lauren:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(21, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("EnvironmetalSorting/Lauren:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(118, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_gpbou"]
+resource_name = "suck"
+length = 2.9333334
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Carmilla:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2),
+"points": PackedFloat32Array(-72, -0.25, 0, 0.25, 0, -63, -0.16, -1.5, 0, 0, -16.000004, -0.16166666, -7.8333325, 0, 0, -29, -0.155, 2.1666663, 0, 0),
+"times": PackedFloat32Array(0, 0.96, 1.93, 2.86)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carmilla:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2),
+"points": PackedFloat32Array(-56, -0.25, 0, 0.25, 0, -56, -0.16, 0, 0, 0, -48, -0.16166666, -1.3333334, 0, 0, 44, -0.155, -15.333334, 0, 0),
+"times": PackedFloat32Array(0, 0.96, 1.93, 2.86)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Carmilla:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0.25, -0.25, 0, 0.25, 0, 0.2, -0.011666656, 0.008333333, 0, 0, 0.25, -0.014999986, -0.008333333, 0, 0),
+"times": PackedFloat32Array(2.13, 2.2, 2.29)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Carmilla:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0.264, -0.25, 0, 0.25, 0, 0.211, -0.011666656, 0.008833334, 0, 0, 0.264, -0.014999986, -0.008833334, 0, 0),
+"times": PackedFloat32Array(2.13, 2.2, 2.29)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EnvironmetalSorting/Lauren:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.945, -0.25, 0, 0.25, 0, 1, -0.026666641, -0.009166668, 0, 0),
+"times": PackedFloat32Array(2.16, 2.32)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("EnvironmetalSorting/Lauren:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.945, -0.25, 0, 0.25, 0, 1, -0.026666641, -0.009166668, 0, 0),
+"times": PackedFloat32Array(2.16, 2.32)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("EnvironmetalSorting/Lauren:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0, 21, -0.025000017, -2.6666667, 0, 0, 81, -0.070000015, -10, 0, 0),
+"times": PackedFloat32Array(2.32, 2.47, 2.89)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("EnvironmetalSorting/Lauren:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(-17, -0.25, 0, 0.25, 0, -24, -0.025000017, 1.1666667, 0, 0, -39, -0.070000015, 2.5, 0, 0),
+"times": PackedFloat32Array(2.32, 2.47, 2.89)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ajgn2"]
+_data = {
+&"RESET": SubResource("Animation_duoo3"),
+&"suck": SubResource("Animation_gpbou")
+}
+
+[sub_resource type="Animation" id="Animation_ajgn2"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spotlight:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spotlight:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(42, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_7hlgk"]
+resource_name = "Spotlight_move"
+length = 1.0666667
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spotlight:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(3, -0.25, 0, 0.25, 0, 21, -0.17166667, -3.0000002, 0, 0),
+"times": PackedFloat32Array(0, 1.03)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spotlight:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(42, -0.25, 0, 0.25, 0, -17, -0.17166667, 9.833334, 0, 0),
+"times": PackedFloat32Array(0, 1.03)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_461ux"]
+_data = {
+&"RESET": SubResource("Animation_ajgn2"),
+&"Spotlight_move": SubResource("Animation_7hlgk")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ajgn2"]
+radius = 13.0
+height = 80.0
+
+[node name="cutscene_2" type="Node2D" unique_id=1404573226]
+position = Vector2(-1, 1)
+script = ExtResource("1_duoo3")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1778993322]
+position = Vector2(2, 25)
+zoom = Vector2(3, 3)
+
+[node name="Collisions" type="StaticBody2D" parent="." unique_id=1116309344]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions" unique_id=1568855496]
+polygon = PackedVector2Array(-106, -56, 19, -56, 34, -55, 47, -55, 67, -55, 73, -54, 84, -53, 82, -69, 88, -54, 99, -53, 101, 155, -109, 154, -108, -68, -141, -88, -175, 41, -88, 203, 148, 181, 152, -4, 115, -135, -92, -104)
+
+[node name="EnvironmetalSorting" type="Node2D" parent="." unique_id=1174102803]
+y_sort_enabled = true
+
+[node name="Chapel" parent="EnvironmetalSorting" unique_id=675667783 instance=ExtResource("1_32eod")]
+position = Vector2(0, -32)
+
+[node name="Lauren" parent="EnvironmetalSorting" unique_id=1222447786 instance=ExtResource("2_06wed")]
+position = Vector2(21, 118)
+scale = Vector2(0.945, 0.945)
+
+[node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("3_duoo3")]
+position = Vector2(-72, -56)
+scale = Vector2(0.25, 0.264)
+
+[node name="Scene 21" parent="." unique_id=359445996 instance=ExtResource("4_06wed")]
+position = Vector2(-46, -155)
+scale = Vector2(4.2815866, 6.771887)
+id = "first_cutscene"
+RoomMessage = "scene21gallery1"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Scene 21" unique_id=1189849318]
+position = Vector2(10.743682, 27.761833)
+rotation = 0.012639626
+scale = Vector2(1.3498051, 0.71524495)
+shape = SubResource("CircleShape2D_duoo3")
+
+[node name="Sucks" parent="." unique_id=1491808084 instance=ExtResource("4_06wed")]
+position = Vector2(-165, -43)
+scale = Vector2(4.8410025, 1.2089908)
+id = "first_cutscene"
+RoomMessage = "scene21gallery3"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sucks" unique_id=1449616334]
+position = Vector2(38.62836, 21.505543)
+rotation = 0.012639626
+scale = Vector2(1.1241714, 0.13490698)
+shape = SubResource("CapsuleShape2D_duoo3")
+
+[node name="Bitten" parent="." unique_id=1179438358 instance=ExtResource("4_06wed")]
+position = Vector2(82, -38.000004)
+scale = Vector2(4.8410025, 1.2089908)
+id = "first_cutscene"
+RoomMessage = "scene21gallery5"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bitten" unique_id=1124964784]
+position = Vector2(2.272255, 4.135685)
+rotation = 0.012639626
+scale = Vector2(1.1241713, 2.2523654)
+shape = SubResource("CapsuleShape2D_gpbou")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1535038352]
+position = Vector2(-20, -25)
+color = Color(0.5616756, 0.23148736, 0.4683466, 1)
+
+[node name="Spotlight" type="PointLight2D" parent="." unique_id=165128968]
+position = Vector2(3, 42)
+color = Color(0.99541754, 0.6741462, 0.7721381, 1)
+energy = 2.01
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_gpbou")
+texture_scale = 2.0
+
+[node name="SuckBlood" type="AnimationPlayer" parent="." unique_id=1657779508]
+libraries/ = SubResource("AnimationLibrary_ajgn2")
+
+[node name="LightMove" type="AnimationPlayer" parent="." unique_id=210259877]
+libraries/ = SubResource("AnimationLibrary_461ux")
+
+[node name="ChapelDoor1" type="Area2D" parent="." unique_id=1242866904]
+position = Vector2(2, -35)
+script = ExtResource("6_gpbou")
+teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
+
+[node name="Door" type="CollisionShape2D" parent="ChapelDoor1" unique_id=1701777970]
+position = Vector2(51, -46)
+shape = SubResource("CapsuleShape2D_ajgn2")
+
+[connection signal="has_yapped_about_it" from="Scene 21" to="." method="_on_scene_21_has_yapped_about_it"]
+[connection signal="has_yapped_about_it" from="Sucks" to="." method="_on_sucks_has_yapped_about_it"]
+[connection signal="has_yapped_about_it" from="Bitten" to="." method="_on_bitten_has_yapped_about_it"]
+[connection signal="body_entered" from="ChapelDoor1" to="ChapelDoor1" method="_on_body_entered"]
+[connection signal="body_exited" from="ChapelDoor1" to="ChapelDoor1" method="_on_body_exited"]

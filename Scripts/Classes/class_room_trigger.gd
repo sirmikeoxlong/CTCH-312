@@ -6,6 +6,8 @@ signal has_yapped_about_it
 signal saying_started
 signal saying_finished
 
+
+
 @export var id : String
 @export var RoomMessage : String
 
@@ -34,10 +36,12 @@ func _on_body_entered(body: CharacterBody2D) -> void:
 	if Global.dialogue.has(global_position):
 		# if character enters here for the first time, trigger the necessary scene
 		# once done, this dialogue has to be deqeued from the scene
-		print("_on_body_entered function working")
+		#Player.animated_sprite.play("idle")
 		Global.lauren_movement_allowed = false
 		say_room_dialogue()
-		await get_tree().create_timer(2.5).timeout
+		#await get_tree().create_timer(2.5).timeout
+		await DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
+	RoomMessage).tree_exited
 		Global.lauren_movement_allowed = true
 		emit_yap()
 		remove_from_scene()

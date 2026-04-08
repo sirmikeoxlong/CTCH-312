@@ -116,9 +116,9 @@ Lauren: The what dress?
 Carmilla: The lady towards the left side of the protrait.
 Lauren: Oh. No, I do not recognize her.
 Carmilla: How intriguing.
-=> END
-
-~ scene21gallery2
+#=> END
+#
+#~ scene21gallery2
 Lauren: Um... Can I ask what your name is?
 Carmilla: ... Carmilla.
 Lauren in her head: *That name seems familiar..*
@@ -130,26 +130,27 @@ Carmilla: Perhaps youare familiar with my dear Margaret?
 Lauren: I don't think so? And I really should be going-
 Carmilla: I want you to grant me something first my dear.
 Lauren: What's that..?
+Carmilla: Come closer...
 => END
 
 ~ scene21gallery3
 Carmilla: [shake]Thy blood!![/shake]
 Lauren: What?!
-=> END
-
-~ scene21gallery4
+#=> END
+#
+#~ scene21gallery4
 Lauren: [shake]Ahhh![/shake] What are you doing?!
 => END
 
 ~ scene21gallery5
 Lauren: Are you crazy?! What was that for?!
-=> END
-
-~ scene21gallery6
+#=> END
+#
+#~ scene21gallery6
 Carmilla: Lauren deary, do not run from me now!~
-=> END
-
-~ mechanics1
+#=> END
+#
+#~ mechanics1
 Hit 'Q' to use your flashlight to stun Carmilla
 => END
 
@@ -195,17 +196,17 @@ Lauren: Nice, I got the second puzzle piece for that door.
 
 ~ scene27carmillaroom3
 Carmilla: Oh Lauren darling, I know you’re around here somewhere!~
-=> END
-
+#=> END
+#
 ~ scene27carmillaroom4
 Lauren: I need to hide!
 => END
 
 ~ scene27carmillaroom5
 Carmilla: Lauren~ I know you're here. Join me so we may talk.
-=> END
-
-~ scene27carmillaroom6
+#=> END
+#
+#~ scene27carmillaroom6
 Lauren: What does she want from me? There's no way she thinks I'm my grandmother... right?
 => END
 

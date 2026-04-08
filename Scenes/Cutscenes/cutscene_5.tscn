@@ -1,0 +1,220 @@
+[gd_scene format=3 uid="uid://egket404p481"]
+
+[ext_resource type="Script" uid="uid://dywhnrwqt8agu" path="res://Scripts/cutscene_scripts/cutscene_5.gd" id="1_ctr1u"]
+[ext_resource type="PackedScene" uid="uid://ccmxpq6w5id6e" path="res://Scenes/environments/env_grandhall.tscn" id="1_mdm14"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_7gc6i"]
+[ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="4_0dppt"]
+
+[sub_resource type="Gradient" id="Gradient_lx5np"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ctr1u"]
+gradient = SubResource("Gradient_lx5np")
+fill_from = Vector2(0.5099715, 0.7891738)
+fill_to = Vector2(0.51282054, 0)
+
+[sub_resource type="Gradient" id="Gradient_0dppt"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bgb05"]
+gradient = SubResource("Gradient_0dppt")
+fill_from = Vector2(0.5099715, 0.7891738)
+fill_to = Vector2(0.51282054, 0)
+
+[sub_resource type="Gradient" id="Gradient_0rnmt"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_46wqj"]
+gradient = SubResource("Gradient_0rnmt")
+fill_from = Vector2(0.5099715, 0.7891738)
+fill_to = Vector2(0.51282054, 0)
+
+[sub_resource type="Gradient" id="Gradient_bgb05"]
+offsets = PackedFloat32Array(0.082987554, 0.64315355, 0.7842324, 0.813278)
+colors = PackedColorArray(1, 1, 1, 1, 0.25858343, 0.25858343, 0.25858343, 1, 0.07185626, 0.07185626, 0.07185626, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0rnmt"]
+gradient = SubResource("Gradient_bgb05")
+width = 40
+height = 39
+fill = 1
+fill_from = Vector2(0.485, 0.455)
+fill_to = Vector2(0.96, 0.125)
+
+[sub_resource type="Animation" id="Animation_46wqj"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spotlight:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-82, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spotlight:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-186, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_7fmhv"]
+resource_name = "move"
+length = 1.9333333
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spotlight:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(-82, -0.25, 0, 0.25, 0, -85, -0.15833333, 0.5, 0, 0, -164, -0.16333333, 13.166667, 0, 0),
+"times": PackedFloat32Array(0, 0.95, 1.93)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spotlight:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(-186, -0.25, 0, 0.25, 0, -305, -0.15833333, 19.833334, 0, 0, -391, -0.16333333, 14.333333, 0, 0),
+"times": PackedFloat32Array(0, 0.95, 1.93)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nqava"]
+_data = {
+&"RESET": SubResource("Animation_46wqj"),
+&"move": SubResource("Animation_7fmhv")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_io5hg"]
+radius = 4.507997
+
+[sub_resource type="Animation" id="Animation_bwd7v"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Environmental Sorting/Grand Hall:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-54, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Environmental Sorting/Grand Hall:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-461.99997, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_tfnot"]
+resource_name = "shake"
+length = 2.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Environmental Sorting/Grand Hall:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(-54, -0.25, 0, 0.25, 0, -84, -0.016666668, 5.0000005, 0, 0, -71, -0.040000003, -2.1666667, 0, 0, -17, -0.029999997, -9, 0, 0, -149, -0.035000008, 22, 0, 0, -88, -0.020000001, -10.166667, 0, 0, -61, -0.029999992, -4.5, 0, 0, -53.999996, -0.035000008, -1.1666675, 0, 0, -80, -0.021111112, 4.333334, 0, 0, -80, -0.011666676, 0, 0, 0, -187, -0.026666662, 17.833334, 0, 0, -10.999985, -0.021666666, -29.333336, 0, 0, -225, -0.024999997, 35.66667, 0, 0, -56, -0.011666676, -28.166668, 0, 0, -56, -0.020000001, 0, 0, 0, -56, -0.028333347, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 0.25333336, 0.43333334, 0.6433334, 0.74333334, 0.9233333, 1.1333333, 1.26, 1.33, 1.49, 1.62, 1.77, 1.84, 1.96, 2.13)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Environmental Sorting/Grand Hall:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(-461.99997, -0.25, 0, 0.25, 0, -460.99997, -0.016666668, -0.16666667, 0, 0, -525, -0.040000003, 10.666672, 0, 0, -523, -0.029999997, -0.33333334, 0, 0, -433, -0.035000008, -15.000001, 0, 0, -442.99997, -0.020000001, 1.6666616, 0, 0, -464, -0.029999992, 3.5000052, 0, 0, -463, -0.035000008, -0.16666667, 0, 0, -378, -0.021111112, -14.166667, 0, 0, -378, -0.011666676, 0, 0, 0, -476, -0.026666662, 16.333334, 0, 0, -329.99997, -0.021666666, -24.333338, 0, 0, -376, -0.024999997, 7.666672, 0, 0, -464, -0.011666676, 14.666668, 0, 0, -464, -0.020000001, 0, 0, 0, -464, -0.028333347, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 0.25333336, 0.43333334, 0.6433334, 0.74333334, 0.9233333, 1.1333333, 1.26, 1.33, 1.49, 1.62, 1.77, 1.84, 1.96, 2.13)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uip6a"]
+_data = {
+&"RESET": SubResource("Animation_bwd7v"),
+&"shake": SubResource("Animation_tfnot")
+}
+
+[node name="cutscene_5" type="Node2D" unique_id=1459771406]
+script = ExtResource("1_ctr1u")
+
+[node name="Environmental Sorting" type="Node2D" parent="." unique_id=1088033534]
+
+[node name="Grand Hall" parent="Environmental Sorting" unique_id=950251797 instance=ExtResource("1_mdm14")]
+position = Vector2(-54, -461.99997)
+
+[node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("2_7gc6i")]
+position = Vector2(-84, -203)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Environmental Sorting" unique_id=1834233243]
+position = Vector2(-20, -25)
+color = Color(0.5616756, 0.23148736, 0.4683466, 1)
+
+[node name="bg_collisions" type="StaticBody2D" parent="." unique_id=1998161251]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collisions" unique_id=1858020704]
+polygon = PackedVector2Array(-206, -419, -166, -420, -166, -415, -161, -411, -147, -411, -141, -416, -141, -420, -41, -420, -41, -415, -37, -412, -22, -412, -17, -414, -17, -420, 17, -420, 17, -320, 11, -320, 11, -296, 15, -296, 17, -237, 41, -237, 41, -212, 41, -160, -85, -166, -41, -138, 291, -136, 292, -71, 92, -72, 92, -95, -47, -96, -48, -55, 66, -53, 66, 104, -67, 106, -67, 154, -67, 154, -116, 154, -116, 106, -301, 104, -300, 70, -250, 70, -248, -56, -236, -55, -143, -55, -142, -96, -275, -94, -275, -74, -465, -71, -464, -138, -149, -138, -79, -158, -222, -162, -223, -230, -201, -230, -198, -295, -192, -296, -193, -320, -198, -321, -198, -400, -199, -418, -379, -350, -547, -196, -527, 104, -352, 198, 160, 204, 380, -42, 360, -170, 286, -259, 169, -420, 79, -538, -305, -528, -307, -436)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1949183471]
+position = Vector2(-92, -438.00003)
+scale = Vector2(0.1999988, 1.8)
+color = Color(0.90092367, 0.4718743, 0.42457274, 1)
+texture = SubResource("GradientTexture2D_ctr1u")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1007934011]
+position = Vector2(-125, -426.00003)
+scale = Vector2(0.1999988, 1.8)
+color = Color(0.4132972, 0.5412858, 0.9723869, 1)
+texture = SubResource("GradientTexture2D_bgb05")
+
+[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=2081578297]
+position = Vector2(-57, -425)
+scale = Vector2(0.1999988, 1.8)
+color = Color(0.48974895, 0.6093262, 0.98005384, 1)
+texture = SubResource("GradientTexture2D_46wqj")
+
+[node name="Spotlight" type="PointLight2D" parent="." unique_id=42141735]
+position = Vector2(-82, -186)
+color = Color(0.99541754, 0.6741462, 0.7721381, 1)
+energy = 2.01
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_0rnmt")
+texture_scale = 2.0
+
+[node name="Light Move" type="AnimationPlayer" parent="." unique_id=722738720]
+libraries/ = SubResource("AnimationLibrary_nqava")
+
+[node name="Library Opens" parent="." unique_id=359445996 instance=ExtResource("4_0dppt")]
+position = Vector2(-196.99998, -523)
+scale = Vector2(2.0084305, 3.994434)
+id = "first_cutscene"
+RoomMessage = "scene21gallery1"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Library Opens" unique_id=1814419393]
+position = Vector2(10.743682, 27.761833)
+rotation = 0.012639626
+scale = Vector2(1.3498051, 0.71524495)
+shape = SubResource("CircleShape2D_io5hg")
+
+[node name="ROOM SHAKES" type="AnimationPlayer" parent="." unique_id=291258610]
+libraries/ = SubResource("AnimationLibrary_uip6a")

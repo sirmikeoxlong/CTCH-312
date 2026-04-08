@@ -39,8 +39,6 @@ func _process(delta: float) -> void:
 		else:
 			#if she doesn't already exist, calculate a random value to
 			# ddetermine if she should be spawned
-			if should_random_spawn_calc():
-				pass #call the spawner
 			print("Carmilla does not currently exist in this scene")
 			carmilla_en_scene = false
 	
@@ -118,8 +116,8 @@ func defer_carmilla_spawner_disable():
 	
 # ________________________________________________________________TODO !!!
 # check if the random value equals 1 or 2. If it is, then return true
-func should_random_spawn_calc() -> bool:
+func should_random_spawn_calc():
 	var my_random_number = rng.randi_range(1, 5)
 	print(my_random_number)
-	return true
+	
 	
