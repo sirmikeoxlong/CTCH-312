@@ -18,11 +18,17 @@ height = 522.0
 radius = 25.019993
 
 [node name="outside_scene" type="Node2D" unique_id=373647599]
+z_as_relative = false
+y_sort_enabled = true
 script = ExtResource("1_2jf0q")
 
 [node name="Environmental Sorting" type="Node2D" parent="." unique_id=826236310]
+z_as_relative = false
+y_sort_enabled = true
 
 [node name="envOutside" parent="Environmental Sorting" unique_id=1871588153 instance=ExtResource("1_f5yt4")]
+z_as_relative = false
+y_sort_enabled = true
 
 [node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("2_2jf0q")]
 position = Vector2(-53, 532)
@@ -34,7 +40,7 @@ volume_db = -14.026
 [node name="bg_collision" type="StaticBody2D" parent="." unique_id=1178411334]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=908254339]
-polygon = PackedVector2Array(-273, 595, -347, 377, -268, 222, -231, 219, -201, 232, -194, 249, -141, 251, -184, 240, -190, 185, -209, 185, -287, 184, -375, 5, -296, -157, -209, -160, -208, -81, -193, -66, -144, -65, -142, -77, 27, -83, 33, -64, 77, -65, 81, -78, 116, -163, 192, -159, 202, -78, 279, -28, 269, 380, 226, 592, -258, 590, -138, 725, 500, 744, 632, 225, 389, -353, -270, -351, -535, -147, -497, 256, -390, 629, -265, 728)
+polygon = PackedVector2Array(-273, 595, -347, 377, -268, 222, -231, 219, -201, 232, -194, 249, -141, 251, -184, 240, -190, 185, -209, 185, -287, 184, -375, 5, -296, -157, -209, -160, -208, -81, -193, -66, -144, -65, -142, -77, -47, -81, -48, -47, -23, -45, -1, -46, 0, -80, 27, -83, 33, -64, 77, -65, 81, -78, 116, -163, 192, -159, 202, -78, 279, -28, 269, 380, 226, 592, -258, 590, -138, 725, 500, 744, 632, 225, 389, -353, -270, -351, -535, -147, -497, 256, -390, 629, -265, 728)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1576738622]
 script = ExtResource("3_0yj4u")
@@ -53,7 +59,7 @@ forbidden_message = "doorlock"
 door_id = "main_entrance"
 
 [node name="Main Door Key" parent="." unique_id=1086952445 instance=ExtResource("6_kv6y2")]
-position = Vector2(242, 13)
+position = Vector2(245, 100)
 id = "main_door_key"
 pickup_message = "scene3gazebo2"
 
@@ -65,6 +71,14 @@ region_rect = Rect2(98, 52, 12, 7)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Main Door Key" unique_id=1248744531]
 shape = SubResource("CircleShape2D_021d3")
 script = ExtResource("8_jl6lp")
+
+[node name="Label" type="Label" parent="Main Door Key" unique_id=868582839]
+offset_left = -40.0
+offset_top = -21.0
+offset_right = 35.0
+offset_bottom = 2.0
+theme_override_font_sizes/font_size = 8
+text = "[ENTER] To Interact"
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Main Door Key" to="." method="_on_main_door_key_body_entered"]

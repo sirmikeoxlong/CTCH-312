@@ -312,7 +312,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ilbab"]
 radius = 5.0
-height = 10.0
+height = 24.0
 
 [sub_resource type="Gradient" id="Gradient_cvnsp"]
 offsets = PackedFloat32Array(0.082987554, 0.64315355, 0.7842324, 0.813278)
@@ -409,6 +409,8 @@ _data = {
 }
 
 [node name="Lauren" type="CharacterBody2D" unique_id=1222447786 groups=["player"]]
+z_as_relative = false
+y_sort_enabled = true
 collision_layer = 9
 collision_mask = 9
 script = ExtResource("1_cvnsp")
@@ -434,6 +436,7 @@ playback_type = 1
 wait_time = 0.35
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1590759023]
+z_as_relative = false
 y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.15284361, 0.13907285)
@@ -442,7 +445,7 @@ animation = &"Crouch left"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=102025890]
-position = Vector2(0, 8)
+position = Vector2(0, 16)
 shape = SubResource("CapsuleShape2D_ilbab")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=2095674953]
@@ -496,12 +499,13 @@ root_node = NodePath("../player_sfx")
 libraries/ = SubResource("AnimationLibrary_jnj1b")
 
 [node name="Flashlightoff" type="Sprite2D" parent="." unique_id=1069926047]
+z_index = 20
 position = Vector2(104.40931, -51.147682)
 scale = Vector2(0.027996432, 0.029473186)
 texture = ExtResource("12_6e115")
 
 [node name="Flashlighton" type="Sprite2D" parent="." unique_id=1731440604]
-z_index = 5
+z_index = 20
 position = Vector2(104.39587, -51.09186)
 scale = Vector2(0.028112978, 0.029307459)
 texture = ExtResource("12_1s20c")
@@ -545,9 +549,9 @@ one_shot = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1336934394]
 offset_left = -148.0
-offset_top = -131.0
+offset_top = -132.0
 offset_right = 1402.0
-offset_bottom = 828.0
+offset_bottom = 827.0
 color = Color(0, 0, 0, 0)
 
 [connection signal="timeout" from="player_sfx/footstep_timer" to="." method="_on_footstep_timer_timeout"]

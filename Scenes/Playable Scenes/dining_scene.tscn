@@ -23,7 +23,6 @@ position = Vector2(-89, 107)
 scale = Vector2(0.5127585, 0.52853614)
 
 [node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("2_10372")]
-y_sort_enabled = true
 position = Vector2(-189, 142)
 
 [node name="bg_collisions" type="StaticBody2D" parent="." unique_id=427350585]

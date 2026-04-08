@@ -18,20 +18,22 @@ radius = 15.0
 height = 86.0
 
 [node name="billiards_scene" type="Node2D" unique_id=166059031]
+z_as_relative = false
+y_sort_enabled = true
 script = ExtResource("1_tjc02")
 
 [node name="billiards env" parent="." unique_id=1399201207 instance=ExtResource("1_m1juu")]
 position = Vector2(608, 214.99998)
-scale = Vector2(0.47819802, 0.48639843)
+scale = Vector2(0.7, 0.711)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=656779597]
 color = Color(0.28564373, 0.5053388, 0.7083086, 1)
 
 [node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_8grv3")]
-position = Vector2(479, 263)
+position = Vector2(513, 277)
 
 [node name="Billiards Paper" parent="." unique_id=1015122729 instance=ExtResource("3_tjc02")]
-position = Vector2(533, 171)
+position = Vector2(503, 158)
 id = "billiards_paper"
 pickup_message = "scene1forest2"
 
@@ -66,7 +68,7 @@ vertical_alignment = 1
 position = Vector2(-7, 35)
 
 [node name="snarky comment" parent="Dialogue" unique_id=359445996 instance=ExtResource("8_8grv3")]
-position = Vector2(511, 221)
+position = Vector2(448, 250)
 id = "gener_comment"
 RoomMessage = "billards/parlorconnect"
 
@@ -77,20 +79,22 @@ scale = Vector2(1.0040979, 1.0000159)
 shape = SubResource("CapsuleShape2D_tjc02")
 
 [node name="Gender" parent="." unique_id=727452976 instance=ExtResource("10_sb6fc")]
-position = Vector2(461, 268)
+position = Vector2(387, 295)
 teleport = "res://Scenes/Playable Scenes/parlor_scene.tscn"
 unlocked = true
 
 [node name="Billiards" parent="." unique_id=265100955 instance=ExtResource("10_sb6fc")]
-position = Vector2(673, 164)
+position = Vector2(704, 134)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
 
 [node name="bg_collision" type="StaticBody2D" parent="." unique_id=1809236975]
-visible = false
+position = Vector2(-1, -18)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=1484798416]
-polygon = PackedVector2Array(516, 151, 516, 190, 508, 190, 507, 245, 448, 246, 448, 293, 508, 293, 508, 338, 530, 338, 536, 329, 665, 328, 691, 338, 691, 152, 691, 152, 520, 153, 540, 15, 773, -2, 841, 171, 805, 323, 732, 440, 468, 501, 288, 380, 231, 217, 334, 16, 425, 9, 487, 95)
+position = Vector2(-276.91855, -91.00002)
+scale = Vector2(1.4608579, 1.5000297)
+polygon = PackedVector2Array(516, 151, 516, 190, 508, 190, 507, 245, 448, 246, 448, 293, 508, 293, 508, 338, 530, 338, 536, 329, 665, 328, 691, 338, 678.3128, 309.3272, 677.62823, 277.9945, 678.9973, 225.32889, 691, 152, 691, 152, 520, 153, 540, 15, 773, -2, 841, 171, 805, 323, 732, 440, 468, 501, 288, 380, 231, 217, 334, 16, 425, 9, 487, 95)
 
 [connection signal="body_entered" from="Billiards Paper" to="." method="_on_billiards_paper_body_entered"]
 [connection signal="pocketed" from="Billiards Paper" to="." method="_on_billiards_paper_pocketed"]
