@@ -262,11 +262,11 @@ parameters/looping = false
 
 [node name="scream" type="AudioStreamPlayer2D" parent="." unique_id=422612097]
 stream = ExtResource("2_ywx2v")
-volume_db = 3.787
+volume_db = 5.727
 max_distance = 288.0
 attenuation = 1.9999996
 bus = &"fear"
-parameters/looping = false
+parameters/looping = true
 
 [node name="player_sfx" type="AudioStreamPlayer2D" parent="." unique_id=1247149017]
 unique_name_in_owner = true

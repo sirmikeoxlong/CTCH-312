@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://be8qbmt0fe144"]
 
 [ext_resource type="Script" uid="uid://c3ubxpp10k6x6" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="AudioStream" uid="uid://df7r64tbvkg7k" path="res://Sounds/UI Toy Dream.ogg" id="2_ilbab"]
+[ext_resource type="AudioStream" uid="uid://bl2jdpqlfvkkg" path="res://Sounds/freesound_community-grunt-85990.mp3" id="2_phyf0"]
 [ext_resource type="Texture2D" uid="uid://d10h171ru05gu" path="res://Sprites/Juanna's Sprites/Lauren_walkingsprite_sheet_final.png" id="2_tenkg"]
 [ext_resource type="AudioStream" uid="uid://chqt6lmjneees" path="res://Sounds/L n C Footsteps 01.ogg" id="3_lgk7d"]
 [ext_resource type="AudioStream" uid="uid://s8e82g7l36ba" path="res://Sounds/L n C Footsteps 02.ogg" id="4_k6inr"]
@@ -14,8 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://qndiiwukmhim" path="res://Sprites/sprites/UIEFFECTS/flashlighton.png" id="12_1s20c"]
 [ext_resource type="Texture2D" uid="uid://t32xtrahhuak" path="res://Sprites/sprites/UIEFFECTS/flashlightoff.png" id="12_6e115"]
 [ext_resource type="AudioStream" uid="uid://cvr7o0dm61ddf" path="res://Sounds/flashlight_click.ogg" id="14_ctaf6"]
-[ext_resource type="Texture2D" uid="uid://dmrjfajqoeu07" path="res://Sprites/sprites/UIEFFECTS/HITHEART.png" id="15_ilbab"]
-[ext_resource type="Texture2D" uid="uid://bgi4lxph27myf" path="res://Sprites/sprites/UIEFFECTS/HEART.png" id="16_phyf0"]
+[ext_resource type="PackedScene" uid="uid://divwyn03jfj76" path="res://Scenes/Entity Scenes/hpbar.tscn" id="15_s1h8r"]
+[ext_resource type="Texture2D" uid="uid://dmrjfajqoeu07" path="res://Sprites/sprites/UIEFFECTS/HITHEART.png" id="18_sfcru"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2uho5"]
 random_pitch = 1.123435
@@ -308,8 +310,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
-radius = 6.0827627
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ilbab"]
+radius = 7.0
+height = 40.0
 
 [sub_resource type="Gradient" id="Gradient_cvnsp"]
 offsets = PackedFloat32Array(0.082987554, 0.64315355, 0.7842324, 0.813278)
@@ -332,6 +335,21 @@ height = 64.13
 gradient = SubResource("Gradient_6t5aa")
 fill_from = Vector2(0.4866469, 0.8991098)
 fill_to = Vector2(0.5074184, 0)
+
+[sub_resource type="Animation" id="Animation_phyf0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_lgk7d"]
 resource_name = "Walking"
@@ -360,9 +378,26 @@ tracks/1/keys = {
 "values": []
 }
 
+[sub_resource type="Animation" id="Animation_sfcru"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k6inr"]
 _data = {
-&"Walking": SubResource("Animation_lgk7d")
+&"RESET": SubResource("Animation_phyf0"),
+&"Walking": SubResource("Animation_lgk7d"),
+&"death": SubResource("Animation_sfcru")
 }
 
 [sub_resource type="Animation" id="Animation_y3174"]
@@ -378,10 +413,19 @@ collision_layer = 9
 collision_mask = 9
 script = ExtResource("1_cvnsp")
 
+[node name="hit_sfx" type="AudioStreamPlayer" parent="." unique_id=1698851939]
+stream = ExtResource("2_phyf0")
+volume_db = -4.394
+pitch_scale = 1.13
+bus = &"sfx"
+
+[node name="HEAL_SFX" type="AudioStreamPlayer" parent="." unique_id=967999468]
+stream = ExtResource("2_ilbab")
+
 [node name="player_sfx" type="AudioStreamPlayer2D" parent="." unique_id=80923421]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_2uho5")
-volume_db = 0.154
+volume_db = 4.034
 attenuation = 1.9318731
 bus = &"sfx"
 playback_type = 1
@@ -398,8 +442,8 @@ animation = &"Crouch left"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=102025890]
-position = Vector2(0, 7)
-shape = SubResource("CircleShape2D_cvnsp")
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_ilbab")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=2095674953]
 color = Color(0.68390006, 0.760807, 0.9558019, 1)
@@ -418,7 +462,7 @@ rotation = -3.1415925
 shape = SubResource("CapsuleShape2D_cvnsp")
 
 [node name="FlashbangPath" type="PointLight2D" parent="LightPivot/Area2D/Flashlight" unique_id=393874507]
-position = Vector2(-366464.22, -2174066.8)
+position = Vector2(-366416.37, -2174151.8)
 rotation = -3.1415925
 scale = Vector2(78125, 93749.99)
 color = Color(0.17785347, 0.17785347, 0.17785338, 1)
@@ -468,58 +512,42 @@ texture_scale = 2.0
 [node name="FlashlightClick" type="AudioStreamPlayer" parent="." unique_id=291450074]
 stream = ExtResource("14_ctaf6")
 
-[node name="HITHEARTS" type="HBoxContainer" parent="." unique_id=1868446684]
-layout_direction = 2
-offset_left = -93.0
-offset_top = -55.0
-offset_right = -93.0
-offset_bottom = -55.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-alignment = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1490803279]
 
-[node name="Hitheart1" type="Sprite2D" parent="HITHEARTS" unique_id=638575910]
-position = Vector2(-12, 1)
-scale = Vector2(0.02, 0.02)
-texture = ExtResource("15_ilbab")
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer" unique_id=1299448266]
+offset_right = 368.0
+offset_bottom = 120.0
 
-[node name="Hitheart2" type="Sprite2D" parent="HITHEARTS" unique_id=1569044704]
-position = Vector2(0, 1)
-scale = Vector2(0.02, 0.02)
-texture = ExtResource("15_ilbab")
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer2" unique_id=1700120433]
+layout_mode = 2
+texture = ExtResource("18_sfcru")
+expand_mode = 3
 
-[node name="Hitheart3" type="Sprite2D" parent="HITHEARTS" unique_id=1063606162]
-position = Vector2(12, 1)
-scale = Vector2(0.02, 0.02)
-texture = ExtResource("15_ilbab")
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/HBoxContainer2" unique_id=1024212073]
+layout_mode = 2
+texture = ExtResource("18_sfcru")
+expand_mode = 3
 
-[node name="HEARTS" type="HBoxContainer" parent="." unique_id=878174408]
-layout_direction = 2
-offset_left = -113.0
-offset_top = -63.0
-offset_right = -73.0
-offset_bottom = -47.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-alignment = 1
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/HBoxContainer2" unique_id=727149713]
+layout_mode = 2
+texture = ExtResource("18_sfcru")
+expand_mode = 3
 
-[node name="Heart1" type="Sprite2D" parent="HEARTS" unique_id=42528934]
-position = Vector2(8, 9)
-scale = Vector2(0.02, 0.02)
-texture = ExtResource("16_phyf0")
+[node name="Hpbar" parent="." unique_id=162392286 instance=ExtResource("15_s1h8r")]
 
-[node name="Heart2" type="Sprite2D" parent="HEARTS" unique_id=461105788]
-position = Vector2(20, 9)
-scale = Vector2(0.02, 0.02)
-texture = ExtResource("16_phyf0")
+[node name="death_timer" type="Timer" parent="." unique_id=2122801340]
+one_shot = true
 
-[node name="Heart3" type="Sprite2D" parent="HEARTS" unique_id=479225431]
-position = Vector2(32, 9)
-scale = Vector2(0.02, 0.02)
-texture = ExtResource("16_phyf0")
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1336934394]
+offset_left = -148.0
+offset_top = -131.0
+offset_right = 1402.0
+offset_bottom = 828.0
+color = Color(0, 0, 0, 0)
 
 [connection signal="timeout" from="player_sfx/footstep_timer" to="." method="_on_footstep_timer_timeout"]
 [connection signal="body_entered" from="LightPivot/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="LightPivot/Area2D/Flashlight/FlashbangPath/flash_timer" to="." method="_on_flash_timer_timeout"]
 [connection signal="hidden" from="Flashlightoff" to="." method="_on_flashlightoff_hidden"]
 [connection signal="hidden" from="Flashlighton" to="." method="_on_flashlighton_hidden"]
+[connection signal="timeout" from="death_timer" to="." method="_on_death_timer_timeout"]
