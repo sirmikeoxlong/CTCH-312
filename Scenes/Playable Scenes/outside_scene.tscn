@@ -45,7 +45,8 @@ rotation = 1.5650148
 shape = SubResource("CapsuleShape2D_nkkqu")
 
 [node name="Entrance" parent="." unique_id=727452976 node_paths=PackedStringArray("key") instance=ExtResource("4_nkkqu")]
-position = Vector2(-63, -91)
+position = Vector2(-65, -64)
+scale = Vector2(5.3991227, 0.83072525)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 key = NodePath("../Main Door Key")
 forbidden_message = "doorlock"

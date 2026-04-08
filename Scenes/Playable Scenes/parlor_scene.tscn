@@ -56,17 +56,22 @@ shape = SubResource("CapsuleShape2D_yykth")
 position = Vector2(-71, -77)
 
 [node name="Gender" parent="." unique_id=727452976 instance=ExtResource("9_xo5wk")]
-position = Vector2(142, -18)
+position = Vector2(134, -18)
 teleport = "res://Scenes/Playable Scenes/billiards_scene.tscn"
 unlocked = true
 
 [node name="Parlour" parent="." unique_id=343064353 instance=ExtResource("9_xo5wk")]
-position = Vector2(-71, -105)
+position = Vector2(-71, -81)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=173428673]
 color = Color(0.44119266, 0.5500828, 0.8660146, 1)
+
+[node name="bg_collision" type="StaticBody2D" parent="." unique_id=470107417]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=337346588]
+polygon = PackedVector2Array(-96, 104, 86, 103, 86, 3, 147, 4, 147, -44, 88, -44, 86, -78, -46, -80, -57, -92, -57, -92, -97, -92, -97, 102, -248, -44, -124, -257, 163, -220, 220, -130, 248, 32, 143, 265, -6, 302, -147, 219, -178, 140)
 
 [connection signal="body_entered" from="Ballroom Paper" to="." method="_on_ballroom_paper_body_entered"]
 [connection signal="pocketed" from="Ballroom Paper" to="." method="_on_ballroom_paper_pocketed"]

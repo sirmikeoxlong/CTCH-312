@@ -16,6 +16,14 @@ radius = 25.019993
 [sub_resource type="CircleShape2D" id="CircleShape2D_32rec"]
 radius = 18.382355
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_opxwx"]
+vertices = PackedVector2Array(-117, 122.85156, -169.92969, 122.96875, -169.03906, -13.96875, -117, 46, 253.92969, -13.0234375, -6, 46, 253.0625, 122.02344, -6, 122.60156, -196.22656, -14.5703125, -208.17188, 1.46875, -207.89844, -14.96875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(5, 4, 6, 7), PackedInt32Array(8, 9, 10)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-216, -133, -221, 175, 309, 179, 308, -130)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32rec"]
+size = Vector2(91, 66)
+
 [node name="study_scene" type="Node2D" unique_id=355425410]
 script = ExtResource("1_c8yqh")
 
@@ -28,11 +36,6 @@ position = Vector2(193, -41)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=687940961]
 color = Color(0.44119266, 0.5500828, 0.8660146, 1)
-
-[node name="bg_collision" type="StaticBody2D" parent="." unique_id=1611814549]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=1666757749]
-polygon = PackedVector2Array(-179, -24, 264, -23, 263, 132, -180, 133, -179, -21, -295, 135, 115, 408, 566, -96, 87, -400, -240, -272, -371, -115, -238, -26)
 
 [node name="Father\'s Journal" parent="." unique_id=1015122729 instance=ExtResource("4_opxwx")]
 position = Vector2(-90, 68)
@@ -67,7 +70,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Study" parent="." unique_id=727452976 node_paths=PackedStringArray("key") instance=ExtResource("8_ts3k0")]
-position = Vector2(191, -40)
+position = Vector2(191, -16)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 key = NodePath("../Father\'s Journal")
 forbidden_message = "studyjournal"
@@ -104,6 +107,20 @@ vertical_alignment = 1
 texture = ExtResource("9_opxwx")
 region_enabled = true
 region_rect = Rect2(98, 52, 12, 7)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1542419503]
+navigation_polygon = SubResource("NavigationPolygon_opxwx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D" unique_id=1413380683]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D" unique_id=391032860]
+position = Vector2(-61.5, 89)
+shape = SubResource("RectangleShape2D_32rec")
+
+[node name="bg_collision" type="StaticBody2D" parent="NavigationRegion2D" unique_id=1611814549]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/bg_collision" unique_id=1666757749]
+polygon = PackedVector2Array(-179, -24, 264, -23, 263, 132, -180, 133, -179, -21, -295, 135, 115, 408, 566, -96, 87, -400, -240, -272, -371, -115, -238, -26)
 
 [connection signal="body_entered" from="Father\'s Journal" to="." method="_on_fathers_journal_body_entered"]
 [connection signal="pocketed" from="Father\'s Journal" to="." method="_on_fathers_journal_pocketed"]

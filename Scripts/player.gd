@@ -8,6 +8,7 @@ var closet_entered = false
 var input_dir = Vector2.ZERO
 var movement_dir = ""
 var can_flashbang = true
+var curr_flashing = false
 
 @onready var flashlight_click: AudioStreamPlayer = $FlashlightClick
 @onready var movement_enabled = Global.lauren_movement_allowed
@@ -148,6 +149,7 @@ func _input(event) -> void:
 #can_flashbang is the variable to connect the timeout function
 		
 	if event.is_action_pressed("flashbang") and can_flashbang:
+		curr_flashing = true
 		can_flashbang = false
 		flashlight.disabled = false
 		light.visible = true
@@ -156,6 +158,7 @@ func _input(event) -> void:
 		flashlightoff.hide()
 		flashlighton.show()
 	if event.is_action_released("flashbang"):
+		curr_flashing = false
 		flashlight.disabled = true
 		light.visible = false
 		flashlighton.hide()
@@ -197,3 +200,10 @@ func _on_flash_timer_timeout() -> void:
 	can_flashbang = true
 	flashlighton.show()
 	flashlight_click.play()
+
+
+# Check if an enemy has entered the flashbang path (during flash)
+# if they have, then change the enemy state to "stunned"
+func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
+	if curr_flashing:
+		StateCarmilla.carmilla_curr_stunned = true

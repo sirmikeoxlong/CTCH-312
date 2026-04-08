@@ -43,7 +43,7 @@ region_enabled = true
 region_rect = Rect2(98, 52, 12, 7)
 
 [node name="Staffroom" parent="." unique_id=727452976 instance=ExtResource("8_mjwrk")]
-position = Vector2(43, 73)
+position = Vector2(44, 47)
 teleport = "res://Scenes/Playable Scenes/staffroom_scene.tscn"
 forbidden_message = "doorlock"
 

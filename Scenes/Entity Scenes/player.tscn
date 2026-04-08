@@ -519,6 +519,7 @@ scale = Vector2(0.02, 0.02)
 texture = ExtResource("16_phyf0")
 
 [connection signal="timeout" from="player_sfx/footstep_timer" to="." method="_on_footstep_timer_timeout"]
+[connection signal="body_entered" from="LightPivot/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="LightPivot/Area2D/Flashlight/FlashbangPath/flash_timer" to="." method="_on_flash_timer_timeout"]
 [connection signal="hidden" from="Flashlightoff" to="." method="_on_flashlightoff_hidden"]
 [connection signal="hidden" from="Flashlighton" to="." method="_on_flashlighton_hidden"]

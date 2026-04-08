@@ -34,7 +34,7 @@ region_enabled = true
 region_rect = Rect2(98, 52, 12, 7)
 
 [node name="Storage Room" parent="." unique_id=727452976 instance=ExtResource("6_h7cjq")]
-position = Vector2(527, 207)
+position = Vector2(524, 240)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
 forbidden_message = "scene2frontdoor1"

@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var to_study: RoomTeleport = $"Doors/To Study"
+@onready var study: RoomTeleport = $Doors/Study
 @onready var f_2_bathroom: RoomTeleport = $"Doors/F2 Bathroom"
 @onready var lauren: CharacterBody2D = $Lauren
 @onready var doors: Node2D = $Doors
@@ -23,6 +23,6 @@ func _process(delta: float) -> void:
 
 func unlock_all_doors():
 	if Global.lockpick_pocketed == true:
-		to_study.unlocked = true
+		study.unlocked = true
 	if Global.f2_bathroom_key_pocketed == true:
 		f_2_bathroom.unlocked = true

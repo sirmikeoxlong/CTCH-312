@@ -59,20 +59,20 @@ region_enabled = true
 region_rect = Rect2(98, 52, 12, 7)
 
 [node name="To Great Hall" parent="." unique_id=727452976 instance=ExtResource("8_chcfv")]
-position = Vector2(60, -12)
+position = Vector2(80, -11)
 scale = Vector2(1.18205, 1.0460984)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
 
 [node name="Bootroom" parent="." unique_id=521600244 instance=ExtResource("8_chcfv")]
-position = Vector2(30, -77)
+position = Vector2(30, -48)
 teleport = "res://Scenes/Playable Scenes/ballroom_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
 
 [node name="Cutscene2" parent="." unique_id=824014948 instance=ExtResource("8_chcfv")]
-position = Vector2(94, 42)
+position = Vector2(80, 49)
 teleport = "res://Scenes/Cutscenes/cutscene_1.tscn"
 unlocked = true
 forbidden_message = "doorlock"
@@ -80,6 +80,7 @@ forbidden_message = "doorlock"
 [node name="bg_collisions" type="StaticBody2D" parent="." unique_id=562130610]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collisions" unique_id=1147782165]
+position = Vector2(-8, 0)
 polygon = PackedVector2Array(-106, -27, 13, -26, 13, -57, 45, -57, 45, -27, 57, -27, 57, 34, 91, 34, 90, 68, -105, 67, -106, -22, -197, 36, -205, 93, -182, 189, 45, 196, 230, 55, 252, -85, 136, -207, -8, -207, -103, -170, -198, -126, -203, -29)
 
 [connection signal="body_entered" from="Spare Bedroom Key" to="." method="_on_spare_bedroom_key_body_entered"]

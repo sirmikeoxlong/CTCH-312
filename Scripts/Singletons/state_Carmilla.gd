@@ -1,5 +1,8 @@
 extends Node
 
+var scene
+var curr_carmilla_instance
+
 # A state for when Carmilla is Normal/roaming
 var carmilla_curr_roaming : bool
 
@@ -15,58 +18,94 @@ var carmilla_curr_stunned : bool
 # A state for when Carmilla is currently in the room
 var carmilla_en_scene : bool
 
+# A state for if the scene calls for a Carmilla spawner
+var call_for_spawn : bool
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# The primary state that Carmilla is in (at game start) will be Roaming
 	# BUT that doesn't necessarilly mean she's in the currently loaded scene (at game start)
 	carmilla_curr_roaming = true
-	carmilla_en_scene = false
-	spawn_carmilla()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# ________________________________________________________________DONE
 func _process(delta: float) -> void:
-	if carmilla_en_scene:
+	if !Global.current_scene == null:
+		if Global.current_scene.has_node("Carmilla"):
+			curr_carmilla_instance = Global.current_scene.get_node("Carmilla")
+			print(curr_carmilla_instance)
+			carmilla_en_scene = true
+		else:
+			print("Carmilla does not currently exist in this scene")
+			carmilla_en_scene = false
+	
+	# The current scene can call for a spawner
+	if call_for_spawn:
 		spawn_carmilla()
+	defer_carmilla_spawner_disable()
 	
-	if carmilla_curr_roaming:
-		roam_around()
-	elif carmilla_curr_stunned:
+	if carmilla_curr_stunned:
 		get_stunned()
-	elif carmilla_curr_chasing:
-		hostile()
-	else:
-		pass
 	
+	
+	
+# ________________________________________________________________TODO !!!
 # if carmilla is in the state of currently roaming, then she should be
 # following a random position within a certain range, which changes every ten seconds
 # Call something in her code
 func roam_around():
-	pass
+	print("carmilla is currently roaming...")
 	
+	
+	
+# ________________________________________________________________DONE
 # if carmilla is currently stunned,
 # then she should be in this state for a time period
 # once the time has elapsed, she should enteer her roaming state again
+# her velocity should get changed to 0
 func get_stunned():
-	pass
+	if carmilla_en_scene:
+		print("carmilla is stunned!")
+		change_state(carmilla_curr_stunned, carmilla_curr_roaming)
+		carmilla_curr_stunned = false
+		Global.current_scene.get_node("Carmilla").set_physics_process(false)
+		await get_tree().create_timer(5).timeout
+		Global.current_scene.get_node("Carmilla").set_physics_process(true)
+	else:
+		print("carmilla is stunned!")
+		change_state(carmilla_curr_stunned, carmilla_curr_roaming)
+		carmilla_curr_stunned = false
+		curr_carmilla_instance.set_physics_process(false)
+		await get_tree().create_timer(5).timeout
+		curr_carmilla_instance.set_physics_process(true)
+	
 
+# ________________________________________________________________TODO !!!
 # if Carmilla is in the state of currently chasing Lauren, then
 # Switch the states (from roaming to chasing)
 # Probably call a function within the Carmilla Player node
 func hostile():
 	pass
 
+
+# ________________________________________________________________DONE
 # Function to set the states, just so that it's easier for us
 func change_state(curr_state : bool, next_state : bool):
 	curr_state = false
 	next_state = true
-	
+
+
+
 # Function to add a Carmilla node to the scene tree
+# ________________________________________________________________TODO !!!
+# add a check to see if Carmilla doesn't already exist
+# probably a "has" check on the current scene tree
 func spawn_carmilla():
-	print("spawner entered")
-	var scene = load("res://Scenes/Entity Scenes/carmilla.tscn")
-	var instance = scene.instantiate()
-	Global.current_scene.add_child(scene)
+	scene = load("res://Scenes/Entity Scenes/carmilla.tscn")
+	curr_carmilla_instance = scene.instantiate()
+	Global.current_scene.add_child(curr_carmilla_instance)
+	print("The value of scene is: ", scene)
+	print("The value of curr_carmilla_instance is: ", curr_carmilla_instance)
 	
 func defer_carmilla_spawner_disable():
-	carmilla_en_scene = false
+	call_for_spawn = false
 	
