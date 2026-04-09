@@ -417,7 +417,7 @@ script = ExtResource("1_cvnsp")
 
 [node name="hit_sfx" type="AudioStreamPlayer" parent="." unique_id=1698851939]
 stream = ExtResource("2_phyf0")
-volume_db = -4.394
+volume_db = -12.816
 pitch_scale = 1.13
 bus = &"sfx"
 
