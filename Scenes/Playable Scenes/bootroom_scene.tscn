@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_gc13i"]
 [ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="4_chcfv"]
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="5_ob8s6"]
-[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="6_kglb0"]
 [ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="7_wsyrv"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="8_chcfv"]
 
@@ -47,9 +46,8 @@ offset_top = 11.0
 offset_right = 59.0
 offset_bottom = 50.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("6_kglb0")
-theme_override_font_sizes/font_size = 10
-text = "[Enter] To Interact"
+theme_override_font_sizes/font_size = 8
+text = "[E] To Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 

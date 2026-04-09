@@ -33,6 +33,14 @@ texture = ExtResource("5_go4le")
 region_enabled = true
 region_rect = Rect2(98, 52, 12, 7)
 
+[node name="Label" type="Label" parent="Staffroom Key" unique_id=925409524]
+offset_left = -24.999979
+offset_top = 4.4117393
+offset_right = 29.000021
+offset_bottom = 27.41174
+theme_override_font_sizes/font_size = 8
+text = "[E] To Interact"
+
 [node name="Storage Room" parent="." unique_id=727452976 instance=ExtResource("6_h7cjq")]
 position = Vector2(524, 240)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
