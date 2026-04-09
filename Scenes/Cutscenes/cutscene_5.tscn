@@ -168,7 +168,7 @@ position = Vector2(-84, -203)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Environmental Sorting" unique_id=1834233243]
 position = Vector2(-20, -25)
-color = Color(0.5616756, 0.23148736, 0.4683466, 1)
+color = Color(0.47113472, 0.18523547, 0.39000043, 1)
 
 [node name="bg_collisions" type="StaticBody2D" parent="." unique_id=1998161251]
 
