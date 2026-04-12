@@ -107,7 +107,7 @@ func spawn_carmilla():
 	scene = load("res://Scenes/Entity Scenes/carmilla.tscn")
 	curr_carmilla_instance = scene.instantiate()
 	Global.current_scene.add_child(curr_carmilla_instance)
-	curr_carmilla_instance.global_position = Global.player_curr_pos + Vector2(80.0, 80.0)
+	curr_carmilla_instance.global_position = Global.player_curr_pos + Vector2(50.0, 50.0)
 	print("The value of scene is: ", scene)
 	print("The value of curr_carmilla_instance is: ", curr_carmilla_instance)
 	
