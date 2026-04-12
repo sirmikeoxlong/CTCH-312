@@ -10,7 +10,7 @@ var movement_dir = ""
 var can_flashbang = true
 var curr_flashing = false
 
-
+Global.player_curr_pos = 
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var flashlight_click: AudioStreamPlayer = $FlashlightClick
