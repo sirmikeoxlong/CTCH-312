@@ -11,6 +11,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_u7sk3"]
 radius = 18.382355
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fyiem"]
+radius = 18.382355
+
 [node name="pantry_scene" type="Node2D" unique_id=233444306]
 script = ExtResource("1_fyiem")
 metadata/_edit_vertical_guides_ = [-181.0]
@@ -42,9 +45,10 @@ texture = ExtResource("7_vpwu3")
 region_enabled = true
 region_rect = Rect2(98, 52, 12, 7)
 
-[node name="Staffroom" parent="." unique_id=727452976 instance=ExtResource("8_mjwrk")]
+[node name="Staffroom" parent="." unique_id=727452976 node_paths=PackedStringArray("key") instance=ExtResource("8_mjwrk")]
 position = Vector2(44, 47)
 teleport = "res://Scenes/Playable Scenes/staffroom_scene.tscn"
+key = NodePath("../Staffroom Key")
 forbidden_message = "doorlock"
 
 [node name="Pantry" parent="." unique_id=1187717758 instance=ExtResource("8_mjwrk")]
@@ -55,6 +59,29 @@ forbidden_message = "doorlock"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1873606942]
 color = Color(0.44119266, 0.5500828, 0.8660146, 1)
+
+[node name="Staffroom Key" parent="." unique_id=1495470937 instance=ExtResource("4_vpwu3")]
+position = Vector2(366, -83)
+scale = Vector2(1.3599999, 1.360001)
+id = "staffroom_key"
+pickup_message = "scene1forest2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Staffroom Key" unique_id=258205814]
+shape = SubResource("CircleShape2D_fyiem")
+script = ExtResource("6_hjcw1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Staffroom Key" unique_id=64384278]
+texture = ExtResource("7_vpwu3")
+region_enabled = true
+region_rect = Rect2(98, 52, 12, 7)
+
+[node name="Label" type="Label" parent="Staffroom Key" unique_id=826830960]
+offset_left = -24.999979
+offset_top = 4.4117393
+offset_right = 29.000021
+offset_bottom = 27.41174
+theme_override_font_sizes/font_size = 8
+text = "[E] To Interact"
 
 [connection signal="body_entered" from="Boot Room Key" to="." method="_on_boot_room_key_body_entered"]
 [connection signal="pocketed" from="Boot Room Key" to="." method="_on_boot_room_key_pocketed"]

@@ -256,13 +256,11 @@ position = Vector2(25, 84)
 [node name="Cutscene3" parent="." unique_id=727452976 instance=ExtResource("2_ev6bi")]
 position = Vector2(-175, -85)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
-forbidden_message = "doorlock"
 
 [node name="Bathroom" parent="." unique_id=72940015 instance=ExtResource("2_ev6bi")]
 position = Vector2(236, -54)
 teleport = "res://Scenes/Playable Scenes/f_2_bathroom_scene.tscn"
 unlocked = true
-forbidden_message = "doorlock"
 
 [node name="Spotlight" type="PointLight2D" parent="." unique_id=1222275785]
 position = Vector2(27, 76)

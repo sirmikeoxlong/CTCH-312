@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c2f73jo000gfb" path="res://Sprites/sprites/TopDownHouse_SmallItems.png" id="5_fdcss"]
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="6_wim1q"]
 [ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="7_t1yt5"]
+[ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="9_wim1q"]
 
 [sub_resource type="Gradient" id="Gradient_vppsg"]
 
@@ -18,6 +19,9 @@ fill_to = Vector2(0.54415953, 0.0056980057)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2yy10"]
 radius = 25.019993
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t1yt5"]
+radius = 18.382355
 
 [node name="ballroom_scene" type="Node2D" unique_id=368079613]
 script = ExtResource("1_fdcss")
@@ -44,6 +48,7 @@ texture = SubResource("GradientTexture2D_3ivsh")
 polygon = PackedVector2Array(-202, -243, 164, -242, 166, -126, 144, -126, 143, -101, 166, -102, 165, 7, 195, 6, 195, 39, 166, 39, -155, 37, -157, -103, -134, -104, -134, -9, -113, -8, -111, -32, -127, -43, -133, -125, -157, -125, -155, -218, -201, -218, -202, -238, -296, -152, -354, -47, -424, 131, -243, 208, 156, 218, 314, 89, 373, -212, 293, -356, 25, -453, -201, -450, -366, -370, -318, -258, -272, -217)
 
 [node name="Ballroom Paper" parent="." unique_id=1015122729 instance=ExtResource("4_tod71")]
+visible = false
 position = Vector2(-47, -134)
 id = "ballroom_paper"
 
@@ -79,9 +84,26 @@ position = Vector2(71, -230)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
 
-[node name="Bootroom" parent="." unique_id=1431071824 instance=ExtResource("3_idnv1")]
+[node name="Bootroom" parent="." unique_id=1431071824 node_paths=PackedStringArray("key") instance=ExtResource("3_idnv1")]
 position = Vector2(181, 22)
 teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
+key = NodePath("../Boot Room Key")
 
 [node name="Storage" parent="." unique_id=1627856602 instance=ExtResource("3_idnv1")]
 position = Vector2(-188, -231)
+
+[node name="Boot Room Key" parent="." unique_id=17265213 instance=ExtResource("4_tod71")]
+visible = false
+position = Vector2(-113, 11)
+scale = Vector2(1.3599999, 1.360001)
+id = "bootroom_key"
+pickup_message = "scene15pantry1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boot Room Key" unique_id=1270628702]
+shape = SubResource("CircleShape2D_t1yt5")
+script = ExtResource("6_wim1q")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Boot Room Key" unique_id=1807286945]
+texture = ExtResource("9_wim1q")
+region_enabled = true
+region_rect = Rect2(98, 52, 12, 7)

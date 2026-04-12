@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://e4kha20n1f77" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Esoteric.png" id="7_0ki4e"]
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="8_5xige"]
 [ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="9_il6a2"]
+[ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="10_0ki4e"]
+[ext_resource type="Texture2D" uid="uid://b0xf8ms2lue40" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Tools.png" id="11_5xige"]
 
 [sub_resource type="Gradient" id="Gradient_8df38"]
 
@@ -22,6 +24,12 @@ height = 86.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tn5m8"]
 radius = 42.0119
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5xige"]
+radius = 25.019993
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_il6a2"]
+radius = 25.019993
 
 [node name="carmillasroom_scene" type="Node2D" unique_id=261969615]
 script = ExtResource("1_vjl3u")
@@ -140,8 +148,69 @@ text = "[Enter] To Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Storage Key" parent="." unique_id=2117722631 instance=ExtResource("6_8df38")]
+position = Vector2(-156, 181)
+id = "storage_room"
+pickup_message = "storageroom_key_found"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Storage Key" unique_id=1683266313]
+texture = ExtResource("10_0ki4e")
+region_enabled = true
+region_rect = Rect2(98, 52, 12, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Storage Key" unique_id=1651121078]
+shape = SubResource("CircleShape2D_5xige")
+script = ExtResource("8_5xige")
+
+[node name="Label" type="Label" parent="Storage Key" unique_id=457217755]
+offset_left = -40.0
+offset_top = -21.0
+offset_right = 35.0
+offset_bottom = 2.0
+theme_override_font_sizes/font_size = 8
+text = "[ENTER] To Interact"
+
+[node name="Library Piece 1" parent="." unique_id=80004430 instance=ExtResource("6_8df38")]
+position = Vector2(165, 185.00002)
+scale = Vector2(1.3599999, 1.360001)
+id = "lib_key_2"
+pickup_message = "disk2mssg"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Library Piece 1" unique_id=1137337817]
+scale = Vector2(1.2857143, 1.2857144)
+texture = ExtResource("11_5xige")
+region_enabled = true
+region_rect = Rect2(113, 17, 14, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Library Piece 1" unique_id=1458081914]
+shape = SubResource("CircleShape2D_il6a2")
+script = ExtResource("8_5xige")
+
+[node name="Label" type="Label" parent="Library Piece 1" unique_id=1568529096]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.294125
+offset_top = -3.6764653
+offset_right = 60.705875
+offset_bottom = 35.323536
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 8
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="saying_finished" from="Dialogue/Enter Carmilla\'s Room" to="." method="_on_enter_carmillas_room_saying_finished"]
 [connection signal="saying_started" from="Dialogue/Enter Carmilla\'s Room" to="." method="_on_enter_carmillas_room_saying_started"]
 [connection signal="body_entered" from="Carmilla\'s Diary" to="." method="_on_carmillas_diary_body_entered"]
 [connection signal="pocketed" from="Carmilla\'s Diary" to="." method="_on_carmillas_diary_pocketed"]
 [connection signal="saying_finished" from="Carmilla\'s Diary" to="." method="_on_carmillas_diary_saying_finished"]
+[connection signal="body_entered" from="Storage Key" to="." method="_on_main_door_key_body_entered"]
+[connection signal="body_exited" from="Storage Key" to="." method="_on_storage_key_body_exited"]
+[connection signal="pocketed" from="Storage Key" to="." method="_on_main_door_key_pocketed"]
+[connection signal="body_entered" from="Library Piece 1" to="." method="_on_library_piece_1_body_entered"]
+[connection signal="body_exited" from="Library Piece 1" to="." method="_on_library_piece_1_body_exited"]
+[connection signal="pocketed" from="Library Piece 1" to="." method="_on_library_piece_1_pocketed"]

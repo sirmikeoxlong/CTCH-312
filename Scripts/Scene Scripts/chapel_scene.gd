@@ -4,6 +4,7 @@ extends Node2D
 @onready var painting: cutscene_interactables = $painting
 @onready var lauren: CharacterBody2D = $EnvironmetalSorting/Lauren
 
+
 var last_door = Global.last_door_accessed
 
 

@@ -7,9 +7,14 @@
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="5_ob8s6"]
 [ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="7_wsyrv"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="8_chcfv"]
+[ext_resource type="Script" uid="uid://b2ajryohr0cqa" path="res://Scripts/Scene Scripts/cut_scene_teleport.gd" id="9_kglb0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qx1av"]
 radius = 18.382355
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wsyrv"]
+radius = 10.985662
+height = 27.971176
 
 [node name="bootroom_scene" type="Node2D" unique_id=892454826]
 script = ExtResource("1_3u0uu")
@@ -19,7 +24,7 @@ position = Vector2(-30, 16)
 scale = Vector2(0.68000066, 0.63999724)
 
 [node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_gc13i")]
-position = Vector2(23, -25)
+position = Vector2(28, -21)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1594320021]
 color = Color(0.1168422, 0.33254594, 0.43403766, 1)
@@ -56,8 +61,8 @@ texture = ExtResource("7_wsyrv")
 region_enabled = true
 region_rect = Rect2(98, 52, 12, 7)
 
-[node name="To Great Hall" parent="." unique_id=727452976 instance=ExtResource("8_chcfv")]
-position = Vector2(80, -11)
+[node name="Bootroom2" parent="." unique_id=727452976 instance=ExtResource("8_chcfv")]
+position = Vector2(77.00001, 51)
 scale = Vector2(1.18205, 1.0460984)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
@@ -70,7 +75,7 @@ unlocked = true
 forbidden_message = "doorlock"
 
 [node name="Cutscene2" parent="." unique_id=824014948 instance=ExtResource("8_chcfv")]
-position = Vector2(80, 49)
+position = Vector2(189, -18)
 teleport = "res://Scenes/Cutscenes/cutscene_1.tscn"
 unlocked = true
 forbidden_message = "doorlock"
@@ -81,5 +86,16 @@ forbidden_message = "doorlock"
 position = Vector2(-8, 0)
 polygon = PackedVector2Array(-106, -27, 13, -26, 13, -57, 45, -57, 45, -27, 57, -27, 57, 34, 91, 34, 90, 68, -105, 67, -106, -22, -197, 36, -205, 93, -182, 189, 45, 196, 230, 55, 252, -85, 136, -207, -8, -207, -103, -170, -198, -126, -203, -29)
 
+[node name="CutSceneTeleport" type="Area2D" parent="." unique_id=114025438]
+position = Vector2(64, 102)
+script = ExtResource("9_kglb0")
+teleport = "res://Scenes/Cutscenes/cutscene_1.tscn"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CutSceneTeleport" unique_id=500018132]
+position = Vector2(-15, -51)
+rotation = 1.5778282
+shape = SubResource("CapsuleShape2D_wsyrv")
+
 [connection signal="body_entered" from="Spare Bedroom Key" to="." method="_on_spare_bedroom_key_body_entered"]
 [connection signal="pocketed" from="Spare Bedroom Key" to="." method="_on_spare_bedroom_key_pocketed"]
+[connection signal="body_entered" from="CutSceneTeleport" to="CutSceneTeleport" method="_on_body_entered"]

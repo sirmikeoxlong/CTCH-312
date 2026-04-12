@@ -3,6 +3,7 @@ extends Node2D
 @onready var ballroom_paper: cutscene_interactables = $"Ballroom Paper"
 @onready var snarky_comment: RoomTrigger = $"Dialogue/snarky comment"
 @onready var lauren: CharacterBody2D = $Lauren
+@onready var parlor_key: cutscene_interactables = $"Parlor Key"
 
 var last_door = Global.last_door_accessed
 
@@ -26,3 +27,15 @@ func _on_ballroom_paper_pocketed() -> void:
 
 func _on_snarky_comment_has_yapped_about_it() -> void:
 	snarky_comment.remove_from_scene()
+
+
+func _on_parlor_key_body_entered(body: Node2D) -> void:
+	parlor_key.entered = true
+
+
+func _on_parlor_key_body_exited(body: Node2D) -> void:
+	parlor_key.entered = false
+
+
+func _on_parlor_key_pocketed() -> void:
+	parlor_key.remove_from_scene()

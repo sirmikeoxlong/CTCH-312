@@ -4,6 +4,8 @@ extends Node2D
 @onready var f_2_bathroom: RoomTeleport = $"Doors/F2 Bathroom"
 @onready var lauren: CharacterBody2D = $Lauren
 @onready var doors: Node2D = $Doors
+@onready var lockpick: cutscene_interactables = $Lockpick
+@onready var b_2_key: cutscene_interactables = $"B2 Key"
 
 var last_door = Global.last_door_accessed
 
@@ -26,3 +28,27 @@ func unlock_all_doors():
 		study.unlocked = true
 	if Global.f2_bathroom_key_pocketed == true:
 		f_2_bathroom.unlocked = true
+
+
+func _on_lockpick_body_entered(body: CharacterBody2D) -> void:
+	lockpick.entered = true
+
+
+func _on_lockpick_body_exited(body: CharacterBody2D) -> void:
+	lockpick.entered = false
+
+
+func _on_lockpick_pocketed() -> void:
+	lockpick.remove_from_scene()
+
+
+func _on_b_2_key_body_entered(body: Node2D) -> void:
+	b_2_key.entered = true
+
+
+func _on_b_2_key_body_exited(body: Node2D) -> void:
+	b_2_key.entered = false
+
+
+func _on_b_2_key_pocketed() -> void:
+	b_2_key.remove_from_scene()

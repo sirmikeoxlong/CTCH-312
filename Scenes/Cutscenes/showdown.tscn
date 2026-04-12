@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dpd4m15rjisci"]
+
+[ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="1_kjisf"]
+[ext_resource type="Script" uid="uid://sx1gp27jx28h" path="res://Scenes/Cutscenes/showdown.gd" id="1_vnawe"]
+[ext_resource type="PackedScene" uid="uid://3w440ilb4h41" path="res://Scenes/environments/env_2_bedroom.tscn" id="3_p0e3f"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="4_w8y4y"]
+[ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="5_vnawe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k7p2a"]
+radius = 4.507997
+
+[node name="Showdown" type="Node2D" unique_id=1164828110]
+script = ExtResource("1_vnawe")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=892223392]
+zoom = Vector2(3, 3)
+
+[node name="Lock The Door" parent="." unique_id=359445996 instance=ExtResource("1_kjisf")]
+position = Vector2(-21, -90)
+scale = Vector2(4.2815866, 6.771887)
+id = "call_out"
+RoomMessage = "scene34mainbed2"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Lock The Door" unique_id=473299896]
+position = Vector2(-14.0135, 21.412052)
+rotation = 0.012639626
+scale = Vector2(1.3498051, 0.71524495)
+shape = SubResource("CircleShape2D_k7p2a")
+
+[node name="Environmental Sorting" type="Node2D" parent="." unique_id=1429025310]
+
+[node name="env_2_bedroom" parent="Environmental Sorting" unique_id=1943075142 instance=ExtResource("3_p0e3f")]
+position = Vector2(1, 2)
+scale = Vector2(0.7112066, 0.74963623)
+
+[node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("4_w8y4y")]
+position = Vector2(26, 30)
+
+[node name="bg_collision" type="StaticBody2D" parent="." unique_id=1716274081]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=1423753557]
+polygon = PackedVector2Array(-126, -1, 45, 1, 46, 74, -12, 87, -148, 73, -148, 38, -125, 38, -123, 2, -205, 22, -210, 61, -143, 150, -37, 164, 69, 139, 96, 103, 102, 7, 102, -92, -10, -121, -136, -123, -184, -89, -196, -35, -180, -13)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=294398744]
+position = Vector2(-1, -1)
+scale = Vector2(0.7112066, 0.74963623)
+color = Color(0.15718266, 0.22584885, 0.47216856, 1)
+
+[node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("5_vnawe")]
+position = Vector2(-127, 37)

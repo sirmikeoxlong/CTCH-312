@@ -39,4 +39,4 @@ func cutscene_redirect():
 	#else:
 		#to_great_hall.enabled = true
 		pass
-		
+	

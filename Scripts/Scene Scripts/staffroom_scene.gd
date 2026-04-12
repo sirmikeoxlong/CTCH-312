@@ -26,3 +26,16 @@ func _on_library_door_key_3_body_entered(body: CharacterBody2D) -> void:
 func _on_library_door_key_3_pocketed() -> void:
 	library_door_key_3.remove_from_scene()
 	Global.lib_key3_collect = true
+
+
+func _on_library_piece_3_body_entered(body: Node2D) -> void:
+	$"Library Piece 3".entered = true
+
+
+func _on_library_piece_3_body_exited(body: Node2D) -> void:
+	$"Library Piece 3".entered = false
+
+
+func _on_library_piece_3_pocketed() -> void:
+	await $"Library Piece 3".remove_from_scene()
+	Global.goto_scene("res://Scenes/Cutscenes/cutscene_5.tscn")

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="4_bl2sy"]
 [ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="5_fydfr"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="6_r0uby"]
+[ext_resource type="Script" uid="uid://b2ajryohr0cqa" path="res://Scripts/Scene Scripts/cut_scene_teleport.gd" id="7_kulqj"]
 
 [sub_resource type="Animation" id="Animation_r0uby"]
 length = 0.001
@@ -31,10 +32,32 @@ tracks/1/keys = {
 "points": PackedFloat32Array(-98.99999, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Carmilla:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Carmilla:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_kulqj"]
 resource_name = "new_animation"
-length = 5.0666666
+length = 5.4
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -42,9 +65,9 @@ tracks/0/path = NodePath("Carmilla:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 2, 2, 2, 2, 2),
-"points": PackedFloat32Array(-107, 0, 0, 0.175, -0.33333334, -109, -0.175, 0, 0, 0, -110, -0.17333333, 0.16666667, 0, 0, -113.00001, -0.14833336, 0.5000013, 0, 0, -159, -0.165, 7.6666656, 0, 0, -214, -0.175, 9.166667, 0, 0),
-"times": PackedFloat32Array(0, 1.05, 2.09, 2.98, 3.97, 5.02)
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(-107, 0, 0, 0.175, -0.33333334, -109, -0.175, 0, 0, 0, -110, -0.17333333, 0.16666667, 0, 0, -113.00001, -0.14833336, 0.5000013, 0, 0, -159, -0.165, 7.6666656, 0, 0, -214, -0.175, 9.166667, 0, 0, -350.00003, -0.021666687, 22.666674, 0, 0),
+"times": PackedFloat32Array(0, 1.05, 2.09, 2.98, 3.97, 5.02, 5.15)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -53,9 +76,9 @@ tracks/1/path = NodePath("Carmilla:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(2, 2, 2, 2, 2, 2),
-"points": PackedFloat32Array(-48, 0, 0, 0.175, -13.666668, -130, -0.175, 5.1666684, 0, 0, -177, -0.17333333, 7.8333335, 0, 0, -225, -0.14833336, 8, 0, 0, -273, -0.165, 8, 0, 0, -268, -0.175, -0.8333334, 0, 0),
-"times": PackedFloat32Array(0, 1.05, 2.09, 2.98, 3.97, 5.02)
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(-48, 0, 0, 0.175, -13.666668, -130, -0.175, 5.1666684, 0, 0, -177, -0.17333333, 7.8333335, 0, 0, -225, -0.14833336, 8, 0, 0, -273, -0.165, 8, 0, 0, -268, -0.175, -0.8333334, 0, 0, -397.00003, -0.021666687, 21.500006, 0, 0),
+"times": PackedFloat32Array(0, 1.05, 2.09, 2.98, 3.97, 5.02, 5.15)
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -70,6 +93,28 @@ tracks/2/keys = {
 "args": [],
 "method": &"move_and_slide"
 }]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Carmilla:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 2, 0),
+"points": PackedFloat32Array(0.2, 0, 0, 0.85833335, -0.033833332, 0.2, -0.845, 0.03330777, 0.013333321, -0.0005255658, -0.003, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 5.07, 5.15)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Carmilla:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(2, 2, 0),
+"points": PackedFloat32Array(0.2, 0, 0, 0.85833335, -0.033833332, 0.2, -0.845, 0.03330777, 0.013333321, -0.0005255658, -0.003, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 5.07, 5.15)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bl2sy"]
@@ -89,6 +134,10 @@ fill_to = Vector2(0.6011396, 0.16524217)
 radius = 16.417727
 height = 41.456955
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kulqj"]
+radius = 15.0
+height = 86.0
+
 [node name="Cutscene 1" type="Node2D" unique_id=1686572223]
 script = ExtResource("1_uxk81")
 
@@ -96,11 +145,10 @@ script = ExtResource("1_uxk81")
 position = Vector2(-72, -484)
 
 [node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("3_kulqj")]
-position = Vector2(-271, 50)
+position = Vector2(-112, -20)
 
 [node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("4_bl2sy")]
 position = Vector2(-109, -98.99999)
-scale = Vector2(0.16182943, 0.17172727)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=623322509]
 libraries/ = SubResource("AnimationLibrary_bl2sy")
@@ -123,7 +171,7 @@ id = "first_cutscene"
 RoomMessage = "scene20entrance1"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Meet Carmilla" unique_id=1067789864]
-position = Vector2(12.600695, 22.332678)
+position = Vector2(12.394126, -6.6170883)
 rotation = 0.012639626
 scale = Vector2(1.1241713, 0.13490698)
 shape = SubResource("CapsuleShape2D_qujks")
@@ -146,18 +194,29 @@ position = Vector2(-20, -25)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=680308434]
 polygon = PackedVector2Array(-293, 103, -292, 73, -246, 73, -244, 10, -182, 11, -171, -51, -144, -51, -143, -93, -34, -93, -33, -54, -1, -54, -3, -15, 13, 15, 28, 8, 69, 8, 72, 106, -61, 108, -61, 153, -108, 152, -110, 107, -287, 107, -169, 221, 85, 163, 106, 10, 52, -126, -69, -143, -236, -131, -326, 22, -342, 114)
 
-[node name="Cutscene1" parent="." unique_id=727452976 instance=ExtResource("6_r0uby")]
-position = Vector2(-313, 64)
+[node name="Bootroom2" parent="." unique_id=727452976 instance=ExtResource("6_r0uby")]
+position = Vector2(-278, 66)
 teleport = "res://Scenes/Playable Scenes/ballroom_scene.tscn"
 unlocked = true
-forbidden_message = "doorlock"
+forbidden_message = "\"What's going on...\""
 
-[node name="Cutscene2" parent="." unique_id=1497041106 instance=ExtResource("6_r0uby")]
-position = Vector2(-224, -241)
-teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
-unlocked = true
-forbidden_message = "doorlock"
+[node name="CutSceneTeleport" type="Area2D" parent="." unique_id=1460681973]
+position = Vector2(-274, -191)
+script = ExtResource("7_kulqj")
+teleport = "res://Scenes/Cutscenes/cutscene_2.tscn"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CutSceneTeleport" unique_id=1424935401]
+position = Vector2(35, -53)
+rotation = 1.5778282
+shape = SubResource("CapsuleShape2D_kulqj")
+
+[node name="Bootroom" parent="." unique_id=570858726 node_paths=PackedStringArray("key") instance=ExtResource("6_r0uby")]
+position = Vector2(-252, 65)
+teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
+key = NodePath("")
+forbidden_message = "\"...\""
 
 [connection signal="body_entered" from="Meet Carmilla" to="." method="_on_snarky_comment_body_entered"]
 [connection signal="body_entered" from="Front Door" to="." method="_on_snarky_comment_body_entered"]
 [connection signal="has_yapped_about_it" from="Front Door" to="." method="_on_front_door_has_yapped_about_it"]
+[connection signal="body_entered" from="CutSceneTeleport" to="CutSceneTeleport" method="_on_body_entered"]

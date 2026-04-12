@@ -29,8 +29,9 @@ func say_room_dialogue():
 	# Function where Lauren yaps
 	# After done, set the signal to true (emit)
 	print("say_room_dialogue function working")
-	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
-	RoomMessage)
+
+	#DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
+	#RoomMessage)
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	if Global.dialogue.has(global_position):
@@ -39,12 +40,12 @@ func _on_body_entered(body: CharacterBody2D) -> void:
 		#Player.animated_sprite.play("idle")
 		Global.lauren_movement_allowed = false
 		say_room_dialogue()
-		#await get_tree().create_timer(2.5).timeout
 		await DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
 	RoomMessage).tree_exited
+		remove_from_scene()
 		Global.lauren_movement_allowed = true
 		emit_yap()
-		remove_from_scene()
+		
 
 func emit_yap():
 	has_yapped_about_it.emit()

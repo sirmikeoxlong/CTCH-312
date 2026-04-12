@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="5_bds3v"]
 [ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="7_d1lcf"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="8_ow1mq"]
+[ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="9_dmogs"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="9_xo5wk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0hgf8"]
@@ -15,6 +16,9 @@ radius = 25.019993
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yykth"]
 radius = 15.0
 height = 86.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uor4v"]
+radius = 25.019993
 
 [node name="Parlor_scene" type="Node2D" unique_id=1854053113]
 script = ExtResource("1_ego5m")
@@ -60,9 +64,10 @@ position = Vector2(134, -18)
 teleport = "res://Scenes/Playable Scenes/billiards_scene.tscn"
 unlocked = true
 
-[node name="Parlour" parent="." unique_id=343064353 instance=ExtResource("9_xo5wk")]
+[node name="Parlour" parent="." unique_id=343064353 node_paths=PackedStringArray("key") instance=ExtResource("9_xo5wk")]
 position = Vector2(-71, -81)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
+key = NodePath("../Parlor Key")
 unlocked = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=173428673]
@@ -73,6 +78,31 @@ color = Color(0.44119266, 0.5500828, 0.8660146, 1)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=337346588]
 polygon = PackedVector2Array(-96, 104, 86, 103, 86, 3, 147, 4, 147, -44, 88, -44, 86, -78, -46, -80, -57, -92, -57, -92, -97, -92, -97, 102, -248, -44, -124, -257, 163, -220, 220, -130, 248, 32, 143, 265, -6, 302, -147, 219, -178, 140)
 
+[node name="Parlor Key" parent="." unique_id=681434239 instance=ExtResource("3_j7gci")]
+position = Vector2(-48, 65)
+id = "parlor_key"
+pickup_message = "scene3gazebo2"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parlor Key" unique_id=1582198450]
+texture = ExtResource("9_dmogs")
+region_enabled = true
+region_rect = Rect2(98, 52, 12, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parlor Key" unique_id=662422551]
+shape = SubResource("CircleShape2D_uor4v")
+script = ExtResource("5_bds3v")
+
+[node name="Label" type="Label" parent="Parlor Key" unique_id=641311266]
+offset_left = -40.0
+offset_top = -21.0
+offset_right = 35.0
+offset_bottom = 2.0
+theme_override_font_sizes/font_size = 8
+text = "[ENTER] To Interact"
+
 [connection signal="body_entered" from="Ballroom Paper" to="." method="_on_ballroom_paper_body_entered"]
 [connection signal="pocketed" from="Ballroom Paper" to="." method="_on_ballroom_paper_pocketed"]
 [connection signal="has_yapped_about_it" from="Dialogue/snarky comment" to="." method="_on_snarky_comment_has_yapped_about_it"]
+[connection signal="body_entered" from="Parlor Key" to="." method="_on_parlor_key_body_entered"]
+[connection signal="body_exited" from="Parlor Key" to="." method="_on_parlor_key_body_exited"]
+[connection signal="pocketed" from="Parlor Key" to="." method="_on_parlor_key_pocketed"]

@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var dining_paper: cutscene_interactables = $"Dining Paper"
-@onready var lauren: CharacterBody2D = $Lauren
+@onready var lauren: CharacterBody2D = $"Environmental Sorting/Lauren"
 
 var last_door = Global.last_door_accessed
 

@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="7_s130n"]
 [ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="8_mloce"]
 [ext_resource type="Texture2D" uid="uid://e4kha20n1f77" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Esoteric.png" id="9_5a3ix"]
-[ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="10_c2gcy"]
+[ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="10_c2gcy"]
 
 [sub_resource type="Gradient" id="Gradient_nw6sa"]
 
@@ -31,6 +31,9 @@ radius = 25.019993
 [sub_resource type="CircleShape2D" id="CircleShape2D_c2gcy"]
 radius = 25.019993
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_s130n"]
+radius = 25.019993
+
 [node name="F2_library_scene" type="Node2D" unique_id=962146672]
 script = ExtResource("1_186q5")
 
@@ -39,7 +42,7 @@ position = Vector2(-25, -257)
 scale = Vector2(0.51459193, 0.5224101)
 
 [node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_77tw0")]
-position = Vector2(-150, -273)
+position = Vector2(-9, 165)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=78225519]
 color = Color(0.44119266, 0.5500828, 0.8660146, 1)
@@ -48,7 +51,7 @@ color = Color(0.44119266, 0.5500828, 0.8660146, 1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=744487845]
 scale = Vector2(0.99294823, 1)
-polygon = PackedVector2Array(-183.29254, -258, -183.29254, -269, -26.184649, -268, -1.0071019, -269, 19.134935, -270, 55.390606, -269, 165.1647, -269, 167.17891, -90, 15.106528, -90, 15.106528, 1, 65.461624, 2, 65.461624, 27, 16.11363, 27, 16.11363, 124, 263.8607, 128, 263.8607, 202, 248.75417, 202, 248.75417, 218, 208.4701, 219, 207.463, 205, 114.809616, 205, 114.809616, 219, 72.51134, 220, 73.51844, 204, -182.28545, 205, -183.29254, 219, -223.57661, 220, -224.58372, 205, -284.00275, 205, -284.00275, 144, -281.98853, 129, -36.25567, 126, -33.234364, 143, -33.234364, 27, -83.589455, 28, -81.57526, 2, -34.241463, 1, -32.22726, -90, -182.28545, -91, -182.28545, -256, -476.3592, -120, -517.6504, 122, -314.2158, 307, -16.11363, 360, 292.05954, 306, 348.45724, 115, 390.75552, 1, 311.1945, -171, 233.64764, -425, -22.156242, -507, -228.61214, -401, -241.70445, -298, -228.61214, -264)
+polygon = PackedVector2Array(-183.29254, -258, -183.29254, -269, -26.184649, -268, -1.0071019, -269, 19.134935, -270, 55.390606, -269, 165.1647, -269, 167.17891, -90, 15.106528, -90, 14.099426, -14, 66.46873, -17, 65.461624, 2, 65.461624, 33, 16.11363, 36, 16.11363, 124, 263.8607, 128, 263.8607, 202, 248.75417, 202, 248.75417, 218, 208.4701, 219, 207.463, 205, 114.809616, 205, 114.809616, 219, 72.51134, 220, 73.51844, 204, 17.120731, 204, 16.11363, 246, -32.22726, 247, -31.121918, 204.40906, -182.28545, 205, -183.29254, 219, -223.57661, 220, -224.58372, 205, -284.00275, 205, -284.00275, 144, -281.98853, 129, -36.25567, 126, -33.234364, 143, -34.241463, 33, -83.589455, 34, -82.58235, -17, -29.205956, -17, -17.120731, -16, 11.078121, -16, 12.085222, -60, -32.22726, -90, -182.28545, -91, -182.28545, -256, -476.3592, -120, -517.6504, 122, -314.2158, 307, -16.11363, 360, 292.05954, 306, 348.45724, 115, 390.75552, 1, 311.1945, -171, 233.64764, -425, -22.156242, -507, -228.61214, -401, -241.70445, -298, -228.61214, -264)
 
 [node name="Lighting" type="Node2D" parent="." unique_id=896085662]
 
@@ -72,54 +75,52 @@ texture = SubResource("GradientTexture2D_0fwj2")
 
 [node name="Doors" type="Node2D" parent="." unique_id=392325371]
 
-[node name="Cutscene2" parent="Doors" unique_id=727452976 instance=ExtResource("3_77tw0")]
+[node name="To Lib F2" parent="Doors" unique_id=727452976 instance=ExtResource("3_77tw0")]
 position = Vector2(-157, -275)
 teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
-forbidden_message = "doorlock"
 
 [node name="BR1" parent="Doors" unique_id=2086894804 instance=ExtResource("3_77tw0")]
 position = Vector2(-69, 16)
 teleport = "res://Scenes/Playable Scenes/1_bedroom_scene.tscn"
 unlocked = true
-forbidden_message = "doorlock"
 
 [node name="BR2" parent="Doors" unique_id=310440998 instance=ExtResource("3_77tw0")]
 position = Vector2(52, 14)
 teleport = "res://Scenes/Playable Scenes/2_bedroom_scene.tscn"
-unlocked = true
-forbidden_message = "doorlock"
 
 [node name="To Bedroom 1" parent="Doors" unique_id=1680612408 instance=ExtResource("3_77tw0")]
 position = Vector2(-161, 152)
 teleport = "res://Scenes/Playable Scenes/1_bedroom_scene.tscn"
-forbidden_message = "doorlock"
 
 [node name="Study" parent="Doors" unique_id=1789752390 node_paths=PackedStringArray("key") instance=ExtResource("3_77tw0")]
-position = Vector2(-200, 190)
+position = Vector2(-200, 198)
 teleport = "res://Scenes/Playable Scenes/study_scene.tscn"
 key = NodePath("../../Lockpick")
-unlocked = true
-forbidden_message = "doorlock"
+forbidden_message = "lockpick1"
 
 [node name="Carmilla\'s Room" parent="Doors" unique_id=1691242732 instance=ExtResource("3_77tw0")]
 position = Vector2(95, 190)
 teleport = "res://Scenes/Playable Scenes/carmillasroom_scene.tscn"
-forbidden_message = "doorlock"
 
 [node name="To Bedroom 2 entrance 1" parent="Doors" unique_id=1656883946 instance=ExtResource("3_77tw0")]
 position = Vector2(145, 156)
 teleport = "res://Scenes/Playable Scenes/2_bedroom_scene.tscn"
-forbidden_message = "doorlock"
 
 [node name="F2 Bathroom" parent="Doors" unique_id=1468689881 instance=ExtResource("3_77tw0")]
 position = Vector2(226, 191)
 teleport = "res://Scenes/Playable Scenes/f_2_bathroom_scene.tscn"
-forbidden_message = "doorlock"
+
+[node name="Upstairs1" parent="Doors" unique_id=2497103 instance=ExtResource("3_77tw0")]
+position = Vector2(-7.9999986, 230)
+scale = Vector2(1.8077381, 0.5174084)
+teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
+unlocked = true
+forbidden_message = "scene6hall1"
 
 [node name="Lockpick" parent="." unique_id=1015122729 instance=ExtResource("5_5a3ix")]
-position = Vector2(-465, 281)
+position = Vector2(-272, 154)
 id = "lockpick"
-pickup_message = "scene1forest2"
+pickup_message = "lockpick2"
 
 [node name="Sprite2D2" type="Sprite2D" parent="Lockpick" unique_id=1558479779]
 texture = ExtResource("6_c2gcy")
@@ -161,6 +162,28 @@ region_rect = Rect2(0, 162, 15, 12)
 shape = SubResource("CircleShape2D_c2gcy")
 script = ExtResource("7_s130n")
 
-[node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("10_c2gcy")]
-position = Vector2(128, -179)
-scale = Vector2(0.16, 0.16)
+[node name="B2 Key" parent="." unique_id=1306054033 instance=ExtResource("5_5a3ix")]
+position = Vector2(132, -173)
+id = "B2_key"
+pickup_message = "B2mssg"
+
+[node name="Sprite2D2" type="Sprite2D" parent="B2 Key" unique_id=1979198002]
+texture = ExtResource("10_c2gcy")
+region_enabled = true
+region_rect = Rect2(98, 52, 12, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B2 Key" unique_id=1643538639]
+shape = SubResource("CircleShape2D_s130n")
+script = ExtResource("7_s130n")
+
+[node name="Label" type="Label" parent="B2 Key" unique_id=1570628497]
+offset_left = -40.0
+offset_top = -21.0
+offset_right = 35.0
+offset_bottom = 2.0
+theme_override_font_sizes/font_size = 8
+text = "[ENTER] To Interact"
+
+[connection signal="body_entered" from="Lockpick" to="." method="_on_lockpick_body_entered"]
+[connection signal="body_exited" from="Lockpick" to="." method="_on_lockpick_body_exited"]
+[connection signal="pocketed" from="Lockpick" to="." method="_on_lockpick_pocketed"]

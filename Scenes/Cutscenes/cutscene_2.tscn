@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="3_duoo3"]
 [ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="4_06wed"]
 [ext_resource type="Script" uid="uid://bcyjasak166ik" path="res://Scenes/chapel/portal_chapel.gd" id="6_gpbou"]
+[ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="7_ajgn2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_duoo3"]
 radius = 4.507997
@@ -361,17 +362,23 @@ libraries/ = SubResource("AnimationLibrary_ajgn2")
 [node name="LightMove" type="AnimationPlayer" parent="." unique_id=210259877]
 libraries/ = SubResource("AnimationLibrary_461ux")
 
-[node name="ChapelDoor1" type="Area2D" parent="." unique_id=1242866904]
-position = Vector2(2, -35)
+[node name="meh" type="Area2D" parent="." unique_id=1242866904]
+position = Vector2(-266, 63)
 script = ExtResource("6_gpbou")
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 
-[node name="Door" type="CollisionShape2D" parent="ChapelDoor1" unique_id=1701777970]
-position = Vector2(51, -46)
+[node name="Door" type="CollisionShape2D" parent="meh" unique_id=1701777970]
+position = Vector2(455, -192)
 shape = SubResource("CapsuleShape2D_ajgn2")
+
+[node name="ChapelDoor1" parent="." unique_id=727452976 instance=ExtResource("7_ajgn2")]
+position = Vector2(54, -47)
+teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
+unlocked = true
+forbidden_message = ""
 
 [connection signal="has_yapped_about_it" from="Scene 21" to="." method="_on_scene_21_has_yapped_about_it"]
 [connection signal="has_yapped_about_it" from="Sucks" to="." method="_on_sucks_has_yapped_about_it"]
 [connection signal="has_yapped_about_it" from="Bitten" to="." method="_on_bitten_has_yapped_about_it"]
-[connection signal="body_entered" from="ChapelDoor1" to="ChapelDoor1" method="_on_body_entered"]
-[connection signal="body_exited" from="ChapelDoor1" to="ChapelDoor1" method="_on_body_exited"]
+[connection signal="body_entered" from="meh" to="meh" method="_on_body_entered"]
+[connection signal="body_exited" from="meh" to="meh" method="_on_body_exited"]
