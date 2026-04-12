@@ -79,12 +79,12 @@ scale = Vector2(1.0040979, 1.0000159)
 shape = SubResource("CapsuleShape2D_tjc02")
 
 [node name="Gender" parent="." unique_id=727452976 instance=ExtResource("10_sb6fc")]
-position = Vector2(387, 295)
+position = Vector2(393, 296)
 teleport = "res://Scenes/Playable Scenes/parlor_scene.tscn"
 unlocked = true
 
 [node name="Billiards" parent="." unique_id=265100955 instance=ExtResource("10_sb6fc")]
-position = Vector2(704, 134)
+position = Vector2(702, 140)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
 
@@ -94,7 +94,7 @@ position = Vector2(-1, -18)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=1484798416]
 position = Vector2(-276.91855, -91.00002)
 scale = Vector2(1.4608579, 1.5000297)
-polygon = PackedVector2Array(516, 151, 516, 190, 508, 190, 507, 245, 448, 246, 448, 293, 508, 293, 508, 338, 530, 338, 536, 329, 665, 328, 691, 338, 678.3128, 309.3272, 677.62823, 277.9945, 678.9973, 225.32889, 691, 152, 691, 152, 520, 153, 540, 15, 773, -2, 841, 171, 805, 323, 732, 440, 468, 501, 288, 380, 231, 217, 334, 16, 425, 9, 487, 95)
+polygon = PackedVector2Array(516, 151, 516, 190, 508, 190, 507, 245, 448, 246, 448, 293, 508, 293, 508, 338, 530, 338, 536, 329, 665, 328, 691, 338, 678.3128, 309.3272, 677.62823, 277.9945, 678.9973, 225.32889, 693.37244, 187.99629, 700.2177, 153.33032, 691, 152, 691, 152, 689.26526, 135.99731, 538.6688, 139.3306, 520, 153, 540, 15, 773, -2, 841, 171, 805, 323, 732, 440, 468, 501, 288, 380, 231, 217, 334, 16, 425, 9, 487, 95)
 
 [connection signal="body_entered" from="Billiards Paper" to="." method="_on_billiards_paper_body_entered"]
 [connection signal="pocketed" from="Billiards Paper" to="." method="_on_billiards_paper_pocketed"]
