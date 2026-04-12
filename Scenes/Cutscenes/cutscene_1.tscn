@@ -192,10 +192,10 @@ shape = SubResource("CapsuleShape2D_qujks")
 position = Vector2(-20, -25)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=680308434]
-polygon = PackedVector2Array(-293, 103, -292, 73, -246, 73, -244, 10, -182, 11, -171, -51, -144, -51, -143, -93, -34, -93, -33, -54, -1, -54, -3, -15, 13, 15, 28, 8, 69, 8, 72, 106, -61, 108, -61, 153, -108, 152, -110, 107, -287, 107, -169, 221, 85, 163, 106, 10, 52, -126, -69, -143, -236, -131, -326, 22, -342, 114)
+polygon = PackedVector2Array(-289, 103, -287, 74, -246, 73, -244, 10, -182, 11, -171, -51, -144, -51, -143, -93, -34, -93, -33, -54, -1, -54, -3, -15, 13, 15, 28, 8, 69, 8, 72, 106, -61, 108, -61, 153, -108, 152, -110, 107, -287, 107, -169, 221, 85, 163, 106, 10, 52, -126, -69, -143, -236, -131, -326, 22, -342, 114, -269, 157)
 
 [node name="Bootroom2" parent="." unique_id=727452976 instance=ExtResource("6_r0uby")]
-position = Vector2(-278, 66)
+position = Vector2(-246, 44)
 teleport = "res://Scenes/Playable Scenes/ballroom_scene.tscn"
 unlocked = true
 forbidden_message = "\"What's going on...\""
@@ -210,10 +210,9 @@ position = Vector2(35, -53)
 rotation = 1.5778282
 shape = SubResource("CapsuleShape2D_kulqj")
 
-[node name="Bootroom" parent="." unique_id=570858726 node_paths=PackedStringArray("key") instance=ExtResource("6_r0uby")]
-position = Vector2(-252, 65)
+[node name="Bootroom" parent="." unique_id=570858726 instance=ExtResource("6_r0uby")]
+position = Vector2(-217, 43)
 teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
-key = NodePath("")
 forbidden_message = "\"...\""
 
 [connection signal="body_entered" from="Meet Carmilla" to="." method="_on_snarky_comment_body_entered"]

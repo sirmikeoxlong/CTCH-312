@@ -25,6 +25,8 @@ var cutscene_1_completed = false
 
 var exposition_complete = false
 
+var player_curr_pos
+
 # ___________________GRAND HALL KEYS_______________________
 
 # library
