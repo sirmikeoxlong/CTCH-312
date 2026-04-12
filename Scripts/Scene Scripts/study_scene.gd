@@ -10,6 +10,7 @@ var last_door = Global.last_door_accessed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.player_curr_pos = lauren.position
 	study.unlocked = false
 	MusicManager.play_music(load("res://Sounds/AMBIENCE.ogg"))
 	Global.lauren_movement_allowed = true

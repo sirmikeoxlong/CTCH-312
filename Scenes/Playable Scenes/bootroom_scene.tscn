@@ -66,19 +66,16 @@ position = Vector2(77.00001, 51)
 scale = Vector2(1.18205, 1.0460984)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
-forbidden_message = "doorlock"
 
 [node name="Bootroom" parent="." unique_id=521600244 instance=ExtResource("8_chcfv")]
 position = Vector2(30, -48)
 teleport = "res://Scenes/Playable Scenes/ballroom_scene.tscn"
 unlocked = true
-forbidden_message = "doorlock"
 
 [node name="Cutscene2" parent="." unique_id=824014948 instance=ExtResource("8_chcfv")]
 position = Vector2(189, -18)
 teleport = "res://Scenes/Cutscenes/cutscene_1.tscn"
 unlocked = true
-forbidden_message = "doorlock"
 
 [node name="bg_collisions" type="StaticBody2D" parent="." unique_id=562130610]
 

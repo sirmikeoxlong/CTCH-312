@@ -126,7 +126,6 @@ forbidden_message = "scene6hall2"
 position = Vector2(-161, -44)
 teleport = "res://Scenes/Floor2States/f_2_library_state_library_unlock.tscn"
 unlocked = true
-forbidden_message = "doorlock"
 
 [connection signal="body_entered" from="Portals" to="Portals" method="_on_body_entered"]
 [connection signal="body_exited" from="Portals" to="Portals" method="_on_body_exited"]

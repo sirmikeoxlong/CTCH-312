@@ -5,6 +5,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.carmilla_movement_allowed = false
+	Global.exposition_complete = true
 	lauren.disable_camera()
 
 
