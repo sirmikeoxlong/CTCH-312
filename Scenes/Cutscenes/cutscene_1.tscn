@@ -191,9 +191,6 @@ shape = SubResource("CapsuleShape2D_qujks")
 [node name="Area2D" type="Area2D" parent="." unique_id=335776729]
 position = Vector2(-20, -25)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=680308434]
-polygon = PackedVector2Array(-289, 103, -287, 74, -246, 73, -244, 10, -182, 11, -171, -51, -144, -51, -143, -93, -34, -93, -33, -54, -1, -54, -3, -15, 13, 15, 28, 8, 69, 8, 72, 106, -61, 108, -61, 153, -108, 152, -110, 107, -287, 107, -169, 221, 85, 163, 106, 10, 52, -126, -69, -143, -236, -131, -326, 22, -342, 114, -269, 157)
-
 [node name="Bootroom2" parent="." unique_id=727452976 instance=ExtResource("6_r0uby")]
 position = Vector2(-246, 44)
 teleport = "res://Scenes/Playable Scenes/ballroom_scene.tscn"
@@ -214,6 +211,12 @@ shape = SubResource("CapsuleShape2D_kulqj")
 position = Vector2(-217, 43)
 teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
 forbidden_message = "\"...\""
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1688644863]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=680308434]
+position = Vector2(-20, -25)
+polygon = PackedVector2Array(-289, 103, -287, 74, -246, 73, -244, 10, -182, 11, -171, -51, -144, -51, -143, -200, -216, -193, -213, -211, -220, -249, -196, -248, -192, -438, 20, -438, 22, -202, -32, -204, -33, -54, -1, -54, -3, -15, 13, 15, 28, 8, 69, 8, 72, 106, -61, 108, -61, 153, -108, 152, -110, 107, -287, 107, -169, 221, 85, 163, 106, 10, 52, -126, 49, -528, -220, -529, -236, -131, -326, 22, -342, 114, -269, 157)
 
 [connection signal="body_entered" from="Meet Carmilla" to="." method="_on_snarky_comment_body_entered"]
 [connection signal="body_entered" from="Front Door" to="." method="_on_snarky_comment_body_entered"]
