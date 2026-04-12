@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://ccmxpq6w5id6e" path="res://Scenes/environments/env_grandhall.tscn" id="2_fnb6d"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="3_n8imk"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="4_p7ygv"]
-[ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="5_hjtva"]
 [ext_resource type="PackedScene" uid="uid://bjd76wvhpf2t8" path="res://Scripts/Classes/class_puzzle.tscn" id="6_i7ypd"]
 [ext_resource type="PackedScene" uid="uid://dhyg2sy24swn7" path="res://Scripts/Keys/library_door_key_1.tscn" id="7_rgoau"]
 [ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="8_cof3y"]
@@ -19,10 +18,6 @@
 gradient = SubResource("Gradient_lx5np")
 fill_from = Vector2(0.5099715, 0.7891738)
 fill_to = Vector2(0.51282054, 0)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lgo1s"]
-radius = 15.0
-height = 86.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo0va"]
 size = Vector2(39, 24.5)
@@ -75,64 +70,64 @@ texture = SubResource("GradientTexture2D_o8okl")
 [node name="ChapelDoor3" parent="Doors" unique_id=594815162 instance=ExtResource("4_p7ygv")]
 position = Vector2(-416, -125)
 teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
+forbidden_message = "iknowdaway"
 
 [node name="ChapelDoor2" parent="Doors" unique_id=865009521 instance=ExtResource("4_p7ygv")]
 position = Vector2(-274, -127)
 teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
+forbidden_message = "iknowdaway"
 
 [node name="ChapelDoor1" parent="Doors" unique_id=1074362768 instance=ExtResource("4_p7ygv")]
 position = Vector2(-207, -220)
 teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
-unlocked = true
+forbidden_message = "iknowdaway"
 
 [node name="Ballroom" parent="Doors" unique_id=1348103655 node_paths=PackedStringArray("key") instance=ExtResource("4_p7ygv")]
 position = Vector2(-333, -93)
 teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
 key = NodePath("../../Collectable Items (offscreen)/Boot Room Key")
-forbidden_message = "doorlock"
+forbidden_message = "iknowdaway"
 
 [node name="Kitchen1" parent="Doors" unique_id=2077266263 instance=ExtResource("4_p7ygv")]
 position = Vector2(168, -129)
 scale = Vector2(1.0264968, 0.27100122)
 teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
-forbidden_message = "kitchendoor"
+forbidden_message = "iknowdaway"
 
 [node name="Entrance" parent="Doors" unique_id=447909036 instance=ExtResource("4_p7ygv")]
 position = Vector2(-91, 141.99998)
 rotation = 1.5840678
 scale = Vector2(0.56056887, 0.55844724)
 teleport = "res://Scenes/Playable Scenes/outside_scene.tscn"
-unlocked = true
-forbidden_message = "doorlock"
 door_id = "f1_outdoor"
 
 [node name="Bootroom" parent="Doors" unique_id=100980308 node_paths=PackedStringArray("key") instance=ExtResource("4_p7ygv")]
 position = Vector2(-283, 85)
 teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
 key = NodePath("../../Collectable Items (offscreen)/Boot Room Key")
-unlocked = true
-forbidden_message = "doorlock"
+forbidden_message = "iknowdaway"
 
 [node name="Storage Room" parent="Doors" unique_id=2129919375 instance=ExtResource("4_p7ygv")]
 position = Vector2(-431, -96)
 teleport = "res://Scenes/Playable Scenes/storage_room_scene.tscn"
 unlocked = true
+forbidden_message = "iknowdaway"
 
 [node name="Parlour" parent="Doors" unique_id=1477209996 instance=ExtResource("4_p7ygv")]
 position = Vector2(126.00001, -83)
 scale = Vector2(1.0716633, 0.19019532)
 teleport = "res://Scenes/Playable Scenes/parlor_scene.tscn"
-forbidden_message = "doorlock"
+forbidden_message = "iknowdaway"
 
 [node name="Billiards" parent="Doors" unique_id=811835521 instance=ExtResource("4_p7ygv")]
 position = Vector2(199, -99)
 teleport = "res://Scenes/Playable Scenes/billiards_scene.tscn"
-unlocked = true
+forbidden_message = "iknowdaway"
 
 [node name="Bathroom" parent="Doors" unique_id=1908018243 instance=ExtResource("4_p7ygv")]
 position = Vector2(250, -103)
 teleport = "res://Scenes/Playable Scenes/f_1_bathroom_scene.tscn"
-unlocked = true
+forbidden_message = "iknowdaway"
 
 [node name="Upstairs1" parent="Doors" unique_id=1488737441 instance=ExtResource("4_p7ygv")]
 position = Vector2(-222.99998, -46.000004)
@@ -150,25 +145,14 @@ forbidden_message = "scene6hall1"
 [node name="Kitchen" parent="Doors" unique_id=802532146 instance=ExtResource("4_p7ygv")]
 position = Vector2(32, -220)
 teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
-unlocked = true
-forbidden_message = "kitchendoor"
+forbidden_message = "iknowdaway"
 
 [node name="To Library" parent="Doors" unique_id=727452976 instance=ExtResource("4_p7ygv")]
 position = Vector2(-170, -409)
 teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
 unlocked = true
-forbidden_message = "doorlock"
 
 [node name="Dialogue" type="Node2D" parent="." unique_id=1555633052]
-
-[node name="d_scene5enter1" parent="Dialogue" unique_id=359445996 instance=ExtResource("5_hjtva")]
-position = Vector2(-91, 96)
-RoomMessage = "scene5enter1"
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Dialogue/d_scene5enter1" unique_id=641975107]
-position = Vector2(4, -17)
-rotation = 1.5778282
-shape = SubResource("CapsuleShape2D_lgo1s")
 
 [node name="Library Door Puzzle" parent="." unique_id=1487168353 instance=ExtResource("6_i7ypd")]
 visible = false
@@ -249,7 +233,6 @@ texture = ExtResource("12_ke0ei")
 region_enabled = true
 region_rect = Rect2(113, 17, 14, 14)
 
-[connection signal="has_yapped_about_it" from="Dialogue/d_scene5enter1" to="." method="_on_class_room_trigger_has_yapped_about_it"]
 [connection signal="body_entered" from="Library Door Puzzle" to="." method="_on_class_puzzle_body_entered"]
 [connection signal="body_entered" from="Key 1" to="." method="_on_pickup_body_entered"]
 [connection signal="pocketed" from="Key 1" to="." method="_on_pickup_pocketed"]

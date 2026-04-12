@@ -79,7 +79,7 @@ texture = SubResource("GradientTexture2D_0fwj2")
 [node name="BR1" parent="Doors" unique_id=2086894804 instance=ExtResource("4_rrqrs")]
 position = Vector2(-69, 16)
 teleport = "res://Scenes/Playable Scenes/1_bedroom_scene.tscn"
-unlocked = true
+forbidden_message = "iknowdaway"
 
 [node name="BR2" parent="Doors" unique_id=310440998 node_paths=PackedStringArray("key") instance=ExtResource("4_rrqrs")]
 position = Vector2(52, 14)
@@ -89,24 +89,29 @@ key = NodePath("../../B2 Key")
 [node name="To Bedroom 1" parent="Doors" unique_id=1680612408 instance=ExtResource("4_rrqrs")]
 position = Vector2(-161, 152)
 teleport = "res://Scenes/Playable Scenes/1_bedroom_scene.tscn"
+forbidden_message = "iknowdaway"
 
 [node name="Study" parent="Doors" unique_id=1789752390 node_paths=PackedStringArray("key") instance=ExtResource("4_rrqrs")]
 position = Vector2(-200, 190)
 teleport = "res://Scenes/Playable Scenes/study_scene.tscn"
 key = NodePath("../../Lockpick")
 unlocked = true
+forbidden_message = "iknowdaway"
 
 [node name="Carmilla\'s Room" parent="Doors" unique_id=1691242732 instance=ExtResource("4_rrqrs")]
 position = Vector2(95, 190)
 teleport = "res://Scenes/Playable Scenes/carmillasroom_scene.tscn"
+forbidden_message = "iknowdaway"
 
 [node name="To Bedroom 2 entrance 1" parent="Doors" unique_id=1656883946 instance=ExtResource("4_rrqrs")]
 position = Vector2(145, 156)
 teleport = "res://Scenes/Playable Scenes/2_bedroom_scene.tscn"
+forbidden_message = "iknowdaway"
 
 [node name="F2 Bathroom" parent="Doors" unique_id=1468689881 instance=ExtResource("4_rrqrs")]
 position = Vector2(226, 191)
 teleport = "res://Scenes/Playable Scenes/f_2_bathroom_scene.tscn"
+forbidden_message = "iknowdaway"
 
 [node name="To Lib F2" parent="Doors" unique_id=727452976 instance=ExtResource("4_rrqrs")]
 position = Vector2(-157, -244)
@@ -118,7 +123,7 @@ position = Vector2(-7.9999986, 230)
 scale = Vector2(1.8077381, 0.5174084)
 teleport = "res://Scenes/GrandHallStates/grandhall_state_library_unlocked.tscn"
 unlocked = true
-forbidden_message = "scene6hall1"
+forbidden_message = "iknowdaway"
 
 [node name="Lockpick" parent="." unique_id=1015122729 instance=ExtResource("5_fildt")]
 position = Vector2(-465, 281)
@@ -166,7 +171,7 @@ shape = SubResource("CircleShape2D_c2gcy")
 script = ExtResource("7_ifkxy")
 
 [node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("10_frb70")]
-position = Vector2(-8, -75)
+position = Vector2(236, 156)
 scale = Vector2(0.16, 0.16)
 
 [node name="B2 Key" parent="." unique_id=1674126785 instance=ExtResource("5_fildt")]

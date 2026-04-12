@@ -8,9 +8,15 @@ var last_door = Global.last_door_accessed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.exposition_complete = true
+	Global.player_curr_pos = lauren.position
 	randomize()
 	var my_random_number = randi_range(0, 5)
+	
+	if Global.exposition_complete:
+		print(my_random_number)
+		if (my_random_number % 2 == 0):
+			StateCarmilla.call_for_spawn = true	
+	
 	
 	MusicManager.play_music(load("res://Sounds/AMBIENCE.ogg"))
 	Global.lauren_movement_allowed = true
@@ -18,10 +24,7 @@ func _ready() -> void:
 	if !(last_door == ""):
 		lauren.global_position = get_node(Global.last_door_accessed).position
 		
-	if Global.exposition_complete:
-		print(my_random_number)
-		if (my_random_number % 2 == 0):
-			StateCarmilla.call_for_spawn = true
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

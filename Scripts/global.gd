@@ -25,7 +25,7 @@ var cutscene_1_completed = false
 
 var exposition_complete = false
 
-var player_curr_pos
+var player_curr_pos : Vector2
 
 # ___________________GRAND HALL KEYS_______________________
 

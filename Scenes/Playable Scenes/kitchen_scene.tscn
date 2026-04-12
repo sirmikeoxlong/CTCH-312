@@ -43,22 +43,18 @@ shape = SubResource("CapsuleShape2D_e50ly")
 position = Vector2(138, 46)
 teleport = "res://Scenes/Playable Scenes/pantry_scene.tscn"
 unlocked = true
-forbidden_message = "doorlock"
 
 [node name="Dining" parent="." unique_id=1476474386 instance=ExtResource("4_e50ly")]
 position = Vector2(-119, 7)
 teleport = "res://Scenes/Playable Scenes/dining_scene.tscn"
 unlocked = true
-forbidden_message = "doorlock"
 
 [node name="Kitchen1" parent="." unique_id=1152223735 instance=ExtResource("4_e50ly")]
 position = Vector2(61, 88)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
-forbidden_message = "doorlock"
 
 [node name="Kitchen" parent="." unique_id=1362045417 instance=ExtResource("4_e50ly")]
 position = Vector2(-223, 40)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 unlocked = true
-forbidden_message = "doorlock"

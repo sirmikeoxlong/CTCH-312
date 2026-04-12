@@ -344,7 +344,6 @@ Carmilla: ...I will give thine one more chance to please me. It would be in thy 
 => END
 
 ~ scene40parenthouse1
-do End.play_ending()
 1 week later...
 Lauren arrives at her parents house, and begins to describe her adventure at the manor, minus the vampire stuff.
 Lauren's Grandma: Oh Lauren sweetheart, I am proud of you for discovering what I thought we had lost about our family's history.
@@ -390,4 +389,8 @@ Well, would you look at that. A lockpick. How convenient.
 
 ~ thewayout
 This is it! The exit!
+=> END
+
+~ iknowdaway
+I don't need to go in here, I think I already know the way out. Gotta find that bedroom.
 => END
