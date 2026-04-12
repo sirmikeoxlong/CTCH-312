@@ -10,6 +10,10 @@ var completed_puzzles = []
 var cutscenes = []
 var completed_cutscenes = []
 
+# Randomzier
+
+var rng = RandomNumberGenerator.new()
+
 # ___________________STATE CHANGES_______________________
 
 var carmilla_movement_allowed = true
@@ -18,6 +22,8 @@ var lauren_movement_allowed = true
 var last_door_accessed : String = ""
 
 var cutscene_1_completed = false
+
+var exposition_complete = false
 
 # ___________________GRAND HALL KEYS_______________________
 
