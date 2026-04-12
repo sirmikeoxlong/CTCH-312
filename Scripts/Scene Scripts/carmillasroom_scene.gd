@@ -40,3 +40,22 @@ func _on_carmillas_diary_saying_finished() -> void:
 	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
 	"puzzlepiece1")
 	Global.goto_scene("res://Scenes/Cutscenes/cutscene_3.tscn")
+
+
+func _on_main_door_key_body_entered(body: Node2D) -> void:
+	$"Storage Key".entered = true
+	
+func _on_storage_key_body_exited(body: Node2D) -> void:
+	$"Storage Key".entered = false
+
+func _on_main_door_key_pocketed() -> void:
+	$"Storage Key".remove_from_scene()
+
+func _on_library_piece_1_body_entered(body: Node2D) -> void:
+	$"Library Piece 1".entered = true
+	
+func _on_library_piece_1_body_exited(body: Node2D) -> void:
+	$"Library Piece 1".entered = false
+	
+func _on_library_piece_1_pocketed() -> void:
+	$"Library Piece 1".remove_from_scene()

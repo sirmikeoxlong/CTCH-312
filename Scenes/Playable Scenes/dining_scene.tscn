@@ -8,9 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://c2f73jo000gfb" path="res://Sprites/sprites/TopDownHouse_SmallItems.png" id="5_85gh8"]
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="6_whtp5"]
 [ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="7_vc8kl"]
+[ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="9_whtp5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nk8y7"]
 radius = 25.019993
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vc8kl"]
+radius = 18.382355
 
 [node name="dining_scene" type="Node2D" unique_id=809300282]
 script = ExtResource("1_85gh8")
@@ -23,17 +27,12 @@ position = Vector2(-89, 107)
 scale = Vector2(0.5127585, 0.52853614)
 
 [node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("2_10372")]
-position = Vector2(-189, 142)
+position = Vector2(-157, 114)
 
 [node name="bg_collisions" type="StaticBody2D" parent="." unique_id=427350585]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collisions" unique_id=1753854485]
 polygon = PackedVector2Array(-212, 48, -185, 49, -185, 54, -180, 56, -164, 57, -159, 52, -158, 48, -54, 48, -53, 50, -13, 50, -11, 48, 75, 48, 76, 53, 80, 54, 95, 55, 101, 51, 101, 48, 136, 48, 137, 147, -174, 148, -175, 172, -213, 172, -212, 49, -308, 112, -283, 239, -91, 254, 74, 229, 147, 267, 282, 140, 249, -13, 259, -124, -61, -260, -325, -159, -358, 19)
-
-[node name="Dining" parent="." unique_id=727452976 instance=ExtResource("3_6q8cs")]
-position = Vector2(-196, 148)
-teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
-forbidden_message = "kitchendoor"
 
 [node name="Dining Paper" parent="." unique_id=1015122729 instance=ExtResource("4_m3k2c")]
 position = Vector2(26, 81)
@@ -67,10 +66,39 @@ text = "[Enter] To Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Staff Room" parent="." unique_id=1205495377 instance=ExtResource("3_6q8cs")]
+[node name="Staffroom" parent="." unique_id=1205495377 node_paths=PackedStringArray("key") instance=ExtResource("3_6q8cs")]
 position = Vector2(96, 150)
 teleport = "res://Scenes/Playable Scenes/staffroom_scene.tscn"
+key = NodePath("../Staffroom Key")
+
+[node name="Dining" parent="." unique_id=727452976 instance=ExtResource("3_6q8cs")]
+position = Vector2(-198, 143)
+teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
 unlocked = true
+forbidden_message = "kitchendoor"
+
+[node name="Staffroom Key" parent="." unique_id=1717358800 instance=ExtResource("4_m3k2c")]
+position = Vector2(366, -83)
+scale = Vector2(1.3599999, 1.360001)
+id = "staffroom_key"
+pickup_message = "scene1forest2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Staffroom Key" unique_id=1448560292]
+shape = SubResource("CircleShape2D_vc8kl")
+script = ExtResource("6_whtp5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Staffroom Key" unique_id=701115716]
+texture = ExtResource("9_whtp5")
+region_enabled = true
+region_rect = Rect2(98, 52, 12, 7)
+
+[node name="Label" type="Label" parent="Staffroom Key" unique_id=1331394373]
+offset_left = -24.999979
+offset_top = 4.4117393
+offset_right = 29.000021
+offset_bottom = 27.41174
+theme_override_font_sizes/font_size = 8
+text = "[E] To Interact"
 
 [connection signal="body_entered" from="Dining Paper" to="." method="_on_dining_paper_body_entered"]
 [connection signal="pocketed" from="Dining Paper" to="." method="_on_dining_paper_pocketed"]

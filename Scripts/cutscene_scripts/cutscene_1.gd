@@ -26,9 +26,11 @@ func _on_front_door_has_yapped_about_it() -> void:
 	# wait a bit
 	# Once Lauren goes through the hall, transport he to the next cutscene
 	$AnimationPlayer.play("new_animation")
-	await get_tree().create_timer(2.5).timeout
+	#await get_tree().create_timer(2.5).timeout
 	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
 	"followcarmilla")
-	await get_tree().create_timer(2.5).timeout
+	await DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
+	"followcarmilla").tree_exited
+	#await get_tree().create_timer(2.5).timeout
 	Global.cutscene_1_completed = true
-	Global.goto_scene("res://Scenes/Playable Scenes/f_2_library_scene.tscn")
+	#Global.goto_scene("res://Scenes/Playable Scenes/f_2_library_scene.tscn")

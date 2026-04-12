@@ -8,9 +8,143 @@
 [ext_resource type="Texture2D" uid="uid://b0xf8ms2lue40" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Tools.png" id="6_b816f"]
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="7_42875"]
 [ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="8_grb6j"]
+[ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="9_sqg00"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ns3tc"]
 radius = 25.019993
+
+[sub_resource type="Gradient" id="Gradient_7a1rt"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sqg00"]
+gradient = SubResource("Gradient_7a1rt")
+fill_from = Vector2(0.3988604, 0.26780626)
+fill_to = Vector2(0.93162394, 0.48433048)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b816f"]
+radius = 4.507997
+
+[sub_resource type="Animation" id="Animation_sqg00"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DirectionalLight2D:color:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DirectionalLight2D:color:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DirectionalLight2D:color:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DirectionalLight2D:color:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_b816f"]
+resource_name = "fade"
+length = 0.73333335
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 18.25, -0.11000001, -3.0416667, 0, 0),
+"times": PackedFloat32Array(0, 0.66)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DirectionalLight2D:color:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.66)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DirectionalLight2D:color:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.66)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DirectionalLight2D:color:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.66)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DirectionalLight2D:color:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.66)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_42875"]
+_data = {
+&"RESET": SubResource("Animation_sqg00"),
+&"fade": SubResource("Animation_b816f")
+}
 
 [node name="2_bedroom_scene" type="Node2D" unique_id=162409078]
 script = ExtResource("1_7a1rt")
@@ -27,12 +161,12 @@ position = Vector2(-122, 41)
 [node name="bg_collision" type="StaticBody2D" parent="." unique_id=1734763748]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collision" unique_id=533925950]
-polygon = PackedVector2Array(-126, -1, 45, 1, 46, 74, -148, 73, -148, 38, -125, 38, -123, 2, -205, 22, -210, 61, -143, 150, -37, 164, 69, 139, 96, 103, 102, 7, 102, -92, -10, -121, -136, -123, -184, -89, -196, -35, -180, -13)
+polygon = PackedVector2Array(-126, -1, 45, 1, 46, 74, -12, 87, -148, 73, -148, 38, -125, 38, -123, 2, -205, 22, -210, 61, -143, 150, -37, 164, 69, 139, 96, 103, 102, 7, 102, -92, -10, -121, -136, -123, -184, -89, -196, -35, -180, -13)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1609483743]
 position = Vector2(-1, -1)
 scale = Vector2(0.7112066, 0.74963623)
-color = Color(0.44119266, 0.5500828, 0.8660146, 1)
+color = Color(0.15718266, 0.22584885, 0.47216856, 1)
 
 [node name="BR2" parent="." unique_id=727452976 instance=ExtResource("3_qqts0")]
 position = Vector2(-133, 50)
@@ -40,7 +174,7 @@ teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 unlocked = true
 
 [node name="Lockpick" parent="." unique_id=1015122729 instance=ExtResource("5_sqg00")]
-position = Vector2(18, 24)
+position = Vector2(401, -138)
 id = "lockpick"
 pickup_message = "scene1forest2"
 
@@ -50,6 +184,7 @@ region_enabled = true
 region_rect = Rect2(68, 178, 7, 12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lockpick" unique_id=883192111]
+position = Vector2(2, 0)
 shape = SubResource("CircleShape2D_ns3tc")
 script = ExtResource("7_42875")
 
@@ -71,5 +206,42 @@ text = "[Enter] To Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=548068023]
+position = Vector2(-12.437498, 17)
+scale = Vector2(1.9863281, 1.7500001)
+color = Color(0.9952616, 0.93499917, 0.9275083, 1)
+texture = SubResource("GradientTexture2D_sqg00")
+
+[node name="Lock The Door" parent="." unique_id=359445996 instance=ExtResource("9_sqg00")]
+position = Vector2(-21, -90)
+scale = Vector2(4.2815866, 6.771887)
+id = "call_out"
+RoomMessage = "scene34mainbed2"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Lock The Door" unique_id=364791779]
+position = Vector2(-14.0135, 21.412052)
+rotation = 0.012639626
+scale = Vector2(1.3498051, 0.71524495)
+shape = SubResource("CircleShape2D_b816f")
+
+[node name="FinallyOut" parent="." unique_id=1643291699 instance=ExtResource("9_sqg00")]
+position = Vector2(54.999992, -92)
+scale = Vector2(4.2815866, 6.771887)
+id = "outtahere"
+RoomMessage = "thewayout"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FinallyOut" unique_id=558811691]
+position = Vector2(3.8146973e-06, 20.969044)
+rotation = 0.012639626
+scale = Vector2(1.3498051, 0.71524495)
+shape = SubResource("CircleShape2D_b816f")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1239371472]
+energy = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=436730225]
+libraries/ = SubResource("AnimationLibrary_42875")
+
 [connection signal="body_entered" from="Lockpick" to="." method="_on_lockpick_body_entered"]
 [connection signal="pocketed" from="Lockpick" to="." method="_on_lockpick_pocketed"]
+[connection signal="has_yapped_about_it" from="FinallyOut" to="." method="_on_finally_out_has_yapped_about_it"]

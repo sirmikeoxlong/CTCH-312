@@ -9,7 +9,6 @@
 [ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="7_gpiai"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="8_ts3k0"]
 [ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="9_opxwx"]
-[ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="10_32rec"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tblej"]
 radius = 25.019993
@@ -122,9 +121,6 @@ shape = SubResource("RectangleShape2D_32rec")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/bg_collision" unique_id=1666757749]
 polygon = PackedVector2Array(-179, -24, 264, -23, 263, 132, -180, 133, -179, -21, -295, 135, 115, 408, 566, -96, 87, -400, -240, -272, -371, -115, -238, -26)
-
-[node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("10_32rec")]
-position = Vector2(13, 23)
 
 [connection signal="body_entered" from="Father\'s Journal" to="." method="_on_fathers_journal_body_entered"]
 [connection signal="pocketed" from="Father\'s Journal" to="." method="_on_fathers_journal_pocketed"]

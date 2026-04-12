@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="6_426wb"]
 [ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="7_coyfa"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="8_ccn60"]
+[ext_resource type="Texture2D" uid="uid://b0xf8ms2lue40" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Tools.png" id="9_426wb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ugnm"]
 radius = 18.382355
@@ -15,6 +16,9 @@ radius = 18.382355
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ccn60"]
 radius = 15.0
 height = 86.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v3oyn"]
+radius = 25.019993
 
 [node name="staffroom_scene" type="Node2D" unique_id=2145826926]
 script = ExtResource("1_2c5ar")
@@ -35,7 +39,7 @@ color = Color(0.44119266, 0.5500828, 0.8660146, 1)
 polygon = PackedVector2Array(-104, -36, 97, -35, 97, 85, -106, 85, -106, -31, -192, 67, -212, 135, -212, 135, -140, 188, -139, 188, 6, 233, 179, 161, 197, -15, 171, -173, -20, -196, -140, -200, -198, -117, -194, -46, -164, -18)
 
 [node name="Library Door Key 3" parent="." unique_id=1015122729 instance=ExtResource("4_coyfa")]
-position = Vector2(-63, -21)
+position = Vector2(-834, -143)
 scale = Vector2(1.3599999, 1.360001)
 id = "lib_key_3"
 pickup_message = "scene1forest2"
@@ -65,9 +69,45 @@ shape = SubResource("CapsuleShape2D_ccn60")
 
 [node name="Staffroom" parent="." unique_id=727452976 instance=ExtResource("8_ccn60")]
 position = Vector2(71, -27)
-teleport = "res://Scenes/Playable Scenes/pantry_scene.tscn"
+teleport = "res://Scenes/Playable Scenes/dining_scene.tscn"
 unlocked = true
 forbidden_message = "doorlock"
 
+[node name="Library Piece 3" parent="." unique_id=1636695938 instance=ExtResource("4_coyfa")]
+position = Vector2(-63, -33)
+scale = Vector2(1.3599999, 1.360001)
+id = "lib_key_3"
+pickup_message = "disk3mssg"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Library Piece 3" unique_id=1225379039]
+scale = Vector2(1.2857143, 1.2857144)
+texture = ExtResource("9_426wb")
+region_enabled = true
+region_rect = Rect2(113, 17, 14, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Library Piece 3" unique_id=570570001]
+shape = SubResource("CircleShape2D_v3oyn")
+script = ExtResource("5_ccn60")
+
+[node name="Label" type="Label" parent="Library Piece 3" unique_id=336823016]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.294125
+offset_top = -3.6764653
+offset_right = 60.705875
+offset_bottom = 35.323536
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 8
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="Library Door Key 3" to="." method="_on_library_door_key_3_body_entered"]
 [connection signal="pocketed" from="Library Door Key 3" to="." method="_on_library_door_key_3_pocketed"]
+[connection signal="body_entered" from="Library Piece 3" to="." method="_on_library_piece_3_body_entered"]
+[connection signal="body_exited" from="Library Piece 3" to="." method="_on_library_piece_3_body_exited"]
+[connection signal="pocketed" from="Library Piece 3" to="." method="_on_library_piece_3_pocketed"]

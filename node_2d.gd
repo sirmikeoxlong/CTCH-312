@@ -5,7 +5,7 @@ extends Area2D
 @export var teleport : String
 @export var key : cutscene_interactables #change this to type key or interactable later
 @export var unlocked = false
-@export var forbidden_message : String
+@export var forbidden_message : String = "doorlock"
 @export var door_id : String
 
 @onready var door_locked: AudioStreamPlayer2D = $door_locked
@@ -43,6 +43,7 @@ func _process(delta: float) -> void:
 			Global.lauren_movement_allowed = false
 			unlock()
 			if unlocked == true:
+					print("door is unlocked")
 					door_use.play()
 					Global.last_door_accessed = self.name
 					await get_tree().create_timer(0.4).timeout

@@ -33,6 +33,15 @@ radius = 18.382355
 [sub_resource type="CircleShape2D" id="CircleShape2D_o8ve4"]
 radius = 18.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lx5np"]
+radius = 25.019993
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5xqpn"]
+radius = 18.382355
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tkr8p"]
+radius = 25.019993
+
 [node name="grandhall_scene" type="Node2D" unique_id=776564788]
 script = ExtResource("1_lgo1s")
 
@@ -45,12 +54,12 @@ color = Color(0.44393474, 0.6622654, 0.9536515, 1)
 position = Vector2(-54, -461.99997)
 
 [node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("2_o8okl")]
-position = Vector2(-163, -417)
+position = Vector2(-188, -384)
 
 [node name="bg_collisions" type="StaticBody2D" parent="." unique_id=912784998]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collisions" unique_id=1350586620]
-polygon = PackedVector2Array(-206, -419, -166, -420, -166, -415, -161, -411, -147, -411, -141, -416, -141, -420, -41, -420, -41, -415, -37, -412, -22, -412, -17, -414, -17, -420, 17, -420, 17, -320, 11, -320, 11, -296, 15, -296, 17, -237, 41, -237, 41, -212, 41, -160, -41, -161, -41, -138, 291, -136, 292, -71, 92, -72, 92, -95, -47, -96, -48, -55, 66, -53, 66, 104, -67, 106, -67, 154, -67, 154, -116, 154, -116, 106, -301, 104, -300, 70, -250, 70, -248, -56, -236, -55, -143, -55, -142, -96, -275, -94, -275, -74, -465, -71, -464, -138, -149, -138, -149, -163, -222, -162, -223, -230, -201, -230, -198, -295, -192, -296, -193, -320, -198, -321, -198, -400, -199, -418, -379, -350, -547, -196, -527, 104, -352, 198, 160, 204, 380, -42, 360, -170, 286, -259, 169, -420, 79, -538, -305, -528, -307, -436)
+polygon = PackedVector2Array(-206, -419, -166, -420, -166, -415, -161, -411, -147, -411, -141, -416, -141, -420, -41, -420, -41, -415, -37, -412, -22, -412, -17, -414, -17, -420, 17, -420, 17, -320, 11, -320, 11, -296, 15, -296, 17, -237, 41, -237, 41, -212, 41, -160, -41, -161, -41, -138, 291, -136, 292, -71, 92, -72, 92, -95, -47, -96, -48, -55, 28, 5, 67, 6, 66, 104, -67, 106, -67, 154, -67, 154, -116, 154, -116, 106, -301, 104, -300, 70, -250, 70, -248, -56, -236, -55, -143, -55, -142, -96, -275, -94, -275, -74, -465, -71, -464, -138, -149, -138, -149, -163, -222, -162, -223, -230, -201, -230, -198, -295, -192, -296, -193, -320, -198, -321, -198, -400, -199, -418, -379, -350, -547, -196, -527, 104, -352, 198, 160, 204, 380, -42, 360, -170, 286, -259, 169, -420, 79, -538, -305, -528, -307, -436)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=452849513]
 position = Vector2(-92, -438.00003)
@@ -78,6 +87,7 @@ teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
 forbidden_message = "scene6hall2"
 
 [node name="To Library2" parent="Doors" unique_id=406643199 instance=ExtResource("3_o8okl")]
+visible = false
 position = Vector2(-173, -411)
 teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
 forbidden_message = "scene6hall2"
@@ -95,16 +105,16 @@ position = Vector2(-207, -220)
 teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
 unlocked = true
 
-[node name="Ballroom" parent="Doors" unique_id=1348103655 node_paths=PackedStringArray("key") instance=ExtResource("3_o8okl")]
+[node name="Ballroom" parent="Doors" unique_id=1348103655 instance=ExtResource("3_o8okl")]
 position = Vector2(-333, -93)
-teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
-key = NodePath("../../Collectable Items (offscreen)/Boot Room Key")
-forbidden_message = "doorlock"
+teleport = "res://Scenes/Playable Scenes/ballroom_scene.tscn"
+unlocked = true
 
 [node name="Kitchen1" parent="Doors" unique_id=2077266263 instance=ExtResource("3_o8okl")]
 position = Vector2(168, -129)
 scale = Vector2(1.0264968, 0.27100122)
 teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
+unlocked = true
 forbidden_message = "kitchendoor"
 
 [node name="Entrance" parent="Doors" unique_id=447909036 instance=ExtResource("3_o8okl")]
@@ -113,26 +123,23 @@ rotation = 1.5840678
 scale = Vector2(0.56056887, 0.55844724)
 teleport = "res://Scenes/Playable Scenes/outside_scene.tscn"
 unlocked = true
-forbidden_message = "doorlock"
 door_id = "f1_outdoor"
 
-[node name="Bootroom" parent="Doors" unique_id=100980308 node_paths=PackedStringArray("key") instance=ExtResource("3_o8okl")]
+[node name="Bootroom2" parent="Doors" unique_id=100980308 node_paths=PackedStringArray("key") instance=ExtResource("3_o8okl")]
 position = Vector2(-283, 85)
 teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
 key = NodePath("../../Collectable Items (offscreen)/Boot Room Key")
-unlocked = true
-forbidden_message = "doorlock"
 
-[node name="Storage Room" parent="Doors" unique_id=2129919375 instance=ExtResource("3_o8okl")]
+[node name="Storage Room" parent="Doors" unique_id=2129919375 node_paths=PackedStringArray("key") instance=ExtResource("3_o8okl")]
 position = Vector2(-431, -96)
 teleport = "res://Scenes/Playable Scenes/storage_room_scene.tscn"
-unlocked = true
+key = NodePath("../../Storage Key")
 
-[node name="Parlour" parent="Doors" unique_id=1477209996 instance=ExtResource("3_o8okl")]
+[node name="Parlour" parent="Doors" unique_id=1477209996 node_paths=PackedStringArray("key") instance=ExtResource("3_o8okl")]
 position = Vector2(126.00001, -83)
 scale = Vector2(1.0716633, 0.19019532)
 teleport = "res://Scenes/Playable Scenes/parlor_scene.tscn"
-forbidden_message = "doorlock"
+key = NodePath("../../Parlor Key")
 
 [node name="Billiards" parent="Doors" unique_id=811835521 instance=ExtResource("3_o8okl")]
 position = Vector2(199, -99)
@@ -144,16 +151,11 @@ position = Vector2(250, -103)
 teleport = "res://Scenes/Playable Scenes/f_1_bathroom_scene.tscn"
 unlocked = true
 
-[node name="Upstairs1" parent="Doors" unique_id=1488737441 instance=ExtResource("3_o8okl")]
+[node name="Upstairs1" parent="Doors" unique_id=1488737441 node_paths=PackedStringArray("key") instance=ExtResource("3_o8okl")]
 position = Vector2(-222.99998, -46.000004)
 scale = Vector2(1.8077381, 0.5174084)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
-forbidden_message = "scene6hall1"
-
-[node name="Upstairs2" parent="Doors" unique_id=401403867 instance=ExtResource("3_o8okl")]
-position = Vector2(46, -43)
-scale = Vector2(2.2399988, 0.5974243)
-teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
+key = NodePath("../../Spare Bedroom Key")
 forbidden_message = "scene6hall1"
 
 [node name="Kitchen" parent="Doors" unique_id=802532146 instance=ExtResource("3_o8okl")]
@@ -251,6 +253,83 @@ scale = Vector2(1.2857143, 1.2857143)
 texture = ExtResource("9_ww25j")
 region_enabled = true
 region_rect = Rect2(113, 17, 14, 14)
+
+[node name="Parlor Key" parent="." unique_id=797037843 instance=ExtResource("8_oyaqd")]
+position = Vector2(563, -139)
+id = "parlor_key"
+pickup_message = "scene3gazebo2"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parlor Key" unique_id=1885222998]
+texture = ExtResource("11_tkr8p")
+region_enabled = true
+region_rect = Rect2(98, 52, 12, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parlor Key" unique_id=1788904058]
+shape = SubResource("CircleShape2D_lx5np")
+script = ExtResource("9_lx5np")
+
+[node name="Label" type="Label" parent="Parlor Key" unique_id=165722634]
+offset_left = -40.0
+offset_top = -21.0
+offset_right = 35.0
+offset_bottom = 2.0
+theme_override_font_sizes/font_size = 8
+text = "[ENTER] To Interact"
+
+[node name="Spare Bedroom Key" parent="." unique_id=1869637465 instance=ExtResource("8_oyaqd")]
+position = Vector2(515, 124)
+scale = Vector2(1.3599999, 1.360001)
+id = "spare_bedroom_key"
+pickup_message = "scene15pantry1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spare Bedroom Key" unique_id=710629218]
+position = Vector2(-388.9706, 88.23524)
+shape = SubResource("CircleShape2D_5xqpn")
+script = ExtResource("9_lx5np")
+
+[node name="Label" type="Label" parent="Spare Bedroom Key" unique_id=114599364]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 8
+text = "[E] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="Spare Bedroom Key" unique_id=76910135]
+texture = ExtResource("11_tkr8p")
+region_enabled = true
+region_rect = Rect2(98, 52, 12, 7)
+
+[node name="Storage Key" parent="." unique_id=1032851947 instance=ExtResource("8_oyaqd")]
+position = Vector2(-408, 300)
+id = "storage_room"
+pickup_message = "storageroom_key_found"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Storage Key" unique_id=130187477]
+texture = ExtResource("11_tkr8p")
+region_enabled = true
+region_rect = Rect2(98, 52, 12, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Storage Key" unique_id=2022663071]
+shape = SubResource("CircleShape2D_tkr8p")
+script = ExtResource("9_lx5np")
+
+[node name="Label" type="Label" parent="Storage Key" unique_id=264829073]
+offset_left = -40.0
+offset_top = -21.0
+offset_right = 35.0
+offset_bottom = 2.0
+theme_override_font_sizes/font_size = 8
+text = "[ENTER] To Interact"
 
 [connection signal="body_entered" from="Doors/To Library" to="." method="_on_to_library_body_entered"]
 [connection signal="body_entered" from="Doors/To Library2" to="." method="_on_to_library_body_entered"]

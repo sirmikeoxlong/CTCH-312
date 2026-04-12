@@ -1,0 +1,265 @@
+[gd_scene format=3 uid="uid://45wfkr6ix4ye"]
+
+[ext_resource type="Script" uid="uid://3hxikejx5jx" path="res://Scripts/Scene Scripts/grandhall_scene.gd" id="1_v4igc"]
+[ext_resource type="PackedScene" uid="uid://ccmxpq6w5id6e" path="res://Scenes/environments/env_grandhall.tscn" id="2_op771"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="3_l23xb"]
+[ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="4_m5mm1"]
+[ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="5_alwx7"]
+[ext_resource type="PackedScene" uid="uid://bjd76wvhpf2t8" path="res://Scripts/Classes/class_puzzle.tscn" id="6_bn7f0"]
+[ext_resource type="PackedScene" uid="uid://dhyg2sy24swn7" path="res://Scripts/Keys/library_door_key_1.tscn" id="7_wxaih"]
+[ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="8_pvosd"]
+[ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="9_7we3w"]
+[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="10_g8f7e"]
+[ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="11_1fgyk"]
+[ext_resource type="Texture2D" uid="uid://b0xf8ms2lue40" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Tools.png" id="12_kgoge"]
+
+[sub_resource type="Gradient" id="Gradient_lx5np"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o8okl"]
+gradient = SubResource("Gradient_lx5np")
+fill_from = Vector2(0.5099715, 0.7891738)
+fill_to = Vector2(0.51282054, 0)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lgo1s"]
+radius = 15.0
+height = 86.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo0va"]
+size = Vector2(39, 24.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uju4l"]
+radius = 18.382355
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o8ve4"]
+radius = 18.0
+
+[node name="grandhall_scene_StateUpstairsUNLOCK" type="Node2D" unique_id=776564788]
+script = ExtResource("1_v4igc")
+
+[node name="Environmental Sorting" type="Node2D" parent="." unique_id=1609331704]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Environmental Sorting" unique_id=926223720]
+color = Color(0.44393474, 0.6622654, 0.9536515, 1)
+
+[node name="Grand Hall" parent="Environmental Sorting" unique_id=950251797 instance=ExtResource("2_op771")]
+position = Vector2(-54, -461.99997)
+
+[node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("3_l23xb")]
+position = Vector2(-163, -417)
+
+[node name="bg_collisions" type="StaticBody2D" parent="." unique_id=912784998]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collisions" unique_id=1350586620]
+polygon = PackedVector2Array(-206, -419, -166, -420, -166, -415, -161, -411, -147, -411, -141, -416, -141, -420, -41, -420, -41, -415, -37, -412, -22, -412, -17, -414, -17, -420, 17, -420, 17, -320, 11, -320, 11, -296, 15, -296, 17, -237, 41, -237, 41, -212, 41, -160, -41, -161, -41, -138, 291, -136, 292, -71, 92, -72, 92, -95, -47, -96, -48, -55, 66, -53, 66, 104, -67, 106, -67, 154, -67, 154, -116, 154, -116, 106, -301, 104, -300, 70, -250, 70, -248, -56, -236, -55, -143, -55, -142, -96, -275, -94, -275, -74, -465, -71, -464, -138, -149, -138, -149, -163, -222, -162, -223, -230, -201, -230, -198, -295, -192, -296, -193, -320, -198, -321, -198, -400, -199, -418, -379, -350, -547, -196, -527, 104, -352, 198, 160, 204, 380, -42, 360, -170, 286, -259, 169, -420, 79, -538, -305, -528, -307, -436)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=452849513]
+position = Vector2(-92, -438.00003)
+scale = Vector2(0.1999988, 1.8)
+color = Color(0.90092367, 0.4718743, 0.42457274, 1)
+texture = SubResource("GradientTexture2D_o8okl")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=236502513]
+position = Vector2(-125, -426.00003)
+scale = Vector2(0.1999988, 1.8)
+color = Color(0.4132972, 0.5412858, 0.9723869, 1)
+texture = SubResource("GradientTexture2D_o8okl")
+
+[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=895078424]
+position = Vector2(-57, -425)
+scale = Vector2(0.1999988, 1.8)
+color = Color(0.48974895, 0.6093262, 0.98005384, 1)
+texture = SubResource("GradientTexture2D_o8okl")
+
+[node name="Doors" type="Node2D" parent="." unique_id=668105722]
+
+[node name="To Library" parent="Doors" unique_id=727452976 instance=ExtResource("4_m5mm1")]
+position = Vector2(-175, -423)
+teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
+forbidden_message = "scene6hall2"
+
+[node name="To Library2" parent="Doors" unique_id=406643199 instance=ExtResource("4_m5mm1")]
+visible = false
+position = Vector2(-173, -411)
+teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
+forbidden_message = "scene6hall2"
+
+[node name="ChapelDoor3" parent="Doors" unique_id=594815162 instance=ExtResource("4_m5mm1")]
+position = Vector2(-416, -125)
+teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
+
+[node name="ChapelDoor2" parent="Doors" unique_id=865009521 instance=ExtResource("4_m5mm1")]
+position = Vector2(-274, -127)
+teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
+
+[node name="ChapelDoor1" parent="Doors" unique_id=1074362768 instance=ExtResource("4_m5mm1")]
+position = Vector2(-207, -220)
+teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
+unlocked = true
+
+[node name="Ballroom" parent="Doors" unique_id=1348103655 node_paths=PackedStringArray("key") instance=ExtResource("4_m5mm1")]
+position = Vector2(-333, -93)
+teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
+key = NodePath("../../Collectable Items (offscreen)/Boot Room Key")
+forbidden_message = "doorlock"
+
+[node name="Kitchen1" parent="Doors" unique_id=2077266263 instance=ExtResource("4_m5mm1")]
+position = Vector2(168, -129)
+scale = Vector2(1.0264968, 0.27100122)
+teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
+forbidden_message = "kitchendoor"
+
+[node name="Entrance" parent="Doors" unique_id=447909036 instance=ExtResource("4_m5mm1")]
+position = Vector2(-91, 141.99998)
+rotation = 1.5840678
+scale = Vector2(0.56056887, 0.55844724)
+teleport = "res://Scenes/Playable Scenes/outside_scene.tscn"
+unlocked = true
+forbidden_message = "doorlock"
+door_id = "f1_outdoor"
+
+[node name="Bootroom" parent="Doors" unique_id=100980308 node_paths=PackedStringArray("key") instance=ExtResource("4_m5mm1")]
+position = Vector2(-283, 85)
+teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
+key = NodePath("../../Collectable Items (offscreen)/Boot Room Key")
+unlocked = true
+forbidden_message = "doorlock"
+
+[node name="Storage Room" parent="Doors" unique_id=2129919375 instance=ExtResource("4_m5mm1")]
+position = Vector2(-431, -96)
+teleport = "res://Scenes/Playable Scenes/storage_room_scene.tscn"
+unlocked = true
+
+[node name="Parlour" parent="Doors" unique_id=1477209996 instance=ExtResource("4_m5mm1")]
+position = Vector2(126.00001, -83)
+scale = Vector2(1.0716633, 0.19019532)
+teleport = "res://Scenes/Playable Scenes/parlor_scene.tscn"
+forbidden_message = "doorlock"
+
+[node name="Billiards" parent="Doors" unique_id=811835521 instance=ExtResource("4_m5mm1")]
+position = Vector2(199, -99)
+teleport = "res://Scenes/Playable Scenes/billiards_scene.tscn"
+unlocked = true
+
+[node name="Bathroom" parent="Doors" unique_id=1908018243 instance=ExtResource("4_m5mm1")]
+position = Vector2(250, -103)
+teleport = "res://Scenes/Playable Scenes/f_1_bathroom_scene.tscn"
+unlocked = true
+
+[node name="Upstairs1" parent="Doors" unique_id=1488737441 instance=ExtResource("4_m5mm1")]
+position = Vector2(-222.99998, -46.000004)
+scale = Vector2(1.8077381, 0.5174084)
+teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
+unlocked = true
+forbidden_message = "scene6hall1"
+
+[node name="Upstairs2" parent="Doors" unique_id=401403867 instance=ExtResource("4_m5mm1")]
+position = Vector2(46, -43)
+scale = Vector2(2.2399988, 0.5974243)
+teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
+unlocked = true
+forbidden_message = "scene6hall1"
+
+[node name="Kitchen" parent="Doors" unique_id=802532146 instance=ExtResource("4_m5mm1")]
+position = Vector2(32, -220)
+teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
+unlocked = true
+forbidden_message = "kitchendoor"
+
+[node name="Dialogue" type="Node2D" parent="." unique_id=1555633052]
+
+[node name="d_scene5enter1" parent="Dialogue" unique_id=359445996 instance=ExtResource("5_alwx7")]
+position = Vector2(-91, 96)
+RoomMessage = "scene5enter1"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Dialogue/d_scene5enter1" unique_id=641975107]
+position = Vector2(4, -17)
+rotation = 1.5778282
+shape = SubResource("CapsuleShape2D_lgo1s")
+
+[node name="Library Door Puzzle" parent="." unique_id=1487168353 instance=ExtResource("6_bn7f0")]
+visible = false
+position = Vector2(-152, -397)
+event = "scene13librarydoor1"
+unsolved_message = "scene6hall2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Library Door Puzzle" unique_id=1190051502]
+position = Vector2(-25, -19)
+shape = SubResource("RectangleShape2D_eo0va")
+
+[node name="Collectable Items (offscreen)" type="Node2D" parent="." unique_id=874164551]
+position = Vector2(-606, 205)
+
+[node name="Library Door Key 2" parent="Collectable Items (offscreen)" unique_id=266493154 instance=ExtResource("7_wxaih")]
+position = Vector2(-155, 7)
+
+[node name="Library Door Key 3" parent="Collectable Items (offscreen)" unique_id=1336902944 instance=ExtResource("7_wxaih")]
+position = Vector2(-153, 27)
+
+[node name="Boot Room Key" parent="Collectable Items (offscreen)" unique_id=1015122729 instance=ExtResource("8_pvosd")]
+position = Vector2(6, -2)
+scale = Vector2(1.3599999, 1.360001)
+id = "bootroom_key"
+pickup_message = "scene15pantry1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable Items (offscreen)/Boot Room Key" unique_id=1142166542]
+shape = SubResource("CircleShape2D_uju4l")
+script = ExtResource("9_7we3w")
+
+[node name="Label" type="Label" parent="Collectable Items (offscreen)/Boot Room Key" unique_id=768170619]
+modulate = Color(0.98872703, 0.98977333, 0.99060506, 1)
+z_index = 20
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("10_g8f7e")
+theme_override_font_sizes/font_size = 10
+text = "[Enter] To Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="Collectable Items (offscreen)/Boot Room Key" unique_id=1701621728]
+texture = ExtResource("11_1fgyk")
+region_enabled = true
+region_rect = Rect2(98, 52, 12, 7)
+
+[node name="Key 1" parent="." unique_id=472880370 instance=ExtResource("8_pvosd")]
+position = Vector2(-606, 204)
+id = "key1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key 1" unique_id=104178822]
+shape = SubResource("CircleShape2D_o8ve4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Key 1" unique_id=30966898]
+scale = Vector2(1.2857143, 1.2857143)
+texture = ExtResource("12_kgoge")
+region_enabled = true
+region_rect = Rect2(113, 17, 14, 14)
+
+[node name="Key 2" parent="." unique_id=1510061342 instance=ExtResource("8_pvosd")]
+position = Vector2(-585, 246)
+id = "key1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key 2" unique_id=1645059917]
+shape = SubResource("CircleShape2D_o8ve4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Key 2" unique_id=715123414]
+position = Vector2(-185, 275)
+scale = Vector2(1.2857143, 1.2857143)
+texture = ExtResource("12_kgoge")
+region_enabled = true
+region_rect = Rect2(113, 17, 14, 14)
+
+[connection signal="body_entered" from="Doors/To Library" to="." method="_on_to_library_body_entered"]
+[connection signal="body_entered" from="Doors/To Library2" to="." method="_on_to_library_body_entered"]
+[connection signal="has_yapped_about_it" from="Dialogue/d_scene5enter1" to="." method="_on_class_room_trigger_has_yapped_about_it"]
+[connection signal="body_entered" from="Library Door Puzzle" to="." method="_on_class_puzzle_body_entered"]
+[connection signal="body_entered" from="Key 1" to="." method="_on_pickup_body_entered"]
+[connection signal="pocketed" from="Key 1" to="." method="_on_pickup_pocketed"]
+[connection signal="body_entered" from="Key 2" to="." method="_on_pickup_body_entered"]
+[connection signal="pocketed" from="Key 2" to="." method="_on_pickup_pocketed"]

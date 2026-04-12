@@ -7,6 +7,8 @@ var dialogue = []
 var completed_room_dialogue = []
 var puzzles = []
 var completed_puzzles = []
+var cutscenes = []
+var completed_cutscenes = []
 
 # ___________________STATE CHANGES_______________________
 

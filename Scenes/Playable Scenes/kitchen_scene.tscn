@@ -18,12 +18,12 @@ position = Vector2(-30, -1)
 scale = Vector2(0.5346391, 0.54584306)
 
 [node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_exuah")]
-position = Vector2(-114, -13)
+position = Vector2(-126, 71)
 
 [node name="bg_collisions" type="StaticBody2D" parent="." unique_id=1698167116]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collisions" unique_id=1252470989]
-polygon = PackedVector2Array(-158, -1, -78, -1, -78, 7, -52, 7, -52, -1, -42, -1, -41, 1, -2, 1, -2, -3, 5, -1, 5, 9, 84, 9, 85, 27, 107, 27, 107, 34, 149, 34, 150, 60, 106, 60, 107, 104, 74, 104, 74, 120, 48, 120, 47, 103, -159, 104, -159, 50, -210, 50, -236, 51, -236, 24, -159, 25, -158, 0, -270, -31, -319, 48, -234, 158, -86, 172, 116, 174, 170, 109, 214, -70, 39, -164, -203, -181, -356, -147, -366, -44, -248, -64)
+polygon = PackedVector2Array(-158, -1, -78, -1, -78, 7, -52, 7, -52, -1, -42, -1, -41, 1, -2, 1, -2, -3, 5, -1, 5, 9, 84, 9, 85, 27, 106, 15, 141, 14, 153, 18, 149, 34, 150, 60, 142, 61, 110, 75, 107, 104, 74, 104, 74, 120, 48, 120, 47, 103, -159, 104, -159, 50, -210, 50, -236, 51, -236, 24, -159, 25, -158, 0, -270, -31, -319, 48, -234, 158, -86, 172, 116, 174, 170, 109, 214, -70, 39, -164, -203, -181, -356, -147, -366, -44, -248, -64)
 
 [node name="Dialogue" type="Node2D" parent="." unique_id=1649744313]
 position = Vector2(-7, 35)
@@ -48,6 +48,7 @@ forbidden_message = "doorlock"
 [node name="Dining" parent="." unique_id=1476474386 instance=ExtResource("4_e50ly")]
 position = Vector2(-119, 7)
 teleport = "res://Scenes/Playable Scenes/dining_scene.tscn"
+unlocked = true
 forbidden_message = "doorlock"
 
 [node name="Kitchen1" parent="." unique_id=1152223735 instance=ExtResource("4_e50ly")]

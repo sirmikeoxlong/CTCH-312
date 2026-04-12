@@ -8,22 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://e4kha20n1f77" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Esoteric.png" id="5_kbvjs"]
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="6_g0o87"]
 [ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="7_al5vg"]
+[ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="9_g0o87"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hkdju"]
 radius = 18.110771
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1btlx"]
-radius = 15.0
-height = 68.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_j7iyf"]
-radius = 21.095022
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_aoy6y"]
-radius = 14.035668
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ydier"]
-radius = 14.035668
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_061c0"]
 radius = 12.0
@@ -58,22 +46,6 @@ script = ExtResource("3_bujhp")
 [node name="Closet 2" type="CollisionShape2D" parent="Portals" unique_id=679500619]
 position = Vector2(-197, 95)
 shape = SubResource("CircleShape2D_hkdju")
-
-[node name="Staircase 1" type="CollisionShape2D" parent="Portals" unique_id=764386133]
-position = Vector2(-162, -61)
-shape = SubResource("CapsuleShape2D_1btlx")
-
-[node name="Staircase 2" type="CollisionShape2D" parent="Portals" unique_id=1246637654]
-position = Vector2(139, 107)
-shape = SubResource("CircleShape2D_j7iyf")
-
-[node name="Chapel Door" type="CollisionShape2D" parent="Portals" unique_id=1403970180]
-position = Vector2(-80, 115)
-shape = SubResource("CircleShape2D_aoy6y")
-
-[node name="Grand Room Door" type="CollisionShape2D" parent="Portals" unique_id=2115802990]
-position = Vector2(31, 115)
-shape = SubResource("CircleShape2D_ydier")
 
 [node name="Closet 1" type="Area2D" parent="." unique_id=83855810]
 
@@ -142,6 +114,19 @@ theme_override_font_sizes/font_size = 10
 text = "[Enter] To Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="To Library" parent="." unique_id=727452976 instance=ExtResource("9_g0o87")]
+position = Vector2(30.999998, 102.99999)
+scale = Vector2(0.9317465, 0.31472805)
+teleport = "res://Scenes/GrandHallStates/grandhall_state_library_unlocked.tscn"
+unlocked = true
+forbidden_message = "scene6hall2"
+
+[node name="To Lib F2" parent="." unique_id=168632190 instance=ExtResource("9_g0o87")]
+position = Vector2(-161, -44)
+teleport = "res://Scenes/Floor2States/f_2_library_state_library_unlock.tscn"
+unlocked = true
+forbidden_message = "doorlock"
 
 [connection signal="body_entered" from="Portals" to="Portals" method="_on_body_entered"]
 [connection signal="body_exited" from="Portals" to="Portals" method="_on_body_exited"]

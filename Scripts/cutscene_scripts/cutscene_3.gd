@@ -7,7 +7,6 @@ func _ready() -> void:
 	Global.carmilla_movement_allowed = false
 	lauren.disable_camera()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

@@ -11,5 +11,5 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _process(delta: float) -> void:
 	if entered == true:
-		if Input.is_action_just_pressed("ui_accept"):
+		if Input.is_action_just_pressed("Interact"):
 			Global.goto_scene(teleport)

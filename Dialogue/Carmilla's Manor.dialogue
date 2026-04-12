@@ -236,7 +236,7 @@ Carmilla: Lauren!! Come forth and join me! Do not aggravate me!!
 
 ~ flashbackyear
 1871. Carmilla is 6 years old.
-=> END
+
 
 ~ scene36flashback1
 Margaret: Good day. My name is Margaret. How goes it?
@@ -246,7 +246,7 @@ Carmilla opens her mouth to reveal her vampire fangs.
 Carmilla: Look! My teeth are pointy! Ain't that neat?
 Margaret is taken aback, but stares in awe.
 Margaret: Neat indeed! Why might they be like that?
-=> END
+
 
 ~ scene36flashback2
 Carmilla's Mother: Carmilla! What is thy purpose?!
@@ -256,11 +256,11 @@ Carmilla: She is nice to me!
 Carmilla's Mother: ...
 Carmilla's Father: ...Join us, young girl.
 Margaret: Alright!
-=> END
+
 
 ~ flashbackyear2
 1881. Carmilla is 16 years old.
-=> END
+
 
 ~ scene37flashback1
 Carmilla: Daisy! Join to me! Let us play outside.
@@ -268,16 +268,16 @@ Margaret: Why must you call me Daisy? Why not Peggy like our parents do?
 Carmilla: You know why! Marguerite is French for daisy, and Marguerite sounds similar to Margaret. Thou does not approve of it?
 Margaret: Tis fine. I must say, it doth sound like thou are head over heels for me.
 Carmilla: I am! Thou does not crave to be my beau?
-=> END
+
 
 ~ scene37flashback2
 Carmilla's Mother: Peggy, Carmilla. Thou must geet ready for schooling.
 Carmilla's Mother: Alright!
-=> END
+
 
 ~ scene37flashback3
 Margaret in her head: *Carmilla wants me to be her... beau?*
-=> END
+
 
 ~ scene38flashback1
 Carmilla waits at the school entrance for Margaret to walk home together, but she does not show up after 2 hours.
@@ -288,7 +288,7 @@ Carmilla's Mother: Oh dear.. We must report it to the police!
 Carmilla's Father: My dear, we must not. I am afraid it is out of our hands.
 Carmilla: But Father! It is Margaret! We must not leave her behind!
 Carmilla's Father: I am sorry, young Carmilla. Come. We must go back home.
-=> END
+
 
 ~ scene38flashback2
 ???: Excuse me, miss?
@@ -341,8 +341,10 @@ Carmilla: ...I will give thine one more chance to please me. It would be in thy 
 	Carmilla continues to suck the blood from Lauren, draining her life force until her body goes limp.
 	Carmilla: Good job my dear. You may rest now.
 	=> END 
+=> END
 
 ~ scene40parenthouse1
+do End.play_ending()
 1 week later...
 Lauren arrives at her parents house, and begins to describe her adventure at the manor, minus the vampire stuff.
 Lauren's Grandma: Oh Lauren sweetheart, I am proud of you for discovering what I thought we had lost about our family's history.
@@ -352,3 +354,40 @@ Lauren's Dad: I am proud of you honey. You brought our family back together.
 Lauren smiles with tears in her eyes.
 THE END
 => END!
+
+~ earth_quake
+The room is shaking! Gah!
+=> END
+
+~ library_door_open
+I guess I can go in now. I wonder what's inside...
+=> END
+
+~ storageroom_key_found
+Oh, looks like this is the key for that room next to the ballroom!
+=> END
+
+~ disk2mssg
+Found another one of those wierd disks! This is definitely for that wierd door by those windows.
+There's three holes on the door, so I need one more. Wonder where it is.
+=> END 
+
+~ disk3mssg
+Alright, I've got the last one! Time to open that wierd door.
+=> END
+
+~ B2mssg
+This is the key to the other bedroom! Good thing it's right outside these doors, heh?
+=> END
+
+~ lockpick1
+This door in particular looks kinda easy to pick. Would be nice if I had a lockpick for this one, honestly...
+=> END
+
+~ lockpick2
+Well, would you look at that. A lockpick. How convenient.
+=> END
+
+~ thewayout
+This is it! The exit!
+=> END

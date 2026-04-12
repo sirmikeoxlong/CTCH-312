@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dywhnrwqt8agu" path="res://Scripts/cutscene_scripts/cutscene_5.gd" id="1_ctr1u"]
 [ext_resource type="PackedScene" uid="uid://ccmxpq6w5id6e" path="res://Scenes/environments/env_grandhall.tscn" id="1_mdm14"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_7gc6i"]
-[ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="4_0dppt"]
+[ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="4_ctr1u"]
 
 [sub_resource type="Gradient" id="Gradient_lx5np"]
 
@@ -95,9 +95,6 @@ _data = {
 &"move": SubResource("Animation_7fmhv")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_io5hg"]
-radius = 4.507997
-
 [sub_resource type="Animation" id="Animation_bwd7v"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -155,6 +152,8 @@ _data = {
 &"shake": SubResource("Animation_tfnot")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctr1u"]
+
 [node name="cutscene_5" type="Node2D" unique_id=1459771406]
 script = ExtResource("1_ctr1u")
 
@@ -204,17 +203,20 @@ texture_scale = 2.0
 [node name="Light Move" type="AnimationPlayer" parent="." unique_id=722738720]
 libraries/ = SubResource("AnimationLibrary_nqava")
 
-[node name="Library Opens" parent="." unique_id=359445996 instance=ExtResource("4_0dppt")]
-position = Vector2(-196.99998, -523)
-scale = Vector2(2.0084305, 3.994434)
-id = "first_cutscene"
-RoomMessage = "scene21gallery1"
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Library Opens" unique_id=1814419393]
-position = Vector2(10.743682, 27.761833)
-rotation = 0.012639626
-scale = Vector2(1.3498051, 0.71524495)
-shape = SubResource("CircleShape2D_io5hg")
-
 [node name="ROOM SHAKES" type="AnimationPlayer" parent="." unique_id=291258610]
 libraries/ = SubResource("AnimationLibrary_uip6a")
+
+[node name="Trigger Shake" type="Area2D" parent="." unique_id=1171563591]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Shake" unique_id=1775375120]
+position = Vector2(-179, -409)
+shape = SubResource("RectangleShape2D_ctr1u")
+
+[node name="To Library" parent="." unique_id=727452976 instance=ExtResource("4_ctr1u")]
+position = Vector2(-175, -418)
+scale = Vector2(0.9317465, 0.101116456)
+teleport = "res://Scenes/Playable Scenes/library_scene.tscn"
+unlocked = true
+forbidden_message = "scene6hall2"
+
+[connection signal="body_entered" from="Trigger Shake" to="." method="_on_trigger_shake_body_entered"]

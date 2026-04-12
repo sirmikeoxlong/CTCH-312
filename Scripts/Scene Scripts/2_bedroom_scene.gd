@@ -26,3 +26,8 @@ func _on_lockpick_pocketed() -> void:
 
 func _on_lockpick_body_entered(body: Node2D) -> void:
 	lockpick.entered = true
+
+
+func _on_finally_out_has_yapped_about_it() -> void:
+	$AnimationPlayer.play("fade")
+	Global.goto_scene("res://Scenes/Cutscenes/final_cutscene.tscn")
