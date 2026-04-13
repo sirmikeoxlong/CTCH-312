@@ -43,6 +43,7 @@ shape = SubResource("CapsuleShape2D_exwrh")
 [node name="Chapel Paper" parent="." unique_id=1015122729 instance=ExtResource("5_e2yx4")]
 position = Vector2(-38, 106)
 id = "chapel_paper"
+pickup_message = "carmillajournal1"
 
 [node name="Sprite2D2" type="Sprite2D" parent="Chapel Paper" unique_id=952643096]
 texture = ExtResource("6_f5eag")

@@ -34,7 +34,7 @@ position = Vector2(513, 277)
 [node name="Billiards Paper" parent="." unique_id=1015122729 instance=ExtResource("3_tjc02")]
 position = Vector2(503, 158)
 id = "billiards_paper"
-pickup_message = "scene1forest2"
+pickup_message = "billiardspaper"
 
 [node name="Sprite2D2" type="Sprite2D" parent="Billiards Paper" unique_id=379194637]
 texture = ExtResource("4_sb6fc")
