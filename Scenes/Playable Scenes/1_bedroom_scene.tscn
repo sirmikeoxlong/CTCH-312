@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="6_oajk3"]
 [ext_resource type="Texture2D" uid="uid://c2f73jo000gfb" path="res://Sprites/sprites/TopDownHouse_SmallItems.png" id="7_21ink"]
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="8_38q4e"]
-[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="9_eq51f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6sk4h"]
 radius = 15.0
@@ -79,14 +78,13 @@ texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -62.0
-offset_top = 11.0
-offset_right = 59.0
-offset_bottom = 50.0
+offset_left = -58.0
+offset_top = -3.0
+offset_right = 63.0
+offset_bottom = 36.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("9_eq51f")
-theme_override_font_sizes/font_size = 10
-text = "[Enter] To Interact"
+theme_override_font_sizes/font_size = 8
+text = "[E To Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 

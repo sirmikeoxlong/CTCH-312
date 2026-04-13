@@ -71,7 +71,6 @@ shape = SubResource("CapsuleShape2D_ccn60")
 position = Vector2(71, -27)
 teleport = "res://Scenes/Playable Scenes/dining_scene.tscn"
 unlocked = true
-forbidden_message = "doorlock"
 
 [node name="Library Piece 3" parent="." unique_id=1636695938 instance=ExtResource("4_coyfa")]
 position = Vector2(-63, -33)
@@ -102,7 +101,7 @@ offset_right = 60.705875
 offset_bottom = 35.323536
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 8
-text = "[Enter] To Interact"
+text = "[E To Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -15,15 +15,15 @@ script = ExtResource("1_f6p4l")
 
 [node name="Node2D" parent="." unique_id=533592669 instance=ExtResource("1_8h8cu")]
 position = Vector2(588, 406)
-scale = Vector2(0.51459193, 0.5224101)
+scale = Vector2(0.7, 0.71)
 
 [node name="Bathroom" parent="." unique_id=727452976 instance=ExtResource("2_yvb7v")]
-position = Vector2(520, 405)
+position = Vector2(487, 404)
 teleport = "res://Scenes/Playable Scenes/carmillasroom_scene.tscn"
 unlocked = true
 
 [node name="F2 Bathroom" parent="." unique_id=260962038 instance=ExtResource("2_yvb7v")]
-position = Vector2(627, 347)
+position = Vector2(639, 335)
 teleport = "res://Scenes/Playable Scenes/f_2_library_scene.tscn"
 unlocked = true
 
@@ -31,18 +31,18 @@ unlocked = true
 color = Color(0.44119266, 0.5500828, 0.8660146, 1)
 
 [node name="Dialogue" type="Node2D" parent="." unique_id=1938964031]
-position = Vector2(-38, 30)
+position = Vector2(-76, 22)
 
 [node name="Hole In The Wall!" parent="Dialogue" unique_id=359445996 instance=ExtResource("3_sp427")]
-position = Vector2(571, 321)
+position = Vector2(587, 324)
 id = "bathroom_hole_discovery"
 RoomMessage = "bathroomhole"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Dialogue/Hole In The Wall!" unique_id=466148630]
-position = Vector2(5.9999995, 57.999996)
+position = Vector2(4.9999995, 55.999996)
 rotation = 0.012639626
 scale = Vector2(1.0040979, 1.0000159)
 shape = SubResource("CapsuleShape2D_f6p4l")
 
 [node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("5_e4l5w")]
-position = Vector2(574, 335)
+position = Vector2(640, 303)

@@ -98,7 +98,7 @@ offset_top = -21.0
 offset_right = 35.0
 offset_bottom = 2.0
 theme_override_font_sizes/font_size = 8
-text = "[ENTER] To Interact"
+text = "[E] To Interact"
 
 [connection signal="body_entered" from="Ballroom Paper" to="." method="_on_ballroom_paper_body_entered"]
 [connection signal="pocketed" from="Ballroom Paper" to="." method="_on_ballroom_paper_pocketed"]

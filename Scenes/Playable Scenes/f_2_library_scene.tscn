@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://we1jdhe0xtlx" path="res://Scripts/Interactables/pickup.tscn" id="5_5a3ix"]
 [ext_resource type="Texture2D" uid="uid://b0xf8ms2lue40" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Tools.png" id="6_c2gcy"]
 [ext_resource type="Script" uid="uid://bbykgp3u1eynr" path="res://Scripts/Scene Scripts/collision_shape_2d.gd" id="7_s130n"]
-[ext_resource type="FontFile" uid="uid://cfmx0kmvtryy3" path="res://Sprites/fonts/Jacquard24-Regular.ttf" id="8_mloce"]
 [ext_resource type="Texture2D" uid="uid://e4kha20n1f77" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Esoteric.png" id="9_5a3ix"]
 [ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="10_c2gcy"]
 
@@ -143,9 +142,8 @@ offset_top = 11.0
 offset_right = 59.0
 offset_bottom = 50.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("8_mloce")
-theme_override_font_sizes/font_size = 10
-text = "[Enter] To Interact"
+theme_override_font_sizes/font_size = 8
+text = "[E] To Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -182,7 +180,7 @@ offset_top = -21.0
 offset_right = 35.0
 offset_bottom = 2.0
 theme_override_font_sizes/font_size = 8
-text = "[ENTER] To Interact"
+text = "[E] To Interact"
 
 [connection signal="body_entered" from="Lockpick" to="." method="_on_lockpick_body_entered"]
 [connection signal="body_exited" from="Lockpick" to="." method="_on_lockpick_body_exited"]
