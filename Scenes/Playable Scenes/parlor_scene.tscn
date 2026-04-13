@@ -31,7 +31,7 @@ scale = Vector2(0.47819802, 0.48639843)
 position = Vector2(6, -20)
 scale = Vector2(1.3599999, 1.360001)
 id = "parlor_paper"
-pickup_message = "scene1forest2"
+pickup_message = "parlorpaper"
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ballroom Paper" unique_id=612045584]
 texture = ExtResource("4_qicmb")

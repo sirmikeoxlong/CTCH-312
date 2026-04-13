@@ -60,7 +60,7 @@ shape = SubResource("CapsuleShape2D_6sk4h")
 [node name="Bedroom 1 Paper" parent="." unique_id=1015122729 instance=ExtResource("6_oajk3")]
 position = Vector2(-77, 32)
 id = "bedroom1_paper"
-pickup_message = "scene1forest2"
+pickup_message = "carmillajournal3"
 
 [node name="Sprite2D2" type="Sprite2D" parent="Bedroom 1 Paper" unique_id=976216302]
 texture = ExtResource("7_21ink")

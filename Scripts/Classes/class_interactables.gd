@@ -46,8 +46,6 @@ func add_to_inventory():
 		key_main.play()
 		SingPlayer.inventory.push_front(self)
 		Global.lauren_movement_allowed = false
-		DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
-		pickup_message)
 		self.hide()
 		await DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
 		pickup_message).tree_exited

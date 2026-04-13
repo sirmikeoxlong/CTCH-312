@@ -55,7 +55,6 @@ position = Vector2(-70, -71.00001)
 scale = Vector2(5.3991227, 0.27072507)
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"
 key = NodePath("../Main Door Key")
-forbidden_message = "doorlock"
 door_id = "main_entrance"
 
 [node name="Main Door Key" parent="." unique_id=1086952445 instance=ExtResource("6_kv6y2")]
