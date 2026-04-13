@@ -15,6 +15,8 @@
 [ext_resource type="AudioStream" uid="uid://b6vbjhqltlo36" path="res://Sounds/Flashlight Bang.ogg" id="11_w72bm"]
 [ext_resource type="Texture2D" uid="uid://qndiiwukmhim" path="res://Sprites/sprites/UIEFFECTS/flashlighton.png" id="12_1s20c"]
 [ext_resource type="Texture2D" uid="uid://t32xtrahhuak" path="res://Sprites/sprites/UIEFFECTS/flashlightoff.png" id="12_6e115"]
+[ext_resource type="Texture2D" uid="uid://d3p8d1uo7x6i0" path="res://Sprites/Juanna's Sprites/hitlauren.png" id="12_ejjhy"]
+[ext_resource type="Texture2D" uid="uid://d3258063fjsy3" path="res://Sprites/Juanna's Sprites/flashlauren.png" id="14_0a0cm"]
 [ext_resource type="AudioStream" uid="uid://cvr7o0dm61ddf" path="res://Sounds/flashlight_click.ogg" id="14_ctaf6"]
 [ext_resource type="PackedScene" uid="uid://divwyn03jfj76" path="res://Scenes/Entity Scenes/hpbar.tscn" id="15_s1h8r"]
 [ext_resource type="Texture2D" uid="uid://dmrjfajqoeu07" path="res://Sprites/sprites/UIEFFECTS/HITHEART.png" id="18_sfcru"]
@@ -62,6 +64,50 @@ region = Rect2(0, 0, 355, 414)
 [sub_resource type="AtlasTexture" id="AtlasTexture_y2ume"]
 atlas = ExtResource("9_jnj1b")
 region = Rect2(355, 0, 355, 414)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de3vx"]
+atlas = ExtResource("12_ejjhy")
+region = Rect2(0, 3, 222, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d25jl"]
+atlas = ExtResource("12_ejjhy")
+region = Rect2(222, 3, 222, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8dpl"]
+atlas = ExtResource("12_ejjhy")
+region = Rect2(444, 3, 222, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sljvk"]
+atlas = ExtResource("12_ejjhy")
+region = Rect2(0, 936, 222, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax4y3"]
+atlas = ExtResource("12_ejjhy")
+region = Rect2(444, 936, 222, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6liit"]
+atlas = ExtResource("12_ejjhy")
+region = Rect2(0, 314, 222, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fddvy"]
+atlas = ExtResource("12_ejjhy")
+region = Rect2(222, 314, 222, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4hxr"]
+atlas = ExtResource("12_ejjhy")
+region = Rect2(444, 314, 222, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsdsq"]
+atlas = ExtResource("12_ejjhy")
+region = Rect2(0, 625, 222, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydwd5"]
+atlas = ExtResource("12_ejjhy")
+region = Rect2(222, 625, 222, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cahhu"]
+atlas = ExtResource("12_ejjhy")
+region = Rect2(444, 625, 222, 311)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r75iy"]
 atlas = ExtResource("2_tenkg")
@@ -143,6 +189,22 @@ region = Rect2(428, 936, 214, 312)
 atlas = ExtResource("2_tenkg")
 region = Rect2(642, 936, 214, 312)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg7o4"]
+atlas = ExtResource("14_0a0cm")
+region = Rect2(428, 3, 214, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mjja"]
+atlas = ExtResource("14_0a0cm")
+region = Rect2(428, 314, 214, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdf6b"]
+atlas = ExtResource("14_0a0cm")
+region = Rect2(428, 625, 214, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcfuu"]
+atlas = ExtResource("14_0a0cm")
+region = Rect2(428, 936, 214, 311)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_qqcod"]
 animations = [{
 "frames": [{
@@ -197,6 +259,59 @@ animations = [{
 "frames": [],
 "loop": true,
 "name": &"Croush left idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_de3vx")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_d25jl")
+}, {
+"duration": 1.6,
+"texture": SubResource("AtlasTexture_a8dpl")
+}],
+"loop": false,
+"name": &"Hit Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_sljvk")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_ax4y3")
+}],
+"loop": false,
+"name": &"Hit Up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_6liit")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_fddvy")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_i4hxr")
+}],
+"loop": false,
+"name": &"Hit left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_xsdsq")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_ydwd5")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_cahhu")
+}],
+"loop": false,
+"name": &"Hit right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -307,6 +422,38 @@ animations = [{
 "frames": [],
 "loop": true,
 "name": &"crouch up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eg7o4")
+}],
+"loop": true,
+"name": &"flash down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mjja")
+}],
+"loop": false,
+"name": &"flash left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdf6b")
+}],
+"loop": true,
+"name": &"flash right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcfuu")
+}],
+"loop": false,
+"name": &"flash up",
 "speed": 5.0
 }]
 
@@ -441,7 +588,7 @@ y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.15284361, 0.13907285)
 sprite_frames = SubResource("SpriteFrames_qqcod")
-animation = &"Crouch left"
+animation = &"Crouch down"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=102025890]
@@ -555,6 +702,7 @@ offset_bottom = 827.0
 color = Color(0, 0, 0, 0)
 
 [connection signal="timeout" from="player_sfx/footstep_timer" to="." method="_on_footstep_timer_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="LightPivot/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="LightPivot/Area2D/Flashlight/FlashbangPath/flash_timer" to="." method="_on_flash_timer_timeout"]
 [connection signal="hidden" from="Flashlightoff" to="." method="_on_flashlightoff_hidden"]

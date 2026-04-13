@@ -9,8 +9,9 @@ var input_dir = Vector2.ZERO
 var movement_dir = ""
 var can_flashbang = true
 var curr_flashing = false
-
-
+var is_hit = false
+var is_flashing_anim = false
+var is_crouching = false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var flashlight_click: AudioStreamPlayer = $FlashlightClick
@@ -87,23 +88,34 @@ func movement_direction():
 		movement_dir = "down"
 
 func player_animation():
+	if is_hit or is_flashing_anim:
+		return #prevent overiding hit animation
+	
 	if velocity:
 		if movement_dir == "left":
+			animated_sprite.flip_h = false
 			$AnimatedSprite2D.play("Walking Left")
 		elif movement_dir == "right":
+			animated_sprite.flip_h = false
 			$AnimatedSprite2D.play("Walking Right")
 		elif movement_dir == "up":
+			animated_sprite.flip_h = false
 			$AnimatedSprite2D.play("Walking Up")
 		elif movement_dir == "down":
+			animated_sprite.flip_h = false
 			$AnimatedSprite2D.play("Walking Down")
 	else:
 		if movement_dir == "left":
+			animated_sprite.flip_h = false
 			$AnimatedSprite2D.play("Idle Left")
 		elif movement_dir == "right":
+			animated_sprite.flip_h = false
 			$AnimatedSprite2D.play("Idle Right")
 		elif movement_dir == "up":
+			animated_sprite.flip_h = false
 			$AnimatedSprite2D.play("Idle Up")
 		elif movement_dir == "down":
+			animated_sprite.flip_h = false
 			$AnimatedSprite2D.play("Idle")
 		
 	
@@ -133,8 +145,11 @@ func _input(event) -> void:
 		
 # Handle Crouching/ running crouch stuff
 	if event.is_action_pressed("crouch"):
+		is_crouching = true
 		speed = 30
+			
 	if event.is_action_released("crouch"):
+		is_crouching = false
 		speed = 80
 	if event.is_action_pressed("running_crouch"):
 		speed = 60
@@ -160,12 +175,29 @@ func _input(event) -> void:
 	if event.is_action_pressed("flashbang") and can_flashbang:
 		curr_flashing = true
 		can_flashbang = false
+		is_flashing_anim = true #to lock the animation
+		
 		flashlight.disabled = false
 		light.visible = true
 		flashlight_bang.play()
 		flash_timer.start()
 		flashlightoff.hide()
 		flashlighton.show()
+		
+		match movement_dir:
+			"left":
+				animated_sprite.flip_h = false
+				animated_sprite.play("flash left")
+			"right":
+				animated_sprite.flip_h = true
+				animated_sprite.play("flash left")
+			"up":
+				animated_sprite.flip_h = false
+				animated_sprite.play("flash up")
+			"down":
+				animated_sprite.flip_h = false
+				animated_sprite.play("flash down")
+				
 	if event.is_action_released("flashbang"):
 		curr_flashing = false
 		flashlight.disabled = true
@@ -228,6 +260,24 @@ func hit():
 	$Hpbar.hit()
 	hit_sfx.play()
 
+	is_hit = true
+	velocity = Vector2.ZERO
+
+	match movement_dir:
+		"left":
+			animated_sprite.flip_h = false
+			animated_sprite.play("Hit left")
+		"right":
+			animated_sprite.flip_h = false
+			animated_sprite.play("Hit right")
+		"up":
+			animated_sprite.flip_h = false
+			animated_sprite.play("Hit Up")
+		"down":
+			animated_sprite.flip_h = false
+			animated_sprite.play("Hit Down")
+
+
 func die():
 	print("You Dead")
 	movement_enabled = false
@@ -236,3 +286,11 @@ func die():
 
 func _on_death_timer_timeout() -> void:
 	get_tree().reload_current_scene()
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite.animation.begins_with("Hit"):
+		is_hit = false
+	if animated_sprite.animation.begins_with("flash"):
+		is_flashing_anim = false
+		

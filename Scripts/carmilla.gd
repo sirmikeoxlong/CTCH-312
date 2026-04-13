@@ -4,6 +4,7 @@ var speed = 50
 var player_in_area = false
 var player
 var last_position: Vector2
+var attack = false
 
 @onready var player_sfx: AudioStreamPlayer2D = %player_sfx
 @onready var footstep_timer: Timer = $player_sfx/footstep_timer
@@ -16,6 +17,8 @@ var last_position: Vector2
 @onready var scream: AudioStreamPlayer2D = $scream
 @onready var notice: AudioStreamPlayer2D = $notice
 @onready var lauren: CharacterBody2D = $"../Lauren"
+@onready var laurenbody: CollisionShape2D = $CollisionShape2D
+@onready var killzone: Area2D = $Killzone
 
 
 func _ready() -> void:
@@ -32,6 +35,8 @@ func _physics_process(delta: float) -> void:
 	
 	
 	$Detection/CollisionShape2D.disabled = false
+	if attack:
+		return  # 🔥 stop movement + animation override
 	if player_in_area:
 		if Global.carmilla_movement_allowed:
 			position += (player.position - position) / speed
@@ -75,3 +80,15 @@ func update_target_position(target_pos: Vector2):
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = velocity.move_toward(safe_velocity * move_speed, 12.0)
 	move_and_slide()
+
+
+
+func _on_killzone_body_entered(body: Node2D) -> void:
+	if body.has_method("player"):
+		attack = true
+		$AnimatedSprite2D.play("attack")
+		
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if $AnimatedSprite2D.animation == "attack":
+		attack = false
