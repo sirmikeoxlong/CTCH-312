@@ -36,7 +36,7 @@ polygon = PackedVector2Array(-212, 48, -185, 49, -185, 54, -180, 56, -164, 57, -
 [node name="Dining Paper" parent="." unique_id=1015122729 instance=ExtResource("4_m3k2c")]
 position = Vector2(26, 81)
 id = "dining_paper"
-pickup_message = "kitchendoor"
+pickup_message = "diningroompaper1"
 
 [node name="Sprite2D2" type="Sprite2D" parent="Dining Paper" unique_id=643689414]
 texture = ExtResource("5_85gh8")
