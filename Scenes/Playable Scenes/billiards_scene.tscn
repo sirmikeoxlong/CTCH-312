@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="10_sb6fc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aal0d"]
-radius = 25.019993
+radius = 18.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjc02"]
 radius = 15.0

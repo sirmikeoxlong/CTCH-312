@@ -11,14 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="9_xo5wk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0hgf8"]
-radius = 25.019993
+radius = 13.235295
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yykth"]
 radius = 15.0
 height = 86.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uor4v"]
-radius = 25.019993
+radius = 13.152946
 
 [node name="Parlor_scene" type="Node2D" unique_id=1854053113]
 script = ExtResource("1_ego5m")

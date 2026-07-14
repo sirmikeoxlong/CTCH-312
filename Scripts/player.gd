@@ -44,7 +44,8 @@ func _ready() -> void:
 	light.visible = false
 
 func _physics_process(delta: float) -> void:
-	movement_enabled = Global.lauren_movement_allowed
+	#movement_enabled = Global.lauren_movement_allowed
+	movement_enabled = !Storystate.in_dialogue
 	if movement_enabled == true:
 		move_and_slide()
 		player_movement()

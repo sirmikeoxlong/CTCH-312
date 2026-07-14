@@ -48,7 +48,7 @@ script = ExtResource("1_lgo1s")
 [node name="Environmental Sorting" type="Node2D" parent="." unique_id=1609331704]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Environmental Sorting" unique_id=926223720]
-color = Color(0.44393474, 0.6622654, 0.9536515, 1)
+color = Color(0.021067383, 0.119668685, 0.24420863, 1)
 
 [node name="Grand Hall" parent="Environmental Sorting" unique_id=950251797 instance=ExtResource("1_nw6sa")]
 position = Vector2(-54, -461.99997)
@@ -106,7 +106,7 @@ teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
 unlocked = true
 
 [node name="Ballroom" parent="Doors" unique_id=1348103655 instance=ExtResource("3_o8okl")]
-position = Vector2(-333, -93)
+position = Vector2(-333, -89)
 teleport = "res://Scenes/Playable Scenes/ballroom_scene.tscn"
 unlocked = true
 
