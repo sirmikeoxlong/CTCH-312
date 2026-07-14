@@ -26,7 +26,7 @@ position = Vector2(608, 214.99998)
 scale = Vector2(0.7, 0.711)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=656779597]
-color = Color(0.28564373, 0.5053388, 0.7083086, 1)
+color = Color(0.15686275, 0.22352941, 0.46666667, 1)
 
 [node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_8grv3")]
 position = Vector2(513, 277)

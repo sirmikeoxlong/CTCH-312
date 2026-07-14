@@ -28,7 +28,7 @@ position = Vector2(-13, 34)
 scale = Vector2(0.47819802, 0.48639843)
 
 [node name="Ballroom Paper" parent="." unique_id=1015122729 instance=ExtResource("3_j7gci")]
-position = Vector2(6, -20)
+position = Vector2(10, -26)
 scale = Vector2(1.3599999, 1.360001)
 id = "parlor_paper"
 pickup_message = "parlorpaper"
@@ -71,7 +71,7 @@ key = NodePath("../Parlor Key")
 unlocked = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=173428673]
-color = Color(0.44119266, 0.5500828, 0.8660146, 1)
+color = Color(0.15545624, 0.22358915, 0.46806526, 1)
 
 [node name="bg_collision" type="StaticBody2D" parent="." unique_id=470107417]
 
