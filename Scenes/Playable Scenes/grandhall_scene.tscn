@@ -17,7 +17,7 @@
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_o8okl"]
 gradient = SubResource("Gradient_lx5np")
-fill_from = Vector2(0.5099715, 0.7891738)
+fill_from = Vector2(0.5185185, 0.8860399)
 fill_to = Vector2(0.51282054, 0)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lgo1s"]
@@ -42,13 +42,21 @@ radius = 18.382355
 [sub_resource type="CircleShape2D" id="CircleShape2D_tkr8p"]
 radius = 25.019993
 
+[sub_resource type="Gradient" id="Gradient_5xqpn"]
+offsets = PackedFloat32Array(0, 0.22794117)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tkr8p"]
+gradient = SubResource("Gradient_5xqpn")
+fill_from = Vector2(0.6581197, 0.45299146)
+fill_to = Vector2(0, 0.47293448)
+
 [node name="grandhall_scene" type="Node2D" unique_id=776564788]
 script = ExtResource("1_lgo1s")
 
 [node name="Environmental Sorting" type="Node2D" parent="." unique_id=1609331704]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Environmental Sorting" unique_id=926223720]
-color = Color(0.021067383, 0.119668685, 0.24420863, 1)
+color = Color(0.046171345, 0.19749907, 0.3711701, 1)
 
 [node name="Grand Hall" parent="Environmental Sorting" unique_id=950251797 instance=ExtResource("1_nw6sa")]
 position = Vector2(-54, -461.99997)
@@ -330,6 +338,27 @@ offset_right = 35.0
 offset_bottom = 2.0
 theme_override_font_sizes/font_size = 8
 text = "[ENTER] To Interact"
+
+[node name="PointLight2D4" type="PointLight2D" parent="." unique_id=1786987791]
+position = Vector2(-125, -316)
+rotation = 1.5814985
+scale = Vector2(1.9970723, 0.21089384)
+color = Color(0.36945978, 0.4772833, 0.8188578, 1)
+texture = SubResource("GradientTexture2D_tkr8p")
+
+[node name="PointLight2D5" type="PointLight2D" parent="." unique_id=1423659180]
+position = Vector2(-58, -316)
+rotation = 1.5814985
+scale = Vector2(1.9970723, 0.21089384)
+color = Color(0.36945978, 0.4772833, 0.8188578, 1)
+texture = SubResource("GradientTexture2D_tkr8p")
+
+[node name="PointLight2D6" type="PointLight2D" parent="." unique_id=379821071]
+position = Vector2(-91.99999, -305.00003)
+rotation = 1.5814985
+scale = Vector2(1.9970723, 0.21089384)
+color = Color(0.83403003, 0.2702064, 0.36583334, 1)
+texture = SubResource("GradientTexture2D_tkr8p")
 
 [connection signal="body_entered" from="Doors/To Library" to="." method="_on_to_library_body_entered"]
 [connection signal="body_entered" from="Doors/To Library2" to="." method="_on_to_library_body_entered"]
