@@ -40,7 +40,6 @@ func _on_body_entered(body: CharacterBody2D) -> void:
 		say_room_dialogue()
 		await DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
 	RoomMessage).tree_exited
-		Global.lauren_movement_allowed = true
 		await remove_from_scene()
 		Global.lauren_movement_allowed = true
 		emit_yap()

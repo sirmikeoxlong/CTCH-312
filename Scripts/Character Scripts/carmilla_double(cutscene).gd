@@ -8,14 +8,13 @@ var attack = false
 var movement_dir
 
 @onready var lauren_double_cutscene_: CharacterBody2D = $"../lauren_double(CUTSCENE)"
-@onready var scream: AudioStreamPlayer2D = $scream
 @onready var notice: AudioStreamPlayer2D = $notice
 
 func _ready() -> void:
 	last_position = position
-	notice.play()
-	await get_tree().create_timer(2.5).timeout
-	notice.stop()
+	#notice.play()
+	#await get_tree().create_timer(2.5).timeout
+	#notice.stop()
 	
 func _physics_process(delta: float) -> void:
 	movement_direction()
@@ -33,6 +32,9 @@ func _physics_process(delta: float) -> void:
 		position += (lauren_double_cutscene_.position - position) / speed
 		
 func movement_direction():
+	if not lauren_double_cutscene_:
+		return
+		
 	# Distance vector pointing from Carmilla to Lauren
 	var diff = lauren_double_cutscene_.global_position - global_position
 	

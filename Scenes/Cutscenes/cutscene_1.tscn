@@ -53,21 +53,21 @@ texture_scale = 2.0
 [node name="lauren_double(CUTSCENE)" parent="." unique_id=398426540 instance=ExtResource("3_kulqj")]
 position = Vector2(-300, 49)
 
+[node name="AnimatedSprite2D" parent="lauren_double(CUTSCENE)" index="0" unique_id=1870464571]
+position = Vector2(0, 1)
+animation = &"Walking Right"
+
+[node name="CollisionShape2D" parent="lauren_double(CUTSCENE)" index="1" unique_id=1786058792]
+position = Vector2(-1, 0)
+
+[node name="PointLight2D" parent="lauren_double(CUTSCENE)" index="2" unique_id=1339314070]
+position = Vector2(0, -1)
+
 [node name="Camera2D" type="Camera2D" parent="lauren_double(CUTSCENE)" unique_id=419290562]
 position = Vector2(14, 9.999992)
 rotation = 1.6056322
 scale = Vector2(1.1273249, 0.9200003)
 zoom = Vector2(8, 8)
-
-[node name="AnimatedSprite2D" parent="lauren_double(CUTSCENE)" index="1" unique_id=1870464571]
-position = Vector2(0, 1)
-animation = &"Walking Right"
-
-[node name="CollisionShape2D" parent="lauren_double(CUTSCENE)" index="2" unique_id=1786058792]
-position = Vector2(-1, 0)
-
-[node name="PointLight2D" parent="lauren_double(CUTSCENE)" index="3" unique_id=1339314070]
-position = Vector2(0, -1)
 
 [node name="Carmilla_double(CUTSCENE)" parent="." unique_id=330098833 instance=ExtResource("4_fydfr")]
 z_index = -1
@@ -88,14 +88,6 @@ max_distance = 288.0
 attenuation = 1.9999996
 bus = &"fear"
 parameters/looping = true
-
-[node name="notice" type="AudioStreamPlayer2D" parent="Carmilla_double(CUTSCENE)" unique_id=813404620]
-stream = ExtResource("6_fydfr")
-volume_db = 6.483
-max_distance = 288.0
-attenuation = 1.9999996
-bus = &"fear"
-parameters/looping = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1675137377]
 position = Vector2(-20, -25)
@@ -161,6 +153,16 @@ forbidden_message = "\"...\""
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=680308434]
 position = Vector2(-20, -25)
 polygon = PackedVector2Array(-289, 103, -287, 74, -246, 73, -244, 10, -182, 11, -171, -51, -144, -51, -143, -200, -216, -193, -213, -211, -220, -249, -196, -248, -192, -438, 20, -438, 22, -202, -32, -204, -33, -54, -1, -54, -3, -15, 13, 15, 28, 8, 69, 8, 72, 106, -61, 108, -61, 153, -108, 152, -110, 107, -287, 107, -169, 221, 85, 163, 106, 10, 52, -126, 49, -528, -220, -529, -236, -131, -326, 22, -342, 114, -269, 157)
+
+[node name="notice" type="AudioStreamPlayer2D" parent="." unique_id=692164849]
+position = Vector2(0, 3.8146973e-06)
+scale = Vector2(1, 0.99999994)
+stream = ExtResource("6_fydfr")
+volume_db = 6.483
+max_distance = 288.0
+attenuation = 1.9999996
+bus = &"fear"
+parameters/looping = false
 
 [connection signal="body_entered" from="Meet Carmilla" to="." method="_on_snarky_comment_body_entered"]
 [connection signal="body_entered" from="Front Door" to="." method="_on_snarky_comment_body_entered"]

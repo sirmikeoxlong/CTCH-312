@@ -39,7 +39,7 @@ func player():
 	pass
 
 func _ready() -> void:
-	$AnimatedSprite2D.play("Walking Right")
+	$AnimatedSprite2D.play("Idle Right")
 
 func _physics_process(delta: float) -> void:
 	movement_enabled = Global.lauren_movement_allowed

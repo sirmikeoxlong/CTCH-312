@@ -44,8 +44,8 @@ func _ready() -> void:
 	light.visible = false
 
 func _physics_process(delta: float) -> void:
-	#movement_enabled = Global.lauren_movement_allowed
-	movement_enabled = !Storystate.in_dialogue
+	movement_enabled = Global.lauren_movement_allowed
+	#movement_enabled = !Storystate.in_dialogue
 	if movement_enabled == true:
 		move_and_slide()
 		player_movement()
@@ -59,7 +59,8 @@ func _physics_process(delta: float) -> void:
 		else:
 			$player_sfx/footstep_timer.stop()
 	else:
-		pass
+		$AnimatedSprite2D.play("Idle")
+		$player_sfx/footstep_timer.stop()
 
 func _on_footstep_timer_timeout():
 	# Play the sound when the timer times out

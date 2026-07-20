@@ -50,6 +50,7 @@ func _process(delta: float) -> void:
 			else:
 				DialogueManager.show_dialogue_balloon(d_Resource, forbidden_message)
 				door_locked.play()
+				Global.lauren_movement_allowed = true
 				#Storystate.in_dialogue = true;
 				#await get_tree().create_timer(2.5).timeout
 				#Global.lauren_movement_allowed = true

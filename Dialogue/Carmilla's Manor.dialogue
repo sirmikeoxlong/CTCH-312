@@ -24,6 +24,7 @@ Lauren: Looks like I can't open this part yet.
 
 ~ scene5enter1
 Lauren: Man, this place looks huge. Not many lights around for this big of a place..
+Hit 'F' to use your flashlight to stun enemies
 => END
 
 ~ scene6hall1
@@ -102,6 +103,10 @@ Lauren: We should see what the lady wants first. Don’t want her getting upset.
 Carmilla: I don't have all day deary.
 => END
 
+~ scene20entrance5
+Move to the spotlight to continue the story
+=> END
+
 ~ scene21gallery1
 Carmilla: Are you familiar with the lady in the ivory half dress?
 Lauren: The what dress?
@@ -132,6 +137,7 @@ Lauren: What?!
 #
 #~ scene21gallery4
 Lauren: [shake]Ahhh![/shake] What are you doing?!
+MOVE FOR THE DOOR!
 => END
 
 ~ scene21gallery5
@@ -142,8 +148,10 @@ Lauren: Are you crazy?! What was that for?!
 Carmilla: Lauren deary, do not run from me now!~
 #=> END
 #
-#~ mechanics1
-Hit 'F' to use your flashlight to stun Carmilla
+=> END
+
+~ afterBite
+Hit 'F' to use your flashlight to stun enemies
 => END
 
 ~ scene23bedroom1
