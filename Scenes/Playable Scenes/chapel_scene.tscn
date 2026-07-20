@@ -32,6 +32,9 @@ position = Vector2(0, -32)
 [node name="Lauren" parent="EnvironmetalSorting" unique_id=1222447786 instance=ExtResource("2_5gyh3")]
 position = Vector2(56, -26)
 
+[node name="CanvasModulate" type="CanvasModulate" parent="EnvironmetalSorting" unique_id=333169178]
+color = Color(0.056100007, 0.10631497, 0.33, 1)
+
 [node name="ChapelDoor1" type="Area2D" parent="." unique_id=1018466263]
 script = ExtResource("3_r5y37")
 teleport = "res://Scenes/Playable Scenes/grandhall_scene.tscn"

@@ -237,12 +237,12 @@ radius = 65.49045
 [sub_resource type="CircleShape2D" id="CircleShape2D_5us03"]
 radius = 550.61414
 
-[sub_resource type="Gradient" id="Gradient_cvnsp"]
+[sub_resource type="Gradient" id="Gradient_ggb2o"]
 offsets = PackedFloat32Array(0.082987554, 0.64315355, 0.7842324, 0.813278)
 colors = PackedColorArray(1, 1, 1, 1, 0.25858343, 0.25858343, 0.25858343, 1, 0.07185626, 0.07185626, 0.07185626, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_f0r47"]
-gradient = SubResource("Gradient_cvnsp")
+gradient = SubResource("Gradient_ggb2o")
 width = 40
 height = 39
 fill = 1
@@ -256,6 +256,7 @@ height = 212.0
 [node name="Carmilla" type="CharacterBody2D" unique_id=140519432]
 scale = Vector2(0.2, 0.2)
 collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_fskwt")
 
 [node name="notice" type="AudioStreamPlayer2D" parent="." unique_id=1882281371]
@@ -287,7 +288,7 @@ wait_time = 0.33
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1412246481]
 sprite_frames = SubResource("SpriteFrames_y4qxr")
-animation = &"attack left"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1577866949]
 position = Vector2(0, 7)
