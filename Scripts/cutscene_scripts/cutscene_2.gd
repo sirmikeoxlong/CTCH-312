@@ -1,22 +1,23 @@
 extends Node2D
 
 @onready var lauren: CharacterBody2D = $EnvironmetalSorting/Lauren
+@onready var notice: AudioStreamPlayer2D = $Carmilla/notice
+@onready var scream: AudioStreamPlayer2D = $Carmilla/scream
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.carmilla_movement_allowed = false
 	Global.exposition_complete = true
-	lauren.disable_camera()
-
+	#lauren.disable_camera()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	notice.stop()
+	scream.stop()
 
 func _on_sucks_has_yapped_about_it() -> void:
 	$SuckBlood.play("suck")
 	$Spotlight.hide()
-	
 
 
 func _on_scene_21_has_yapped_about_it() -> void:

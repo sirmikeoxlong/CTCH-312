@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dj38ugwb5k1yf" path="res://Scenes/environments/env_chapel.tscn" id="1_32eod"]
 [ext_resource type="Script" uid="uid://uh60lfgcqi41" path="res://Scripts/cutscene_scripts/cutscene_2.gd" id="1_duoo3"]
-[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="2_06wed"]
+[ext_resource type="PackedScene" uid="uid://bwnatxofyyww4" path="res://Characters/lauren_double(cutscene).tscn" id="3_ajgn2"]
 [ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="3_duoo3"]
 [ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="4_06wed"]
 [ext_resource type="Script" uid="uid://bcyjasak166ik" path="res://Scenes/chapel/portal_chapel.gd" id="6_gpbou"]
@@ -16,8 +16,8 @@ radius = 3.7305427
 height = 159.24252
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gpbou"]
-radius = 5.3376846
-height = 16.140604
+radius = 2.203208
+height = 17.623323
 
 [sub_resource type="Gradient" id="Gradient_cvnsp"]
 offsets = PackedFloat32Array(0.082987554, 0.64315355, 0.7842324, 0.813278)
@@ -77,50 +77,6 @@ tracks/3/keys = {
 "points": PackedFloat32Array(0.264, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("EnvironmetalSorting/Lauren:scale:x")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.945, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("EnvironmetalSorting/Lauren:scale:y")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.945, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("EnvironmetalSorting/Lauren:position:x")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(2),
-"points": PackedFloat32Array(21, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("EnvironmetalSorting/Lauren:position:y")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(2),
-"points": PackedFloat32Array(118, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
 
 [sub_resource type="Animation" id="Animation_gpbou"]
 resource_name = "suck"
@@ -168,50 +124,6 @@ tracks/3/keys = {
 "handle_modes": PackedInt32Array(0, 2, 2),
 "points": PackedFloat32Array(0.264, -0.25, 0, 0.25, 0, 0.211, -0.011666656, 0.008833334, 0, 0, 0.264, -0.014999986, -0.008833334, 0, 0),
 "times": PackedFloat32Array(2.13, 2.2, 2.29)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("EnvironmetalSorting/Lauren:scale:x")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0.945, -0.25, 0, 0.25, 0, 1, -0.026666641, -0.009166668, 0, 0),
-"times": PackedFloat32Array(2.16, 2.32)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("EnvironmetalSorting/Lauren:scale:y")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0.945, -0.25, 0, 0.25, 0, 1, -0.026666641, -0.009166668, 0, 0),
-"times": PackedFloat32Array(2.16, 2.32)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("EnvironmetalSorting/Lauren:position:x")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(2, 2, 2),
-"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0, 21, -0.025000017, -2.6666667, 0, 0, 81, -0.070000015, -10, 0, 0),
-"times": PackedFloat32Array(2.32, 2.47, 2.89)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("EnvironmetalSorting/Lauren:position:y")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(2, 2, 2),
-"points": PackedFloat32Array(-17, -0.25, 0, 0.25, 0, -24, -0.025000017, 1.1666667, 0, 0, -39, -0.070000015, 2.5, 0, 0),
-"times": PackedFloat32Array(2.32, 2.47, 2.89)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ajgn2"]
@@ -300,9 +212,8 @@ y_sort_enabled = true
 [node name="Chapel" parent="EnvironmetalSorting" unique_id=675667783 instance=ExtResource("1_32eod")]
 position = Vector2(0, -32)
 
-[node name="Lauren" parent="EnvironmetalSorting" unique_id=1222447786 instance=ExtResource("2_06wed")]
-position = Vector2(21, 118)
-scale = Vector2(0.945, 0.945)
+[node name="lauren_double(CUTSCENE)" parent="EnvironmetalSorting" unique_id=398426540 instance=ExtResource("3_ajgn2")]
+position = Vector2(28, 111)
 
 [node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("3_duoo3")]
 position = Vector2(-72, -56)
@@ -320,6 +231,18 @@ rotation = 0.012639626
 scale = Vector2(1.3498051, 0.71524495)
 shape = SubResource("CircleShape2D_duoo3")
 
+[node name="Instructions Spotlight" parent="." unique_id=1153164207 instance=ExtResource("4_06wed")]
+visible = false
+position = Vector2(23.999939, 120)
+scale = Vector2(4.2815866, 6.771887)
+RoomMessage = "scene20entrance5"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Instructions Spotlight" unique_id=2135763227]
+position = Vector2(1.9073486e-06, 0.14767075)
+rotation = 0.012639626
+scale = Vector2(1.3498051, 0.71524495)
+shape = SubResource("CircleShape2D_duoo3")
+
 [node name="Sucks" parent="." unique_id=1491808084 instance=ExtResource("4_06wed")]
 position = Vector2(-165, -43)
 scale = Vector2(4.8410025, 1.2089908)
@@ -333,20 +256,22 @@ scale = Vector2(1.1241714, 0.13490698)
 shape = SubResource("CapsuleShape2D_duoo3")
 
 [node name="Bitten" parent="." unique_id=1179438358 instance=ExtResource("4_06wed")]
-position = Vector2(82, -38.000004)
-scale = Vector2(4.8410025, 1.2089908)
+position = Vector2(56.000004, -36)
+scale = Vector2(9.641005, 1.4489939)
 id = "first_cutscene"
 RoomMessage = "scene21gallery5"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Bitten" unique_id=1124964784]
-position = Vector2(2.272255, 4.135685)
+light_mask = 3
+visibility_layer = 3
+position = Vector2(-0.20656729, -3.8146973e-06)
 rotation = 0.012639626
 scale = Vector2(1.1241713, 2.2523654)
 shape = SubResource("CapsuleShape2D_gpbou")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1535038352]
 position = Vector2(-20, -25)
-color = Color(0.5616756, 0.23148736, 0.4683466, 1)
+color = Color(0.26677158, 0.089333765, 0.21674329, 1)
 
 [node name="Spotlight" type="PointLight2D" parent="." unique_id=165128968]
 position = Vector2(3, 42)
@@ -378,7 +303,10 @@ unlocked = true
 forbidden_message = ""
 
 [connection signal="has_yapped_about_it" from="Scene 21" to="." method="_on_scene_21_has_yapped_about_it"]
+[connection signal="has_yapped_about_it" from="Instructions Spotlight" to="." method="_on_scene_21_has_yapped_about_it"]
 [connection signal="has_yapped_about_it" from="Sucks" to="." method="_on_sucks_has_yapped_about_it"]
 [connection signal="has_yapped_about_it" from="Bitten" to="." method="_on_bitten_has_yapped_about_it"]
 [connection signal="body_entered" from="meh" to="meh" method="_on_body_entered"]
 [connection signal="body_exited" from="meh" to="meh" method="_on_body_exited"]
+
+[editable path="Carmilla"]

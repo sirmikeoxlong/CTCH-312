@@ -25,6 +25,9 @@ func unloack_all_doors():
 
 func _on_boot_room_key_body_entered(body: CharacterBody2D) -> void:
 	boot_room_key.entered = true
+	
+func _on_boot_room_key_body_exited(body: Node2D) -> void:
+	boot_room_key.entered = false
 
 func _on_boot_room_key_pocketed() -> void:
 	boot_room_key.remove_from_scene()

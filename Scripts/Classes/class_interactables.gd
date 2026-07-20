@@ -60,3 +60,7 @@ func remove_from_scene():
 	Global.items.erase(id)
 	queue_free()
 	# remove from the scene
+
+
+func _on_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

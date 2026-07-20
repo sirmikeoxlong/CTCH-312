@@ -1,3 +1,6 @@
+#This class handles room teleportation... it updates the last room accessed if the player
+#enters the door, which is presumably unlocked.
+
 class_name RoomTeleport
 
 extends Area2D
@@ -14,15 +17,10 @@ extends Area2D
 
 var d_Resource = load("res://Dialogue/Carmilla's Manor.dialogue")
 
-
 var entered	
 
 func _ready() -> void:
-	#if !Global.collected_cutscenes.has(global_position):
-		#queue_free() #free the item becouse already has been collected
-	#else:
-		#Global.items.append(global_position)
-		pass
+	pass
 
 # Check if player has the key to unlock this door in inventory
 func unlock():
@@ -39,7 +37,6 @@ func _on_body_exited(body: CharacterBody2D) -> void:
 func _process(delta: float) -> void:
 	if entered == true:
 		if Input.is_action_just_pressed("Talk"):
-			#lauren.movement_enabled = false
 			Global.lauren_movement_allowed = false
 			unlock()
 			if unlocked == true:
@@ -53,6 +50,7 @@ func _process(delta: float) -> void:
 			else:
 				DialogueManager.show_dialogue_balloon(d_Resource, forbidden_message)
 				door_locked.play()
-				await get_tree().create_timer(2.5).timeout
 				Global.lauren_movement_allowed = true
-				#lauren.movement_enabled = true
+				#Storystate.in_dialogue = true;
+				#await get_tree().create_timer(2.5).timeout
+				#Global.lauren_movement_allowed = true

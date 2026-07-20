@@ -24,6 +24,7 @@ Lauren: Looks like I can't open this part yet.
 
 ~ scene5enter1
 Lauren: Man, this place looks huge. Not many lights around for this big of a place..
+Hit 'F' to use your flashlight to stun enemies
 => END
 
 ~ scene6hall1
@@ -90,24 +91,20 @@ Carmilla: What is thy name?
 Lauren: Lauren. Lauren Woods.
 Carmilla: Mmm. Interesting.
 Lauren: I’m sorry ma’am, I didn’t know anyone would be living here. I was sent by my family to find something that once belonged to my great grandmother. I believe this was her house in the 1800s. I uh.. found the key outside. I can leave if you want-
-Try the front door...
-=> END
-
-~ scene20entrance2
-The door is locked.
 Carmilla: Thou just got here sweetheart. Stay a while.
 Lauren: What do you want with me...?
-Carmilla: Come. Walk with me.
+Carmilla: Come. Let us go to the chapel.
 Lauren: Okay....
 Lauren in her head: *Is this a good idea?* 
-=> END 
-
-~ followcarmilla
 Lauren: We should see what the lady wants first. Don’t want her getting upset.
 => END
 
 ~ scene20entrance4
 Carmilla: I don't have all day deary.
+=> END
+
+~ scene20entrance5
+Move to the spotlight to continue the story
 => END
 
 ~ scene21gallery1
@@ -140,6 +137,7 @@ Lauren: What?!
 #
 #~ scene21gallery4
 Lauren: [shake]Ahhh![/shake] What are you doing?!
+MOVE FOR THE DOOR!
 => END
 
 ~ scene21gallery5
@@ -150,8 +148,10 @@ Lauren: Are you crazy?! What was that for?!
 Carmilla: Lauren deary, do not run from me now!~
 #=> END
 #
-#~ mechanics1
-Hit 'F' to use your flashlight to stun Carmilla
+=> END
+
+~ afterBite
+Hit 'F' to use your flashlight to stun enemies
 => END
 
 ~ scene23bedroom1

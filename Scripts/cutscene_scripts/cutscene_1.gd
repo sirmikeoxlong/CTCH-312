@@ -1,16 +1,23 @@
 extends Node2D
 
 @onready var lauren: CharacterBody2D = $Lauren
+#@onready var notice: AudioStreamPlayer2D = $notice
+@onready var notice: AudioStreamPlayer2D = $"Carmilla_double(CUTSCENE)/notice"
 
 var last_door = Global.last_door_accessed
 
 # Called wh$Camera2Den the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.lauren_movement_allowed = true
+	MusicManager.play_music(load("res://Sounds/AMBIENCE.ogg"))
+	notice.play()
+	await get_tree().create_timer(2.5).timeout
+	notice.stop()
+	
+	Global.lauren_movement_allowed = false
 	Global.carmilla_movement_allowed = false
 	
-	if !(last_door == ""):
-		lauren.global_position = get_node(Global.last_door_accessed).position
+	#if !(last_door == ""):
+		#lauren.global_position = get_node(Global.last_door_accessed).position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

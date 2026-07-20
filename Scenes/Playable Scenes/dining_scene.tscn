@@ -10,10 +10,17 @@
 [ext_resource type="Texture2D" uid="uid://c7p570yvtq2sn" path="res://Sprites/sprites/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="9_whtp5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nk8y7"]
-radius = 25.019993
+radius = 22.090721
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vc8kl"]
 radius = 18.382355
+
+[sub_resource type="Gradient" id="Gradient_lx5np"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_85gh8"]
+gradient = SubResource("Gradient_lx5np")
+fill_from = Vector2(0.5185185, 0.8860399)
+fill_to = Vector2(0.51282054, 0)
 
 [node name="dining_scene" type="Node2D" unique_id=809300282]
 script = ExtResource("1_85gh8")
@@ -28,10 +35,13 @@ scale = Vector2(0.5127585, 0.52853614)
 [node name="Lauren" parent="Environmental Sorting" unique_id=1222447786 instance=ExtResource("2_10372")]
 position = Vector2(-157, 114)
 
+[node name="CanvasModulate" type="CanvasModulate" parent="Environmental Sorting" unique_id=1916120258]
+color = Color(0.056100007, 0.10631497, 0.33, 1)
+
 [node name="bg_collisions" type="StaticBody2D" parent="." unique_id=427350585]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collisions" unique_id=1753854485]
-polygon = PackedVector2Array(-212, 48, -185, 49, -185, 54, -180, 56, -164, 57, -159, 52, -158, 48, -54, 48, -53, 50, -13, 50, -11, 48, 75, 48, 76, 53, 80, 54, 95, 55, 101, 51, 101, 48, 136, 48, 137, 147, -174, 148, -175, 172, -213, 172, -212, 49, -308, 112, -283, 239, -91, 254, 74, 229, 147, 267, 282, 140, 249, -13, 259, -124, -61, -260, -325, -159, -358, 19)
+polygon = PackedVector2Array(-212, 48, -185, 49, -185, 54, -180, 56, -164, 57, -159, 52, -158, 48, -54, 48, -53, 50, -13, 50, -11, 48, 75, 48, 76, 53, 80, 54, 95, 55, 101, 51, 101, 48, 108, 48, 108, 148, -174, 148, -175, 172, -213, 172, -212, 49, -308, 112, -283, 239, -91, 254, 74, 229, 147, 267, 282, 140, 249, -13, 259, -124, -61, -260, -325, -159, -358, 19)
 
 [node name="Dining Paper" parent="." unique_id=1015122729 instance=ExtResource("4_m3k2c")]
 position = Vector2(26, 81)
@@ -44,6 +54,7 @@ region_enabled = true
 region_rect = Rect2(36, 22, 9, 9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dining Paper" unique_id=1672094965]
+position = Vector2(-1, 7)
 shape = SubResource("CircleShape2D_nk8y7")
 script = ExtResource("6_whtp5")
 
@@ -65,7 +76,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Staffroom" parent="." unique_id=1205495377 node_paths=PackedStringArray("key") instance=ExtResource("3_6q8cs")]
-position = Vector2(96, 150)
+position = Vector2(87, 142)
 teleport = "res://Scenes/Playable Scenes/staffroom_scene.tscn"
 key = NodePath("../Staffroom Key")
 
@@ -98,5 +109,12 @@ offset_bottom = 27.41174
 theme_override_font_sizes/font_size = 8
 text = "[E] To Interact"
 
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1064086782]
+position = Vector2(-104, -282)
+scale = Vector2(0.1999988, 1.8)
+color = Color(0.90092367, 0.4718743, 0.42457274, 1)
+texture = SubResource("GradientTexture2D_85gh8")
+
 [connection signal="body_entered" from="Dining Paper" to="." method="_on_dining_paper_body_entered"]
+[connection signal="body_exited" from="Dining Paper" to="." method="_on_dining_paper_body_exited"]
 [connection signal="pocketed" from="Dining Paper" to="." method="_on_dining_paper_pocketed"]

@@ -13,6 +13,9 @@ height = 86.0
 [node name="kitchen_scene" type="Node2D" unique_id=1798775096]
 script = ExtResource("1_j6ss8")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1467188774]
+color = Color(0.05490196, 0.105882354, 0.32941177, 1)
+
 [node name="env_kitchen" parent="." unique_id=1237898850 instance=ExtResource("1_55l32")]
 position = Vector2(-30, -1)
 scale = Vector2(0.5346391, 0.54584306)

@@ -17,7 +17,7 @@
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_o8okl"]
 gradient = SubResource("Gradient_lx5np")
-fill_from = Vector2(0.5099715, 0.7891738)
+fill_from = Vector2(0.5185185, 0.8860399)
 fill_to = Vector2(0.51282054, 0)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lgo1s"]
@@ -42,13 +42,21 @@ radius = 18.382355
 [sub_resource type="CircleShape2D" id="CircleShape2D_tkr8p"]
 radius = 25.019993
 
+[sub_resource type="Gradient" id="Gradient_5xqpn"]
+offsets = PackedFloat32Array(0, 0.22794117)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tkr8p"]
+gradient = SubResource("Gradient_5xqpn")
+fill_from = Vector2(0.92578125, 0.47265625)
+fill_to = Vector2(0, 0.47293448)
+
 [node name="grandhall_scene" type="Node2D" unique_id=776564788]
 script = ExtResource("1_lgo1s")
 
 [node name="Environmental Sorting" type="Node2D" parent="." unique_id=1609331704]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Environmental Sorting" unique_id=926223720]
-color = Color(0.44393474, 0.6622654, 0.9536515, 1)
+color = Color(0.056100007, 0.10631497, 0.33, 1)
 
 [node name="Grand Hall" parent="Environmental Sorting" unique_id=950251797 instance=ExtResource("1_nw6sa")]
 position = Vector2(-54, -461.99997)
@@ -59,7 +67,7 @@ position = Vector2(-188, -384)
 [node name="bg_collisions" type="StaticBody2D" parent="." unique_id=912784998]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bg_collisions" unique_id=1350586620]
-polygon = PackedVector2Array(-206, -419, -166, -420, -166, -415, -161, -411, -147, -411, -141, -416, -141, -420, -41, -420, -41, -415, -37, -412, -22, -412, -17, -414, -17, -420, 17, -420, 17, -320, 11, -320, 11, -296, 15, -296, 19, -244, 41, -243, 41, -212, -37, -211, -40, -162, -39, -137, 264, -138, 264, -72, 92, -72, 92, -95, -47, -96, -48, -55, 28, 5, 69, 6, 72, 104, -67, 106, -67, 154, -67, 154, -116, 154, -116, 106, -301, 104, -300, 70, -250, 70, -248, -56, -236, -55, -143, -55, -142, -96, -292, -93, -294, -74, -465, -71, -464, -138, -149, -138, -148, -162, -148, -209, -222, -209, -222, -241, -195, -242, -198, -295, -192, -296, -193, -320, -198, -321, -198, -400, -199, -418, -379, -350, -547, -196, -527, 104, -352, 198, 160, 204, 380, -42, 360, -170, 286, -259, 169, -420, 79, -538, -305, -528, -307, -436)
+polygon = PackedVector2Array(-206, -419, -166, -420, -166, -415, -161, -411, -147, -411, -141, -416, -141, -420, -41, -420, -41, -415, -37, -412, -22, -412, -17, -414, -17, -420, 17, -420, 17, -320, 11, -320, 11, -296, 15, -296, 19, -244, 41, -243, 41, -212, -37, -211, -40, -162, -39, -137, 264, -138, 264, -72, 92, -72, 92, -95, -47, -96, -48, -55, 27, 6, 25, -40, 24, -45, 70, -45, 69, 6, 72, 104, -67, 106, -67, 154, -67, 154, -116, 154, -116, 106, -301, 104, -300, 70, -250, 70, -248, -56, -236, -55, -143, -55, -142, -96, -292, -93, -294, -74, -465, -71, -464, -138, -149, -138, -148, -162, -148, -209, -222, -209, -222, -241, -195, -242, -198, -295, -192, -296, -193, -320, -198, -321, -198, -400, -199, -418, -379, -350, -547, -196, -527, 104, -352, 198, 160, 204, 380, -42, 360, -170, 286, -259, 169, -420, 79, -538, -305, -528, -307, -436)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=452849513]
 position = Vector2(-92, -438.00003)
@@ -106,7 +114,7 @@ teleport = "res://Scenes/Playable Scenes/chapel_scene.tscn"
 unlocked = true
 
 [node name="Ballroom" parent="Doors" unique_id=1348103655 instance=ExtResource("3_o8okl")]
-position = Vector2(-333, -93)
+position = Vector2(-333, -89)
 teleport = "res://Scenes/Playable Scenes/ballroom_scene.tscn"
 unlocked = true
 
@@ -126,7 +134,7 @@ unlocked = true
 door_id = "f1_outdoor"
 
 [node name="Bootroom2" parent="Doors" unique_id=100980308 node_paths=PackedStringArray("key") instance=ExtResource("3_o8okl")]
-position = Vector2(-283, 85)
+position = Vector2(-287, 87)
 teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
 key = NodePath("../../Collectable Items (offscreen)/Boot Room Key")
 
@@ -171,7 +179,7 @@ position = Vector2(-91, 96)
 RoomMessage = "scene5enter1"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Dialogue/d_scene5enter1" unique_id=641975107]
-position = Vector2(4, -17)
+position = Vector2(3, -9)
 rotation = 1.5778282
 shape = SubResource("CapsuleShape2D_lgo1s")
 
@@ -330,6 +338,27 @@ offset_right = 35.0
 offset_bottom = 2.0
 theme_override_font_sizes/font_size = 8
 text = "[ENTER] To Interact"
+
+[node name="PointLight2D4" type="PointLight2D" parent="." unique_id=1786987791]
+position = Vector2(-125, -316)
+rotation = 1.5814985
+scale = Vector2(1.9970723, 0.21089384)
+color = Color(0.36945978, 0.4772833, 0.8188578, 1)
+texture = SubResource("GradientTexture2D_tkr8p")
+
+[node name="PointLight2D5" type="PointLight2D" parent="." unique_id=1423659180]
+position = Vector2(-58, -316)
+rotation = 1.5814985
+scale = Vector2(1.9970723, 0.21089384)
+color = Color(0.36945978, 0.4772833, 0.8188578, 1)
+texture = SubResource("GradientTexture2D_tkr8p")
+
+[node name="PointLight2D6" type="PointLight2D" parent="." unique_id=379821071]
+position = Vector2(-91.99999, -305.00003)
+rotation = 1.5814985
+scale = Vector2(1.9970723, 0.21089384)
+color = Color(0.83403003, 0.2702064, 0.36583334, 1)
+texture = SubResource("GradientTexture2D_tkr8p")
 
 [connection signal="body_entered" from="Doors/To Library" to="." method="_on_to_library_body_entered"]
 [connection signal="body_entered" from="Doors/To Library2" to="." method="_on_to_library_body_entered"]

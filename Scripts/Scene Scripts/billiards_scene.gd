@@ -34,7 +34,9 @@ func _process(delta: float) -> void:
 
 func _on_billiards_paper_body_entered(body: CharacterBody2D) -> void:
 	billiards_paper.entered = true
-
+	
+func _on_billiards_paper_body_exited(body: Node2D) -> void:
+	billiards_paper.entered = false
 
 func _on_billiards_paper_pocketed() -> void:
 	billiards_paper.remove_from_scene()

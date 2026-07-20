@@ -39,9 +39,7 @@ func player():
 	pass
 
 func _ready() -> void:
-	$AnimatedSprite2D.play("Idle")
-	animation_player.stop()
-	light.visible = false
+	$AnimatedSprite2D.play("Idle Right")
 
 func _physics_process(delta: float) -> void:
 	movement_enabled = Global.lauren_movement_allowed
@@ -51,21 +49,8 @@ func _physics_process(delta: float) -> void:
 		player_movement()
 		movement_direction()
 		player_animation()
-		
-		  # Check if the player is moving and on the floor
-		if velocity.length() > 0 :
-			if $player_sfx/footstep_timer.is_stopped():
-				$player_sfx/footstep_timer.start()
-		else:
-			$player_sfx/footstep_timer.stop()
 	else:
 		$AnimatedSprite2D.play("Idle")
-		$player_sfx/footstep_timer.stop()
-
-func _on_footstep_timer_timeout():
-	# Play the sound when the timer times out
-	if velocity.length() > 0 :
-			player_sfx.play()
 		
 		
 func player_movement():
@@ -74,9 +59,6 @@ func player_movement():
 		velocity = input_dir * speed 
 	else:
 		speed = 0.0
-
-func disable_camera():
-	camera_2d.queue_free()
 		
 	
 func movement_direction():
@@ -122,21 +104,6 @@ func player_animation():
 		
 	
 func _input(event) -> void:
-	
-# Handle flashlight direction
-	if event.is_action_pressed("left"):
-		lightPivot.set_rotation_degrees(90)
-		lightPivot.set_position(Vector2(-25.0, 6.0))
-	if event.is_action_pressed("right"):
-		lightPivot.set_rotation_degrees(270)
-		lightPivot.set_position(Vector2(25.0, 6.0))
-	if event.is_action_pressed("up"):
-		lightPivot.set_rotation_degrees(180)
-		lightPivot.set_position(Vector2(0.0, -26.0))
-	if event.is_action_pressed("down"):
-		lightPivot.set_rotation_degrees(0)
-		lightPivot.set_position(Vector2(0.0, 26.0))
-		
 		
 # Handle running
 	if event.is_action_pressed("run"):
@@ -170,43 +137,6 @@ func _input(event) -> void:
 			enable_movement()
 			$AnimatedSprite2D.visible = true
 
-# Handle flashbang
-# Add an enable/disabler thing rather than scaling
-#can_flashbang is the variable to connect the timeout function
-		
-	if event.is_action_pressed("flashbang") and can_flashbang:
-		curr_flashing = true
-		can_flashbang = false
-		is_flashing_anim = true #to lock the animation
-		
-		flashlight.disabled = false
-		light.visible = true
-		flashlight_bang.play()
-		flash_timer.start()
-		flashlightoff.hide()
-		flashlighton.show()
-		
-		match movement_dir:
-			"left":
-				animated_sprite.flip_h = false
-				animated_sprite.play("flash left")
-			"right":
-				animated_sprite.flip_h = true
-				animated_sprite.play("flash left")
-			"up":
-				animated_sprite.flip_h = false
-				animated_sprite.play("flash up")
-			"down":
-				animated_sprite.flip_h = false
-				animated_sprite.play("flash down")
-				
-	if event.is_action_released("flashbang"):
-		curr_flashing = false
-		flashlight.disabled = true
-		light.visible = false
-		flashlighton.hide()
-		flashlightoff.show()
-
 
 func disable_movement():
 	movement_enabled = false
@@ -215,84 +145,18 @@ func disable_movement():
 func enable_movement():
 	movement_enabled = true
 	#Global.lauren_movement_allowed = true
-
-
-# Handle hiding
-	# if hide key is pressed, Lauren's Sprite dissapears and
-	# her collission either shrinks or dissapears enough that
-	# none of the NPCs can detect her
-	# I think this is probably gonna be a signal from the character to 
-	# another node?
 	
-
-
-func _on_closet_1_body_entered(body: CharacterBody2D) -> void:
-	closet_entered = true
-
-func _on_closet_1_body_exited(body: Node2D) -> void:
-	closet_entered = false
 	
-# Handle flashbang
-	# if flashbang button pressed
-	# Lauren should enter her flashlight animation (for that direction)
-	# The screen should immediately flash white
-	# Carmilla should enter her stunned state (8 seconds)
-	
-#connect timer timeout to flash
-func _on_flash_timer_timeout() -> void:
-	can_flashbang = true
-	flashlighton.show()
-	flashlight_click.play()
-
-
-# Check if an enemy has entered the flashbang path (during flash)
-# if they have, then change the enemy state to "stunned"
-func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
-	if curr_flashing:
-		StateCarmilla.carmilla_curr_stunned = true
-#healsssss - pick up function that will be used as a signal for the bandages
-func heal_pickup():
-	print("healed!") # debug
-	$Hpbar.heal()
-	heal_sfx.play()
-	
-#get smacked
-func hit():
-	print("get Smacked") #debug
-	$Hpbar.hit()
-	hit_sfx.play()
-
-	is_hit = true
-	velocity = Vector2.ZERO
-
-	match movement_dir:
-		"left":
-			animated_sprite.flip_h = false
-			animated_sprite.play("Hit left")
-		"right":
-			animated_sprite.flip_h = false
-			animated_sprite.play("Hit right")
-		"up":
-			animated_sprite.flip_h = false
-			animated_sprite.play("Hit Up")
-		"down":
-			animated_sprite.flip_h = false
-			animated_sprite.play("Hit Down")
-
-
-func die():
-	print("You Dead")
-	movement_enabled = false
-	animation_player.play("death")
-	death_timer.start()
-
-func _on_death_timer_timeout() -> void:
-	get_tree().reload_current_scene()
-
-
-func _on_animated_sprite_2d_animation_finished() -> void:
-	if animated_sprite.animation.begins_with("Hit"):
-		is_hit = false
-	if animated_sprite.animation.begins_with("flash"):
-		is_flashing_anim = false
-		
+#extends CharacterBody2D
+#
+#var input_dir = Vector2.ZERO
+#
+#func _ready() -> void:
+	#$AnimatedSprite2D.play("Idle Right")
+	#
+#func _physics_process(delta: float) -> void:
+	#pass
+#
+#func player_movement():
+	#input_dir = Input.get_vector("left", "right", "up", "down")
+	#velocity = input_dir * speed 

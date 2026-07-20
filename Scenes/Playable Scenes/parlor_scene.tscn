@@ -11,14 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="9_xo5wk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0hgf8"]
-radius = 25.019993
+radius = 13.235295
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yykth"]
 radius = 15.0
 height = 86.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uor4v"]
-radius = 25.019993
+radius = 13.152946
 
 [node name="Parlor_scene" type="Node2D" unique_id=1854053113]
 script = ExtResource("1_ego5m")
@@ -28,7 +28,7 @@ position = Vector2(-13, 34)
 scale = Vector2(0.47819802, 0.48639843)
 
 [node name="Ballroom Paper" parent="." unique_id=1015122729 instance=ExtResource("3_j7gci")]
-position = Vector2(6, -20)
+position = Vector2(10, -26)
 scale = Vector2(1.3599999, 1.360001)
 id = "parlor_paper"
 pickup_message = "parlorpaper"
@@ -46,6 +46,7 @@ script = ExtResource("5_bds3v")
 position = Vector2(-7, 35)
 
 [node name="snarky comment" parent="Dialogue" unique_id=359445996 instance=ExtResource("7_d1lcf")]
+visible = false
 position = Vector2(94, -60)
 id = "gener_comment"
 RoomMessage = "billards/parlorconnect"
@@ -71,7 +72,7 @@ key = NodePath("../Parlor Key")
 unlocked = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=173428673]
-color = Color(0.44119266, 0.5500828, 0.8660146, 1)
+color = Color(0.15545624, 0.22358915, 0.46806526, 1)
 
 [node name="bg_collision" type="StaticBody2D" parent="." unique_id=470107417]
 
@@ -101,6 +102,7 @@ theme_override_font_sizes/font_size = 8
 text = "[E] To Interact"
 
 [connection signal="body_entered" from="Ballroom Paper" to="." method="_on_ballroom_paper_body_entered"]
+[connection signal="body_exited" from="Ballroom Paper" to="." method="_on_ballroom_paper_body_exited"]
 [connection signal="pocketed" from="Ballroom Paper" to="." method="_on_ballroom_paper_pocketed"]
 [connection signal="has_yapped_about_it" from="Dialogue/snarky comment" to="." method="_on_snarky_comment_has_yapped_about_it"]
 [connection signal="body_entered" from="Parlor Key" to="." method="_on_parlor_key_body_entered"]
