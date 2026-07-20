@@ -212,6 +212,18 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ts2o5"]
 radius = 65.49045
 
+[sub_resource type="Gradient" id="Gradient_cvnsp"]
+offsets = PackedFloat32Array(0.082987554, 0.64315355, 0.7842324, 0.813278)
+colors = PackedColorArray(1, 1, 1, 1, 0.25858343, 0.25858343, 0.25858343, 1, 0.07185626, 0.07185626, 0.07185626, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ts2o5"]
+gradient = SubResource("Gradient_cvnsp")
+width = 40
+height = 39
+fill = 1
+fill_from = Vector2(0.485, 0.455)
+fill_to = Vector2(0.96, 0.125)
+
 [node name="Carmilla_double(CUTSCENE)" type="CharacterBody2D" unique_id=330098833]
 y_sort_enabled = true
 script = ExtResource("1_ts2o5")
@@ -225,3 +237,10 @@ animation = &"down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1353400359]
 position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_ts2o5")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1815063324]
+scale = Vector2(4.48, 5.0799994)
+color = Color(0.68390006, 0.760807, 0.9558019, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ts2o5")
+texture_scale = 2.0
