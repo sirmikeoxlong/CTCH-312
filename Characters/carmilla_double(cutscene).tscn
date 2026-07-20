@@ -224,6 +224,9 @@ fill = 1
 fill_from = Vector2(0.485, 0.455)
 fill_to = Vector2(0.96, 0.125)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_37rg3"]
+radius = 208.76143
+
 [node name="Carmilla_double(CUTSCENE)" type="CharacterBody2D" unique_id=330098833]
 y_sort_enabled = true
 script = ExtResource("1_ts2o5")
@@ -244,3 +247,12 @@ color = Color(0.68390006, 0.760807, 0.9558019, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_ts2o5")
 texture_scale = 2.0
+
+[node name="Detection" type="Area2D" parent="." unique_id=790245251]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=1887039957]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_37rg3")
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]

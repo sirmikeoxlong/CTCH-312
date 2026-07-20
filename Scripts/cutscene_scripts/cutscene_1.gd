@@ -9,6 +9,8 @@ func _ready() -> void:
 	Global.lauren_movement_allowed = true
 	Global.carmilla_movement_allowed = false
 	
+	MusicManager.play_music(load("res://Sounds/AMBIENCE.ogg"))
+	
 	if !(last_door == ""):
 		lauren.global_position = get_node(Global.last_door_accessed).position
 
@@ -25,7 +27,7 @@ func _on_front_door_has_yapped_about_it() -> void:
 	# Carmilla should move away
 	# wait a bit
 	# Once Lauren goes through the hall, transport he to the next cutscene
-	$AnimationPlayer.play("new_animation")
+	#$AnimationPlayer.play("new_animation")
 	#await get_tree().create_timer(2.5).timeout
 	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Carmilla's Manor.dialogue"), 
 	"followcarmilla")

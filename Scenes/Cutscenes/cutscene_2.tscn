@@ -346,7 +346,7 @@ shape = SubResource("CapsuleShape2D_gpbou")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1535038352]
 position = Vector2(-20, -25)
-color = Color(0.5616756, 0.23148736, 0.4683466, 1)
+color = Color(0.26677158, 0.089333765, 0.21674329, 1)
 
 [node name="Spotlight" type="PointLight2D" parent="." unique_id=165128968]
 position = Vector2(3, 42)

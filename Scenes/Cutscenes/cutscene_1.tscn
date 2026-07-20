@@ -2,11 +2,25 @@
 
 [ext_resource type="Script" uid="uid://cynkasjf2gbjh" path="res://Scripts/cutscene_scripts/cutscene_1.gd" id="1_uxk81"]
 [ext_resource type="PackedScene" uid="uid://ccmxpq6w5id6e" path="res://Scenes/environments/env_grandhall.tscn" id="2_r0uby"]
-[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="3_kulqj"]
+[ext_resource type="PackedScene" uid="uid://bwnatxofyyww4" path="res://Characters/lauren_double(cutscene).tscn" id="3_kulqj"]
 [ext_resource type="PackedScene" uid="uid://spfiyq443c6o" path="res://Characters/carmilla_double(cutscene).tscn" id="4_fydfr"]
+[ext_resource type="AudioStream" uid="uid://bsvl2w5s8qc6w" path="res://Sounds/Carmilla Screaming02.ogg" id="5_bl2sy"]
 [ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="5_fydfr"]
+[ext_resource type="AudioStream" uid="uid://bgqpu4w7ysems" path="res://Sounds/Enemy Alerted.ogg" id="6_fydfr"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="6_r0uby"]
 [ext_resource type="Script" uid="uid://b2ajryohr0cqa" path="res://Scripts/Scene Scripts/cut_scene_teleport.gd" id="7_kulqj"]
+
+[sub_resource type="Gradient" id="Gradient_cvnsp"]
+offsets = PackedFloat32Array(0.082987554, 0.64315355, 0.7842324, 0.813278)
+colors = PackedColorArray(1, 1, 1, 1, 0.25858343, 0.25858343, 0.25858343, 1, 0.07185626, 0.07185626, 0.07185626, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u3lw8"]
+gradient = SubResource("Gradient_cvnsp")
+width = 40
+height = 39
+fill = 1
+fill_from = Vector2(0.485, 0.455)
+fill_to = Vector2(0.96, 0.125)
 
 [sub_resource type="Gradient" id="Gradient_au0op"]
 
@@ -29,17 +43,63 @@ script = ExtResource("1_uxk81")
 [node name="Grand Hall" parent="." unique_id=950251797 instance=ExtResource("2_r0uby")]
 position = Vector2(-72, -484)
 
-[node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("3_kulqj")]
-position = Vector2(-179, 45)
+[node name="PointLight2D" type="PointLight2D" parent="Grand Hall" unique_id=1521950936]
+position = Vector2(-294.23206, 459.61566)
+color = Color(0.68390006, 0.760807, 0.9558019, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_u3lw8")
+texture_scale = 2.0
+
+[node name="lauren_double(CUTSCENE)" parent="." unique_id=398426540 instance=ExtResource("3_kulqj")]
+position = Vector2(-300, 49)
+
+[node name="Camera2D" type="Camera2D" parent="lauren_double(CUTSCENE)" unique_id=419290562]
+position = Vector2(14, 9.999992)
+rotation = 1.6056322
+scale = Vector2(1.1273249, 0.9200003)
+zoom = Vector2(8, 8)
+
+[node name="AnimatedSprite2D" parent="lauren_double(CUTSCENE)" index="1" unique_id=1870464571]
+position = Vector2(0, 1)
+animation = &"Walking Right"
+
+[node name="CollisionShape2D" parent="lauren_double(CUTSCENE)" index="2" unique_id=1786058792]
+position = Vector2(-1, 0)
+
+[node name="PointLight2D" parent="lauren_double(CUTSCENE)" index="3" unique_id=1339314070]
+position = Vector2(0, -1)
 
 [node name="Carmilla_double(CUTSCENE)" parent="." unique_id=330098833 instance=ExtResource("4_fydfr")]
 z_index = -1
-position = Vector2(-105.99999, -92.99999)
+position = Vector2(-268, 47.000004)
 scale = Vector2(0.16771662, 0.17738096)
+
+[node name="AnimatedSprite2D" parent="Carmilla_double(CUTSCENE)" index="0" unique_id=449501708]
+animation = &"idle left"
+
+[node name="CollisionShape2D" parent="Carmilla_double(CUTSCENE)/Detection" parent_id_path=PackedInt32Array(330098833, 790245251) index="0" unique_id=1887039957]
+position = Vector2(-5.962433, 9.059906e-06)
+
+[node name="scream" type="AudioStreamPlayer2D" parent="Carmilla_double(CUTSCENE)" unique_id=1299968983]
+visible = false
+stream = ExtResource("5_bl2sy")
+volume_db = 5.727
+max_distance = 288.0
+attenuation = 1.9999996
+bus = &"fear"
+parameters/looping = true
+
+[node name="notice" type="AudioStreamPlayer2D" parent="Carmilla_double(CUTSCENE)" unique_id=813404620]
+stream = ExtResource("6_fydfr")
+volume_db = 6.483
+max_distance = 288.0
+attenuation = 1.9999996
+bus = &"fear"
+parameters/looping = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1675137377]
 position = Vector2(-20, -25)
-color = Color(0.37384263, 0.13838717, 0.3080187, 1)
+color = Color(0.49517488, 0.19659865, 0.4142652, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1905979694]
 visible = false
@@ -49,25 +109,25 @@ scale = Vector2(2.3258908, 2.398146)
 texture = SubResource("GradientTexture2D_e5ivg")
 
 [node name="Meet Carmilla" parent="." unique_id=359445996 instance=ExtResource("5_fydfr")]
-position = Vector2(-165, -43)
-scale = Vector2(4.8410025, 1.2089908)
+position = Vector2(-275, 61.999996)
+scale = Vector2(0.841002, 6.7289886)
 id = "first_cutscene"
 RoomMessage = "scene20entrance1"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Meet Carmilla" unique_id=1067789864]
-position = Vector2(12.394126, -6.6170883)
+position = Vector2(-3.5671759, -0.4458323)
 rotation = 0.012639626
 scale = Vector2(1.1241713, 0.13490698)
 shape = SubResource("CapsuleShape2D_qujks")
 
 [node name="Front Door" parent="." unique_id=67263175 instance=ExtResource("5_fydfr")]
-position = Vector2(-163, -80)
+position = Vector2(-394, 177)
 scale = Vector2(4.8410025, 1.2089908)
 id = "Front Door Locked"
 RoomMessage = "scene20entrance2"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Front Door" unique_id=1866364541]
-position = Vector2(11.774422, 153.02019)
+position = Vector2(9.536743e-07, 0)
 rotation = 0.012639626
 scale = Vector2(1.0040979, 1.0000159)
 shape = SubResource("CapsuleShape2D_qujks")
@@ -76,7 +136,7 @@ shape = SubResource("CapsuleShape2D_qujks")
 position = Vector2(-20, -25)
 
 [node name="Bootroom2" parent="." unique_id=727452976 instance=ExtResource("6_r0uby")]
-position = Vector2(-246, 44)
+position = Vector2(-439, 33)
 teleport = "res://Scenes/Playable Scenes/ballroom_scene.tscn"
 unlocked = true
 forbidden_message = "\"What's going on...\""
@@ -92,7 +152,7 @@ rotation = 1.5778282
 shape = SubResource("CapsuleShape2D_kulqj")
 
 [node name="Bootroom" parent="." unique_id=570858726 instance=ExtResource("6_r0uby")]
-position = Vector2(-217, 43)
+position = Vector2(-400, 32)
 teleport = "res://Scenes/Playable Scenes/bootroom_scene.tscn"
 forbidden_message = "\"...\""
 
@@ -106,3 +166,6 @@ polygon = PackedVector2Array(-289, 103, -287, 74, -246, 73, -244, 10, -182, 11, 
 [connection signal="body_entered" from="Front Door" to="." method="_on_snarky_comment_body_entered"]
 [connection signal="has_yapped_about_it" from="Front Door" to="." method="_on_front_door_has_yapped_about_it"]
 [connection signal="body_entered" from="CutSceneTeleport" to="CutSceneTeleport" method="_on_body_entered"]
+
+[editable path="lauren_double(CUTSCENE)"]
+[editable path="Carmilla_double(CUTSCENE)"]
