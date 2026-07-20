@@ -47,7 +47,7 @@ offsets = PackedFloat32Array(0, 0.22794117)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_tkr8p"]
 gradient = SubResource("Gradient_5xqpn")
-fill_from = Vector2(0.6581197, 0.45299146)
+fill_from = Vector2(0.92578125, 0.47265625)
 fill_to = Vector2(0, 0.47293448)
 
 [node name="grandhall_scene" type="Node2D" unique_id=776564788]
@@ -56,7 +56,7 @@ script = ExtResource("1_lgo1s")
 [node name="Environmental Sorting" type="Node2D" parent="." unique_id=1609331704]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Environmental Sorting" unique_id=926223720]
-color = Color(0.046171345, 0.19749907, 0.3711701, 1)
+color = Color(0.056100007, 0.10631497, 0.33, 1)
 
 [node name="Grand Hall" parent="Environmental Sorting" unique_id=950251797 instance=ExtResource("1_nw6sa")]
 position = Vector2(-54, -461.99997)

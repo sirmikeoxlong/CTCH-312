@@ -27,9 +27,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_dining_paper_body_entered(body: Node2D) -> void:
+func _on_dining_paper_body_entered(body: CharacterBody2D) -> void:
 	dining_paper.entered = true
 	
-
+func _on_dining_paper_body_exited(body: CharacterBody2D) -> void:
+	dining_paper.entered = false
+	
 func _on_dining_paper_pocketed() -> void:
 	dining_paper.remove_from_scene()
+
+
+	pass # Replace with function body.

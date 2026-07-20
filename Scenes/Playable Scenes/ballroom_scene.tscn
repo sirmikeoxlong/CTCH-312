@@ -14,7 +14,7 @@
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_3ivsh"]
 gradient = SubResource("Gradient_vppsg")
-fill_from = Vector2(0.52991456, 0.7407407)
+fill_from = Vector2(0.5167785, 0.8187919)
 fill_to = Vector2(0.54415953, 0.0056980057)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2yy10"]
@@ -26,15 +26,16 @@ radius = 18.382355
 [node name="ballroom_scene" type="Node2D" unique_id=368079613]
 script = ExtResource("1_fdcss")
 
-[node name="env_ballroom" parent="." unique_id=1479919169 instance=ExtResource("1_2xjvu")]
-position = Vector2(12, -242)
-scale = Vector2(0.47819802, 0.48639843)
-
 [node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("2_idnv1")]
 position = Vector2(89, -242)
 
+[node name="env_ballroom" parent="." unique_id=1479919169 instance=ExtResource("1_2xjvu")]
+y_sort_enabled = true
+position = Vector2(12, -242)
+scale = Vector2(0.47819802, 0.48639843)
+
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=15137641]
-color = Color(0.28564373, 0.5053388, 0.7083086, 1)
+color = Color(0.12660962, 0.2637228, 0.3891556, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1112724748]
 position = Vector2(1, -178)

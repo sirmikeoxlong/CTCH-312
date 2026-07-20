@@ -459,7 +459,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ilbab"]
 radius = 5.0
-height = 24.0
+height = 10.0
 
 [sub_resource type="Gradient" id="Gradient_cvnsp"]
 offsets = PackedFloat32Array(0.082987554, 0.64315355, 0.7842324, 0.813278)

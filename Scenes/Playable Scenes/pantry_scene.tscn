@@ -31,6 +31,8 @@ position = Vector2(-87, 15)
 polygon = PackedVector2Array(-107, 16, -44, 17, -43, 6, -35, 7, -33, 14, 46, 15, 47, 6, 64, 6, 65, 64, 56, 64, 56, 82, 29, 82, 29, 63, -44, 61, -43, 44, -106, 43, -106, 20, -171, 76, -100, 135, 108, 138, 181, 27, 167, -137, 3, -186, -50, -211, -140, -144, -167, -1, -124, 11)
 
 [node name="Boot Room Key" parent="." unique_id=1015122729 instance=ExtResource("4_vpwu3")]
+z_index = -1
+y_sort_enabled = true
 position = Vector2(6, -2)
 scale = Vector2(1.3599999, 1.360001)
 id = "bootroom_key"
@@ -49,16 +51,14 @@ region_rect = Rect2(98, 52, 12, 7)
 position = Vector2(44, 47)
 teleport = "res://Scenes/Playable Scenes/staffroom_scene.tscn"
 key = NodePath("../Staffroom Key")
-forbidden_message = "doorlock"
 
 [node name="Pantry" parent="." unique_id=1187717758 instance=ExtResource("8_mjwrk")]
 position = Vector2(-96, 29)
 teleport = "res://Scenes/Playable Scenes/kitchen_scene.tscn"
 unlocked = true
-forbidden_message = "doorlock"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1873606942]
-color = Color(0.44119266, 0.5500828, 0.8660146, 1)
+color = Color(0.05490196, 0.105882354, 0.32941177, 1)
 
 [node name="Staffroom Key" parent="." unique_id=1495470937 instance=ExtResource("4_vpwu3")]
 position = Vector2(366, -83)
@@ -84,4 +84,5 @@ theme_override_font_sizes/font_size = 8
 text = "[E] To Interact"
 
 [connection signal="body_entered" from="Boot Room Key" to="." method="_on_boot_room_key_body_entered"]
+[connection signal="body_exited" from="Boot Room Key" to="." method="_on_boot_room_key_body_exited"]
 [connection signal="pocketed" from="Boot Room Key" to="." method="_on_boot_room_key_pocketed"]

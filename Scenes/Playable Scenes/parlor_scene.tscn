@@ -46,6 +46,7 @@ script = ExtResource("5_bds3v")
 position = Vector2(-7, 35)
 
 [node name="snarky comment" parent="Dialogue" unique_id=359445996 instance=ExtResource("7_d1lcf")]
+visible = false
 position = Vector2(94, -60)
 id = "gener_comment"
 RoomMessage = "billards/parlorconnect"
@@ -101,6 +102,7 @@ theme_override_font_sizes/font_size = 8
 text = "[E] To Interact"
 
 [connection signal="body_entered" from="Ballroom Paper" to="." method="_on_ballroom_paper_body_entered"]
+[connection signal="body_exited" from="Ballroom Paper" to="." method="_on_ballroom_paper_body_exited"]
 [connection signal="pocketed" from="Ballroom Paper" to="." method="_on_ballroom_paper_pocketed"]
 [connection signal="has_yapped_about_it" from="Dialogue/snarky comment" to="." method="_on_snarky_comment_has_yapped_about_it"]
 [connection signal="body_entered" from="Parlor Key" to="." method="_on_parlor_key_body_entered"]

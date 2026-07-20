@@ -13,8 +13,8 @@
 radius = 18.382355
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wsyrv"]
-radius = 10.985662
-height = 27.971176
+radius = 14.9925995
+height = 45.984802
 
 [node name="bootroom_scene" type="Node2D" unique_id=892454826]
 script = ExtResource("1_3u0uu")
@@ -27,7 +27,7 @@ scale = Vector2(0.68000066, 0.63999724)
 position = Vector2(28, -21)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1594320021]
-color = Color(0.1168422, 0.33254594, 0.43403766, 1)
+color = Color(0.04847213, 0.17999789, 0.24200657, 1)
 
 [node name="Spare Bedroom Key" parent="." unique_id=1015122729 instance=ExtResource("4_chcfv")]
 position = Vector2(-66, -29.000002)
@@ -89,7 +89,7 @@ script = ExtResource("9_kglb0")
 teleport = "res://Scenes/Cutscenes/cutscene_1.tscn"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CutSceneTeleport" unique_id=500018132]
-position = Vector2(-15, -51)
+position = Vector2(5, -49)
 rotation = 1.5778282
 shape = SubResource("CapsuleShape2D_wsyrv")
 

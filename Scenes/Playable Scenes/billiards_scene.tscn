@@ -32,7 +32,7 @@ color = Color(0.15686275, 0.22352941, 0.46666667, 1)
 position = Vector2(513, 277)
 
 [node name="Billiards Paper" parent="." unique_id=1015122729 instance=ExtResource("3_tjc02")]
-position = Vector2(503, 158)
+position = Vector2(505, 156)
 id = "billiards_paper"
 pickup_message = "billiardspaper"
 
@@ -95,4 +95,5 @@ scale = Vector2(1.4608579, 1.5000297)
 polygon = PackedVector2Array(516, 151, 516, 190, 508, 190, 507, 245, 448, 246, 448, 293, 508, 293, 508, 338, 530, 338, 536, 329, 665, 328, 691, 338, 678.3128, 309.3272, 677.62823, 277.9945, 678.9973, 225.32889, 693.37244, 187.99629, 700.2177, 153.33032, 691, 152, 691, 152, 689.26526, 135.99731, 538.6688, 139.3306, 520, 153, 540, 15, 773, -2, 841, 171, 805, 323, 732, 440, 468, 501, 288, 380, 231, 217, 334, 16, 425, 9, 487, 95)
 
 [connection signal="body_entered" from="Billiards Paper" to="." method="_on_billiards_paper_body_entered"]
+[connection signal="body_exited" from="Billiards Paper" to="." method="_on_billiards_paper_body_exited"]
 [connection signal="pocketed" from="Billiards Paper" to="." method="_on_billiards_paper_pocketed"]

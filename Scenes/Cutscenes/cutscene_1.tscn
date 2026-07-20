@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ccmxpq6w5id6e" path="res://Scenes/environments/env_grandhall.tscn" id="2_r0uby"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Entity Scenes/player.tscn" id="3_kulqj"]
 [ext_resource type="PackedScene" uid="uid://ddaurrrwvdn47" path="res://Scenes/Entity Scenes/carmilla.tscn" id="4_bl2sy"]
+[ext_resource type="PackedScene" uid="uid://spfiyq443c6o" path="res://Characters/carmilla_double(cutscene).tscn" id="4_fydfr"]
 [ext_resource type="PackedScene" uid="uid://d0trqxdl8e8mm" path="res://Scripts/Classes/class_room_trigger.tscn" id="5_fydfr"]
 [ext_resource type="PackedScene" uid="uid://dx1pcgoii0f41" path="res://Scripts/Classes/class_room_teleport.tscn" id="6_r0uby"]
 [ext_resource type="Script" uid="uid://b2ajryohr0cqa" path="res://Scripts/Scene Scripts/cut_scene_teleport.gd" id="7_kulqj"]
@@ -145,9 +146,16 @@ script = ExtResource("1_uxk81")
 position = Vector2(-72, -484)
 
 [node name="Lauren" parent="." unique_id=1222447786 instance=ExtResource("3_kulqj")]
-position = Vector2(-112, -20)
+position = Vector2(-179, 45)
+
+[node name="Carmilla_double(CUTSCENE)" parent="." unique_id=330098833 instance=ExtResource("4_fydfr")]
+z_index = -1
+position = Vector2(-103, -7.6293945e-06)
+scale = Vector2(0.16771662, 0.17738096)
 
 [node name="Carmilla" parent="." unique_id=140519432 instance=ExtResource("4_bl2sy")]
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(-109, -98.99999)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=623322509]
@@ -155,7 +163,7 @@ libraries/ = SubResource("AnimationLibrary_bl2sy")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1675137377]
 position = Vector2(-20, -25)
-color = Color(0.73762393, 0.34754023, 0.6222237, 1)
+color = Color(0.37384263, 0.13838717, 0.3080187, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1905979694]
 visible = false
