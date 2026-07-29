@@ -3,7 +3,7 @@ Keep yourself safe
 
 Welcome to our gallery viewers! :D
 
-# Carmilla's Manor (from out itch.io page synopsis)
+# Carmilla's Manor (from our itch.io page synopsis)
  > Carmilla's Manor is a horror RPG that follows the story of Lauren. This heroine must traverse through a perilous manor to please the whims of her parents and retrieve an artifact that belonged to her family. Unbeknownst to her, the antagonistic figure Carmilla lurks the manor's halls. As Lore unravels, Lauren realizes how twisted Carmilla's mind has become. Carmilla believes that Lauren is the woman she had fallen in love with years ago. As her mind shatters she clings to Lauren as a beacon to her fractured life. Lauren must evade Carmilla's attacks, retrieve the relic, and escape the manor alive.
 
 # Challenges
